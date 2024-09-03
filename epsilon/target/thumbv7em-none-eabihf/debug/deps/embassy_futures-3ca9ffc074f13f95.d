@@ -1,0 +1,11 @@
+D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabihf\debug\deps\libembassy_futures-3ca9ffc074f13f95.rmeta: D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\lib.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\fmt.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\block_on.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\yield_now.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\join.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\select.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\../README.md
+
+D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabihf\debug\deps\embassy_futures-3ca9ffc074f13f95.d: D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\lib.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\fmt.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\block_on.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\yield_now.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\join.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\select.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\../README.md
+
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\lib.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\fmt.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\block_on.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\yield_now.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\join.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\select.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-futures\src\../README.md:

@@ -1,0 +1,6 @@
+cargo:rustc-link-lib=static=cortex-m
+cargo:rustc-link-search=D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabihf\debug\build\cortex-m-2b1372e18641e3a4\out
+cargo:rustc-cfg=cortex_m
+cargo:rustc-cfg=armv7m
+cargo:rustc-cfg=armv7em
+cargo:rustc-cfg=has_fpu

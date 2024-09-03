@@ -1,0 +1,5 @@
+cargo:rustc-cfg=cortex_m
+cargo:rustc-cfg=armv7m
+cargo:rustc-link-search=D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\release\build\cortex-m-rt-f52b10556bf9e722\out
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=link.x.in

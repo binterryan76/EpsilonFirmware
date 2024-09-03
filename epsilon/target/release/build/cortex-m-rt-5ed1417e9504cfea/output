@@ -1,0 +1,3 @@
+cargo:rustc-link-search=D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\release\build\cortex-m-rt-5ed1417e9504cfea\out
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=link.x.in

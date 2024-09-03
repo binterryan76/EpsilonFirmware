@@ -1,0 +1,12 @@
+D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\release\deps\libdefmt_rtt-eccc9442a5067263.rmeta: C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src/lib.rs C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src\channel.rs C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src\consts.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\release\build\defmt-rtt-78b24c4433d04cc9\out/consts.rs
+
+D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\release\deps\libdefmt_rtt-eccc9442a5067263.rlib: C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src/lib.rs C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src\channel.rs C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src\consts.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\release\build\defmt-rtt-78b24c4433d04cc9\out/consts.rs
+
+D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\release\deps\defmt_rtt-eccc9442a5067263.d: C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src/lib.rs C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src\channel.rs C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src\consts.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\release\build\defmt-rtt-78b24c4433d04cc9\out/consts.rs
+
+C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src/lib.rs:
+C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src\channel.rs:
+C:\Users\Ryan\.cargo\registry\src\index.crates.io-6f17d22bba15001f\defmt-rtt-0.4.1\src\consts.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\release\build\defmt-rtt-78b24c4433d04cc9\out/consts.rs:
+
+# env-dep:OUT_DIR=D:\\Users\\Ryan\\Documents\\Projects\\Embedded Rust Blinky2\\embassy\\examples\\stm32f4\\target\\thumbv7em-none-eabi\\release\\build\\defmt-rtt-78b24c4433d04cc9\\out

@@ -1,0 +1,10 @@
+D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\debug\deps\libembassy_net_wiznet-89ed187a64f1738f.rmeta: D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\lib.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\mod.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\w5500.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\w5100s.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\device.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\../README.md
+
+D:\Users\Ryan\Documents\Projects\Embedded Rust Blinky2\embassy\examples\stm32f4\target\thumbv7em-none-eabi\debug\deps\embassy_net_wiznet-89ed187a64f1738f.d: D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\lib.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\mod.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\w5500.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\w5100s.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\device.rs D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\../README.md
+
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\lib.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\mod.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\w5500.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\chip\w5100s.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\device.rs:
+D:\Users\Ryan\Documents\Projects\Embedded\ Rust\ Blinky2\embassy\embassy-net-wiznet\src\../README.md:
