@@ -26,6 +26,9 @@ public record SetTargetTempCommand(
         $"Set temperarure conroller {TempControllerIndex} target temp to {TargetTemp}";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => false;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         initialMachine.Entities.TempControllers.TryGetValue(TempControllerIndex, out TempController? initialTempController);

@@ -15,6 +15,9 @@ public record AddBoardCommand(Board Board, uint? LineNumber = null) : ICommand
     public string Description { get; } = $"Add board '{Board.Name}' to a machine";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => false;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         Board boardToAdd = Board with { Id = initialMachine.Entities.Boards.NextId() };

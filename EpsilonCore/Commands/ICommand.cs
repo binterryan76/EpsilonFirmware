@@ -22,6 +22,11 @@ public interface ICommand
     public uint? LineNumber { get; }
 
     /// <summary>
+    /// Indicates whether the command requires the machine to be at zero velocity before it can be run.
+    /// </summary>
+    public bool RequiresZeroVelocity { get; }
+
+    /// <summary>
     /// This function should contain Enqueue logic specific to a particular command.
     /// This will perform any checks specific to a particular command and ensure 
     /// the command is ready to be applied to the <paramref name="initialMachine"/>.

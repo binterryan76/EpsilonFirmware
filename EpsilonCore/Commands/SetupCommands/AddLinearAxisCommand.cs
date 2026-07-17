@@ -15,6 +15,9 @@ public record AddLinearAxisCommand(AxisLinear Axis, uint? LineNumber = null) : I
     public string Description { get; } = $"Add axis '{Axis.Name}' to a machine";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => true;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         AxisLinear axisToAdd = Axis with

@@ -19,6 +19,9 @@ public record BlinkPinCommand(
     public string Description { get; } = $"Blinks pin {PinId} {BlinkCount} times holding pin high for {BlinkTimeHigh} and low for {BlinkTimeLow}";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => false;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         if (BlinkCount == 0)

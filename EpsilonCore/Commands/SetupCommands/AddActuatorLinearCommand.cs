@@ -15,6 +15,9 @@ public record AddActuatorLinearCommand(IActuatorLinear Actuator, uint? LineNumbe
     public string Description { get; } = $"Add linear actuator '{Actuator.Name}' to a machine";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => true;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         IActuatorLinear actuatorToAdd = Actuator.With(id: initialMachine.Entities.ActuatorsLinear.NextId());

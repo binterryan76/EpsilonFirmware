@@ -10,6 +10,9 @@ public record AddPinCommand(Pin Pin, uint? LineNumber = null) : ICommand
     public string Description { get; } = $"Adds pin '{Pin.Name}' to a machine";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => false;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         Pin pinToAdd = Pin with { Id = initialMachine.Entities.Pins.NextId() };

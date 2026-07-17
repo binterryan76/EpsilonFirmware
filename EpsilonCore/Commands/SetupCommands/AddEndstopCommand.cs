@@ -17,6 +17,9 @@ public record AddEndstopCommand(
     public string Description { get; } = $"Add endstop '{Endstop.Name}' to a machine";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => false;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         Endstop endstopToAdd = Endstop with

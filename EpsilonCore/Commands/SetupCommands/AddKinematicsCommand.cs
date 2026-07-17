@@ -33,6 +33,9 @@ public record AddKinematicsCommand(
     public string Description { get; } = $"Add kinematics '{Kinematics.Name}' to a motion system";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => true;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         CompositeKinematicSystem initialKinematicSystem = initialMachine.MotionSystem.CompositeKinematicSystem;

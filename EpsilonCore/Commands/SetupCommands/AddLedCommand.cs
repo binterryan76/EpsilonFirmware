@@ -10,6 +10,9 @@ public record AddLedCommand(Led Led, uint? LineNumber = null) : ICommand
     public string Description { get; } = $"Add LED '{Led.Name}' to a machine";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => false;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         Led ledToAdd = Led with { Id = initialMachine.Entities.Leds.NextId() };

@@ -1,9 +1,11 @@
 ﻿using EpsilonCore.Boards;
 using EpsilonCore.Commands;
+using EpsilonCore.Commands.MotionCommands;
 using EpsilonCore.Communication;
 using EpsilonCore.Display;
 using EpsilonCore.Helpers;
 using EpsilonCore.Machines;
+using EpsilonCore.Motion;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 
@@ -18,10 +20,6 @@ public class EpsilonEngine
     // Give the mutex a unique name (prefix with "Global\\" to make it OS-wide)
     private static readonly Mutex mainLoopMutex = new();
 
-    /// <summary>
-    /// Max number of commands that can be in the send machineQueue at a time.
-    /// </summary>
-    private const uint SEND_QUEUE_MAX = byte.MaxValue;
     private ConcurrentDictionary<uint, MachineQueue> MachineQueues { get; } = [];
 
     /// <summary>
@@ -124,6 +122,122 @@ public class EpsilonEngine
         bool success = MachineQueues.TryGetValue(machineQueueIndex, out MachineQueue? queue);
         if (success)
             queue!.CommandsToEnqueue.Enqueue(command);
+    }
+
+    /// <summary>
+    /// Adds a list of commands to the command machineQueue to be processed.
+    /// </summary>
+    /// <param name="machineQueueIndex"></param>
+    /// <param name="commands"></param>
+    public void EnqueueCommands(uint machineQueueIndex, IEnumerable<ICommand> commands)
+    {
+        const int LOOK_AHEAD_COUNT = 20;
+
+        bool success = MachineQueues.TryGetValue(machineQueueIndex, out MachineQueue? queue);
+        if (!success || queue is null)
+            return;
+
+        MoveQueue moveQueue = new();
+        List<ICommand> commandsToQueue = [];
+        bool containsMoveCommand = false;
+        foreach (ICommand command in commands)
+        {
+            commandsToQueue.Add(command);
+
+            if (command is MoveCommand moveCommand)
+            {
+                Result<Move> move = moveCommand.GetMove(queue.LatestQueuedMachine);
+                if (move.IsError)
+                {
+                    // Last command was a move command but it failed to get a move so remove it from the queued commands list.
+                    commandsToQueue.RemoveAt(commandsToQueue.Count - 1);
+
+                    // Send all queued commands and moves before the failed move command to the machineQueue.
+                    SolveMovesAndSendAllCommands(queue, moveQueue, commandsToQueue);
+
+                    // Log error.
+                    queue.LatestQueuedMachine.ResultMessageLogger.Log(
+                        Helper.GetFormattedDisplayMessage(moveCommand, ErrorLevel.Error, move.Exception.Message));
+
+                    return;
+                }
+                else
+                {
+                    moveQueue.Add(move.Value);
+                    containsMoveCommand = true;
+                }
+
+            }
+            else if (!containsMoveCommand)
+            {
+                // If a non-move command comes in and there are no moves before it then just queue it.
+                SolveMovesAndSendAllCommands(queue, moveQueue, commandsToQueue);
+                continue;
+            }
+
+            if (command.RequiresZeroVelocity)
+            {
+                // All moves can be solved and sent if the command requires zero velocity because solving moves will end with zero velocity.
+                SolveMovesAndSendAllCommands(queue, moveQueue, commandsToQueue);
+                containsMoveCommand = false;
+            }
+            else if (moveQueue.Count >= LOOK_AHEAD_COUNT)
+            {
+                // Enough commands have been queued to the move queue to solve the moves and add them to the command machineQueue.
+                // We will only send half of them though because if more moves are coming up, we may want to maintain a higher speed
+                // and solvig moves always ends with zero velocity. Roughly the first half will be accelerating and the second half will
+                // be decelerating but we don't know if we want to decelerate yet.
+                SolveMovesAndSendHalfOfMoveCommands(queue, moveQueue, ref commandsToQueue);
+            }
+        }
+    }
+
+    private static void SolveMovesAndSendAllCommands(
+        MachineQueue queue,
+        MoveQueue moveQueue,
+        List<ICommand> queuedCommands)
+    {
+        moveQueue.SolveAllMoves(queue.LatestQueuedMachine.MotionSystem.Precisions);
+
+        foreach (ICommand command in queuedCommands)
+            queue.CommandsToEnqueue.Enqueue(command);
+
+        // Clear the move queue and move commands list but keep the last move to remember velocities for next batch of moves.
+        Move? lastMove = moveQueue.Last;
+        moveQueue.Clear();
+        if (lastMove is not null)
+            moveQueue.Add(lastMove);
+        queuedCommands.Clear();
+    }
+
+    private static void SolveMovesAndSendHalfOfMoveCommands(
+        MachineQueue queue,
+        MoveQueue moveQueue,
+        ref List<ICommand> queuedCommands)
+    {
+        moveQueue.SolveAllMoves(queue.LatestQueuedMachine.MotionSystem.Precisions);
+
+        int movesToSend = (moveQueue.Count / 2) - 1;
+        int movesSent = 0;
+        int commandsSent = 0;
+
+        foreach (ICommand command in queuedCommands)
+        {
+            queue.CommandsToEnqueue.Enqueue(command);
+            commandsSent++;
+
+            if (command is MoveCommand)
+            {
+                movesSent++;
+                moveQueue.Dequeue();
+            }
+
+            if (movesSent >= movesToSend)
+                break;
+        }
+
+        // Clear all commands that have been sent.
+        queuedCommands = [.. queuedCommands.Skip(commandsSent)];
     }
 
     /// <summary>

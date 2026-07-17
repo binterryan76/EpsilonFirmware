@@ -15,6 +15,9 @@ public record AddActuatorRotationalCommand(IActuatorRotational Actuator, uint? L
     public string Description { get; } = $"Add rotational actuator '{Actuator.Name}' to a machine";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => true;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         IActuatorRotational actuatorToAdd = Actuator.With(id: initialMachine.Entities.ActuatorsRotational.NextId());

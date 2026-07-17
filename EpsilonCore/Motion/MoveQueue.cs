@@ -11,8 +11,12 @@ namespace EpsilonCore.Motion;
 public class MoveQueue
 {
     private readonly Queue<Move> queue = [];
-
+    public int Count => queue.Count;
+    public void Clear() => queue.Clear();
+    public Move? Last => queue.Count > 0 ? queue.Last() : null;
     public void Add(Move move) => queue.Enqueue(move);
+    public bool TryDequeue(out Move? move) => queue.TryDequeue(out move);
+    public Move Dequeue() => queue.Dequeue();
 
     /// <summary>
     /// Solves the time of every <see cref="MovePoint"/>.
@@ -88,10 +92,7 @@ public class MoveQueue
     /// </summary>
     public void SolveAllMoves(MotionSystemPrecisions precisions)
     {
-        // Every Move's positions, disatances, and MovePoints are set when the Move is created.
-        // Now we just need to solve for MovePoints.Time
-        // TODO: Figure out how this will support solving just the next few moves because
-        // planning to end at a stop assumes that the queue contains the last move.
+        if (Count <= 0) return;
 
         // Steps 1 and 2 above.
         foreach (Move move in queue)

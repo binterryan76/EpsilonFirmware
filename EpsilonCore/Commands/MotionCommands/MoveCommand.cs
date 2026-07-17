@@ -1,5 +1,8 @@
 ﻿using EpsilonCore.Helpers;
 using EpsilonCore.Machines;
+using EpsilonCore.Motion;
+using EpsilonCore.Motion.Axis;
+using EpsilonCore.Motion.Kinematics;
 using System.Collections.Immutable;
 using UnitsNet;
 
@@ -35,6 +38,9 @@ public record MoveCommand : ICommand
 
     /// <inheritdoc />
     public string Description { get; private init; }
+
+    /// <inheritdoc />
+    public bool RequiresZeroVelocity => false;
 
     /// <summary>
     /// Split linear moves into many small segments of this size.
@@ -125,6 +131,45 @@ public record MoveCommand : ICommand
             return $"Move missing positions";
     }
 
+    /// <summary>
+    /// Returns a <see cref="Move"/> result that represents the move specified by this command, 
+    /// using the current positions of the machine as the starting point.
+    /// </summary>
+    /// <param name="initialMachine"></param>
+    /// <returns></returns>
+    public Result<Move> GetMove(Machine initialMachine)
+    {
+        CompositeKinematicSystem kinematicSystem = initialMachine.MotionSystem.CompositeKinematicSystem;
+
+        // Get the final positions of all axes involved in the move, using the current position if no new position is specified.
+        List<Length?> positionsFinalLinear = [];
+        foreach (AxisLinear axis in kinematicSystem.AxesLinear)
+        {
+            if (PositionsLinear.TryGetValue(axis.Id, out Length pos))
+                positionsFinalLinear.Add(pos);
+            else
+                positionsFinalLinear.Add(axis.Pos);
+        }
+
+        // Repeat with rotational axes.
+        List<Angle?> positionsFinalRotational = [];
+        foreach (AxisRotational axis in kinematicSystem.AxesRotational)
+        {
+            if (PositionsRotational.TryGetValue(axis.Id, out Angle pos))
+                positionsFinalRotational.Add(pos);
+            else
+                positionsFinalRotational.Add(axis.Pos);
+        }
+
+        return Move.New(initialMachine.MotionSystem.Precisions,
+            kinematicSystem,
+            [.. kinematicSystem.AxesLinear.Select(axis => axis.Pos)],
+            [.. kinematicSystem.AxesRotational.Select(axis => axis.Pos)],
+            positionsFinalLinear,
+            positionsFinalRotational,
+            RequestedSpeedLinear,
+            RequestedSpeedRotational);
+    }
 
     /// <summary>
     /// The generic move algorithm works like this:
@@ -165,6 +210,46 @@ public record MoveCommand : ICommand
         //
         //stopwatch.Stop();
         //long millis = stopwatch.ElapsedMilliseconds;
+        Machine resultantMachine = initialMachine with
+        {
+            Entities = initialMachine.Entities with
+            {
+                AxesLinear = initialMachine.Entities.AxesLinear.Select(kvp =>
+                {
+                    if (PositionsLinear.TryGetValue(kvp.Key, out Length pos))
+                        return new KeyValuePair<uint, AxisLinear>(kvp.Key, kvp.Value with { Pos = pos });
+                    else
+                        return kvp;
+                }).ToImmutableDictionary(),
+                AxesRotational = initialMachine.Entities.AxesRotational.Select(kvp =>
+                {
+                    if (PositionsRotational.TryGetValue(kvp.Key, out Angle pos))
+                        return new KeyValuePair<uint, AxisRotational>(kvp.Key, kvp.Value with { Pos = pos });
+                    else
+                        return kvp;
+                }).ToImmutableDictionary()
+            },
+            MotionSystem = initialMachine.MotionSystem with
+            {
+                CompositeKinematicSystem = initialMachine.MotionSystem.CompositeKinematicSystem with
+                {
+                    AxesLinear = initialMachine.MotionSystem.CompositeKinematicSystem.AxesLinear.Select(axis =>
+                    {
+                        if (PositionsLinear.TryGetValue(axis.Id, out Length pos))
+                            return axis with { Pos = pos };
+                        else
+                            return axis;
+                    }).ToImmutableList(),
+                    AxesRotational = initialMachine.MotionSystem.CompositeKinematicSystem.AxesRotational.Select(axis =>
+                    {
+                        if (PositionsRotational.TryGetValue(axis.Id, out Angle pos))
+                            return axis with { Pos = pos };
+                        else
+                            return axis;
+                    }).ToImmutableList()
+                }
+            }
+        };
         return QueuedCommand.Success(this, initialMachine);
     }
 

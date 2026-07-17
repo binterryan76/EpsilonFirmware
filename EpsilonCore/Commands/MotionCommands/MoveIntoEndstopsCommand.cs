@@ -21,6 +21,9 @@ public record MoveIntoEndstopsCommand(
         $"Moves machine into endstops [{string.Join(", ", EndstopIdsToHomeTo)}]";
 
     /// <inheritdoc />
+    public bool RequiresZeroVelocity => true;
+
+    /// <inheritdoc />
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
         throw new NotImplementedException();
