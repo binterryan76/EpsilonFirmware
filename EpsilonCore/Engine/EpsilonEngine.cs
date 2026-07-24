@@ -12,13 +12,24 @@ using System.Diagnostics;
 namespace EpsilonCore.Engine;
 
 /// <summary>
-/// This contains the queues for all machines and runs the main loop to process commands.
-/// Start this process by adding a machine with its machine machineQueue by calling <see cref="AddMachineQueue"/>.
+/// This contains the queues for all machines and runs the main loop.
+/// The main loop receives commands, sends those commands to microcontrollers, and receives responses from the microcontrollers.
+/// Start this process by adding a machine with its machine machineQueue by calling <see cref="AddMachineQueue"/>
+/// which will start a new thread to run the main loop.
+/// You can machineQueue commands with <see cref="EnqueueCommand"/> or <see cref="EnqueueCommands"/> and they will be processed in the main loop.
+/// 
+/// This main loop needs to be a forever loop since a connection will be maintained with every microcontroller
+/// and pings will be sent back and forth to ensure the connection is still alive.
+/// If there are no commands to process, the main loop will sleep between periodic checks for new commands to process.
+/// The main loop needs to prioritize sending commands to ensure all the microconroller's command buffers are filled.
+/// With extra resources, the main loop can machineQueue commands.
+/// Recieving data from the microcontrollers is handled with a relatively quick event handler.
+/// 
 /// </summary>
-public class EpsilonEngine
+public class EpsilonEngine(IResultMessageLogger logger)
 {
     // Give the mutex a unique name (prefix with "Global\\" to make it OS-wide)
-    private static readonly Mutex mainLoopMutex = new();
+    //private static readonly Mutex mainLoopMutex = new();
 
     private ConcurrentDictionary<uint, MachineQueue> MachineQueues { get; } = [];
 
@@ -28,6 +39,31 @@ public class EpsilonEngine
     /// </summary>
     public bool Running { get; private set; } = false;
     private Thread? mainThread;
+
+    /// <summary>
+    /// Logger to use for errors that occur not related to a specific machine.
+    /// </summary>
+    public IResultMessageLogger EngineLogger { get; } = logger;
+
+    /// <summary>
+    /// Raised when a <see cref="QueuedCommand"/> is queued and the <see cref="QueuedCommand.ResultantMachine"/> 
+    /// is applied to the <see cref="MachineQueue.LatestQueuedMachine"/>.
+    /// The sender object will be the <see cref="QueuedCommand.InitialMachine"/> that the command was queued to.
+    /// </summary>
+    public EventHandler<QueuedCommand>? CommandQueued;
+
+    /// <summary>
+    /// Raised when a <see cref="QueuedCommand"/> is sent to one or more <see cref="Board"/>s.
+    /// The sender object will be the <see cref="QueuedCommand.InitialMachine"/> that the command was queued to.
+    /// </summary>
+    public EventHandler<QueuedCommand>? CommandSent;
+
+    /// <summary>
+    /// Raised when a <see cref="QueuedCommand"/> is fully resolved and the <see cref="QueuedCommand.ResultantMachine"/>
+    /// is applied to the <see cref="MachineQueue.CurrentMachine"/>.
+    /// The sender object will be the <see cref="QueuedCommand.ResultantMachine"/> that resulted from the command.
+    /// </summary>
+    public EventHandler<QueuedCommand>? CommandResolved;
 
     /// <summary>
     /// Creates a new machine machineQueue for the given machine.
@@ -55,29 +91,39 @@ public class EpsilonEngine
     /// Returns true if successful or false if there was an error.
     /// </summary>
     /// <param name="machineQueueId"></param>
-    /// <param name="name"></param>
-    /// <param name="baudRate"></param>
-    /// <param name="portNameIncludeString"></param>
+    /// <param name="communicator"></param>
     /// <returns></returns>
-    public bool AddUartCommunicator(uint machineQueueId, string name, uint baudRate, string portNameIncludeString)
+    public Exception? AddCommunicator(uint machineQueueId, ICommunicator communicator)
     {
         bool success = MachineQueues.TryGetValue(machineQueueId, out MachineQueue? machineQueue);
 
         if (!success || machineQueue is null)
         {
-            Debug.WriteLine($"Communicator '{name}' could not be added because {nameof(MachineQueue)} {machineQueueId} doesn't exist.");
-            return false;
+            string message = $"Communicator '{communicator.Name}' could not be added because {nameof(MachineQueue)} {machineQueueId} doesn't exist.";
+            Debug.WriteLine(message);
+            return new ArgumentException(message);
         }
 
-        UartCommunicator communicator = new(name, baudRate, portNameIncludeString);
-        uint nextBoardQueueId = machineQueue.BoardQueues.NextId();
+        uint nextBoardQueueId = machineQueue.Communicators.NextId();
         communicator.Id = nextBoardQueueId;
-        BoardQueue boardQueueToAdd = new(communicator);
-        mainLoopMutex.WaitOne();
-        machineQueue.BoardQueues = machineQueue.BoardQueues.Add(nextBoardQueueId, boardQueueToAdd);
+
+        success = machineQueue.Communicators.TryAdd(nextBoardQueueId, communicator);
+        if (!success)
+        {
+            string message = $"Communicator '{communicator.Name}' could not be added due to a multithreading error.";
+            Debug.WriteLine(message);
+            return new ArgumentException(message);
+        }
+
+        communicator.DataPacketsReceivedHandler += (sender, dataPackets) =>
+        {
+            Debug.Assert(sender is not null);
+            foreach (DataPacket dataPacket in dataPackets)
+                ProcessDataPacket((ICommunicator)sender, dataPacket);
+        };
+
         success = communicator.Connect();
-        mainLoopMutex.ReleaseMutex();
-        return success;
+        return success ? new Exception($"Could not connect to Communicator '{communicator.Name}'.") : null;
     }
 
     /// <summary>
@@ -131,113 +177,12 @@ public class EpsilonEngine
     /// <param name="commands"></param>
     public void EnqueueCommands(uint machineQueueIndex, IEnumerable<ICommand> commands)
     {
-        const int LOOK_AHEAD_COUNT = 20;
-
         bool success = MachineQueues.TryGetValue(machineQueueIndex, out MachineQueue? queue);
-        if (!success || queue is null)
+        if (!success)
             return;
 
-        MoveQueue moveQueue = new();
-        List<ICommand> commandsToQueue = [];
-        bool containsMoveCommand = false;
         foreach (ICommand command in commands)
-        {
-            commandsToQueue.Add(command);
-
-            if (command is MoveCommand moveCommand)
-            {
-                Result<Move> move = moveCommand.GetMove(queue.LatestQueuedMachine);
-                if (move.IsError)
-                {
-                    // Last command was a move command but it failed to get a move so remove it from the queued commands list.
-                    commandsToQueue.RemoveAt(commandsToQueue.Count - 1);
-
-                    // Send all queued commands and moves before the failed move command to the machineQueue.
-                    SolveMovesAndSendAllCommands(queue, moveQueue, commandsToQueue);
-
-                    // Log error.
-                    queue.LatestQueuedMachine.ResultMessageLogger.Log(
-                        Helper.GetFormattedDisplayMessage(moveCommand, ErrorLevel.Error, move.Exception.Message));
-
-                    return;
-                }
-                else
-                {
-                    moveQueue.Add(move.Value);
-                    containsMoveCommand = true;
-                }
-
-            }
-            else if (!containsMoveCommand)
-            {
-                // If a non-move command comes in and there are no moves before it then just queue it.
-                SolveMovesAndSendAllCommands(queue, moveQueue, commandsToQueue);
-                continue;
-            }
-
-            if (command.RequiresZeroVelocity)
-            {
-                // All moves can be solved and sent if the command requires zero velocity because solving moves will end with zero velocity.
-                SolveMovesAndSendAllCommands(queue, moveQueue, commandsToQueue);
-                containsMoveCommand = false;
-            }
-            else if (moveQueue.Count >= LOOK_AHEAD_COUNT)
-            {
-                // Enough commands have been queued to the move queue to solve the moves and add them to the command machineQueue.
-                // We will only send half of them though because if more moves are coming up, we may want to maintain a higher speed
-                // and solvig moves always ends with zero velocity. Roughly the first half will be accelerating and the second half will
-                // be decelerating but we don't know if we want to decelerate yet.
-                SolveMovesAndSendHalfOfMoveCommands(queue, moveQueue, ref commandsToQueue);
-            }
-        }
-    }
-
-    private static void SolveMovesAndSendAllCommands(
-        MachineQueue queue,
-        MoveQueue moveQueue,
-        List<ICommand> queuedCommands)
-    {
-        moveQueue.SolveAllMoves(queue.LatestQueuedMachine.MotionSystem.Precisions);
-
-        foreach (ICommand command in queuedCommands)
-            queue.CommandsToEnqueue.Enqueue(command);
-
-        // Clear the move queue and move commands list but keep the last move to remember velocities for next batch of moves.
-        Move? lastMove = moveQueue.Last;
-        moveQueue.Clear();
-        if (lastMove is not null)
-            moveQueue.Add(lastMove);
-        queuedCommands.Clear();
-    }
-
-    private static void SolveMovesAndSendHalfOfMoveCommands(
-        MachineQueue queue,
-        MoveQueue moveQueue,
-        ref List<ICommand> queuedCommands)
-    {
-        moveQueue.SolveAllMoves(queue.LatestQueuedMachine.MotionSystem.Precisions);
-
-        int movesToSend = (moveQueue.Count / 2) - 1;
-        int movesSent = 0;
-        int commandsSent = 0;
-
-        foreach (ICommand command in queuedCommands)
-        {
-            queue.CommandsToEnqueue.Enqueue(command);
-            commandsSent++;
-
-            if (command is MoveCommand)
-            {
-                movesSent++;
-                moveQueue.Dequeue();
-            }
-
-            if (movesSent >= movesToSend)
-                break;
-        }
-
-        // Clear all commands that have been sent.
-        queuedCommands = [.. queuedCommands.Skip(commandsSent)];
+            queue!.CommandsToEnqueue.Enqueue(command);
     }
 
     /// <summary>
@@ -248,22 +193,17 @@ public class EpsilonEngine
     {
         while (Running)
         {
-            mainLoopMutex.WaitOne();
+            //mainLoopMutex.WaitOne();
             foreach (MachineQueue machineQueue in MachineQueues.Values)
             {
                 // skip stopped queues
                 if (machineQueue.SendStatus != MachineQueue.MachineQueueStatus.Running)
                     continue;
 
-                //foreach (BoardQueue boardQueue in machineQueue.BoardQueues.Values)
-                //{
-                //
-                //}
-                EnqueueAllCommands(machineQueue);
+                EnqueueNextCommand(machineQueue);
                 SendSomeQueuedCommands(machineQueue);
-                ReceiveDataFromBoards(machineQueue);
             }
-            mainLoopMutex.ReleaseMutex();
+            //mainLoopMutex.ReleaseMutex();
         }
     }
 
@@ -283,37 +223,56 @@ public class EpsilonEngine
         if (!success || queueToClear is null || queueToClear.EnqueueStatus != MachineQueue.MachineQueueStatus.Running)
             return false;
 
-        mainLoopMutex.WaitOne();
-
-        // call this once to queue all commands
-        EnqueueAllCommands(queueToClear);
-
-        bool finished = false;
-
-        while (!finished)
+        while (true)
         {
-            finished = true;
-            if (queueToClear.Queued.Count > 0)
-            {
-                if (queueToClear.SendStatus != MachineQueue.MachineQueueStatus.Running)
-                {
-                    mainLoopMutex.ReleaseMutex();
-                    return false;
-                }
+            // Stop if there is an error.
+            if (queueToClear.EnqueueStatus != MachineQueue.MachineQueueStatus.Running ||
+                queueToClear.SendStatus != MachineQueue.MachineQueueStatus.Running)
+                break;
 
-                SendSomeQueuedCommands(queueToClear);
-                finished = false;
-            }
+            // Stop if all queues are empty.
+            if (queueToClear.CommandsToEnqueue.IsEmpty &&
+                queueToClear.Queued.Count <= 0 &&
+                queueToClear.ReadyToSend.Count <= 0 &&
+                queueToClear.Sent.Count <= 0)
+                break;
 
-            if (queueToClear.Sent.Count > 0)
-            {
-                ReceiveDataFromBoards(queueToClear);
-                finished = false;
-            }
+            Thread.Sleep(10);
         }
 
-        mainLoopMutex.ReleaseMutex();
-        return true;
+        return queueToClear.EnqueueStatus == MachineQueue.MachineQueueStatus.Running &&
+            queueToClear.SendStatus == MachineQueue.MachineQueueStatus.Running;
+        //mainLoopMutex.WaitOne();
+
+        // call this once to machineQueue all commands
+        // EnqueueAllCommands(queueToClear);
+
+        //bool finished = false;
+        //
+        //while (!finished)
+        //{
+        //    finished = true;
+        //    if (queueToClear.Queued.Count > 0)
+        //    {
+        //        if (queueToClear.SendStatus != MachineQueue.MachineQueueStatus.Running)
+        //        {
+        //            //mainLoopMutex.ReleaseMutex();
+        //            return false;
+        //        }
+        //
+        //        SendSomeQueuedCommands(queueToClear);
+        //        finished = false;
+        //    }
+        //
+        //    if (queueToClear.Sent.Count > 0)
+        //    {
+        //        ReceiveDataFromBoards(queueToClear);
+        //        finished = false;
+        //    }
+        //}
+        //
+        ////mainLoopMutex.ReleaseMutex();
+        //return true;
     }
 
     /*
@@ -327,121 +286,201 @@ public class EpsilonEngine
      * This is best done at the microcontroller level.
      */
 
-
     /// <summary>
-    /// Moves all <see cref="ICommand"/>s from <see cref="MachineQueue.CommandsToEnqueue"/> to <see cref="MachineQueue.Queued"/>.
-    /// Gets the output machine for incoming commands from <see cref="MachineQueue.CommandsToEnqueue"/> 
-    /// by calling <see cref="ICommand.EnqueueCommandSpecific(Machine)"/>.
-    /// Adds the commands and their output machines to <see cref="MachineQueue.Queued"/>.
+    /// Moves the next <see cref="ICommand"/>s from <see cref="MachineQueue.CommandsToEnqueue"/> to <see cref="MachineQueue.Queued"/>.
+    /// Will then try to move the command from <see cref="MachineQueue.Queued"/> to <see cref="MachineQueue.ReadyToSend"/>.
+    /// This process involved getting the output machine for a command by calling <see cref="ICommand.EnqueueCommandSpecific(Machine)"/>.
+    /// This will also solve the <see cref="MoveQueue"/> when either enough 
     /// </summary>
     /// <param name="machineQueue"></param>
     /// <exception cref="Exception">Thrown if a successfully queued command has a null <see cref="QueuedCommand.ResultantMachine"/>.</exception>
-    private static void EnqueueAllCommands(MachineQueue machineQueue)
+    private void EnqueueNextCommand(MachineQueue machineQueue)
     {
-        while (!machineQueue.CommandsToEnqueue.IsEmpty &&
-            machineQueue.EnqueueStatus == MachineQueue.MachineQueueStatus.Running)
+        if (machineQueue.EnqueueStatus != MachineQueue.MachineQueueStatus.Running)
+            return;
+
+        if (machineQueue.CommandsToEnqueue.IsEmpty)
         {
-            bool success = machineQueue.CommandsToEnqueue.TryDequeue(out ICommand? command);
+            if (machineQueue.Queued.Count <= 0)
+                return;
 
-            Debug.Assert(success,
-                $"Dequeueing {nameof(MachineQueue.CommandsToEnqueue)} should never fail.");
+            SolveMovesAndMarkCommandsAsReadyToSend(machineQueue);
+            return;
+        }
 
-            Debug.Assert(command is not null,
-                $"{nameof(MachineQueue.CommandsToEnqueue)} should never contain a null command.");
+        bool success = machineQueue.CommandsToEnqueue.TryDequeue(out ICommand? command);
 
-            Machine initialMachine = machineQueue.LatestQueuedMachine;
-            QueuedCommand queuedCommand = command.EnqueueCommandSpecific(initialMachine);
+        Debug.Assert(success,
+            $"Dequeueing {nameof(MachineQueue.CommandsToEnqueue)} should never fail.");
 
-            // check for explicit enqueue command failures
-            if (queuedCommand.ErrorLevel != ErrorLevel.Success)
+        Debug.Assert(command is not null,
+            $"{nameof(MachineQueue.CommandsToEnqueue)} should never contain a null command.");
+
+        Machine initialMachine = machineQueue.LatestQueuedMachine;
+        QueuedCommand queuedCommand = command.EnqueueCommandSpecific(initialMachine);
+
+        // check for explicit enqueue command failures
+        if (queuedCommand.ErrorLevel != ErrorLevel.Success)
+        {
+            // TODO: raise event for failed machineQueue event
+
+            // Log error.
+            initialMachine.ResultMessageLogger.Log(Helper.GetFormattedDisplayMessage(queuedCommand));
+
+            // Don't send any more commands to this machineQueue until error is addressed.
+            machineQueue.CommandsToEnqueue.Clear();
+            machineQueue.EnqueueStatus = MachineQueue.MachineQueueStatus.Stopped;
+            return;
+        }
+
+        Debug.Assert(queuedCommand.ResultantMachine is not null,
+            "All success results require a non-null ResultantMachine property.");
+
+        machineQueue.LatestQueuedMachine = queuedCommand.ResultantMachine;
+
+        // If a non-move command comes in and there is nothing before it then just mark it as ready to send.
+        if (machineQueue.Queued.Count <= 0 && command is not MoveCommand)
+        {
+            machineQueue.ReadyToSend.Enqueue(queuedCommand);
+            return;
+        }
+
+        // Otherwise, mark it as only queued but not ready to send.
+        machineQueue.Queued.Enqueue(queuedCommand);
+        CommandQueued?.Invoke(initialMachine, queuedCommand);
+
+        if (command is MoveCommand moveCommand)
+        {
+            Result<Move> move = moveCommand.GetMove(initialMachine);
+            if (move.IsError)
             {
-                // TODO: raise event for failed machineQueue event
+                // Log error.
+                initialMachine.ResultMessageLogger.Log(move.Exception.Message);
 
-                // Log error
-                initialMachine.ResultMessageLogger.Log(Helper.GetFormattedDisplayMessage(queuedCommand));
-
-                // don't send any more commands to this machineQueue until error is addressed
+                // Don't send any more commands to this machineQueue until error is addressed.
                 machineQueue.CommandsToEnqueue.Clear();
                 machineQueue.EnqueueStatus = MachineQueue.MachineQueueStatus.Stopped;
+
+                // Go ahead and solve and send all the moves ahead of this command that did work.
+                SolveMovesAndMarkCommandsAsReadyToSend(machineQueue);
                 return;
             }
+            machineQueue.MoveQueue.Add(move.Value);
+        }
 
-            Debug.Assert(queuedCommand.ResultantMachine is not null,
-                "All success results require a non-null ResultantMachine property.");
+        const int LOOK_AHEAD_COUNT = 20;
 
-            if (queuedCommand.DataPacket is null)
-            {
-                // no data to send so just add it to queued commands and continue
-                // Note: we don't need to send it to a BoardQueue because if there is no data to send, it isn't board specific.
-                machineQueue.Queued.Enqueue(queuedCommand);
-                machineQueue.LatestQueuedMachine = queuedCommand.ResultantMachine;
-
-                continue;
-            }
-
-            success = machineQueue.BoardQueues.TryGetValue(queuedCommand.DataPacket.CommunicatorId, out BoardQueue? boardQueue);
-
-            // Cause error if BoardQueue doesn't exist
-            if (!success || boardQueue is null)
-            {
-                queuedCommand = queuedCommand with
-                {
-                    ErrorLevel = ErrorLevel.Error,
-                    DisplayMessage = $"{nameof(BoardQueue)} {queuedCommand.DataPacket.CommunicatorId} is needed to send the data packet but doesn't exist"
-                };
-
-                // TODO: raise event for failed machineQueue event
-
-                // log error
-                initialMachine.ResultMessageLogger.Log(Helper.GetFormattedDisplayMessage(queuedCommand));
-
-                // don't send any more commands to this machineQueue until error is addressed
-                machineQueue.CommandsToEnqueue.Clear();
-                machineQueue.EnqueueStatus = MachineQueue.MachineQueueStatus.Stopped;
-                return;
-            }
-
-            // everything was successful so we can add it to the queued commands for both the BoardQueue and MachineQueue
-            machineQueue.Queued.Enqueue(queuedCommand);
-            machineQueue.LatestQueuedMachine = queuedCommand.ResultantMachine;
-            // TODO: eventually add the ability for there to be multiple DataPackets for a single command and send each packet to the corresponding board.
-            boardQueue.Queued.Enqueue(queuedCommand);
+        if (command.RequiresZeroVelocity || machineQueue.CommandsToEnqueue.IsEmpty)
+        {
+            // All moves can be solved and sent if the command requires zero
+            // velocity because solving moves will end with zero velocity.
+            // Also if there are no more commands to send then we can solve the moves and send them.
+            SolveMovesAndMarkCommandsAsReadyToSend(machineQueue);
+        }
+        else if (machineQueue.MoveQueue.Count > LOOK_AHEAD_COUNT)
+        {
+            // Enough commands have been queued to the move queue to solve the moves
+            // and add them to the command machineQueue.
+            // We will only send half of them though because if more moves are coming up, we may
+            // want to maintain a higher speed and solvig moves always ends with zero velocity.
+            // Roughly the first half will be accelerating and the second half will
+            // be decelerating but we don't know if we want to decelerate yet.
+            SolveMovesAndMarkHalfOfMoveCommandsAsReadyToSend(machineQueue);
         }
     }
 
     /// <summary>
-    /// Sends a set of <see cref="DataPacket"/>s via an <see cref="ICommunicator"/> and
-    /// moves commands and their output machines from <see cref="MachineQueue.Queued"/> to <see cref="MachineQueue.Sent"/>.
-    /// Sends <see cref="DataPacket"/>s until either <see cref="SEND_QUEUE_MAX"/> is reached or an error is encountered or
-    /// the microcontroller's internal machineQueue doesn't have enough space for the next command.
+    /// Solves the <see cref="MoveQueue"/> and moves all commands from <see cref="MachineQueue.Queued"/>
+    /// to <see cref="MachineQueue.ReadyToSend"/>.
     /// </summary>
     /// <param name="machineQueue"></param>
-    private static void SendSomeQueuedCommands(MachineQueue machineQueue)
+    private static void SolveMovesAndMarkCommandsAsReadyToSend(MachineQueue machineQueue)
     {
-        // TODO: fix this loop because sending data should probably be async?
-        while (machineQueue.SendStatus == MachineQueue.MachineQueueStatus.Running &&
-            machineQueue.Queued.Count > 0)
+        MoveQueue moveQueue = machineQueue.MoveQueue;
+        moveQueue.SolveAllMoves(machineQueue.LatestQueuedMachine.MotionSystem.Precisions);
+
+        foreach (QueuedCommand command in machineQueue.Queued)
+            machineQueue.ReadyToSend.Enqueue(command);
+
+        // Clear the move machineQueue and move commands list but keep the last move to remember velocities for next batch of moves.
+        Move? lastMove = moveQueue.Last;
+        moveQueue.Clear();
+        if (lastMove is not null)
+            moveQueue.Add(lastMove);
+        machineQueue.Queued.Clear();
+    }
+
+    /// <summary>
+    /// Solves the <see cref="MoveQueue"/> and moves commands from <see cref="MachineQueue.Queued"/>
+    /// to <see cref="MachineQueue.ReadyToSend"/> until half the move commands have been moved and
+    /// continues to move commands until another <see cref="MoveCommand"/> is encountered.
+    /// </summary>
+    /// <param name="machineQueue"></param>
+    private static void SolveMovesAndMarkHalfOfMoveCommandsAsReadyToSend(MachineQueue machineQueue)
+    {
+        MoveQueue moveQueue = machineQueue.MoveQueue;
+        moveQueue.SolveAllMoves(machineQueue.LatestQueuedMachine.MotionSystem.Precisions);
+
+        int movesToSend = (moveQueue.Count / 2) - 1;
+        int movesMarkedReadyToSend = 0;
+        int commandsMarkedAsReadyToSend = 0;
+        bool markedEnoughMoves = false;
+        foreach (QueuedCommand queuedCommand in machineQueue.Queued)
         {
-            QueuedCommand nextCommand = machineQueue.Queued.Peek();
+            bool isMoveCommand = queuedCommand.Command is MoveCommand;
+            if (markedEnoughMoves && isMoveCommand)
+                break;
+
+            machineQueue.ReadyToSend.Enqueue(queuedCommand);
+            commandsMarkedAsReadyToSend++;
+
+            if (isMoveCommand)
+            {
+                movesMarkedReadyToSend++;
+                moveQueue.Dequeue();
+            }
+
+            if (movesMarkedReadyToSend >= movesToSend)
+                markedEnoughMoves = true;
+        }
+
+        // Clear all commands that have been sent.
+        machineQueue.Queued = new Queue<QueuedCommand>(machineQueue.Queued.Skip(commandsMarkedAsReadyToSend));
+    }
+
+    /// <summary>
+    /// Sends a set of <see cref="DataPacket"/>s via an <see cref="ICommunicator"/> and
+    /// moves commands and their output machines from <see cref="MachineQueue.ReadyToSend"/> to <see cref="MachineQueue.Sent"/>.
+    /// Sends <see cref="DataPacket"/>s until either an error is encountered or the microcontroller's 
+    /// internal machineQueue doesn't have enough space for the next command.
+    /// </summary>
+    /// <param name="machineQueue"></param>
+    private void SendSomeQueuedCommands(MachineQueue machineQueue)
+    {
+        while (machineQueue.SendStatus == MachineQueue.MachineQueueStatus.Running &&
+            machineQueue.ReadyToSend.Count > 0)
+        {
+            QueuedCommand nextCommand = machineQueue.ReadyToSend.Peek();
 
             Debug.Assert(nextCommand.ErrorLevel == ErrorLevel.Warning ||
                 nextCommand.ErrorLevel == ErrorLevel.Success,
-                $"{nameof(MachineQueue)}.{nameof(MachineQueue.Queued)} should only contain {nameof(QueuedCommand)}s with a status of either {ErrorLevel.Warning.ToDisplayStr()} or {ErrorLevel.Success.ToDisplayStr()}.");
+                $"{nameof(MachineQueue)}.{nameof(MachineQueue.ReadyToSend)} should only contain {nameof(QueuedCommand)}s with a status of either {ErrorLevel.Warning.ToDisplayStr()} or {ErrorLevel.Success.ToDisplayStr()}.");
 
             Debug.Assert(nextCommand.ResultantMachine is not null,
-                $"{nameof(MachineQueue)}.{nameof(MachineQueue.Queued)} should never contain a null {nameof(QueuedCommand)}.{nameof(QueuedCommand.ResultantMachine)}.");
+                $"{nameof(MachineQueue)}.{nameof(MachineQueue.ReadyToSend)} should never contain a null {nameof(QueuedCommand)}.{nameof(QueuedCommand.ResultantMachine)}.");
 
             // Early continue if there is no data to send
             if (nextCommand.DataPacket is null)
             {
-                // Actually remove the command from the queued queue
-                machineQueue.Queued.Dequeue();
+                // Actually remove the command from the ready to send machineQueue
+                machineQueue.ReadyToSend.Dequeue();
 
                 if (machineQueue.Sent.Count <= 0)
                 {
                     // Just skip the sent list entirely and just apply the resultant machine if
                     // there is no data to send and no commands in front of the current one.
                     machineQueue.CurrentMachine = nextCommand.ResultantMachine;
+                    CommandResolved?.Invoke(nextCommand.ResultantMachine, nextCommand);
                 }
                 else
                 {
@@ -452,26 +491,24 @@ public class EpsilonEngine
                 continue;
             }
 
-            uint boardQueueId = nextCommand.DataPacket.CommunicatorId;
-            bool success = machineQueue.BoardQueues.TryGetValue(boardQueueId, out BoardQueue? boardQueue);
+            uint communicatorId = nextCommand.DataPacket.CommunicatorId;
+            bool success = machineQueue.Communicators.TryGetValue(communicatorId, out ICommunicator? communicatorToSendWith);
             int dataPacketSize = nextCommand.DataPacket.TotalLength;
 
-            Debug.Assert(success && boardQueue is not null,
-                $"{nameof(BoardQueue)} {boardQueueId} could not be found but should have been verified to exist when the command was queued.");
+            Debug.Assert(success && communicatorToSendWith is not null,
+                $"{nameof(ICommunicator)} {communicatorId} could not be found but should have been verified to exist when the command was queued.");
 
-            if (boardQueue.BoardCommandBufferBytesFree < dataPacketSize)
+            if (communicatorToSendWith.BoardCommandBufferBytesFree < dataPacketSize)
             {
-                // no more room in microcontroller's buffer to send data packet, just bail without dequeueing the command
+                // No more room in microcontroller's buffer to send data packet, just bail without dequeueing the command.
                 return;
             }
 
-            // Actually remove the command from the queued queue
-            machineQueue.Queued.Dequeue();
+            // Actually remove the command from the ready to send machineQueue
+            machineQueue.ReadyToSend.Dequeue();
 
-            ICommunicator communicatorToSendWith = boardQueue.Communicator;
-
-            // only assign the sequence number right before sending data packet because if a
-            // command is cancelled, we don't want to increment the sequence number
+            // Only assign the sequence number right before sending data packet because if a
+            // command is cancelled, we don't want to increment the sequence number.
             QueuedCommand commandToSend = nextCommand with
             {
                 DataPacket = nextCommand.DataPacket with
@@ -482,25 +519,18 @@ public class EpsilonEngine
                 }
             };
 
-            // actually send data packet via the ICommunicator
+            // Actually send data packet via the ICommunicator.
             bool sendSuccess = communicatorToSendWith.Send(commandToSend.DataPacket);
 
             IResultMessageLogger logger = nextCommand.ResultantMachine.ResultMessageLogger;
             if (sendSuccess)
             {
                 // track how much space the sent command is taking up in the microcontroller's command machineQueue
-                boardQueue.BoardCommandBufferBytesOccupied += dataPacketSize;
+                communicatorToSendWith.BoardCommandBufferBytesOccupied += (uint)dataPacketSize;
 
-                // log success
-                logger.Log(
-                    Helper.GetFormattedDisplayMessage(
-                        commandToSend.Command,
-                        ErrorLevel.Success,
-                        "Command sent"));
-
-                // move the command to the Sent queue for both the MachineQueue and BoardQueue.
+                // Move the command to the Sent machineQueue.
                 machineQueue.Sent.Enqueue(commandToSend);
-                boardQueue.Sent.Enqueue(commandToSend);
+                CommandSent?.Invoke(commandToSend.InitialMachine, commandToSend);
             }
             else
             {
@@ -519,125 +549,106 @@ public class EpsilonEngine
         }
     }
 
-    private static void ReceiveDataFromBoards(MachineQueue machineQueue)
+    private void ProcessDataPacket(ICommunicator communicator, DataPacket dataPacket)
     {
-        // Get list of BoardQueues to iterate through
-        List<BoardQueue> boardQueues = [.. machineQueue.BoardQueues.Values];
-        List<BoardQueue> boardQueuesToRemove = [];
-        Machine machine = machineQueue.CurrentMachine;
-
-        while (boardQueues.Count > 0)
+        bool success = MachineQueues.TryGetValue(communicator.MachineId, out MachineQueue? machineQueue);
+        if (!success || machineQueue is null)
         {
-            foreach (BoardQueue boardQueue in boardQueues)
-            {
-                ICommunicator communicator = boardQueue.Communicator;
+            EngineLogger.Log($"Data packet received from communicator '{communicator.Name}' but MachineQueue {communicator.MachineId} doesn't exist.");
+            return;
+        }
+        Machine machine = machineQueue.CurrentMachine;
+        IResultMessageLogger logger = machine.ResultMessageLogger;
 
-                DataPacket? dataPacket = communicator.Read();
+        success = machine.Entities.Boards.TryGetValue(communicator.BoardId, out Board? board);
+        string dataPacketSource;
+        if (success && board is not null)
+            dataPacketSource = $"{machine.Name} (board {board.Id})";
+        else
+            dataPacketSource = $"{machine.Name} (communicator {communicator.Id})";
 
-                if (dataPacket is null)
+        Result<CommandCode> commandCode = dataPacket.CommandCode.ToCommandCode();
+
+        // If unrecognized command code is received, log and continue
+        if (commandCode.IsError)
+        {
+            logger.Log($"Unregocnized command code received from {dataPacketSource}: {dataPacket.CommandCode}.");
+            logger.Log(commandCode.Exception.Message);
+            return;
+        }
+
+        // TODO: add validation on data length for each command code type
+        switch (commandCode.Value)
+        {
+            case CommandCode.DISPLAY_TEXT:
                 {
-                    // stop looping through boards that don't have data ready
-                    boardQueuesToRemove.Add(boardQueue);
-                    continue;
+                    string message = System.Text.Encoding.ASCII.GetString(dataPacket.AllData.ToArray()[3..]);
+                    logger.Log($"Message from {dataPacketSource}:\n\t{message}.");
+                    break;
                 }
-
-                Result<CommandCode> commandCode = dataPacket.CommandCode.ToCommandCode();
-
-                IResultMessageLogger logger = machine.ResultMessageLogger;
-
-                // If unrecognized command code is received, log and continue
-                if (commandCode.IsError)
+            case CommandCode.COMMAND_COMPLETE:
                 {
-                    logger.Log($"Unregocnized command code received: {dataPacket.CommandCode}.");
-                    logger.Log(commandCode.Exception.Message);
-                    continue;
+                    byte sequenceNum = dataPacket.SequenceNumber;
+
+                    if (machineQueue.Sent.Count <= 0)
+                    {
+                        logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but command {sequenceNum} wasn't in the sent MachineQueue.");
+                        return;
+                    }
+
+                    // remove command from sent machineQueue
+                    // TODO: for now just assume that there is only one ICommunicator and Board per machine and so one commands should complete in the order they were sent. Add support for multiple ICommunicators later.
+                    QueuedCommand sentCommandInMachineQueue = machineQueue.Sent.Dequeue();
+
+                    Debug.Assert(sentCommandInMachineQueue.ResultantMachine is not null,
+                        $"A sent command should never have a null {nameof(QueuedCommand.ResultantMachine)}.");
+
+                    // Apply resultant machine.
+                    machineQueue.CurrentMachine = sentCommandInMachineQueue.ResultantMachine;
+
+                    // Commands with data packets should have had data sent to a board via an
+                    // ICommunicator and thus should be the next item in the BoardQueue.
+                    if (sentCommandInMachineQueue.DataPacket is not null)
+                    {
+                        if (machineQueue.Sent.Count <= 0)
+                        {
+                            logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but command {sequenceNum} wasn't in the sent MachineQueue.");
+                            return;
+                        }
+
+                        if (machineQueue.Sent.Peek() != sentCommandInMachineQueue)
+                        {
+                            logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but that command wasn't the next command in the sent MachineQueue.");
+                            return;
+                        }
+
+                        // remove the command from the BoardQueue and reduce the buffer bytes occupied
+                        // by the data packet length now that the microcontroller is done with that data packet.
+                        QueuedCommand commandThatWasResolved = machineQueue.Sent.Dequeue();
+                        communicator.BoardCommandBufferBytesOccupied -= (uint)sentCommandInMachineQueue.DataPacket.TotalLength;
+                        CommandResolved?.Invoke(commandThatWasResolved.ResultantMachine, commandThatWasResolved);
+                    }
+
+                    break;
                 }
-
-                Result<Board> board = machine.Entities.Boards.Values.TryFirst(b => b.CommunicatorId == communicator.Id);
-                string dataPacketSource;
-                if (board.IsSuccess)
-                    dataPacketSource = $"{machine.Name} (board {board.Value.Id})";
-                else
-                    dataPacketSource = $"{machine.Name} (communicator {communicator.Id})";
-
-                // TODO: add validation on data length for each command code type
-                switch (commandCode.Value)
+            case CommandCode.ERROR:
                 {
-                    case CommandCode.DISPLAY_TEXT:
-                        {
-                            string message = System.Text.Encoding.ASCII.GetString(dataPacket.AllData.ToArray()[3..]);
-                            logger.Log($"Message from {dataPacketSource}:\n\t{message}.");
-                            break;
-                        }
-                    case CommandCode.COMMAND_COMPLETE:
-                        {
-                            byte sequenceNum = dataPacket.SequenceNumber;
+                    // log errors from microcontroller
+                    // TODO: require board restart?
+                    byte[] allData = [.. dataPacket.AllData];
+                    Result<BoardErrorCode> errorCode = allData[3].ToBoardErrorCode();
+                    if (errorCode.IsError)
+                    {
+                        logger.Log($"Unrecognized error with command {dataPacket.SequenceNumber} on {dataPacketSource}.");
+                        logger.Log(errorCode.Exception.Message);
+                        return;
+                    }
+                    UInt32 lineNumber = BitConverter.ToUInt32(allData, 4);
+                    string fileName = BitConverter.ToString(allData, 4 + sizeof(UInt32));
+                    logger.Log($"Error with command {dataPacket.SequenceNumber} on {dataPacketSource}:\n\t{fileName} line {lineNumber}\n\t{errorCode.Value.DisplayMessage()}");
 
-                            if (machineQueue.Sent.Count <= 0)
-                            {
-                                logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but command {sequenceNum} wasn't in the sent MachineQueue.");
-                                continue;
-                            }
-
-                            // remove command from sent queue
-                            QueuedCommand sentCommandInMachineQueue = machineQueue.Sent.Dequeue();
-
-                            Debug.Assert(sentCommandInMachineQueue.ResultantMachine is not null,
-                                $"A sent command should never have a null {nameof(QueuedCommand.ResultantMachine)}.");
-
-                            // Apply resultant machine.
-                            machineQueue.CurrentMachine = sentCommandInMachineQueue.ResultantMachine;
-
-                            // Commands with data packets should have had data sent to a board via an
-                            // ICommunicator and thus should be the next item in the BoardQueue.
-                            if (sentCommandInMachineQueue.DataPacket is not null)
-                            {
-                                if (boardQueue.Sent.Count <= 0)
-                                {
-                                    logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but command {sequenceNum} wasn't in the sent BoardQueue.");
-                                    return;
-                                }
-
-                                if (boardQueue.Sent.Peek() != sentCommandInMachineQueue)
-                                {
-                                    logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but that command wasn't the next command in BoardQueue.");
-                                    return;
-                                }
-
-                                // remove the command from the BoardQueue and reduce the buffer bytes occupied
-                                // by the data packet length now that the microcontroller is done with that data packet.
-                                boardQueue.Sent.Dequeue();
-                                boardQueue.BoardCommandBufferBytesOccupied -= sentCommandInMachineQueue.DataPacket.TotalLength;
-                            }
-
-                            // log successful command completed
-                            logger.Log($"Command {dataPacket.SequenceNumber} completed on {dataPacketSource}.");
-                            break;
-                        }
-                    case CommandCode.ERROR:
-                        {
-                            // log errors from microcontroller
-                            // TODO: require board restart?
-                            byte[] allData = [.. dataPacket.AllData];
-                            Result<BoardErrorCode> errorCode = allData[3].ToBoardErrorCode();
-                            if (errorCode.IsError)
-                            {
-                                logger.Log($"Unrecognized error with command {dataPacket.SequenceNumber} on {dataPacketSource}.");
-                                logger.Log(errorCode.Exception.Message);
-                                return;
-                            }
-                            UInt32 lineNumber = BitConverter.ToUInt32(allData, 4);
-                            string fileName = BitConverter.ToString(allData, 4 + sizeof(UInt32));
-                            logger.Log($"Error with command {dataPacket.SequenceNumber} on {dataPacketSource}:\n\t{fileName} line {lineNumber}\n\t{errorCode.Value.DisplayMessage()}");
-
-                            break;
-                        }
+                    break;
                 }
-            }
-            foreach (BoardQueue boardQueueToRemove in boardQueuesToRemove)
-            {
-                boardQueues.Remove(boardQueueToRemove);
-            }
         }
     }
 

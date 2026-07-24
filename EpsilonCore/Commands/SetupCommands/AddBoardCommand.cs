@@ -33,8 +33,9 @@ public record AddBoardCommand(Board Board, uint? LineNumber = null) : ICommand
         if (initialMachine.Entities.Boards.ContainsEntityWithName(boardToAdd.Name))
             return QueuedCommand.Warning(this,
                 $"A board with the same name'{Board.Name}' has already been added to machine '{initialMachine.Name}'",
+                initialMachine,
                 resultantMachine);
 
-        return QueuedCommand.Success(this, resultantMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 }

@@ -36,8 +36,9 @@ public record AddLinearAxisCommand(AxisLinear Axis, uint? LineNumber = null) : I
         if (initialMachine.ContainsAxisName(axisToAdd.Name))
             return QueuedCommand.Warning(this,
                 $"Machine '{initialMachine.Name}' already has an axis with the name '{axisToAdd.Name}'",
+                initialMachine,
                 resultantMachine);
 
-        return QueuedCommand.Success(this, resultantMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 }

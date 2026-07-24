@@ -28,8 +28,9 @@ public record AddLedCommand(Led Led, uint? LineNumber = null) : ICommand
         if (initialMachine.Entities.Leds.ContainsEntityWithName(ledToAdd.Name))
             return QueuedCommand.Warning(this,
                 $"An LED with the same name'{Led.Name}' has already been added to machine '{initialMachine.Name}'",
+                initialMachine,
                 resultantMachine);
 
-        return QueuedCommand.Success(this, resultantMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 }

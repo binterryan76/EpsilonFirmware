@@ -1,10 +1,22 @@
-﻿using EpsilonCore.Commands;
+﻿using EpsilonCore.Boards;
+using EpsilonCore.Commands;
+using EpsilonCore.Communication;
 using EpsilonCore.Machines;
+using EpsilonCore.Motion;
 using System.Collections.Concurrent;
-using System.Collections.Immutable;
 
 namespace EpsilonCore.Engine;
 
+/// <summary>
+/// MachineQueue manages the queue of <see cref="ICommand"/>s for a specific machine.
+/// It also keeps track of the latest status update of the machine for things like temperature and position updates.
+/// <see cref="ICommand"/>s are first created, then send to <see cref="CommandsToEnqueue"/> where they wait 
+/// to be queued to a machine and moved to <see cref="Queued"/>, then marked ready to send and moved 
+/// to <see cref="ReadyToSend"/>, then sent and moved to <see cref="Sent"/>.
+/// If a <see cref="Board"/> sends a message saying that a command failed or an error occurred, every other
+/// <see cref="Board"/> will be notified to shutdown, clear their movment queue, set pins to safe states, etc.
+/// </summary>
+/// <param name="initialMachine"></param>
 internal class MachineQueue(Machine initialMachine)
 {
     public enum MachineQueueStatus
@@ -13,13 +25,50 @@ internal class MachineQueue(Machine initialMachine)
         Stopped,
     }
 
-    public readonly ConcurrentQueue<ICommand> CommandsToEnqueue = [];
-    public readonly Queue<QueuedCommand> Queued = [];
-    public readonly Queue<QueuedCommand> Sent = [];
+    /// <summary>
+    /// Contains commands that were sent from an external source and haven't been looked at yet.
+    /// </summary>
+    public ConcurrentQueue<ICommand> CommandsToEnqueue { get; } = [];
 
+    /// <summary>
+    /// Contains commands that have been queued to a machine but haven't had their step times solved yet so cannot be sent.
+    /// Commands will wait here until either enough commands pile up to solve their step times, or until a command requires 
+    /// the machine to come to a complete stop, or if the end there are no more commands to queue.
+    /// </summary>
+    public Queue<QueuedCommand> Queued { get; set; } = [];
+
+    /// <summary>
+    /// Contains commands that have been queued to a machine and have had their step times solved so they are ready to be sent.
+    /// Commands will wait here until the microcontroller's command buffer has enough space to receive the command.
+    /// </summary>
+    public Queue<QueuedCommand> ReadyToSend { get; } = [];
+
+    /// <summary>
+    /// Contains commands that have been sent to a machine but haven't received a response yet.
+    /// Commands will wait here until the microcontroller sends a response indicating the command was successful or failed.
+    /// </summary>
+    public Queue<QueuedCommand> Sent { get; } = [];
+
+    /// <summary>
+    /// Used to solve step times.
+    /// </summary>
+    public MoveQueue MoveQueue { get; } = new();
+
+    /// <summary>
+    /// Machine that resulted from the last command which has received a successful response from the microcontroller.
+    /// </summary>
     public Machine CurrentMachine { get; set; } = initialMachine;
+
+    /// <summary>
+    /// Machine that resulted from the last command which was queued.
+    /// This is used as the input machine for the next command to be queued.
+    /// </summary>
     public Machine LatestQueuedMachine { get; set; } = initialMachine;
-    public IImmutableDictionary<uint, BoardQueue> BoardQueues { get; set; } = ImmutableDictionary<uint, BoardQueue>.Empty;
+
+    /// <summary>
+    /// Contains the <see cref="ICommunicator"/>s for each <see cref="Machine"/> that is being managed by this <see cref="MachineQueue"/>.
+    /// </summary>
+    public ConcurrentDictionary<uint, ICommunicator> Communicators { get; set; } = [];
     public MachineQueueStatus EnqueueStatus { get; set; } = MachineQueueStatus.Running;
     public MachineQueueStatus SendStatus { get; set; } = MachineQueueStatus.Running;
 }

@@ -250,7 +250,7 @@ public record MoveCommand : ICommand
                 }
             }
         };
-        return QueuedCommand.Success(this, initialMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 
 

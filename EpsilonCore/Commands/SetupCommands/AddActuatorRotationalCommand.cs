@@ -33,9 +33,10 @@ public record AddActuatorRotationalCommand(IActuatorRotational Actuator, uint? L
         if (initialMachine.Entities.Boards.ContainsEntityWithName(actuatorToAdd.Name))
             return QueuedCommand.Warning(this,
                 $"A rotational actuator with the same name'{Actuator.Name}' has already been added to machine '{initialMachine.Name}'",
+                initialMachine,
                 resultantMachine);
 
-        return QueuedCommand.Success(this, resultantMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 }
 

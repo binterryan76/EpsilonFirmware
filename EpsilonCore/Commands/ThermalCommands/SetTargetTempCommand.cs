@@ -64,6 +64,6 @@ public record SetTargetTempCommand(
 
         Debug.Assert(dataPacket.IsSuccess);
 
-        return QueuedCommand.Success(this, resultMachine, dataPacket.Value);
+        return QueuedCommand.Success(this, initialMachine, resultMachine, dataPacket.Value);
     }
 }

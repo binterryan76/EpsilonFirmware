@@ -60,6 +60,6 @@ public record AddKinematicsCommand(
             }
         };
 
-        return QueuedCommand.Success(this, resultantMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 }

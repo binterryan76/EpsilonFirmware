@@ -34,7 +34,7 @@ public partial class MainViewModel : ObservableObject
 
     public ObservableCollection<string> AxisGraphs { get; set; } = [];
 
-    private readonly ScriptGlobals globals = new();
+    private readonly ScriptGlobals globals;
     private readonly ScriptOptions options = ScriptOptions.Default
             .AddReferences(typeof(ScriptGlobals).Assembly)
             .AddImports(
@@ -54,7 +54,7 @@ public partial class MainViewModel : ObservableObject
 
     public MainViewModel()
     {
-        globals.TextboxResultLogger.LogFunction = Log;
+        globals = new(Log);
     }
 
     private bool Log(string message)
@@ -175,6 +175,33 @@ public partial class MainViewModel : ObservableObject
         const uint mainCommunicatorId = 0;
 
         EpsilonEngine engine = globals.Engine;
+        engine.CommandQueued += (object? sender, QueuedCommand command) =>
+        {
+            Debug.Assert(command.InitialMachine is not null);
+            command.InitialMachine.ResultMessageLogger.Log(
+                Helper.GetFormattedDisplayMessage(
+                    command.Command,
+                    ErrorLevel.Success,
+                    "Command queued"));
+        };
+        engine.CommandSent += (object? sender, QueuedCommand command) =>
+        {
+            Debug.Assert(command.InitialMachine is not null);
+            command.InitialMachine.ResultMessageLogger.Log(
+                Helper.GetFormattedDisplayMessage(
+                    command.Command,
+                    ErrorLevel.Success,
+                    "Command sent"));
+        };
+        engine.CommandResolved += (object? sender, QueuedCommand command) =>
+        {
+            Debug.Assert(command.ResultantMachine is not null);
+            command.ResultantMachine.ResultMessageLogger.Log(
+                Helper.GetFormattedDisplayMessage(
+                    command.Command,
+                    ErrorLevel.Success,
+                    "Command resolved"));
+        };
         engine.AddMachineQueue(mainMachine);
 
         uint lineNumber = 1;

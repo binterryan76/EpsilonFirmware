@@ -39,8 +39,9 @@ public record AddEndstopCommand(
         if (initialMachine.Entities.Endstops.ContainsEntityWithName(endstopToAdd.Name))
             return QueuedCommand.Warning(this,
                 $"An endstop with the same name '{endstopToAdd.Name}' has already been added to machine '{initialMachine.Name}'",
+                initialMachine,
                 resultantMachine);
 
-        return QueuedCommand.Success(this, resultantMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 }

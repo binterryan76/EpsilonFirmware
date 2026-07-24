@@ -13,6 +13,8 @@ namespace EpsilonCore.Commands;
 ///     Exclude trailing periods from this string.</param>
 /// <param name="ErrorLevel"><inheritdoc cref="Commands.ErrorLevel"/></param>
 /// <param name="Command">The command to be enqueued/sent.</param>
+/// <param name="InitialMachine">The machine that the command was queued to.
+///     This will be null if the command failed to be queued.</param>
 /// <param name="ResultantMachine">The machine that would result if the command was run.
 ///     This will be null if the command failed to be queued.</param>
 /// <param name="DataPacket">The data to send data to the microcontroller.
@@ -21,6 +23,7 @@ public record QueuedCommand(
     ErrorLevel ErrorLevel,
     string DisplayMessage,
     ICommand Command,
+    Machine? InitialMachine = null,
     Machine? ResultantMachine = null,
     DataPacket? DataPacket = null)
 {
@@ -28,30 +31,38 @@ public record QueuedCommand(
     /// Returns a new <see cref="QueuedCommand"/> indicating the command was successful
     /// and no data needs to be sent to the microcontroller.
     /// </summary>
-    /// <param name="command"></param>
-    /// <param name="resultantMachine">The machine after the command runs.</param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
+    /// <param name="initialMachine"><inheritdoc cref="InitialMachine"/></param>
+    /// <param name="resultantMachine"><inheritdoc cref="ResultantMachine"/></param>
     /// <returns></returns>
-    public static QueuedCommand Success(ICommand command, Machine resultantMachine) => new(
-        ErrorLevel.Success,
-        $"Command queued",
-        command,
-        resultantMachine);
+    public static QueuedCommand Success(
+        ICommand command,
+        Machine initialMachine,
+        Machine resultantMachine) => new(
+            ErrorLevel.Success,
+            $"Command queued",
+            command,
+            initialMachine,
+            resultantMachine);
 
     /// <summary>
     /// Returns a new <see cref="QueuedCommand"/> indicating the command was successful
     /// and data needs to be sent to the microcontroller.
     /// </summary>
-    /// <param name="command"></param>
-    /// <param name="resultantMachine">The machine after the command runs.</param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
+    /// <param name="initialMachine"><inheritdoc cref="InitialMachine"/></param>
+    /// <param name="resultantMachine"><inheritdoc cref="ResultantMachine"/></param>
     /// <param name="dataPacket"><inheritdoc cref="DataPacket"/></param>
     /// <returns></returns>
     public static QueuedCommand Success(
         ICommand command,
+        Machine initialMachine,
         Machine resultantMachine,
         DataPacket dataPacket) => new(
             ErrorLevel.Success,
             $"Command queued",
             command,
+            initialMachine,
             resultantMachine,
             dataPacket);
 
@@ -60,42 +71,51 @@ public record QueuedCommand(
     /// and no data needs to be sent to the microcontroller however something
     /// notable happened that should probably be reported.
     /// </summary>
-    /// <param name="command"></param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
     /// <param name="message">Warning message.</param>
-    /// <param name="resultantMachine">The machine after the command runs.</param>
+    /// <param name="initialMachine"><inheritdoc cref="InitialMachine"/></param>
+    /// <param name="resultantMachine"><inheritdoc cref="ResultantMachine"/></param>
     /// <returns></returns>
-    public static QueuedCommand Warning(ICommand command, string message, Machine resultantMachine) => new(
-        ErrorLevel.Warning,
-        message,
-        command,
-        resultantMachine);
+    public static QueuedCommand Warning(
+        ICommand command,
+        string message,
+        Machine initialMachine,
+        Machine resultantMachine) => new(
+            ErrorLevel.Warning,
+            message,
+            command,
+            initialMachine,
+            resultantMachine);
 
     /// <summary>
     /// Returns a new <see cref="QueuedCommand"/> indicating the command was successful
     /// and data needs to be sent to the microcontroller something
     /// notable happened that should probably be reported.
     /// </summary>
-    /// <param name="command"></param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
     /// <param name="message">Warning message.</param>
-    /// <param name="resultantMachine">The machine after the command runs.</param>
+    /// <param name="initialMachine"><inheritdoc cref="InitialMachine"/></param>
+    /// <param name="resultantMachine"><inheritdoc cref="ResultantMachine"/></param>
     /// <param name="dataPacket"><inheritdoc cref="DataPacket"/></param>
     /// <returns></returns>
     public static QueuedCommand Warning(
         ICommand command,
         string message,
+        Machine initialMachine,
         Machine resultantMachine,
         DataPacket dataPacket) => new(
             ErrorLevel.Warning,
             message,
             command,
+            initialMachine,
             resultantMachine,
             dataPacket);
 
     /// <summary>
     /// Returns a new <see cref="QueuedCommand"/> indicating the command was unnecessary.
     /// </summary>
-    /// <param name="command"></param>
-    /// <param name="displayMessage"></param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
+    /// <param name="displayMessage"><inheritdoc cref="DisplayMessage"/></param>
     /// <returns></returns>
     public static QueuedCommand Unnecessary(ICommand command, string displayMessage) => new(
         ErrorLevel.Unnecessary,
@@ -105,7 +125,7 @@ public record QueuedCommand(
     /// <summary>
     /// Returns a new <see cref="QueuedCommand"/> indicating the command was already queued.
     /// </summary>
-    /// <param name="command"></param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
     /// <returns></returns>
     public static QueuedCommand AlreadyQueued(ICommand command) => new(
         ErrorLevel.Unnecessary,
@@ -115,8 +135,8 @@ public record QueuedCommand(
     /// <summary>
     /// Returns a new <see cref="QueuedCommand"/> indicating the command failed.
     /// </summary>
-    /// <param name="command"></param>
-    /// <param name="displayMessage"></param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
+    /// <param name="displayMessage"><inheritdoc cref="DisplayMessage"/></param>
     /// <returns></returns>
     public static QueuedCommand Error(ICommand command, string displayMessage) => new(
         ErrorLevel.Error,
@@ -127,7 +147,7 @@ public record QueuedCommand(
     /// Returns a new <see cref="QueuedCommand"/> indicating the command failed
     /// because <see cref="Machine"/> doesn't contain the given <see cref="IKinematics"/>.
     /// </summary>
-    /// <param name="command"></param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
     /// <param name="machine"></param>
     /// <param name="kinematics"></param>
     /// <returns></returns>
@@ -141,7 +161,7 @@ public record QueuedCommand(
     /// Returns a new <see cref="QueuedCommand"/> indicating the command failed
     /// because <see cref="Machine"/> doesn't contain the given <paramref name="kinematicSystemId"/>.
     /// </summary>
-    /// <param name="command"></param>
+    /// <param name="command"><inheritdoc cref="Command"/></param>
     /// <param name="machine"></param>
     /// <param name="kinematicSystemId"></param>
     /// <returns></returns>

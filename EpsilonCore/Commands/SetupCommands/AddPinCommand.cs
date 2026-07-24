@@ -28,8 +28,9 @@ public record AddPinCommand(Pin Pin, uint? LineNumber = null) : ICommand
         if (initialMachine.Entities.Pins.ContainsEntityWithName(pinToAdd.Name))
             return QueuedCommand.Warning(this,
                 $"A pin with the same name '{pinToAdd.Name}' has already been added to machine '{initialMachine.Name}'",
+                initialMachine,
                 resultantMachine);
 
-        return QueuedCommand.Success(this, resultantMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 }

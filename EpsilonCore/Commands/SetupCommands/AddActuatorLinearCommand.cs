@@ -33,8 +33,9 @@ public record AddActuatorLinearCommand(IActuatorLinear Actuator, uint? LineNumbe
         if (initialMachine.Entities.Boards.ContainsEntityWithName(actuatorToAdd.Name))
             return QueuedCommand.Warning(this,
                 $"A linear actuator with the same name'{Actuator.Name}' has already been added to machine '{initialMachine.Name}'",
+                initialMachine,
                 resultantMachine);
 
-        return QueuedCommand.Success(this, resultantMachine);
+        return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
 }

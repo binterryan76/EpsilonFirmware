@@ -40,6 +40,6 @@ public record MoveIntoEndstopsCommand(
         // an additional command is required to set the machine's true position.
         // TODO: this may change the machine becuase motors will be enabled by the movement
         // TODO: this will eventually need to send data, probably indicating which motors to stop when a given endstop is hit.
-        return QueuedCommand.Success(this, initialMachine);
+        return QueuedCommand.Success(this, initialMachine, initialMachine);
     }
 }
