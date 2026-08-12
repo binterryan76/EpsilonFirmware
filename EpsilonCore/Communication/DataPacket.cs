@@ -173,4 +173,14 @@ public record DataPacket
     {
         return $"CommandCode: {CommandCode} | SequenceNumber: {SequenceNumber} | Data: {AllData.ToString}";
     }
+
+    /// <summary>
+    /// Returns a new <see cref="DataPacket"/> with the given sequence number assigned.
+    /// </summary>
+    /// <param name="sequenceNumber"></param>
+    /// <returns></returns>
+    public DataPacket SetSequenceNumber(byte sequenceNumber)
+    {
+        return this with { AllData = AllData.SetItem(SEQUENCE_NUM_INDEX, sequenceNumber) };
+    }
 }

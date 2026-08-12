@@ -2,6 +2,7 @@
 using EpsilonCore.Machines;
 using EpsilonCore.Motion.Kinematics;
 using EpsilonCore.Units;
+using System.Collections.Immutable;
 using UnitsNet;
 
 namespace EpsilonCore.Commands;
@@ -17,16 +18,39 @@ namespace EpsilonCore.Commands;
 ///     This will be null if the command failed to be queued.</param>
 /// <param name="ResultantMachine">The machine that would result if the command was run.
 ///     This will be null if the command failed to be queued.</param>
-/// <param name="DataPacket">The data to send data to the microcontroller.
+/// <param name="DataPackets">The data to send data to the microcontroller.
 ///     This will be null if the command failed to be queued or if there is no data to send.</param>
 public record QueuedCommand(
     ErrorLevel ErrorLevel,
     string DisplayMessage,
     ICommand Command,
+    IImmutableList<DataPacket> DataPackets,
     Machine? InitialMachine = null,
-    Machine? ResultantMachine = null,
-    DataPacket? DataPacket = null)
+    Machine? ResultantMachine = null)
 {
+    /// <summary>
+    /// Constructs a new <see cref="QueuedCommand"/> with no data packets to send to the microcontroller.
+    /// </summary>
+    /// <param name="errorLevel"></param>
+    /// <param name="displayMessage"></param>
+    /// <param name="command"></param>
+    /// <param name="initialMachine"></param>
+    /// <param name="resultantMachine"></param>
+    public QueuedCommand(
+        ErrorLevel errorLevel,
+        string displayMessage,
+        ICommand command,
+        Machine? initialMachine = null,
+        Machine? resultantMachine = null)
+        : this(
+            errorLevel,
+            displayMessage,
+            command,
+            ImmutableList<DataPacket>.Empty,
+            initialMachine,
+            resultantMachine)
+    { }
+
     /// <summary>
     /// Returns a new <see cref="QueuedCommand"/> indicating the command was successful
     /// and no data needs to be sent to the microcontroller.
@@ -52,19 +76,19 @@ public record QueuedCommand(
     /// <param name="command"><inheritdoc cref="Command"/></param>
     /// <param name="initialMachine"><inheritdoc cref="InitialMachine"/></param>
     /// <param name="resultantMachine"><inheritdoc cref="ResultantMachine"/></param>
-    /// <param name="dataPacket"><inheritdoc cref="DataPacket"/></param>
+    /// <param name="dataPackets"><inheritdoc cref="DataPackets"/></param>
     /// <returns></returns>
     public static QueuedCommand Success(
         ICommand command,
         Machine initialMachine,
         Machine resultantMachine,
-        DataPacket dataPacket) => new(
+        IImmutableList<DataPacket> dataPackets) => new(
             ErrorLevel.Success,
             $"Command queued",
             command,
+            dataPackets,
             initialMachine,
-            resultantMachine,
-            dataPacket);
+            resultantMachine);
 
     /// <summary>
     /// Returns a new <see cref="QueuedCommand"/> indicating the command was successful
@@ -96,20 +120,20 @@ public record QueuedCommand(
     /// <param name="message">Warning message.</param>
     /// <param name="initialMachine"><inheritdoc cref="InitialMachine"/></param>
     /// <param name="resultantMachine"><inheritdoc cref="ResultantMachine"/></param>
-    /// <param name="dataPacket"><inheritdoc cref="DataPacket"/></param>
+    /// <param name="dataPackets"><inheritdoc cref="DataPackets"/></param>
     /// <returns></returns>
     public static QueuedCommand Warning(
         ICommand command,
         string message,
         Machine initialMachine,
         Machine resultantMachine,
-        DataPacket dataPacket) => new(
+        IImmutableList<DataPacket> dataPackets) => new(
             ErrorLevel.Warning,
             message,
             command,
+            dataPackets,
             initialMachine,
-            resultantMachine,
-            dataPacket);
+            resultantMachine);
 
     /// <summary>
     /// Returns a new <see cref="QueuedCommand"/> indicating the command was unnecessary.

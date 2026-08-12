@@ -71,6 +71,6 @@ public record BlinkPinCommand(
 
         Debug.Assert(dataPacket.IsSuccess);
 
-        return QueuedCommand.Success(this, initialMachine, initialMachine, dataPacket.Value);
+        return QueuedCommand.Success(this, initialMachine, initialMachine, [dataPacket.Value]);
     }
 }

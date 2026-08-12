@@ -44,6 +44,46 @@ internal class MachineQueue(Machine initialMachine)
     public Queue<QueuedCommand> ReadyToSend { get; } = [];
 
     /// <summary>
+    /// Contains the <see cref="DataPacket"/>s that still need to be sent ffor the next command in <see cref="ReadyToSend"/>.
+    /// When <see cref="ReadyToSend"/> gets a new command, this queue will be filled with the <see cref="DataPacket"/>s 
+    /// for that command.
+    /// As each <see cref="DataPacket"/> is sent, it will be removed from this queue until all the <see cref="DataPacket"/>s 
+    /// for that command have been sent.
+    /// Once this is empty, the next command in <see cref="ReadyToSend"/> will be moved to <see cref="Sent"/> and the next 
+    /// command's <see cref="DataPacket"/>s will be added to this queue.
+    /// </summary>
+    public Queue<DataPacket> DataPacketsReadyToSend { get; } = [];
+
+    /// <summary>
+    /// Adds a command to the <see cref="ReadyToSend"/> queue and fills the <see cref="DataPacketsReadyToSend"/> 
+    /// queue with the data packets from the next command to send if there are any.
+    /// </summary>
+    /// <param name="queuedCommand"></param>
+    public void AddCommandToReadyToSend(QueuedCommand queuedCommand)
+    {
+        ReadyToSend.Enqueue(queuedCommand);
+
+        // Any time a command is added to the ReadyToSend queue, we need to check if there are any data packets to send for that command.
+        // If there are, we need to fill the DataPacketsReadyToSend queue with those data packets.
+        MaybeQueueDataPacketsToSend();
+    }
+
+    /// <summary>
+    /// Fills the <see cref="DataPacketsReadyToSend"/> queue with the data packets from the next command to send if there are any.
+    /// </summary>
+    public void MaybeQueueDataPacketsToSend()
+    {
+        if (ReadyToSend.Count <= 0)
+            return;
+
+        QueuedCommand nextCommandToSend = ReadyToSend.Peek();
+
+        if (nextCommandToSend.DataPackets.Count > 0 && DataPacketsReadyToSend.Count <= 0)
+            foreach (DataPacket dataPacket in nextCommandToSend.DataPackets)
+                DataPacketsReadyToSend.Enqueue(dataPacket);
+    }
+
+    /// <summary>
     /// Contains commands that have been sent to a machine but haven't received a response yet.
     /// Commands will wait here until the microcontroller sends a response indicating the command was successful or failed.
     /// </summary>

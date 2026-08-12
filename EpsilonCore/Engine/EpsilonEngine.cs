@@ -22,8 +22,28 @@ namespace EpsilonCore.Engine;
 /// and pings will be sent back and forth to ensure the connection is still alive.
 /// If there are no commands to process, the main loop will sleep between periodic checks for new commands to process.
 /// The main loop needs to prioritize sending commands to ensure all the microconroller's command buffers are filled.
-/// With extra resources, the main loop can machineQueue commands.
+/// With extra resources, the main loop can queue commands to machineQueues.
 /// Recieving data from the microcontrollers is handled with a relatively quick event handler.
+/// 
+/// Remember that each command can contain multiple data packets and each data packet can be sent to a different microcontroller.
+/// This means that we need to ensure that each involved microcontroller has enough room in their command buffers before sending
+/// any all the data packets for a command all at once. The microcontroller assumes that a command is good to run once it receives the data packets
+/// although some command will contain a specific time they need to run.
+/// 
+/// The main loop logic works something like this:
+/// See if there are any data packets that can be sent to the microcontrollers. If so, send them until
+/// there is no data left to send or any command buffer on the microcontrollers doesn't have enough room to receive the data for the given command.
+/// 
+/// The interrupt for receiving data packets from microcontrollers works like this:
+/// If a command is completed, get the sequence number for the last data packet for that command
+/// TODO: we cannot determine what command completed because we dont store the sequnce number
+/// Solution, We do need to store the sequence number.
+/// 
+/// Idea: every command should be assumed to have completed properly and if an error occurs, the microcontroller will send an error message.
+/// Other than that, the microcontroller will indicate if the command buffer has more room freed up so the main loop can send more data packets.
+/// This means we need a BUFFER_BYTES_AVAILABLE message.
+/// 
+/// 
 /// 
 /// </summary>
 public class EpsilonEngine(IResultMessageLogger logger)
@@ -341,7 +361,7 @@ public class EpsilonEngine(IResultMessageLogger logger)
         // If a non-move command comes in and there is nothing before it then just mark it as ready to send.
         if (machineQueue.Queued.Count <= 0 && command is not MoveCommand)
         {
-            machineQueue.ReadyToSend.Enqueue(queuedCommand);
+            machineQueue.AddCommandToReadyToSend(queuedCommand);
             return;
         }
 
@@ -400,7 +420,7 @@ public class EpsilonEngine(IResultMessageLogger logger)
         moveQueue.SolveAllMoves(machineQueue.LatestQueuedMachine.MotionSystem.Precisions);
 
         foreach (QueuedCommand command in machineQueue.Queued)
-            machineQueue.ReadyToSend.Enqueue(command);
+            machineQueue.AddCommandToReadyToSend(command);
 
         // Clear the move machineQueue and move commands list but keep the last move to remember velocities for next batch of moves.
         Move? lastMove = moveQueue.Last;
@@ -431,7 +451,7 @@ public class EpsilonEngine(IResultMessageLogger logger)
             if (markedEnoughMoves && isMoveCommand)
                 break;
 
-            machineQueue.ReadyToSend.Enqueue(queuedCommand);
+            machineQueue.AddCommandToReadyToSend(queuedCommand);
             commandsMarkedAsReadyToSend++;
 
             if (isMoveCommand)
@@ -470,7 +490,7 @@ public class EpsilonEngine(IResultMessageLogger logger)
                 $"{nameof(MachineQueue)}.{nameof(MachineQueue.ReadyToSend)} should never contain a null {nameof(QueuedCommand)}.{nameof(QueuedCommand.ResultantMachine)}.");
 
             // Early continue if there is no data to send
-            if (nextCommand.DataPacket is null)
+            if (nextCommand.DataPackets.Count <= 0)
             {
                 // Actually remove the command from the ready to send machineQueue
                 machineQueue.ReadyToSend.Dequeue();
@@ -480,6 +500,8 @@ public class EpsilonEngine(IResultMessageLogger logger)
                     // Just skip the sent list entirely and just apply the resultant machine if
                     // there is no data to send and no commands in front of the current one.
                     machineQueue.CurrentMachine = nextCommand.ResultantMachine;
+
+                    // Raise event for command resolved.
                     CommandResolved?.Invoke(nextCommand.ResultantMachine, nextCommand);
                 }
                 else
@@ -491,60 +513,69 @@ public class EpsilonEngine(IResultMessageLogger logger)
                 continue;
             }
 
-            uint communicatorId = nextCommand.DataPacket.CommunicatorId;
-            bool success = machineQueue.Communicators.TryGetValue(communicatorId, out ICommunicator? communicatorToSendWith);
-            int dataPacketSize = nextCommand.DataPacket.TotalLength;
-
-            Debug.Assert(success && communicatorToSendWith is not null,
-                $"{nameof(ICommunicator)} {communicatorId} could not be found but should have been verified to exist when the command was queued.");
-
-            if (communicatorToSendWith.BoardCommandBufferBytesFree < dataPacketSize)
+            foreach (DataPacket dataPacket in machineQueue.DataPacketsReadyToSend)
             {
-                // No more room in microcontroller's buffer to send data packet, just bail without dequeueing the command.
-                return;
-            }
+                uint communicatorId = dataPacket.CommunicatorId;
+                bool success = machineQueue.Communicators.TryGetValue(communicatorId, out ICommunicator? communicatorToSendWith);
+                int dataPacketSize = dataPacket.TotalLength;
 
-            // Actually remove the command from the ready to send machineQueue
-            machineQueue.ReadyToSend.Dequeue();
+                Debug.Assert(success && communicatorToSendWith is not null,
+                    $"{nameof(ICommunicator)} {communicatorId} could not be found but should have been verified to exist when the command was queued.");
 
-            // Only assign the sequence number right before sending data packet because if a
-            // command is cancelled, we don't want to increment the sequence number.
-            QueuedCommand commandToSend = nextCommand with
-            {
-                DataPacket = nextCommand.DataPacket with
+                if (communicatorToSendWith.BoardCommandBufferBytesFree < dataPacketSize)
                 {
-                    AllData = nextCommand.DataPacket.AllData.SetItem(
-                        DataPacket.SEQUENCE_NUM_INDEX,
-                        communicatorToSendWith.IncrementAndReturnNextSequenceNumber())
+                    // No more room in microcontroller's buffer to send data packet, just
+                    // bail without dequeueing the command from machineQueue.ReadyToSend or
+                    // dequeueing data packet from machineQueue.DataPacketsReadyToSend.
+                    return;
                 }
-            };
 
-            // Actually send data packet via the ICommunicator.
-            bool sendSuccess = communicatorToSendWith.Send(commandToSend.DataPacket);
+                // Only assign the sequence number right before sending data packet because if a
+                // command is cancelled, we don't want to increment the sequence number.
+                DataPacket dataPacketWithSequenceNum = dataPacket.SetSequenceNumber(
+                    communicatorToSendWith.IncrementAndReturnNextSequenceNumber());
 
-            IResultMessageLogger logger = nextCommand.ResultantMachine.ResultMessageLogger;
-            if (sendSuccess)
-            {
-                // track how much space the sent command is taking up in the microcontroller's command machineQueue
-                communicatorToSendWith.BoardCommandBufferBytesOccupied += (uint)dataPacketSize;
+                // Actually send data packet via the ICommunicator.
+                bool sendSuccess = communicatorToSendWith.Send(dataPacketWithSequenceNum);
 
-                // Move the command to the Sent machineQueue.
-                machineQueue.Sent.Enqueue(commandToSend);
-                CommandSent?.Invoke(commandToSend.InitialMachine, commandToSend);
-            }
-            else
-            {
-                // TODO: Raise event for command send failure.
+                IResultMessageLogger logger = nextCommand.ResultantMachine.ResultMessageLogger;
+                if (sendSuccess)
+                {
+                    // track how much space the sent command is taking up in the microcontroller's command machineQueue
+                    communicatorToSendWith.BoardCommandBufferBytesOccupied += (uint)dataPacketSize;
 
-                // log fail
-                logger.Log(
-                    Helper.GetFormattedDisplayMessage(
-                        commandToSend.Command,
-                        ErrorLevel.Error,
-                        $"Failed to send data packet using communicator '{communicatorToSendWith.Name}'"));
+                    // Actually remove the data packet from the ready to send list.
+                    machineQueue.DataPacketsReadyToSend.Dequeue();
 
-                // stop machineQueue
-                machineQueue.SendStatus = MachineQueue.MachineQueueStatus.Stopped;
+                    // Actually move the command from machineQueue.ReadyToSend to machineQueue.Sent if
+                    // every data packet associated with it has been sent successfully.
+                    // NOTE: The command that is moved will not have any of the sequence numbers assigned to the data packets
+                    // because a modified copy of the data packet is sent to the microcontroller but the data packet in the command's 
+                    // data packet list is not modified. I don't think we will need to reference the sequence number later so this is ok.
+                    if (machineQueue.DataPacketsReadyToSend.Count <= 0)
+                    {
+                        machineQueue.ReadyToSend.Dequeue();
+                        machineQueue.Sent.Enqueue(nextCommand);
+                        CommandSent?.Invoke(nextCommand.InitialMachine, nextCommand);
+                    }
+                }
+                else
+                {
+                    // TODO: Raise event for command send failure.
+
+                    // Don't remove the command from machineQueue.ReadyToSend or
+                    // the data packet from machineQueue.DataPacketsReadyToSend.
+
+                    // log fail
+                    logger.Log(
+                        Helper.GetFormattedDisplayMessage(
+                            nextCommand.Command,
+                            ErrorLevel.Error,
+                            $"Failed to send data packet using communicator '{communicatorToSendWith.Name}'"));
+
+                    // stop machineQueue
+                    machineQueue.SendStatus = MachineQueue.MachineQueueStatus.Stopped;
+                }
             }
         }
     }
@@ -592,12 +623,13 @@ public class EpsilonEngine(IResultMessageLogger logger)
 
                     if (machineQueue.Sent.Count <= 0)
                     {
-                        logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but command {sequenceNum} wasn't in the sent MachineQueue.");
+                        logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but there were no commands in MachineQueue.Sent.");
                         return;
                     }
 
                     // remove command from sent machineQueue
                     // TODO: for now just assume that there is only one ICommunicator and Board per machine and so one commands should complete in the order they were sent. Add support for multiple ICommunicators later.
+                    // TODO: IMPORTANT: only remove the command from the queue and reduce the space occupied in the buffer(s) if all data packets of the command are complete. 
                     QueuedCommand sentCommandInMachineQueue = machineQueue.Sent.Dequeue();
 
                     Debug.Assert(sentCommandInMachineQueue.ResultantMachine is not null,
@@ -608,7 +640,7 @@ public class EpsilonEngine(IResultMessageLogger logger)
 
                     // Commands with data packets should have had data sent to a board via an
                     // ICommunicator and thus should be the next item in the BoardQueue.
-                    if (sentCommandInMachineQueue.DataPacket is not null)
+                    if (sentCommandInMachineQueue.DataPackets is not null)
                     {
                         if (machineQueue.Sent.Count <= 0)
                         {
@@ -624,9 +656,21 @@ public class EpsilonEngine(IResultMessageLogger logger)
 
                         // remove the command from the BoardQueue and reduce the buffer bytes occupied
                         // by the data packet length now that the microcontroller is done with that data packet.
-                        QueuedCommand commandThatWasResolved = machineQueue.Sent.Dequeue();
-                        communicator.BoardCommandBufferBytesOccupied -= (uint)sentCommandInMachineQueue.DataPacket.TotalLength;
-                        CommandResolved?.Invoke(commandThatWasResolved.ResultantMachine, commandThatWasResolved);
+                        foreach (DataPacket resolvedCommandDataPacket in sentCommandInMachineQueue.DataPackets)
+                        {
+                            success = machineQueue.Communicators.TryGetValue(resolvedCommandDataPacket.CommunicatorId, out ICommunicator? dataPacketsCommunicator);
+                            if (!success || dataPacketsCommunicator is null)
+                            {
+                                logger.Log($"Warning: Command {sequenceNum} completed on {dataPacketSource} but the communicator {resolvedCommandDataPacket.CommunicatorId} for that command's data packet could not be found.");
+                                continue;
+                            }
+                            dataPacketsCommunicator.BoardCommandBufferBytesOccupied -= (uint)resolvedCommandDataPacket.TotalLength;
+                        }
+
+                        if (sentCommandInMachineQueue.DataPackets.Count > 1)
+                            throw new NotImplementedException("Currently commands can only have one data packet. Support for multiple data packets per command is not yet implemented.");
+
+                        CommandResolved?.Invoke(sentCommandInMachineQueue.ResultantMachine, sentCommandInMachineQueue);
                     }
 
                     break;
