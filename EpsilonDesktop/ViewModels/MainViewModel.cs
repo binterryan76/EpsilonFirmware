@@ -244,6 +244,7 @@ public partial class MainViewModel : ObservableObject
             Speed.FromMillimetersPerSecond(10),
             null,
             null,
+            absoluteMove: true,
             lineNumber++);
         Debug.Assert(moveCommand1.IsSuccess);
 
@@ -254,6 +255,7 @@ public partial class MainViewModel : ObservableObject
             Speed.FromMillimetersPerSecond(100),
             null,
             null,
+            absoluteMove: true,
             lineNumber++);
         Debug.Assert(moveCommand2.IsSuccess);
 

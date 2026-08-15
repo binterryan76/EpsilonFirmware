@@ -29,6 +29,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" MinWidth="400" />
@@ -124,5 +125,12 @@
             VerticalAlignment="Center"
             Command="{Binding TestCodeCommand}"
             Content="Run Test Code" />
+        
+       <views:JogAxesControl
+            Grid.Row="8"
+            Grid.Column="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center"
+            DataContext="{Binding JogAxesViewModel}" />
     </Grid>
 </Window>

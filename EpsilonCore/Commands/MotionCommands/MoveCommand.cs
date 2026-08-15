@@ -20,6 +20,7 @@ public record MoveCommand : ICommand
 
     /// <summary>
     /// Requested speed of the linear axes involved in the move.
+    /// If both linear and rotational speeds are null, the move will be executed at the current speed of the machine.
     /// </summary>
     public Speed? RequestedSpeedLinear { get; private init; }
 
@@ -30,11 +31,19 @@ public record MoveCommand : ICommand
 
     /// <summary>
     /// Requested speed of the rotational axes involved in the move.
+    /// If both linear and rotational speeds are null, the move will be executed at the current speed of the machine.
     /// </summary>
     public RotationalSpeed? RequestedSpeedRotational { get; private init; }
 
     /// <inheritdoc />
     public uint? LineNumber { get; private init; } = null;
+
+    /// <summary>
+    /// Indicates whether the move is absolute or relative. 
+    /// If true, the positions are the final position of the move.
+    /// If false, they are relative to the current position.
+    /// </summary>
+    public bool AbsoluteMove { get; private init; } = true;
 
     /// <inheritdoc />
     public string Description { get; private init; }
@@ -57,7 +66,8 @@ public record MoveCommand : ICommand
         Speed? requestedSpeedLinear,
         IImmutableDictionary<uint, Angle>? rotationalPositions,
         RotationalSpeed? requestedSpeedRotational,
-        uint? lineNumber = null)
+        bool absoluteMove,
+        uint? lineNumber)
     {
         PositionsLinear = linearPositions is null ? ImmutableDictionary<uint, Length>.Empty : linearPositions;
         RequestedSpeedLinear = requestedSpeedLinear;
@@ -65,6 +75,7 @@ public record MoveCommand : ICommand
         RequestedSpeedRotational = requestedSpeedRotational;
         Description = GetMoveDescription(linearPositions, requestedSpeedLinear, rotationalPositions, requestedSpeedRotational);
         LineNumber = lineNumber;
+        AbsoluteMove = absoluteMove;
     }
 
     /// <summary>
@@ -74,13 +85,15 @@ public record MoveCommand : ICommand
     /// <param name="requestedSpeedLinear"></param>
     /// <param name="rotationalPositions"></param>
     /// <param name="requestedSpeedRotational"></param>
+    /// <param name="absoluteMove"></param>
     /// <param name="lineNumber"></param>
     /// <returns></returns>
     public static Result<MoveCommand> New(
-        IImmutableDictionary<uint, Length>? linearPositions,
-        Speed? requestedSpeedLinear,
-        IImmutableDictionary<uint, Angle>? rotationalPositions,
-        RotationalSpeed? requestedSpeedRotational,
+        IImmutableDictionary<uint, Length>? linearPositions = null,
+        Speed? requestedSpeedLinear = null,
+        IImmutableDictionary<uint, Angle>? rotationalPositions = null,
+        RotationalSpeed? requestedSpeedRotational = null,
+        bool absoluteMove = true,
         uint? lineNumber = null)
     {
         if ((linearPositions is null || linearPositions.Count <= 0) &&
@@ -95,12 +108,13 @@ public record MoveCommand : ICommand
             requestedSpeedLinear,
             rotationalPositions,
             requestedSpeedRotational,
+            absoluteMove,
             lineNumber);
     }
 
     private static string GetPositionsString<TKey, TValue>(IImmutableDictionary<TKey, TValue> positions)
     {
-        return string.Join(", ", positions.Select(kvp => $"(axis {kvp.Key}: {kvp.Value})"));
+        return string.Join(", ", positions.Select(kvp => $"(initialAxis {kvp.Key}: {kvp.Value})"));
     }
 
     private static string GetMoveDescription(
@@ -174,7 +188,7 @@ public record MoveCommand : ICommand
     /// <summary>
     /// The generic move algorithm works like this:
     ///     Figure out which axes are involved in the move by seeing which ones have a non-zero distance travelled.
-    ///     Figure out which kinematic system each axis belongs to.
+    ///     Figure out which kinematic system each initialAxis belongs to.
     ///     Split move into many small segments (about 0.1 mm or 0.1 degrees).
     ///         We split it into small enough segments to assume that their won't be any crazy jumps in velocity between two adjacent segments.
     ///     For each kinematic system involved, solve the inverse kinematics at each of the segment end points to get the actuator positions.
@@ -198,8 +212,6 @@ public record MoveCommand : ICommand
     /// <returns></returns>
     public QueuedCommand EnqueueCommandSpecific(Machine initialMachine)
     {
-
-
         //StringBuilder output = new();
         //output.AppendLine("Duration,Angle Proximal,Angle Distal,Accel Proximal,Accel Distal,Vel Proximal,VelDistal");
         //for (int i = 0; i < moveSegments.IntermediatePosCount - 1; i++)
@@ -210,49 +222,54 @@ public record MoveCommand : ICommand
         //
         //stopwatch.Stop();
         //long millis = stopwatch.ElapsedMilliseconds;
+
+        IImmutableDictionary<uint, AxisLinear> resultantLinearAxes = initialMachine.Entities.AxesLinear;
+        foreach ((uint axisId, Length finalPosOrDistance) in PositionsLinear)
+        {
+            bool success = resultantLinearAxes.TryGetValue(axisId, out AxisLinear? initialAxis);
+
+            if (!success || initialAxis is null)
+                return QueuedCommand.Error(this, $"Axis {axisId} does not exist in machine '{initialMachine.Name}'.");
+
+            if (initialAxis.Pos is null)
+                return QueuedCommand.Error(this, $"Axis {axisId} '{initialAxis.Name}' has not been homed.");
+
+            Length finalPos = AbsoluteMove ? finalPosOrDistance : initialAxis.Pos.Value + finalPosOrDistance;
+            resultantLinearAxes.SetItem(axisId, initialAxis with { Pos = finalPos });
+        }
+
+        IImmutableDictionary<uint, AxisRotational> resultantRotationalAxes = initialMachine.Entities.AxesRotational;
+        foreach ((uint axisId, Angle finalPosOrDistance) in PositionsRotational)
+        {
+            bool success = resultantRotationalAxes.TryGetValue(axisId, out AxisRotational? initialAxis);
+
+            if (!success || initialAxis is null)
+                return QueuedCommand.Error(this, $"Axis {axisId} does not exist in machine '{initialMachine.Name}'.");
+
+            if (initialAxis.Pos is null)
+                return QueuedCommand.Error(this, $"Axis {axisId} '{initialAxis.Name}' has not been homed.");
+
+            Angle finalPos = AbsoluteMove ? finalPosOrDistance : initialAxis.Pos.Value + finalPosOrDistance;
+            resultantRotationalAxes.SetItem(axisId, initialAxis with { Pos = finalPos });
+        }
+
         Machine resultantMachine = initialMachine with
         {
             Entities = initialMachine.Entities with
             {
-                AxesLinear = initialMachine.Entities.AxesLinear.Select(kvp =>
-                {
-                    if (PositionsLinear.TryGetValue(kvp.Key, out Length pos))
-                        return new KeyValuePair<uint, AxisLinear>(kvp.Key, kvp.Value with { Pos = pos });
-                    else
-                        return kvp;
-                }).ToImmutableDictionary(),
-                AxesRotational = initialMachine.Entities.AxesRotational.Select(kvp =>
-                {
-                    if (PositionsRotational.TryGetValue(kvp.Key, out Angle pos))
-                        return new KeyValuePair<uint, AxisRotational>(kvp.Key, kvp.Value with { Pos = pos });
-                    else
-                        return kvp;
-                }).ToImmutableDictionary()
+                AxesLinear = resultantLinearAxes,
+                AxesRotational = resultantRotationalAxes
             },
             MotionSystem = initialMachine.MotionSystem with
             {
                 CompositeKinematicSystem = initialMachine.MotionSystem.CompositeKinematicSystem with
                 {
-                    AxesLinear = initialMachine.MotionSystem.CompositeKinematicSystem.AxesLinear.Select(axis =>
-                    {
-                        if (PositionsLinear.TryGetValue(axis.Id, out Length pos))
-                            return axis with { Pos = pos };
-                        else
-                            return axis;
-                    }).ToImmutableList(),
-                    AxesRotational = initialMachine.MotionSystem.CompositeKinematicSystem.AxesRotational.Select(axis =>
-                    {
-                        if (PositionsRotational.TryGetValue(axis.Id, out Angle pos))
-                            return axis with { Pos = pos };
-                        else
-                            return axis;
-                    }).ToImmutableList()
+                    AxesLinear = resultantLinearAxes.Values.ToImmutableList(),
+                    AxesRotational = resultantRotationalAxes.Values.ToImmutableList()
                 }
             }
         };
+
         return QueuedCommand.Success(this, initialMachine, resultantMachine);
     }
-
-
-
 }
