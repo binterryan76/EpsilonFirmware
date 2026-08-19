@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="EpsilonDesktop/EpsilonDesktop.csproj" />
   <Project Path="EpsilonCore/EpsilonCore.csproj" Id="31a69474-74cb-4a89-a1ff-b592d8e36874" />
+  <Project Path="EpsilonDesktop/EpsilonDesktop.csproj" />
   <Project Path="EpsilonPlotter/EpsilonPlotter.csproj" Id="2bc8ce72-d4c3-4c0d-ae06-970c4f493e0f" />
   <Project Path="UnitsNetHelpers/UnitsNetHelpers.csproj" Id="21f1556a-1cc7-445b-8df4-9231a1a07393" />
 </Solution>
