@@ -5,7 +5,6 @@ using EpsilonCore.Engine;
 using EpsilonCore.Helpers;
 using EpsilonCore.Machines;
 using System.Collections.ObjectModel;
-using System.Windows.Documents;
 using UnitsNet;
 
 namespace EpsilonDesktop.ViewModels;
@@ -17,7 +16,7 @@ public partial class MachineViewModel : ObservableObject
     private IResultMessageLogger ResultMessageLogger { get; init; }
 
     [ObservableProperty]
-    public partial Machine Machine { get; set; } = machine;
+    public partial Machine Machine { get; set; }
 
     [ObservableProperty]
     private partial JogAxesViewModel JogAxesViewModel { get; set; }
@@ -35,7 +34,7 @@ public partial class MachineViewModel : ObservableObject
         MachineId = machineId;
         ResultMessageLogger = resultMessageLogger;
         JogAxesViewModel = jogAxisViewModel;
-        engine.
+
     }
 
     public static Result<MachineViewModel> New(
