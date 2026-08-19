@@ -1,0 +1,15 @@
+<map id="EpsilonCore.Commands.MotionCommands.MoveCommand.GetMove" name="EpsilonCore.Commands.MotionCommands.MoveCommand.GetMove">
+<area shape="rect" id="Node000001" title="Returns a Move result that represents the move specified by this command, using the current positions..." alt="" coords="5,147,247,189"/>
+<area shape="rect" id="Node000002" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a0e3c54be2c512f31b34772db2a5f5e81" title="Creates a new Move object and automatically sets the sample points and segments. It does many checks ..." alt="" coords="295,155,497,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,165,281,167,276,169,248,171"/>
+<area shape="rect" id="Node000003" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="576,5,748,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="411,152,467,106,504,80,544,58,564,52,559,54,546,62,507,85,470,110,414,156"/>
+<area shape="rect" id="Node000004" href="$d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a6ebca5a6675f5b2f2a294a7c85993ad7" title="Used to convert axis positions to actuator positions." alt="" coords="545,72,779,131"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="452,151,533,134,528,135,453,157"/>
+<area shape="rect" id="Node000005" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="558,155,766,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="497,165,546,168,540,168,498,171"/>
+<area shape="rect" id="Node000006" href="$d5/dd6/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_linear.html#aac2526af2c862cb481ebc11c25e2a4eb" title="Returns true if a position is unreachable by this axis." alt="" coords="571,205,753,248"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="460,179,558,203,553,204,460,185"/>
+<area shape="rect" id="Node000007" href="$da/dea/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_rotational.html#aa46b9ab40c4c0eb280067b403e3ba1f8" title="Returns true if a position is unreachable by this axis." alt="" coords="559,272,765,315"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="416,179,473,218,546,258,563,267,558,266,544,262,471,222,415,185"/>
+</map>

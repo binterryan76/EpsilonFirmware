@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Communication.DataPacket.SetSequenceNumber" name="EpsilonCore.Communication.DataPacket.SetSequenceNumber">
+<area shape="rect" id="Node000001" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="5,5,224,48"/>
+<area shape="rect" id="Node000002" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="272,5,463,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,24,259,27,254,27,224,29"/>
+</map>

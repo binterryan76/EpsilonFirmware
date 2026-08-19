@@ -1,0 +1,17 @@
+<map id="EpsilonCore.Commands.TestCommands.BlinkPinCommand.EnqueueCommandSpecific" name="EpsilonCore.Commands.TestCommands.BlinkPinCommand.EnqueueCommandSpecific">
+<area shape="rect" id="Node000001" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,97,261,156"/>
+<area shape="rect" id="Node000002" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#ab58e732a8274a2af0bc1b0a5b8c908b7" title="Returns a new QueuedCommand indicating the command failed." alt="" coords="309,5,521,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,94,308,57,331,52,326,54,310,63,211,99"/>
+<area shape="rect" id="Node000004" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aae3bfd6e734f88aa6738dbb7c7d9676f" title="Instantiates a new DataPacket with validation. Note: This copies the data array into an internal arra..." alt="" coords="319,205,510,248"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="210,154,310,191,331,200,326,200,308,196,210,159"/>
+<area shape="rect" id="Node000006" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aa4874bcffedb1e5f7347cd82d5ed49cf" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="309,72,521,115"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="261,109,296,107,291,109,262,114"/>
+<area shape="rect" id="Node000007" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aefb2257c3f48006c6d84261e4d8f284e" title="Returns a new QueuedCommand indicating the command was unnecessary." alt="" coords="309,139,521,181"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="261,139,296,145,291,146,261,144"/>
+<area shape="rect" id="Node000003" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a37824ea92db6a9fe516561f1146be964" title=" " alt="" coords="569,72,781,115"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="501,46,577,67,572,68,501,51"/>
+<area shape="rect" id="Node000005" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="580,205,771,248"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="511,224,567,227,561,227,511,229"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="521,91,556,93,551,94,522,96"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="500,135,572,120,577,118,502,141"/>
+</map>

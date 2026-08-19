@@ -1,0 +1,15 @@
+<map id="EpsilonDesktop.ViewModels.JogAxesViewModel.SetButtonEnabledAndVisibility" name="EpsilonDesktop.ViewModels.JogAxesViewModel.SetButtonEnabledAndVisibility">
+<area shape="rect" id="Node000001" title="This sets the visibility and enabled state of the buttons based on the presence of axes...." alt="" coords="841,80,1087,139"/>
+<area shape="rect" id="Node000002" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#ad049dd190ff9d3f9d174160335058a0b" title=" " alt="" coords="558,5,784,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="829,76,784,66,784,61,834,76"/>
+<area shape="rect" id="Node000003" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0098e8e70d3bbc99e225bbaac9ac7954" title=" " alt="" coords="549,88,793,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="823,110,794,112,794,107,829,109"/>
+<area shape="rect" id="Node000004" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0f34a75db6d24699f86da4ef50d95cff" title="This method reads all the non&#45;extrusion axes from the machine and populates the axes and axis button ..." alt="" coords="563,155,779,197"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="829,140,768,157,768,151,823,141"/>
+<area shape="rect" id="Node000005" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0300a5ed14189f27d4befcaba518e94a" title=" " alt="" coords="246,121,501,164"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="545,162,502,160,502,154,550,162"/>
+<area shape="rect" id="Node000006" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#af9fb95ef0d57cfb590a9addb08ac5777" title=" " alt="" coords="246,188,501,231"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="550,190,502,198,501,192,545,190"/>
+<area shape="rect" id="Node000007" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a34c161b6b35e702a2ec7f4ceb4e6d581" title=" " alt="" coords="5,188,198,231"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="227,210,198,212,198,207,233,209"/>
+</map>

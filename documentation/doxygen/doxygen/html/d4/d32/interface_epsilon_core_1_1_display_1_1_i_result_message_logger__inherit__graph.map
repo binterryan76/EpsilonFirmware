@@ -1,0 +1,7 @@
+<map id="EpsilonCore.Display.IResultMessageLogger" name="EpsilonCore.Display.IResultMessageLogger">
+<area shape="rect" id="Node000001" title="Used to log messages that result from queueing and sending commands." alt="" coords="113,5,298,48"/>
+<area shape="rect" id="Node000002" href="$d9/d58/class_epsilon_core_1_1_display_1_1_debug_console_logger.html" title="Used to log messages that result from queueing and sending commands using Debug.WriteLine(string)." alt="" coords="5,96,187,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,57,123,98,120,93,166,59"/>
+<area shape="rect" id="Node000003" href="$da/ded/class_epsilon_desktop_1_1_models_1_1_textbox_result_logger.html" title=" " alt="" coords="211,96,421,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="244,55,293,96,287,95,242,60"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="EpsilonCore.Commands.MotionCommands.MoveIntoEndstopsCommand.EnqueueCommandSpecific" name="EpsilonCore.Commands.MotionCommands.MoveIntoEndstopsCommand.EnqueueCommandSpecific">
+<area shape="rect" id="Node000001" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,85,271,144"/>
+<area shape="rect" id="Node000002" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aecf7fd643816d880dfa514dbfd32a49b" title=" " alt="" coords="319,64,531,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,98,306,97,301,98,271,104"/>
+<area shape="rect" id="Node000005" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aa4874bcffedb1e5f7347cd82d5ed49cf" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="579,123,791,165"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="271,119,565,135,562,140,271,124"/>
+<area shape="rect" id="Node000003" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#ab58e732a8274a2af0bc1b0a5b8c908b7" title="Returns a new QueuedCommand indicating the command failed." alt="" coords="579,5,791,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="522,61,570,53,575,51,523,66"/>
+<area shape="rect" id="Node000004" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a37824ea92db6a9fe516561f1146be964" title=" " alt="" coords="839,64,1052,107"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="532,83,826,85,821,86,532,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="783,46,836,60,830,60,783,51"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="782,119,830,111,836,110,783,125"/>
+</map>

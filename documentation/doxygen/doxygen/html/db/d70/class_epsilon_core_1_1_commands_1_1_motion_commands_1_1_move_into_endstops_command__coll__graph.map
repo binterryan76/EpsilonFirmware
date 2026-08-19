@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Commands.MotionCommands.MoveIntoEndstopsCommand" name="EpsilonCore.Commands.MotionCommands.MoveIntoEndstopsCommand">
+<area shape="rect" id="Node000001" title="Command to move a machine until it hits the given endstops. Note: If you want to home the machine,..." alt="" coords="5,80,267,123"/>
+<area shape="rect" id="Node000002" href="$d3/d14/interface_epsilon_core_1_1_commands_1_1_i_command.html" title="Interface used by all commands. Users creating custom commands need to use extreme caution and have g..." alt="" coords="20,5,252,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,46,138,81,134,79,134,50"/>
+</map>

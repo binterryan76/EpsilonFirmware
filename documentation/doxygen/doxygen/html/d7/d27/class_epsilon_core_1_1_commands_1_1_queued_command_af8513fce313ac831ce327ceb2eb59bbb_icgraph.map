@@ -1,0 +1,17 @@
+<map id="EpsilonCore.Commands.QueuedCommand.Warning" name="EpsilonCore.Commands.QueuedCommand.Warning">
+<area shape="rect" id="Node000001" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="332,261,544,304"/>
+<area shape="rect" id="Node000002" href="$da/df0/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_actuator_linear_command.html#a5a74e1640f379d881080378e6a186040" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="13,5,276,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="417,247,395,209,365,163,327,117,282,78,265,67,264,62,285,74,331,114,369,160,400,206,422,248"/>
+<area shape="rect" id="Node000003" href="$d6/db7/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_actuator_rotational_command.html#a65fcfe34b13c08fe26928bf90dc1dc48" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="23,88,266,147"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="402,251,349,205,282,161,260,150,258,145,285,156,352,201,407,250"/>
+<area shape="rect" id="Node000004" href="$d8/dc0/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_board_command.html#a27ef818c5a78435fcda867891f72295b" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="12,171,277,229"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="342,258,252,233,251,227,347,255"/>
+<area shape="rect" id="Node000005" href="$d8/d4e/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_endstop_command.html#a45b59d4dd0d580ee68b9ff0e7ba8ce60" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,253,284,312"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="314,284,285,285,283,280,318,282"/>
+<area shape="rect" id="Node000006" href="$d6/dde/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_led_command.html#a5d5f28372245f6883edd66fabb961cc2" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="19,336,270,395"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="342,310,252,338,250,333,347,307"/>
+<area shape="rect" id="Node000007" href="$d0/d32/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_linear_axis_command.html#a7bce7de56f7221f76ac102eec82be7a6" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="24,419,265,477"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="407,314,352,364,285,409,260,420,258,416,282,404,349,360,402,317"/>
+<area shape="rect" id="Node000008" href="$d3/dbf/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_pin_command.html#aee1722d9e11626edf52248593443bb0e" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="20,501,269,560"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="422,316,400,359,369,405,331,452,285,491,265,503,263,498,282,487,327,448,365,402,395,356,418,319"/>
+</map>

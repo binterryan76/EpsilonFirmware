@@ -1,0 +1,27 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$d3/d14/interface_epsilon_core_1_1_commands_1_1_i_command.html" title="Interface used by all commands. Users creating custom commands need to use extreme caution and have g..." alt="" coords="5,396,237,423"/>
+<area shape="rect" id="Node000001" href="$d5/d34/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_command.html" title="Command to move the machine to the specified position." alt="" coords="312,5,518,48"/>
+<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="125,380,140,314,169,227,190,181,216,136,247,94,283,58,313,42,310,46,286,62,251,98,220,139,195,183,174,229,145,315,130,381"/>
+<area shape="rect" id="Node000002" href="$db/d52/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_into_endstops_command.html" title="Command to move a machine until it hits the given endstops. Note: If you want to home the machine,..." alt="" coords="285,72,546,115"/>
+<area shape="poly" id="edge4_Node000000_Node000002" title=" " alt="" coords="128,380,147,326,179,256,224,185,252,153,283,125,305,113,301,117,286,129,255,156,228,188,183,259,152,328,133,382"/>
+<area shape="rect" id="Node000003" href="$da/df0/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_actuator_linear_command.html" title="Command to add an IActuatorLinear to a Machine." alt="" coords="286,139,545,181"/>
+<area shape="poly" id="edge5_Node000000_Node000003" title=" " alt="" coords="133,381,156,338,189,287,232,235,283,191,307,180,304,184,286,196,236,239,193,290,160,341,138,383"/>
+<area shape="rect" id="Node000004" href="$d6/db7/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_actuator_rotational_command.html" title="Command to add an IActuatorRotational to a Machine." alt="" coords="304,205,527,264"/>
+<area shape="poly" id="edge6_Node000000_Node000004" title=" " alt="" coords="144,383,204,329,243,299,283,274,310,263,307,267,286,278,246,304,208,333,148,387"/>
+<area shape="rect" id="Node000005" href="$d8/dc0/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_board_command.html" title="Command to add a board to a machine." alt="" coords="311,288,520,331"/>
+<area shape="poly" id="edge7_Node000000_Node000005" title=" " alt="" coords="165,387,284,340,324,330,320,333,286,345,168,392"/>
+<area shape="rect" id="Node000006" href="$d8/d4e/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_endstop_command.html" title="Command to add a new Boards.Endstop to a Machine." alt="" coords="304,355,527,397"/>
+<area shape="poly" id="edge8_Node000000_Node000006" title=" " alt="" coords="251,392,305,387,301,390,253,397"/>
+<area shape="rect" id="Node000007" href="$d0/dc3/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_kinematics_command.html" title="Command to add a new set of kinematics to a machine. A single machine has only one MotionSystem and C..." alt="" coords="295,421,536,464"/>
+<area shape="poly" id="edge9_Node000000_Node000007" title=" " alt="" coords="252,422,297,428,293,430,253,427"/>
+<area shape="rect" id="Node000008" href="$d6/dde/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_led_command.html" title=" " alt="" coords="315,488,516,531"/>
+<area shape="poly" id="edge10_Node000000_Node000008" title=" " alt="" coords="166,427,286,473,325,487,320,488,284,479,167,432"/>
+<area shape="rect" id="Node000009" href="$d0/d32/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_linear_axis_command.html" title="Command to add an AxisLinear to a Machine." alt="" coords="297,555,534,597"/>
+<area shape="poly" id="edge11_Node000000_Node000009" title=" " alt="" coords="145,431,207,487,245,516,286,540,314,554,309,555,283,545,242,520,203,491,145,436"/>
+<area shape="rect" id="Node000010" href="$d3/dbf/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_pin_command.html" title=" " alt="" coords="315,621,516,664"/>
+<area shape="poly" id="edge12_Node000000_Node000010" title=" " alt="" coords="136,433,162,474,195,520,237,567,286,607,317,624,311,624,283,612,234,571,191,524,158,476,136,439"/>
+<area shape="rect" id="Node000011" href="$d0/d2f/class_epsilon_core_1_1_commands_1_1_test_commands_1_1_blink_pin_command.html" title=" " alt="" coords="315,688,516,731"/>
+<area shape="poly" id="edge13_Node000000_Node000011" title=" " alt="" coords="132,435,154,488,186,552,230,618,256,648,286,674,318,692,312,692,283,678,253,652,226,622,181,555,149,490,131,440"/>
+<area shape="rect" id="Node000012" href="$da/d6d/class_epsilon_core_1_1_commands_1_1_thermal_commands_1_1_set_target_temp_command.html" title="Command to set the target temperature for a temperature controller." alt="" coords="295,755,536,797"/>
+<area shape="poly" id="edge14_Node000000_Node000012" title=" " alt="" coords="128,435,147,501,176,583,197,626,222,668,252,707,286,741,305,755,300,754,283,745,248,711,218,671,192,629,172,585,142,502,127,441"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="EpsilonDesktop.ViewModels.JogAxesViewModel.DisableAllButtons" name="EpsilonDesktop.ViewModels.JogAxesViewModel.DisableAllButtons">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,250,56"/>
+<area shape="rect" id="Node000002" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a25b4bded784d0b1c6277c20c805c83df" title="This sets the visibility and enabled state of the buttons based on the presence of axes...." alt="" coords="298,5,543,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,32,285,34,279,35,250,37"/>
+</map>

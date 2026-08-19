@@ -1,0 +1,13 @@
+<map id="EpsilonCore.Actuator.IActuator" name="EpsilonCore.Actuator.IActuator">
+<area shape="rect" id="Node000001" title=" " alt="" coords="119,80,321,107"/>
+<area shape="rect" id="Node000003" href="$d5/d56/interface_epsilon_core_1_1_actuator_1_1_i_actuator_linear.html" title=" " alt="" coords="5,155,208,197"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,118,137,156,134,152,192,114"/>
+<area shape="rect" id="Node000005" href="$d3/d95/interface_epsilon_core_1_1_actuator_1_1_i_actuator_rotational.html" title=" " alt="" coords="232,155,434,197"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="250,113,307,154,301,154,250,119"/>
+<area shape="rect" id="Node000002" href="$df/d93/interface_epsilon_core_1_1_machines_1_1_i_entity.html" title="Used for items that are looked up by ID. If an object is contained by another object and not looked u..." alt="" coords="123,5,317,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,45,222,80,217,79,219,50"/>
+<area shape="rect" id="Node000004" href="$db/d6b/class_epsilon_core_1_1_actuator_1_1_stepper_motor_linear.html" title=" " alt="" coords="9,245,204,288"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="108,211,109,246,104,244,105,215"/>
+<area shape="rect" id="Node000006" href="$d6/de0/class_epsilon_core_1_1_actuator_1_1_stepper_motor.html" title=" " alt="" coords="236,245,430,288"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="335,211,335,247,331,243,331,215"/>
+</map>

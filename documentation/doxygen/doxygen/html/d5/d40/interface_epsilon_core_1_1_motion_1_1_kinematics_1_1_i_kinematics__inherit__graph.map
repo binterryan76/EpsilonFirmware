@@ -1,0 +1,7 @@
+<map id="EpsilonCore.Motion.Kinematics.IKinematics" name="EpsilonCore.Motion.Kinematics.IKinematics">
+<area shape="rect" id="Node000001" title="Used to map actuator positions to and from axis positions." alt="" coords="5,39,214,81"/>
+<area shape="rect" id="Node000002" href="$dc/dfc/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_kinematics_cartesian3_d.html" title=" " alt="" coords="262,5,470,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,42,264,40,258,41,230,47"/>
+<area shape="rect" id="Node000003" href="$d7/db8/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_kinematics_scara2_d.html" title=" " alt="" coords="262,72,470,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,73,264,80,258,80,229,78"/>
+</map>

@@ -1,0 +1,23 @@
+<map id="EpsilonCore.Motion.Move.Simplify" name="EpsilonCore.Motion.Move.Simplify">
+<area shape="rect" id="Node000001" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1778,96,1953,139"/>
+<area shape="rect" id="Node000002" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="1516,96,1730,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1759,117,1730,120,1730,115,1765,117"/>
+<area shape="rect" id="Node000003" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="1212,5,1468,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1530,91,1443,67,1443,62,1535,91"/>
+<area shape="rect" id="Node000009" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#aa8253565b6132fa6a1c80bb1c0cc6d9a" title=" " alt="" coords="5,163,218,205"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="1540,143,1469,161,1356,178,1267,185,1063,187,587,187,218,187,218,181,587,181,1063,181,1267,180,1355,172,1468,156,1535,144"/>
+<area shape="rect" id="Node000010" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="1226,88,1454,147"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="1498,117,1454,120,1454,115,1503,117"/>
+<area shape="rect" id="Node000004" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="960,96,1164,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1227,68,1137,98,1136,93,1222,69"/>
+<area shape="rect" id="Node000005" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="728,96,912,139"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="941,117,912,120,912,115,947,117"/>
+<area shape="rect" id="Node000006" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7ae9403462c6b24c7b5269486935b043" title="Starts the main loop to process commands." alt="" coords="497,96,680,139"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="710,118,681,120,681,115,716,117"/>
+<area shape="rect" id="Node000007" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a1a1bb4ef025cb02e84108d89d858eb5d" title="Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue p..." alt="" coords="266,96,449,139"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="479,118,450,120,449,115,484,117"/>
+<area shape="rect" id="Node000008" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#ab60d7ed415bd23eb2a585771901566ee" title=" " alt="" coords="15,96,208,139"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="248,118,208,120,208,115,253,117"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="264,143,194,165,192,159,259,144"/>
+<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="1208,117,1165,120,1164,115,1214,117"/>
+</map>

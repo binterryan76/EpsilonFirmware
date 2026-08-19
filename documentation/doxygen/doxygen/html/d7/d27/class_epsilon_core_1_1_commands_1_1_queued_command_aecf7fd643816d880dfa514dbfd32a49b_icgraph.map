@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Commands.QueuedCommand.ErrorMissingEndstop" name="EpsilonCore.Commands.QueuedCommand.ErrorMissingEndstop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="319,13,531,56"/>
+<area shape="rect" id="Node000002" href="$db/d52/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_into_endstops_command.html#a3a6d8b558a82ced3814f16194476d5c2" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,5,271,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="300,35,271,37,271,32,306,35"/>
+</map>

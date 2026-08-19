@@ -1,0 +1,11 @@
+<map id="EpsilonCore.Motion.MoveQueue.CalculateJunctionDsDtLimits" name="EpsilonCore.Motion.MoveQueue.CalculateJunctionDsDtLimits">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,219,81"/>
+<area shape="rect" id="Node000002" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="267,5,480,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,44,254,41,249,43,220,49"/>
+<area shape="rect" id="Node000003" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="267,72,480,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,71,254,77,249,78,219,76"/>
+<area shape="rect" id="Node000004" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="545,39,716,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="480,77,532,73,527,73,481,82"/>
+<area shape="rect" id="Node000005" href="$dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="528,105,733,148"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="481,105,515,111,510,111,480,110"/>
+</map>

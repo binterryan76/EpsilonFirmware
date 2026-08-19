@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Commands.ThermalCommands.SetTargetTempCommand" name="EpsilonCore.Commands.ThermalCommands.SetTargetTempCommand">
+<area shape="rect" id="Node000001" title="Command to set the target temperature for a temperature controller." alt="" coords="5,80,246,123"/>
+<area shape="rect" id="Node000002" href="$d3/d14/interface_epsilon_core_1_1_commands_1_1_i_command.html" title="Interface used by all commands. Users creating custom commands need to use extreme caution and have g..." alt="" coords="10,5,241,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,46,128,81,123,79,124,50"/>
+</map>

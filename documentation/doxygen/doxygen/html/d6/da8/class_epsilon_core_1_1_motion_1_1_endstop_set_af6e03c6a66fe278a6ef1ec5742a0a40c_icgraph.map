@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Motion.EndstopSet.MinOnly" name="EpsilonCore.Motion.EndstopSet.MinOnly">
+<area shape="rect" id="Node000001" title="Returns a new EndstopSet with only a minimum endstop." alt="" coords="246,5,433,48"/>
+<area shape="rect" id="Node000002" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#ab60d7ed415bd23eb2a585771901566ee" title=" " alt="" coords="5,5,198,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,27,198,29,198,24,232,26"/>
+</map>

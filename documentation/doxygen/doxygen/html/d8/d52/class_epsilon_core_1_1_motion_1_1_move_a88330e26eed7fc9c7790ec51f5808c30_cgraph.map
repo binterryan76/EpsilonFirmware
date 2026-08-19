@@ -1,0 +1,7 @@
+<map id="EpsilonCore.Motion.Move.CalculateActuatorDerivativesAndVelocityLimits" name="EpsilonCore.Motion.Move.CalculateActuatorDerivativesAndVelocityLimits">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,197,89"/>
+<area shape="rect" id="Node000002" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="245,5,436,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,44,232,41,227,43,198,49"/>
+<area shape="rect" id="Node000003" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="253,72,428,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,71,240,79,235,79,197,76"/>
+</map>

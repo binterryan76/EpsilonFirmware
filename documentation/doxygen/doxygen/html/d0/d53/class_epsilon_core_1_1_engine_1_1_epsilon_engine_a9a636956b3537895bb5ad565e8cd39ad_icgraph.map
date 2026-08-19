@@ -1,0 +1,17 @@
+<map id="EpsilonCore.Engine.EpsilonEngine.GetCurrentMachine" name="EpsilonCore.Engine.EpsilonEngine.GetCurrentMachine">
+<area shape="rect" id="Node000001" title="Returns the latest Machine based on it&#39;s ID. Returns null if it cannot be found." alt="" coords="813,105,997,148"/>
+<area shape="rect" id="Node000002" href="$d4/d4f/class_epsilon_desktop_1_1_view_models_1_1_machine_view_model.html#a665a5948c9795a6ab3264e7424d1efd8" title=" " alt="" coords="561,5,753,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="847,98,764,62,734,51,734,46,766,58,852,98"/>
+<area shape="rect" id="Node000003" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0f34a75db6d24699f86da4ef50d95cff" title="This method reads all the non&#45;extrusion axes from the machine and populates the axes and axis button ..." alt="" coords="549,72,765,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="795,112,766,111,766,105,801,112"/>
+<area shape="rect" id="Node000007" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#ab60d7ed415bd23eb2a585771901566ee" title=" " alt="" coords="561,139,753,181"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="800,141,754,150,753,144,795,141"/>
+<area shape="rect" id="Node000008" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#aa8253565b6132fa6a1c80bb1c0cc6d9a" title=" " alt="" coords="551,205,763,248"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="852,155,766,196,734,207,733,202,764,191,847,156"/>
+<area shape="rect" id="Node000004" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0300a5ed14189f27d4befcaba518e94a" title=" " alt="" coords="246,39,501,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="531,79,501,78,501,72,536,79"/>
+<area shape="rect" id="Node000005" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#af9fb95ef0d57cfb590a9addb08ac5777" title=" " alt="" coords="246,105,501,148"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="531,108,502,114,501,109,536,107"/>
+<area shape="rect" id="Node000006" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a34c161b6b35e702a2ec7f4ceb4e6d581" title=" " alt="" coords="5,105,198,148"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="228,128,199,129,198,124,233,126"/>
+</map>

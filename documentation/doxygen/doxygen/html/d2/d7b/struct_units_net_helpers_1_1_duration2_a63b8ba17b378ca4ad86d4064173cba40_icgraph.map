@@ -1,0 +1,9 @@
+<map id="UnitsNetHelpers.Duration2.GetConversionFactor" name="UnitsNetHelpers.Duration2.GetConversionFactor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="482,39,664,81"/>
+<area shape="rect" id="Node000002" href="$d2/d7b/struct_units_net_helpers_1_1_duration2.html#a5d645de7d4acc6344f1d9782a4dea7dd" title="Convert this quantity to the given unit." alt="" coords="236,47,434,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="463,60,435,63,434,57,469,60"/>
+<area shape="rect" id="Node000003" href="$d2/d7b/struct_units_net_helpers_1_1_duration2.html#ab63512c37d92127f59564a53eb479d44" title=" " alt="" coords="5,5,188,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,44,188,42,188,37,223,44"/>
+<area shape="rect" id="Node000004" href="$d2/d7b/struct_units_net_helpers_1_1_duration2.html#a3b8dd89d02b4c97950dc2f318244f9fc" title=" " alt="" coords="5,72,188,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="217,76,188,83,188,78,223,76"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="EpsilonCore.Motion.Move.Simplify" name="EpsilonCore.Motion.Move.Simplify">
+<area shape="rect" id="Node000001" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="5,29,181,72"/>
+<area shape="rect" id="Node000002" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="229,29,404,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,48,216,50,211,51,181,53"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="274,27,272,19,279,10,294,5,316,3,340,5,356,14,351,13,339,10,316,8,295,10,282,15,277,21,279,30"/>
+<area shape="rect" id="Node000003" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="452,37,659,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,48,439,51,434,51,405,53"/>
+</map>

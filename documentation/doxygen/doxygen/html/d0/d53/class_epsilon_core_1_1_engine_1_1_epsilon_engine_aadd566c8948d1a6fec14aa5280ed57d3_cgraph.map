@@ -1,0 +1,9 @@
+<map id="EpsilonCore.Engine.EpsilonEngine.AddCommunicator" name="EpsilonCore.Engine.EpsilonEngine.AddCommunicator">
+<area shape="rect" id="Node000001" title="Adds an ICommunicator to a MachineQueue. This is done at the engine level because ICommunicators are ..." alt="" coords="5,39,189,81"/>
+<area shape="rect" id="Node000002" href="$da/de4/class_epsilon_core_1_1_communication_1_1_i_communicator.html#a931b10587634033d8b948991f2ddb971" title="Connects to a a microcontroller board." alt="" coords="237,5,428,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,44,224,42,219,43,190,50"/>
+<area shape="rect" id="Node000003" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7dddc05b08ab389ddfd78bcd337b24dc" title=" " alt="" coords="241,72,424,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,70,228,78,222,78,189,76"/>
+<area shape="rect" id="Node000004" href="$d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="476,72,661,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="424,91,463,93,458,93,424,96"/>
+</map>

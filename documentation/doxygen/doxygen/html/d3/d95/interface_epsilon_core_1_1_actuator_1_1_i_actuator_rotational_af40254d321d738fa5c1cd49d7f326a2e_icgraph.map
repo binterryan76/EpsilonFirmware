@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Actuator.IActuatorRotational.With" name="EpsilonCore.Actuator.IActuatorRotational.With">
+<area shape="rect" id="Node000001" title="Because IActuatorRotational is just an interface, it might be implemented on classes or records so th..." alt="" coords="297,13,499,56"/>
+<area shape="rect" id="Node000002" href="$d6/db7/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_actuator_rotational_command.html#a65fcfe34b13c08fe26928bf90dc1dc48" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,5,249,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,35,249,37,249,32,284,34"/>
+</map>

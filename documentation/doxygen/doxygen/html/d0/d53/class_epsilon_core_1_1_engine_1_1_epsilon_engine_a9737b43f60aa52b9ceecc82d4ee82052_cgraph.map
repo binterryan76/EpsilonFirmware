@@ -1,0 +1,43 @@
+<map id="EpsilonCore.Engine.EpsilonEngine.SolveMovesAndMarkHalfOfMoveCommandsAsReadyToSend" name="EpsilonCore.Engine.EpsilonEngine.SolveMovesAndMarkHalfOfMoveCommandsAsReadyToSend">
+<area shape="rect" id="Node000001" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="5,231,233,289"/>
+<area shape="rect" id="Node000002" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="281,239,494,281"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,257,268,259,263,261,234,263"/>
+<area shape="rect" id="Node000003" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="564,64,755,123"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="423,236,595,132,599,130,425,240"/>
+<area shape="rect" id="Node000006" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="542,205,777,248"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="494,244,529,242,524,244,495,249"/>
+<area shape="rect" id="Node000013" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="553,272,766,315"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="494,270,540,278,535,279,495,276"/>
+<area shape="rect" id="Node000018" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="572,384,747,427"/>
+<area shape="poly" id="edge18_Node000002_Node000018" title=" " alt="" coords="430,279,607,376,602,377,428,284"/>
+<area shape="rect" id="Node000004" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="836,5,1028,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="755,67,830,51,825,53,757,72"/>
+<area shape="rect" id="Node000005" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="844,72,1020,115"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="755,91,831,93,826,94,756,96"/>
+<area shape="rect" id="Node000007" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="844,139,1020,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="749,202,832,184,827,186,750,207"/>
+<area shape="rect" id="Node000012" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="844,205,1020,248"/>
+<area shape="poly" id="edge12_Node000006_Node000012" title=" " alt="" coords="777,224,831,226,826,227,778,229"/>
+<area shape="rect" id="Node000008" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1087,88,1304,115"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1020,138,1120,118,1115,119,1021,143"/>
+<area shape="rect" id="Node000010" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1108,139,1284,181"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="1020,157,1095,160,1090,160,1021,163"/>
+<area shape="rect" id="Node000011" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1087,205,1305,232"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="1020,177,1120,201,1115,202,1020,182"/>
+<area shape="rect" id="Node000009" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1353,109,1547,152"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1305,111,1340,117,1335,118,1305,117"/>
+<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="1284,147,1340,143,1335,144,1285,152"/>
+<area shape="rect" id="Node000014" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="825,272,1039,315"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="767,291,812,293,807,294,767,296"/>
+<area shape="rect" id="Node000015" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="825,339,1039,381"/>
+<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="750,313,830,334,824,334,750,318"/>
+<area shape="rect" id="Node000016" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="1110,288,1282,331"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1039,337,1092,329,1097,328,1040,342"/>
+<area shape="rect" id="Node000017" href="$dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="1093,355,1298,397"/>
+<area shape="poly" id="edge17_Node000015_Node000017" title=" " alt="" coords="1039,364,1080,369,1075,369,1039,369"/>
+<area shape="rect" id="Node000019" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="844,429,1020,472"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="748,417,832,434,826,433,748,423"/>
+<area shape="poly" id="edge21_Node000019_Node000019" title=" " alt="" coords="883,427,880,419,889,410,906,405,932,403,960,405,979,414,973,413,959,410,932,408,907,410,891,415,885,421,887,430"/>
+<area shape="rect" id="Node000020" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="1092,437,1300,464"/>
+<area shape="poly" id="edge20_Node000019_Node000020" title=" " alt="" coords="1020,448,1079,451,1074,451,1020,453"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="EpsilonCore.Communication.SerialCommunicator.Send" name="EpsilonCore.Communication.SerialCommunicator.Send">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,64,197,107"/>
+<area shape="rect" id="Node000002" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a25b5dc917b8ab44db2643e5c5db0fe60" title=" " alt="" coords="245,64,437,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,83,232,85,227,86,198,88"/>
+<area shape="rect" id="Node000003" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aae3bfd6e734f88aa6738dbb7c7d9676f" title="Instantiates a new DataPacket with validation. Note: This copies the data array into an internal arra..." alt="" coords="755,5,947,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,61,485,49,617,35,742,29,737,30,617,40,485,55,427,66"/>
+<area shape="rect" id="Node000005" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a28728aa2c0f825f142b852416d514461" title=" " alt="" coords="500,64,692,107"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="437,91,488,94,482,95,438,97"/>
+<area shape="rect" id="Node000007" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#ac08e88dc0c46c89cd49a884334ba05de" title=" " alt="" coords="485,131,707,173"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="426,105,500,126,494,126,425,110"/>
+<area shape="rect" id="Node000004" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="995,5,1186,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="947,24,981,26,976,27,947,29"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="498,77,453,79,452,74,503,76"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="691,61,738,53,743,52,692,66"/>
+<area shape="rect" id="Node000006" href="$d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a699d504f5fa70c030b2b8ac71b899958" title=" " alt="" coords="759,72,943,115"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="692,86,747,90,741,90,693,91"/>
+</map>

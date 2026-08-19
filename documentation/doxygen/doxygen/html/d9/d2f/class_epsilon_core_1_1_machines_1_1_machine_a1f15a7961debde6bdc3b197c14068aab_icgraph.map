@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Machines.Machine.ContainsAxisName" name="EpsilonCore.Machines.Machine.ContainsAxisName">
+<area shape="rect" id="Node000001" title="Returns true if the machine contains either a linear or rotational axis with the given name." alt="" coords="294,13,503,56"/>
+<area shape="rect" id="Node000002" href="$d0/d32/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_linear_axis_command.html#a7bce7de56f7221f76ac102eec82be7a6" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,5,246,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,35,246,37,246,32,281,34"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html" title="Used to log messages that result from queueing and sending commands." alt="" coords="5,39,191,81"/>
+<area shape="rect" id="Node000001" href="$d9/d58/class_epsilon_core_1_1_display_1_1_debug_console_logger.html" title="Used to log messages that result from queueing and sending commands using Debug.WriteLine(string)." alt="" coords="253,5,434,48"/>
+<area shape="poly" id="edge15_Node000000_Node000001" title=" " alt="" coords="206,43,255,38,250,40,207,48"/>
+<area shape="rect" id="Node000002" href="$da/ded/class_epsilon_desktop_1_1_models_1_1_textbox_result_logger.html" title=" " alt="" coords="239,72,448,115"/>
+<area shape="poly" id="edge16_Node000000_Node000002" title=" " alt="" coords="206,72,241,79,236,79,206,77"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="EpsilonCore.Commands.Macros.BoardMacros.BttOctopusProMacros.AddBttOctopusProBoardAndPinsMacro" name="EpsilonCore.Commands.Macros.BoardMacros.BttOctopusProMacros.AddBttOctopusProBoardAndPinsMacro">
+<area shape="rect" id="Node000001" title="Queues commands to add the BTT Octopus Pro board and all it&#39;s pins." alt="" coords="5,147,255,205"/>
+<area shape="rect" id="Node000002" href="$d8/dc0/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_board_command.html#ab2c78dffede724371842cfef16907ff7" title=" " alt="" coords="318,5,588,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,144,233,108,302,74,321,68,316,71,304,78,236,112,177,148"/>
+<area shape="rect" id="Node000003" href="$d3/dbf/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_pin_command.html#a62aaed9bc0e3d22dcc8345411fd960f9" title=" " alt="" coords="303,88,603,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="254,148,334,133,329,136,256,153"/>
+<area shape="rect" id="Node000004" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ade2620529f1d5b38277ca56be7ce4a5b" title="Adds a command to the command machineQueue to be processed." alt="" coords="361,155,544,197"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="255,173,348,175,343,177,256,179"/>
+<area shape="rect" id="Node000005" href="$d2/d14/class_epsilon_core_1_1_boards_1_1_stm32.html#a393985a539070c98289cea3a0498b527" title="Returns a list of pin names starting from PA0 up to the last GPIO set letter and last pin number." alt="" coords="361,221,544,264"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="255,199,348,220,343,221,255,204"/>
+<area shape="rect" id="Node000006" href="$d4/dfb/class_epsilon_core_1_1_boards_1_1_board_timer.html#a3642cb126086726402981879de36ad7c" title="Returns a new instance of a BoardTimer with validation." alt="" coords="365,288,540,331"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="174,203,235,240,304,274,353,291,347,291,302,278,232,245,173,208"/>
+<area shape="rect" id="Node000007" href="$d4/dfb/class_epsilon_core_1_1_boards_1_1_board_timer.html#a0faaff92a01a9a1bc25d7be0f6e95e09" title=" " alt="" coords="651,288,826,331"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="541,307,638,309,633,309,541,312"/>
+</map>

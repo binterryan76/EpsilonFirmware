@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Communication.ICommunicator.Connect" name="EpsilonCore.Communication.ICommunicator.Connect">
+<area shape="rect" id="Node000001" title="Connects to a a microcontroller board." alt="" coords="237,5,428,48"/>
+<area shape="rect" id="Node000002" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#aadd566c8948d1a6fec14aa5280ed57d3" title="Adds an ICommunicator to a MachineQueue. This is done at the engine level because ICommunicators are ..." alt="" coords="5,5,189,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,27,189,29,189,24,223,26"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="EpsilonCore.Commands.MotionCommands.MoveCommand.New" name="EpsilonCore.Commands.MotionCommands.MoveCommand.New">
+<area shape="rect" id="Node000001" title="Returns either a new MoveCommand or an error if the inputs are invalid." alt="" coords="5,5,221,48"/>
+<area shape="rect" id="Node000002" href="$d5/d34/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_command.html#a2f0bdbf03e51dc2ec00aa7d6975e8fd3" title=" " alt="" coords="269,5,549,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,24,256,27,250,27,221,29"/>
+<area shape="rect" id="Node000003" href="$d5/d34/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_command.html#aeb34d76d1753b43c56cb3e67f8447be8" title=" " alt="" coords="597,5,904,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="550,24,584,27,579,27,550,29"/>
+</map>

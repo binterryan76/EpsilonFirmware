@@ -1,0 +1,15 @@
+<map id="EpsilonCore.Communication.SerialCommunicator.Read" name="EpsilonCore.Communication.SerialCommunicator.Read">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,64,197,107"/>
+<area shape="rect" id="Node000002" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a25b5dc917b8ab44db2643e5c5db0fe60" title=" " alt="" coords="245,64,437,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,92,232,94,226,95,197,97"/>
+<area shape="rect" id="Node000003" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aae3bfd6e734f88aa6738dbb7c7d9676f" title="Instantiates a new DataPacket with validation. Note: This copies the data array into an internal arra..." alt="" coords="500,5,692,48"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="185,61,244,49,368,35,487,29,482,31,369,40,245,55,187,66"/>
+<area shape="rect" id="Node000006" href="$d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a699d504f5fa70c030b2b8ac71b899958" title=" " alt="" coords="249,131,432,173"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="180,105,250,125,244,127,180,110"/>
+<area shape="poly" id="edge4_Node000002_Node000001" title=" " alt="" coords="242,77,213,79,212,74,247,76"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,61,488,51,483,53,437,66"/>
+<area shape="rect" id="Node000005" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#ac08e88dc0c46c89cd49a884334ba05de" title=" " alt="" coords="485,72,707,115"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="437,86,472,89,467,90,438,91"/>
+<area shape="rect" id="Node000004" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="755,5,947,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="692,24,742,26,737,27,693,29"/>
+</map>

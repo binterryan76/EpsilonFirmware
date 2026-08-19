@@ -1,0 +1,6 @@
+<map id="EpsilonCore.Commands.ICommand.EnqueueCommandSpecific" name="EpsilonCore.Commands.ICommand.EnqueueCommandSpecific">
+<area shape="rect" id="Node000001" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,29,241,72"/>
+<area shape="rect" id="Node000002" href="$d6/d67/namespace_epsilon_core_1_1_commands.html#a51ae152d8a80b167f85f4fac207b58ac" title="Result returned when queueing or sending commands." alt="" coords="289,29,501,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,48,276,51,270,51,241,53"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="344,27,342,19,350,10,368,5,395,3,424,5,443,14,438,14,423,10,395,8,369,10,353,15,347,21,349,30"/>
+</map>

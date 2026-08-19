@@ -1,0 +1,16 @@
+- Doing a Z baby step move during a single slow print move will not occur until the move finishes.
+	- We address this by allowing some commands to be processed immediately when received.
+- Once a print starts, you cannot change the infill percentage.
+	- We address this by integrating a slicer into the firmware so you can splice two G-code files together during a print and switch to an updated one once the current layer finishes.
+- Making a 5 axis printer is a chicken and egg problem. Firmware developers don't want to support 5 axis machines when 5 axis slicers don't exist yet and conversely, slicer developers don't want to support 5 axis machines when 5 axis firmware doesn't exist yet.
+	- We address this by supporting 5 axis kinematics.
+- Configuring a machine with unique kinematics is difficult.
+	- We address this by supporting composite kinematic systems where commands can be used to set up a kinematic system which is a combination of other kinematic systems. Adding a new base kinematic system is as simple as creating a new C# record which implements the IKinematics interface.
+- Customizing firmware is confusing and difficult.
+	- We address this by being incredibly picky about code readability and having excellent documentation.
+- Using meta-G-code commands is difficult. Some machines require the use of meta G-code commands which can be used like a traditional programming language to store data in variables, perform loops, conditional logic, etc. 
+	- We address this by exposing C# scripting so the machine can be controlled with actual C# scripts which supports far more than meta-G-code commands ever could. For example, you can create strongly typed functions, and custom data types.
+- Using the daemon.gcode in RepRap Firmware is slow.
+	- We address this by using the C# event system.
+- Making a machine that does certain things when some conditions are met is difficult.
+	- We address this by using the C# event system.

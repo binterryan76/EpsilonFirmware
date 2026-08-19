@@ -1,0 +1,7 @@
+<map id="EpsilonDesktop.ViewModels.MachineViewModel.New" name="EpsilonDesktop.ViewModels.MachineViewModel.New">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,198,81"/>
+<area shape="rect" id="Node000002" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9a636956b3537895bb5ad565e8cd39ad" title="Returns the latest Machine based on it&#39;s ID. Returns null if it cannot be found." alt="" coords="280,5,463,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,45,267,39,262,41,199,51"/>
+<area shape="rect" id="Node000003" href="$d4/d4f/class_epsilon_desktop_1_1_view_models_1_1_machine_view_model.html#adc45e85e88f10b34c06fda0263ba2514" title=" " alt="" coords="246,72,497,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,69,233,76,228,76,198,75"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="EpsilonDesktop.ViewModels.JogAxesViewModel.MoveAxisLinear" name="EpsilonDesktop.ViewModels.JogAxesViewModel.MoveAxisLinear">
+<area shape="rect" id="Node000001" title=" " alt="" coords="596,185,829,228"/>
+<area shape="rect" id="Node000002" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a254db913f6a7b64dded4eb18c3c0534c" title=" " alt="" coords="292,111,548,169"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="598,182,548,172,548,167,604,181"/>
+<area shape="rect" id="Node000006" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0840cb53d64be68ecffca5c865215f2f" title=" " alt="" coords="297,219,542,277"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="578,226,544,233,543,228,583,225"/>
+<area shape="rect" id="Node000003" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0c0a647eb5152c7c1e2a8bf8cfe7da07" title=" " alt="" coords="5,5,244,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,105,243,62,210,51,209,46,245,58,348,102"/>
+<area shape="rect" id="Node000004" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#aa63a5ff29e38e83c8ff9b5552dbe5dc5" title=" " alt="" coords="5,72,244,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="274,118,245,115,243,110,279,116"/>
+<area shape="rect" id="Node000005" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a8b71840ea47b6cbea9ed6a9366f45e1b" title=" " alt="" coords="5,139,244,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="274,151,245,154,243,149,279,149"/>
+<area shape="rect" id="Node000007" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a904ec15126a6b9337862ee8239a31e72" title=" " alt="" coords="11,205,238,248"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="279,239,239,238,238,232,284,237"/>
+<area shape="rect" id="Node000008" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a1ceec3b9e1725b6c1c600c287e2790b8" title=" " alt="" coords="11,272,238,315"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="279,270,239,278,238,273,284,268"/>
+<area shape="rect" id="Node000009" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#aee19121615dbde32491cf3c51acf75c0" title=" " alt="" coords="11,339,238,381"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="347,284,245,329,210,341,209,335,243,324,342,285"/>
+</map>

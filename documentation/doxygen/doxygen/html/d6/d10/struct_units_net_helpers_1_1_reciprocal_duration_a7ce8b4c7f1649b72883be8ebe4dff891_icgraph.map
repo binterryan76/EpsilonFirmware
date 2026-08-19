@@ -1,0 +1,9 @@
+<map id="UnitsNetHelpers.ReciprocalDuration.GetConversionFactor" name="UnitsNetHelpers.ReciprocalDuration.GetConversionFactor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="470,39,668,81"/>
+<area shape="rect" id="Node000002" href="$d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html#acd119912f9c8cd43fe7197bc52da6699" title="Convert this quantity to the given unit." alt="" coords="238,39,422,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="452,60,423,63,422,57,457,60"/>
+<area shape="rect" id="Node000003" href="$d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html#a2d81d4eea3728dbef539d207f5e9d4c8" title=" " alt="" coords="5,5,190,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,45,190,43,190,37,225,44"/>
+<area shape="rect" id="Node000004" href="$d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html#aac00087c1e683c31fd8219d1f6701bb7" title=" " alt="" coords="5,72,190,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="220,76,191,83,190,77,225,75"/>
+</map>

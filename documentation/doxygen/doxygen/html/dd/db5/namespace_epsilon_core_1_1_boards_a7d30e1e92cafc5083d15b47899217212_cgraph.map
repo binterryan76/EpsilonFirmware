@@ -1,0 +1,6 @@
+<map id="EpsilonCore.Boards.ToByteArray" name="EpsilonCore.Boards.ToByteArray">
+<area shape="rect" id="Node000001" title="Converts an uint to a byte array to be included in a DataPacket." alt="" coords="5,29,188,72"/>
+<area shape="rect" id="Node000002" href="$dd/db5/namespace_epsilon_core_1_1_boards.html#aef830276eaca22f0a123f0e4c121d1d0" title="Converts a double to a byte array to be included in a DataPacket." alt="" coords="236,29,418,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,48,223,50,217,51,188,53"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="283,27,281,19,289,10,304,5,327,3,351,5,368,14,363,13,350,10,327,8,305,10,292,15,287,21,288,30"/>
+</map>

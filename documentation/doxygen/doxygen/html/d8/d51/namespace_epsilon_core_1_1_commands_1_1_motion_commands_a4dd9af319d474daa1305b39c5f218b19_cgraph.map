@@ -1,0 +1,7 @@
+<map id="EpsilonCore.Commands.MotionCommands.EnqueueCommandSpecific" name="EpsilonCore.Commands.MotionCommands.EnqueueCommandSpecific">
+<area shape="rect" id="Node000001" title="The generic move algorithm works like this: Figure out which axes are involved in the move by seeing ..." alt="" coords="5,29,256,72"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="78,28,76,19,85,10,103,5,131,3,160,5,180,14,175,14,159,10,130,8,104,10,87,15,81,21,83,30"/>
+<area shape="rect" id="Node000002" href="$d6/d67/namespace_epsilon_core_1_1_commands.html#a51ae152d8a80b167f85f4fac207b58ac" title="Result returned when queueing or sending commands." alt="" coords="304,29,516,72"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="256,48,291,51,286,51,256,53"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="358,27,355,19,364,10,382,5,410,3,440,5,459,14,454,14,439,10,410,8,383,10,367,15,360,21,362,30"/>
+</map>

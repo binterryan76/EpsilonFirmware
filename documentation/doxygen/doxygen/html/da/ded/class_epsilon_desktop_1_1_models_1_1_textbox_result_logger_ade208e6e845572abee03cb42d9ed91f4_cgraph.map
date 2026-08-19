@@ -1,0 +1,6 @@
+<map id="EpsilonDesktop.Models.TextboxResultLogger.Log" name="EpsilonDesktop.Models.TextboxResultLogger.Log">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,215,72"/>
+<area shape="rect" id="Node000002" href="$da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="263,29,461,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,48,250,51,245,51,215,53"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="315,27,312,19,320,10,337,5,362,3,389,5,406,14,401,13,387,10,362,8,338,10,323,15,318,21,319,30"/>
+</map>

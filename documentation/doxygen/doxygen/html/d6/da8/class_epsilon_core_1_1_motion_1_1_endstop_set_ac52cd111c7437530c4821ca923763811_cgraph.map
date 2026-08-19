@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Motion.EndstopSet.Both" name="EpsilonCore.Motion.EndstopSet.Both">
+<area shape="rect" id="Node000001" title="Returns a new EndstopSet with bowth a minimum and maximum endstop." alt="" coords="5,5,193,48"/>
+<area shape="rect" id="Node000002" href="$d6/da8/class_epsilon_core_1_1_motion_1_1_endstop_set.html#a5b1e282a8c8f0a803504fde5ce78dab0" title=" " alt="" coords="241,5,428,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,24,228,26,222,27,193,29"/>
+</map>

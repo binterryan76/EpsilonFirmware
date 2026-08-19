@@ -1,0 +1,11 @@
+<map id="EpsilonCore.Helpers.OptionalResult&#45;1&#45;g.OptionalResult" name="EpsilonCore.Helpers.OptionalResult&#45;1&#45;g.OptionalResult">
+<area shape="rect" id="Node000001" title="Constructs an unsuccessful result." alt="" coords="307,105,500,148"/>
+<area shape="rect" id="Node000002" href="$d5/d9b/struct_epsilon_core_1_1_helpers_1_1_optional_result-1-g.html#a0b261b4a25ef9233d1ecc230c67b421f" title="Converts a result of one type to a result of another." alt="" coords="35,5,229,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="344,99,258,62,224,51,223,46,260,58,349,97"/>
+<area shape="rect" id="Node000003" href="$d5/d9b/struct_epsilon_core_1_1_helpers_1_1_optional_result-1-g.html#ad5345ffeef2ee43c147adb3092bc08b8" title="Converts a result of one type to a result of another asychronously." alt="" coords="35,72,229,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="289,114,229,108,229,103,294,112"/>
+<area shape="rect" id="Node000004" href="$d5/d9b/struct_epsilon_core_1_1_helpers_1_1_optional_result-1-g.html#aabb99171ede3c80a2e4acb05b8072ef8" title="Automatically converts Exception to an error OptionalResult&lt;T&gt; for easy return." alt="" coords="5,139,259,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="288,141,260,147,259,142,294,140"/>
+<area shape="rect" id="Node000005" href="$d5/d9b/struct_epsilon_core_1_1_helpers_1_1_optional_result-1-g.html#a3883110627a069c3842d4d0ac2144e2d" title="Automatically converts &lt;T&gt; to OptionalResult&lt;T&gt; for easy return." alt="" coords="5,205,259,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="349,155,260,196,224,207,223,202,258,191,344,156"/>
+</map>

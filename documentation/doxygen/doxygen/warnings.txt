@@ -1,0 +1,34 @@
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:4: warning: explicit link request to 'Doxygen' could not be resolved
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:4: warning: explicit link request to 'Obsidian' could not be resolved
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:27: warning: Found unknown command '\doxygen'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:27: warning: Found unknown command '\EpsilonFirmwareDoxyfile'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:28: warning: Found unknown command '\Program'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:29: warning: Found unknown command '\doxygen'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:29: warning: Found unknown command '\EpsilonFirmwareDoxyfile'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:31: warning: Found unknown command '\Program'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:31: warning: Found unknown command '\Graphviz'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:31: warning: Found unknown command '\bin'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:53: warning: Found unknown command '\documentation'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:53: warning: Found unknown command '\obsidian'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:53: warning: Found unknown command '\Epsilon'
+C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:54: warning: explicit link request to 'Generating' could not be resolved
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument id from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument name from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument boardId from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument maxSpeed from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument homingSpeed from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument maxAcceleration from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotorLinear.cs:40: warning: argument id from the argument list of EpsilonCore.Actuator.StepperMotorLinear.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotorLinear.cs:40: warning: argument name from the argument list of EpsilonCore.Actuator.StepperMotorLinear.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotorLinear.cs:40: warning: argument boardId from the argument list of EpsilonCore.Actuator.StepperMotorLinear.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotorLinear.cs:40: warning: argument maxSpeed from the argument list of EpsilonCore.Actuator.StepperMotorLinear.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotorLinear.cs:40: warning: argument homingSpeed from the argument list of EpsilonCore.Actuator.StepperMotorLinear.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotorLinear.cs:40: warning: argument maxAcceleration from the argument list of EpsilonCore.Actuator.StepperMotorLinear.With has multiple @param documentation sections
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Helpers/OptionalResult.cs:108: warning: argument 'value' of command @param is not found in the argument list of EpsilonCore.Helpers.OptionalResult< T >::operator OptionalResult< T >(Exception ex)
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Helpers/OptionalResult.cs:108: warning: The following parameter of EpsilonCore.Helpers.OptionalResult-1-g.operator OptionalResult< T >(Exception ex) is not documented:
+  parameter 'ex'
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Helpers/OptionalResult.cs:26: warning: unterminated param or exception tag
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Helpers/OptionalResult.cs:32: warning: unterminated param or exception tag
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Helpers/Result.cs:23: warning: unterminated param or exception tag
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Helpers/Result.cs:29: warning: unterminated param or exception tag
+C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Motion/Move.cs:597: warning: argument 'move' of command @param is not found in the argument list of EpsilonCore.Motion.Move::Simplify(Length actuatorEpsilonLinear, Angle actuatorEpsilonRotational)

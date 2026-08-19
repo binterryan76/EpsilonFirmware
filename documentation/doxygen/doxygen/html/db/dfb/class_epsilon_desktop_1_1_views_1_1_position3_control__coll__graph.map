@@ -1,0 +1,12 @@
+<map id="EpsilonDesktop.Views.Position3Control" name="EpsilonDesktop.Views.Position3Control">
+<area shape="rect" id="Node000001" title="Position3Control." alt="" coords="643,74,855,116"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="38,10,219,52"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,16,301,11,407,3,454,4,513,11,564,22,615,38,702,73,697,73,613,43,563,27,512,16,453,9,407,9,301,16,235,21"/>
+<area shape="rect" id="Node000004" href="$d5/d68/class_epsilon_desktop_1_1_views_1_1_position3_control.html" title="Position3Control." alt="" coords="301,74,512,116"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="234,53,314,73,308,74,234,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,108,252,151"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="268,131,387,131,512,126,640,113,646,113,513,131,387,136,268,136"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="267,110,303,108,298,109,268,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="528,92,645,95,640,95,528,98"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="384,56,392,50,407,47,420,49,429,55,434,64,432,75,428,71,428,65,425,59,418,54,407,52,394,54,386,60"/>
+</map>

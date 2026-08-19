@@ -1,0 +1,1 @@
+%windir%\system32\cmd.exe /c start "" "%CD%\doxygen\html\index.html"

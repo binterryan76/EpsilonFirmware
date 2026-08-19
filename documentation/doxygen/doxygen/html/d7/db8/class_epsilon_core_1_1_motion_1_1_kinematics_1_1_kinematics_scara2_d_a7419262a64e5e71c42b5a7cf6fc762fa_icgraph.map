@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Motion.Kinematics.KinematicsScara2D.ForwardKinematics" name="EpsilonCore.Motion.Kinematics.KinematicsScara2D.ForwardKinematics">
+<area shape="rect" id="Node000001" title=" " alt="" coords="307,5,560,48"/>
+<area shape="rect" id="Node000002" href="$d7/db8/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_kinematics_scara2_d.html#a52ea9fe3fcffd4e72559da0462ca74f8" title="Used to convert actuator positions to axis positions. Enters the axis positions into the provided mem..." alt="" coords="5,5,259,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,27,259,29,259,24,294,27"/>
+</map>

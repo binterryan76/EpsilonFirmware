@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Commands.QueuedCommand.TempControllerNotAssignedToMachine" name="EpsilonCore.Commands.QueuedCommand.TempControllerNotAssignedToMachine">
+<area shape="rect" id="Node000001" title=" " alt="" coords="349,5,597,64"/>
+<area shape="rect" id="Node000002" href="$da/d6d/class_epsilon_core_1_1_commands_1_1_thermal_commands_1_1_set_target_temp_command.html#a95e26336674bf94c15e8e133b3b633f2" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,5,301,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,35,301,37,301,32,336,35"/>
+</map>

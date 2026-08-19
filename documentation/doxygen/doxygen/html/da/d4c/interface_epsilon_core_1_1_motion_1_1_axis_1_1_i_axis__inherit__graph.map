@@ -1,0 +1,9 @@
+<map id="EpsilonCore.Motion.Axis.IAxis" name="EpsilonCore.Motion.Axis.IAxis">
+<area shape="rect" id="Node000001" title=" " alt="" coords="101,80,271,123"/>
+<area shape="rect" id="Node000003" href="$d5/dd6/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_linear.html" title=" " alt="" coords="5,171,175,213"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,132,114,172,111,168,150,134"/>
+<area shape="rect" id="Node000004" href="$da/dea/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_rotational.html" title=" " alt="" coords="199,171,368,213"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="221,131,263,170,258,170,219,136"/>
+<area shape="rect" id="Node000002" href="$df/d93/interface_epsilon_core_1_1_machines_1_1_i_entity.html" title="Used for items that are looked up by ID. If an object is contained by another object and not looked u..." alt="" coords="89,5,283,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,45,188,81,184,79,185,50"/>
+</map>

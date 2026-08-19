@@ -1,0 +1,7 @@
+<map id="EpsilonCore.Motion.MoveQueue.ComputeCosineOfTurnAngle" name="EpsilonCore.Motion.MoveQueue.ComputeCosineOfTurnAngle">
+<area shape="rect" id="Node000001" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="5,39,219,81"/>
+<area shape="rect" id="Node000002" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="284,5,455,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,44,271,39,265,40,220,49"/>
+<area shape="rect" id="Node000003" href="$dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="267,72,472,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,71,254,78,249,78,219,77"/>
+</map>

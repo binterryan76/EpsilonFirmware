@@ -1,0 +1,46 @@
+<map id="EpsilonCore.Commands.QueuedCommand" name="EpsilonCore.Commands.QueuedCommand">
+<area shape="rect" id="Node000001" title="Result returned when queueing or sending commands." alt="" coords="1553,371,1766,413"/>
+<area shape="poly" id="edge21_Node000001_Node000001" title=" " alt="" coords="1704,355,1689,352,1659,349,1633,351,1616,356,1610,362,1611,371,1607,369,1604,361,1613,352,1632,346,1660,344,1690,346,1710,355"/>
+<area shape="rect" id="Node000002" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0300a5ed14189f27d4befcaba518e94a" title=" " alt="" coords="1250,5,1505,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1650,354,1634,292,1606,212,1587,171,1564,131,1536,94,1504,62,1488,51,1489,46,1507,58,1540,91,1568,128,1592,169,1611,210,1639,291,1654,357"/>
+<area shape="rect" id="Node000003" href="$d3/d14/interface_epsilon_core_1_1_commands_1_1_i_command.html#af228281e93b6182a473afa2fc1f62660" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="1260,72,1495,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1645,355,1626,305,1596,243,1556,181,1531,153,1504,129,1486,118,1487,112,1507,125,1535,149,1560,178,1601,241,1631,303,1650,357"/>
+<area shape="rect" id="Node000004" href="$d8/d51/namespace_epsilon_core_1_1_commands_1_1_motion_commands.html#a4dd9af319d474daa1305b39c5f218b19" title="The generic move algorithm works like this: Figure out which axes are involved in the move by seeing ..." alt="" coords="1252,163,1502,205"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1633,357,1579,292,1543,256,1504,226,1468,208,1469,203,1507,222,1547,252,1583,288,1638,358"/>
+<area shape="rect" id="Node000005" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="978,371,1182,413"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="1627,358,1574,311,1541,288,1504,270,1435,250,1377,243,1320,250,1250,271,1206,291,1165,318,1103,372,1100,368,1162,313,1203,286,1248,265,1319,245,1377,238,1436,244,1506,266,1544,283,1578,307,1633,359"/>
+<area shape="rect" id="Node000009" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#ab60d7ed415bd23eb2a585771901566ee" title=" " alt="" coords="15,512,208,555"/>
+<area shape="poly" id="edge27_Node000001_Node000009" title=" " alt="" coords="1648,426,1629,476,1599,530,1558,583,1534,606,1507,625,1449,654,1397,670,1349,676,1303,675,1204,662,1147,656,1082,653,587,653,527,651,467,643,349,618,245,587,166,558,166,553,247,582,351,613,468,638,528,645,587,648,1082,648,1148,651,1205,657,1303,670,1349,670,1396,664,1447,649,1504,620,1531,602,1554,579,1594,527,1624,474,1644,430"/>
+<area shape="rect" id="Node000011" href="$da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="1278,520,1476,563"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="1609,421,1507,480,1424,522,1422,517,1504,475,1604,422"/>
+<area shape="rect" id="Node000012" href="$da/ded/class_epsilon_desktop_1_1_models_1_1_textbox_result_logger.html#ade208e6e845572abee03cb42d9ed91f4" title=" " alt="" coords="976,571,1185,613"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="1643,426,1621,465,1590,507,1552,546,1507,577,1467,593,1426,605,1342,618,1259,619,1185,613,1185,608,1259,613,1341,612,1425,600,1466,588,1504,572,1549,542,1586,504,1616,463,1639,428"/>
+<area shape="rect" id="Node000013" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="960,439,1201,481"/>
+<area shape="poly" id="edge22_Node000001_Node000013" title=" " alt="" coords="1577,417,1506,436,1348,454,1202,462,1201,456,1347,449,1505,431,1572,418"/>
+<area shape="rect" id="Node000014" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7dddc05b08ab389ddfd78bcd337b24dc" title=" " alt="" coords="1286,688,1469,731"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="1650,426,1631,482,1602,548,1561,614,1535,645,1507,671,1470,693,1468,688,1504,667,1532,641,1556,611,1597,545,1627,480,1646,430"/>
+<area shape="rect" id="Node000016" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="1249,280,1505,339"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="1567,366,1480,342,1480,337,1572,366"/>
+<area shape="rect" id="Node000017" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="1264,363,1491,421"/>
+<area shape="poly" id="edge25_Node000001_Node000017" title=" " alt="" coords="1535,392,1491,395,1491,389,1540,392"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="1422,147,1406,144,1377,141,1350,143,1334,148,1327,154,1329,163,1324,161,1322,153,1331,144,1349,138,1377,136,1407,138,1427,147"/>
+<area shape="rect" id="Node000006" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="728,439,912,481"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="978,419,905,441,904,436,984,417"/>
+<area shape="rect" id="Node000007" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7ae9403462c6b24c7b5269486935b043" title="Starts the main loop to process commands." alt="" coords="497,440,680,483"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="711,461,681,463,680,458,716,460"/>
+<area shape="rect" id="Node000008" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a1a1bb4ef025cb02e84108d89d858eb5d" title="Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue p..." alt="" coords="266,441,449,484"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="479,463,450,465,449,460,484,461"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="264,491,190,514,187,509,268,487"/>
+<area shape="rect" id="Node000010" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#aa8253565b6132fa6a1c80bb1c0cc6d9a" title=" " alt="" coords="5,441,218,484"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="247,464,219,465,217,460,252,461"/>
+<area shape="poly" id="edge12_Node000011_Node000005" title=" " alt="" coords="1333,510,1273,470,1200,429,1168,416,1168,411,1202,424,1276,465,1339,511"/>
+<area shape="poly" id="edge17_Node000011_Node000009" title=" " alt="" coords="1260,539,821,536,587,536,209,536,208,531,587,531,821,531,1265,538"/>
+<area shape="poly" id="edge13_Node000011_Node000011" title=" " alt="" coords="1422,504,1406,501,1377,499,1350,501,1334,505,1327,511,1329,521,1325,518,1322,510,1331,501,1349,495,1377,493,1407,496,1427,505"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="1265,560,1186,577,1185,571,1260,561"/>
+<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="1279,515,1161,485,1161,479,1285,515"/>
+<area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="941,460,913,463,912,457,947,460"/>
+<area shape="rect" id="Node000015" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#aadd566c8948d1a6fec14aa5280ed57d3" title="Adds an ICommunicator to a MachineQueue. This is done at the engine level because ICommunicators are ..." alt="" coords="989,688,1172,731"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="1268,709,1173,712,1173,707,1273,709"/>
+<area shape="poly" id="edge24_Node000016_Node000005" title=" " alt="" coords="1252,344,1161,373,1159,367,1257,343"/>
+<area shape="poly" id="edge26_Node000017_Node000005" title=" " alt="" coords="1245,392,1183,395,1182,389,1251,392"/>
+</map>

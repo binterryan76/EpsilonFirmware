@@ -1,0 +1,15 @@
+<map id="EpsilonCore.Communication.DataPacket.New" name="EpsilonCore.Communication.DataPacket.New">
+<area shape="rect" id="Node000001" title="Instantiates a new DataPacket with validation. Note: This copies the data array into an internal arra..." alt="" coords="588,74,779,116"/>
+<area shape="rect" id="Node000002" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a25b5dc917b8ab44db2643e5c5db0fe60" title=" " alt="" coords="296,36,488,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="570,81,489,73,489,67,575,80"/>
+<area shape="rect" id="Node000003" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a28728aa2c0f825f142b852416d514461" title=" " alt="" coords="5,7,197,50"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="634,65,590,44,539,27,450,13,359,8,273,11,198,17,196,12,272,5,359,3,451,7,541,22,592,40,639,66"/>
+<area shape="rect" id="Node000005" href="$d0/d2f/class_epsilon_core_1_1_commands_1_1_test_commands_1_1_blink_pin_command.html#a77c7f874e418a48b95e56064cc74c618" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="265,103,520,162"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="570,110,521,118,520,113,575,109"/>
+<area shape="rect" id="Node000006" href="$da/d6d/class_epsilon_core_1_1_commands_1_1_thermal_commands_1_1_set_target_temp_command.html#a95e26336674bf94c15e8e133b3b633f2" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="245,186,540,244"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="638,124,591,152,541,176,510,188,508,182,539,171,589,148,633,125"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="278,56,198,49,197,44,283,54"/>
+<area shape="rect" id="Node000004" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a4a8d21daf58c5e4336adfe1a0f30cc3d" title=" " alt="" coords="5,74,197,116"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="278,73,198,85,196,80,283,70"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="212,28,298,38,293,41,213,33"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="UnitsNetHelpers.Frequency2.GetConversionFactor" name="UnitsNetHelpers.Frequency2.GetConversionFactor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="506,39,700,81"/>
+<area shape="rect" id="Node000002" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5b898ed39e3cab7349351af2194f60e8" title="Convert this quantity to the given unit." alt="" coords="248,47,458,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="487,60,459,63,458,57,493,60"/>
+<area shape="rect" id="Node000003" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a9aa335ff85a1d1de8f54e41aca0feaa8" title=" " alt="" coords="5,5,200,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,44,200,42,200,37,235,44"/>
+<area shape="rect" id="Node000004" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a24c46b481334948055c39ba427f4f0b2" title=" " alt="" coords="5,72,200,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="230,76,200,83,200,78,235,76"/>
+</map>

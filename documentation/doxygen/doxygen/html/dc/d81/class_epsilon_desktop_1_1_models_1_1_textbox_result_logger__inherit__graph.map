@@ -1,0 +1,5 @@
+<map id="EpsilonDesktop.Models.TextboxResultLogger" name="EpsilonDesktop.Models.TextboxResultLogger">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,96,215,139"/>
+<area shape="rect" id="Node000002" href="$d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html" title="Used to log messages that result from queueing and sending commands." alt="" coords="17,5,203,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,62,112,97,108,95,108,66"/>
+</map>

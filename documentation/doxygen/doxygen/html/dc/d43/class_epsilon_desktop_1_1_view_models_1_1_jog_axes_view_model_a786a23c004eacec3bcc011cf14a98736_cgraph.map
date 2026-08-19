@@ -1,0 +1,13 @@
+<map id="EpsilonDesktop.ViewModels.JogAxesViewModel.MoveAxisRotational" name="EpsilonDesktop.ViewModels.JogAxesViewModel.MoveAxisRotational">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,72,263,115"/>
+<area shape="rect" id="Node000002" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ade2620529f1d5b38277ca56be7ce4a5b" title="Adds a command to the command machineQueue to be processed." alt="" coords="327,5,510,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,69,314,51,309,53,229,74"/>
+<area shape="rect" id="Node000003" href="$d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="326,72,511,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="263,91,313,93,307,94,263,96"/>
+<area shape="rect" id="Node000004" href="$d5/d34/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_command.html#af7aa0dc4c37d9a3c9016f53348a43c00" title="Returns either a new MoveCommand or an error if the inputs are invalid." alt="" coords="311,139,526,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,113,312,134,307,135,228,118"/>
+<area shape="rect" id="Node000005" href="$d5/d34/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_command.html#a2f0bdbf03e51dc2ec00aa7d6975e8fd3" title=" " alt="" coords="574,139,854,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="526,157,561,160,556,160,526,163"/>
+<area shape="rect" id="Node000006" href="$d5/d34/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_command.html#aeb34d76d1753b43c56cb3e67f8447be8" title=" " alt="" coords="902,139,1210,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="855,157,890,160,884,160,855,163"/>
+</map>

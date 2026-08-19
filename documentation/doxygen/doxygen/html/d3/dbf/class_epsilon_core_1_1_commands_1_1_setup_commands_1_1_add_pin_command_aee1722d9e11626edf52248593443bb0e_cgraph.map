@@ -1,0 +1,10 @@
+<map id="EpsilonCore.Commands.SetupCommands.AddPinCommand.EnqueueCommandSpecific" name="EpsilonCore.Commands.SetupCommands.AddPinCommand.EnqueueCommandSpecific">
+<area shape="rect" id="Node000001" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,31,255,89"/>
+<area shape="rect" id="Node000002" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aa4874bcffedb1e5f7347cd82d5ed49cf" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="303,5,515,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,42,289,41,284,42,256,48"/>
+<area shape="rect" id="Node000004" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#af8513fce313ac831ce327ceb2eb59bbb" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="303,72,515,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="255,72,290,79,284,79,255,78"/>
+<area shape="rect" id="Node000003" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a37824ea92db6a9fe516561f1146be964" title=" " alt="" coords="563,39,775,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="515,38,550,44,545,44,515,43"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="515,77,545,76,550,75,516,82"/>
+</map>

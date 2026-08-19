@@ -1,0 +1,9 @@
+<map id="UnitsNetHelpers.ReciprocalDuration" name="UnitsNetHelpers.ReciprocalDuration">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,196,190,239"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="55,5,129,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,47,100,196,94,196,90,49"/>
+<area shape="rect" id="Node000003" href="$d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html" title=" " alt="" coords="113,81,298,124"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="122,38,180,80,175,82,121,44"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,135,119,198,115,194,173,136"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="313,94,324,103,316,110,299,113,297,108,314,105,319,103,313,100"/>
+</map>

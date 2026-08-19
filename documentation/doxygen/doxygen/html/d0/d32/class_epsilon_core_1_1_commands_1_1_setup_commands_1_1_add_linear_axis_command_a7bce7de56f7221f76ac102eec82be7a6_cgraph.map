@@ -1,0 +1,12 @@
+<map id="EpsilonCore.Commands.SetupCommands.AddLinearAxisCommand.EnqueueCommandSpecific" name="EpsilonCore.Commands.SetupCommands.AddLinearAxisCommand.EnqueueCommandSpecific">
+<area shape="rect" id="Node000001" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,64,246,123"/>
+<area shape="rect" id="Node000002" href="$d9/d2f/class_epsilon_core_1_1_machines_1_1_machine.html#a1f15a7961debde6bdc3b197c14068aab" title="Returns true if the machine contains either a linear or rotational axis with the given name." alt="" coords="295,5,504,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,62,297,51,292,53,247,67"/>
+<area shape="rect" id="Node000003" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aa4874bcffedb1e5f7347cd82d5ed49cf" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="294,72,506,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,91,280,93,275,94,246,96"/>
+<area shape="rect" id="Node000005" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#af8513fce313ac831ce327ceb2eb59bbb" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="294,139,506,181"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="246,120,297,134,292,135,246,125"/>
+<area shape="rect" id="Node000004" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a37824ea92db6a9fe516561f1146be964" title=" " alt="" coords="554,105,766,148"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="506,104,541,111,536,111,506,110"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="506,144,536,142,541,142,507,149"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="EpsilonCore.Commands.QueuedCommand.Error" name="EpsilonCore.Commands.QueuedCommand.Error">
+<area shape="rect" id="Node000001" title="Returns a new QueuedCommand indicating the command failed." alt="" coords="696,312,908,355"/>
+<area shape="rect" id="Node000002" href="$d5/d34/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_command.html#a4f742915ce9faa4a56b52860087a8334" title="The generic move algorithm works like this: Figure out which axes are involved in the move by seeing ..." alt="" coords="349,5,648,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="787,296,767,248,737,189,697,129,673,102,646,78,631,67,630,62,650,74,677,98,701,126,742,186,772,246,792,298"/>
+<area shape="rect" id="Node000003" href="$d0/dc3/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_kinematics_command.html#a11b6bb40b5bc07785c9fc80d43ba1e21" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="376,88,620,147"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="777,299,724,229,687,192,647,161,621,147,621,142,649,156,691,188,728,226,782,299"/>
+<area shape="rect" id="Node000004" href="$d0/d2f/class_epsilon_core_1_1_commands_1_1_test_commands_1_1_blink_pin_command.html#a77c7f874e418a48b95e56064cc74c618" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="371,171,626,229"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="755,303,705,274,647,244,619,233,618,227,649,239,708,269,761,303"/>
+<area shape="rect" id="Node000005" href="$da/d6d/class_epsilon_core_1_1_commands_1_1_thermal_commands_1_1_set_target_temp_command.html#a95e26336674bf94c15e8e133b3b633f2" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,496,301,555"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="678,320,604,320,519,324,433,336,350,361,297,389,250,426,210,464,179,498,176,494,206,460,246,421,294,385,348,356,432,331,519,318,604,314,683,319"/>
+<area shape="rect" id="Node000006" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aecf7fd643816d880dfa514dbfd32a49b" title=" " alt="" coords="392,253,604,296"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="678,310,605,298,605,293,683,309"/>
+<area shape="rect" id="Node000008" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a24e1e97fb000b7d49590cb3fe27c08ff" title="Returns a new QueuedCommand indicating the command failed because Machine doesn&#39;t contain the given I..." alt="" coords="368,371,629,413"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="678,358,613,373,611,368,683,356"/>
+<area shape="rect" id="Node000009" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a952dae957254298203ad2ea94307c09b" title="Returns a new QueuedCommand indicating the command failed because Machine doesn&#39;t contain the given k..." alt="" coords="368,437,629,480"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="761,362,709,398,649,428,615,439,614,434,647,423,706,394,757,365"/>
+<area shape="rect" id="Node000010" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a0dff455c728a83beede8c98240c19184" title=" " alt="" coords="392,504,604,547"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="780,366,725,434,689,467,649,494,606,512,604,507,647,490,686,462,722,430,775,369"/>
+<area shape="rect" id="Node000011" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aa41d308f9de24ef361f413dfb96de847" title=" " alt="" coords="374,571,622,629"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="789,367,767,414,737,465,698,517,650,561,624,576,622,571,646,557,694,513,732,462,763,411,784,370"/>
+<area shape="rect" id="Node000007" href="$db/d52/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_into_endstops_command.html#a3a6d8b558a82ced3814f16194476d5c2" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="20,245,286,304"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="374,276,287,277,285,272,379,273"/>
+<area shape="poly" id="edge10_Node000010_Node000005" title=" " alt="" coords="374,526,301,528,301,523,379,525"/>
+<area shape="poly" id="edge12_Node000011_Node000005" title=" " alt="" coords="357,570,291,558,292,553,362,570"/>
+</map>

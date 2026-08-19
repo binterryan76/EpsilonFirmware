@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Commands.SetupCommands.AddEndstopCommand" name="EpsilonCore.Commands.SetupCommands.AddEndstopCommand">
+<area shape="rect" id="Node000001" title="Command to add a new Boards.Endstop to a Machine." alt="" coords="9,80,233,123"/>
+<area shape="rect" id="Node000002" href="$d3/d14/interface_epsilon_core_1_1_commands_1_1_i_command.html" title="Interface used by all commands. Users creating custom commands need to use extreme caution and have g..." alt="" coords="5,5,237,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,46,123,81,119,79,119,50"/>
+</map>

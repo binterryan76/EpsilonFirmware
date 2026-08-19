@@ -1,0 +1,8 @@
+<map id="EpsilonCore.Communication.SerialCommunicator.Read" name="EpsilonCore.Communication.SerialCommunicator.Read">
+<area shape="rect" id="Node000001" title=" " alt="" coords="485,5,676,48"/>
+<area shape="rect" id="Node000002" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a25b5dc917b8ab44db2643e5c5db0fe60" title=" " alt="" coords="245,5,437,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,36,438,38,438,33,472,36"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="453,15,487,18,482,18,453,20"/>
+<area shape="rect" id="Node000003" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a4a8d21daf58c5e4336adfe1a0f30cc3d" title=" " alt="" coords="5,5,197,48"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="226,27,197,29,197,24,231,26"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="EpsilonCore.Motion.Move.New" name="EpsilonCore.Motion.Move.New">
+<area shape="rect" id="Node000001" title="Creates a new Move object and automatically sets the sample points and segments. It does many checks ..." alt="" coords="295,47,497,73"/>
+<area shape="rect" id="Node000002" href="$d5/d34/class_epsilon_core_1_1_commands_1_1_motion_commands_1_1_move_command.html#aaaedb5beb42057d880a91103cc6173f2" title="Returns a Move result that represents the move specified by this command, using the current positions..." alt="" coords="5,5,247,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,46,247,44,247,39,282,45"/>
+<area shape="rect" id="Node000003" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#aa8253565b6132fa6a1c80bb1c0cc6d9a" title=" " alt="" coords="20,72,232,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="277,75,233,83,232,78,282,74"/>
+</map>

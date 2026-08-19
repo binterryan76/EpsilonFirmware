@@ -1,0 +1,35 @@
+<map id="EpsilonCore.Communication.DataPacket.DataPacket" name="EpsilonCore.Communication.DataPacket.DataPacket">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1577,192,1769,234"/>
+<area shape="rect" id="Node000002" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aae3bfd6e734f88aa6738dbb7c7d9676f" title="Instantiates a new DataPacket with validation. Note: This copies the data array into an internal arra..." alt="" coords="1324,92,1516,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1613,184,1528,149,1497,137,1497,132,1530,144,1618,185"/>
+<area shape="rect" id="Node000008" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aa23cdd4fd53d8cf6cd1600af82459d44" title="Instantiates a new DataPacket with validation. Note: This copies the data array into an internal arra..." alt="" coords="1324,158,1516,201"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="1559,198,1516,195,1516,190,1564,198"/>
+<area shape="rect" id="Node000009" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a553e2bc1881c7eba77517225d72f08c5" title="Instantiates a blank DataPacket with validation." alt="" coords="1324,225,1516,268"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1564,227,1517,236,1516,231,1559,228"/>
+<area shape="rect" id="Node000010" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="1311,292,1529,334"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1618,241,1530,282,1497,294,1496,288,1528,277,1613,242"/>
+<area shape="rect" id="Node000003" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a25b5dc917b8ab44db2643e5c5db0fe60" title=" " alt="" coords="1019,38,1212,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1307,94,1212,79,1212,74,1312,93"/>
+<area shape="rect" id="Node000004" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a28728aa2c0f825f142b852416d514461" title=" " alt="" coords="728,9,920,52"/>
+<area shape="poly" id="edge8_Node000002_Node000004" title=" " alt="" coords="1375,82,1324,53,1293,39,1262,29,1173,13,1082,8,996,11,921,18,920,13,995,6,1082,3,1174,8,1264,24,1295,34,1326,48,1380,83"/>
+<area shape="rect" id="Node000006" href="$d0/d2f/class_epsilon_core_1_1_commands_1_1_test_commands_1_1_blink_pin_command.html#a77c7f874e418a48b95e56064cc74c618" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="988,105,1243,164"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="1306,121,1244,128,1243,123,1311,120"/>
+<area shape="rect" id="Node000007" href="$da/d6d/class_epsilon_core_1_1_commands_1_1_thermal_commands_1_1_set_target_temp_command.html#a95e26336674bf94c15e8e133b3b633f2" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="968,188,1263,246"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="1328,139,1312,149,1288,163,1264,178,1235,189,1233,184,1262,173,1286,159,1310,144,1323,141"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1001,57,920,51,920,46,1006,57"/>
+<area shape="rect" id="Node000005" href="$dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a4a8d21daf58c5e4336adfe1a0f30cc3d" title=" " alt="" coords="728,76,920,118"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="1001,74,921,87,920,82,1006,73"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="935,30,1021,41,1016,42,935,35"/>
+<area shape="rect" id="Node000011" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="995,292,1236,334"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1293,313,1237,316,1236,310,1298,313"/>
+<area shape="rect" id="Node000012" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="732,292,916,334"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="976,313,916,316,916,310,981,313"/>
+<area shape="rect" id="Node000013" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7ae9403462c6b24c7b5269486935b043" title="Starts the main loop to process commands." alt="" coords="497,292,680,334"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="714,313,681,316,681,310,719,313"/>
+<area shape="rect" id="Node000014" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a1a1bb4ef025cb02e84108d89d858eb5d" title="Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue p..." alt="" coords="266,292,449,334"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="479,313,450,316,449,310,484,313"/>
+<area shape="rect" id="Node000015" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#ab60d7ed415bd23eb2a585771901566ee" title=" " alt="" coords="15,258,208,301"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="247,299,208,295,208,290,253,298"/>
+<area shape="rect" id="Node000016" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#aa8253565b6132fa6a1c80bb1c0cc6d9a" title=" " alt="" coords="5,325,218,368"/>
+<area shape="poly" id="edge17_Node000014_Node000016" title=" " alt="" coords="248,328,218,334,218,329,253,327"/>
+</map>

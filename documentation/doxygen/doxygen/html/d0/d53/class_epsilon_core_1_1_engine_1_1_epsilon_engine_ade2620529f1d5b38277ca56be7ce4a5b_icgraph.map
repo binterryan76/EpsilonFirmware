@@ -1,0 +1,31 @@
+<map id="EpsilonCore.Engine.EpsilonEngine.EnqueueCommand" name="EpsilonCore.Engine.EpsilonEngine.EnqueueCommand">
+<area shape="rect" id="Node000001" title="Adds a command to the command machineQueue to be processed." alt="" coords="901,172,1085,215"/>
+<area shape="rect" id="Node000002" href="$d4/d4d/class_epsilon_core_1_1_commands_1_1_macros_1_1_board_macros_1_1_btt_octopus_pro_macros.html#a38f2694bff705553aa8ac9e8b23f65f0" title="Queues commands to add the BTT Octopus Pro board and all it&#39;s pins." alt="" coords="600,69,849,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="913,166,810,131,810,126,918,166"/>
+<area shape="rect" id="Node000004" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a2f3f27d072b3eda77718926d3ed26428" title=" " alt="" coords="608,172,841,215"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="883,194,842,196,841,191,889,193"/>
+<area shape="rect" id="Node000013" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a786a23c004eacec3bcc011cf14a98736" title=" " alt="" coords="596,296,853,339"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="934,221,774,298,772,293,929,222"/>
+<area shape="rect" id="Node000003" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#ab60d7ed415bd23eb2a585771901566ee" title=" " alt="" coords="324,56,516,99"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="582,90,517,87,516,81,587,88"/>
+<area shape="rect" id="Node000005" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a254db913f6a7b64dded4eb18c3c0534c" title=" " alt="" coords="292,123,548,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="590,176,549,172,548,167,595,175"/>
+<area shape="rect" id="Node000009" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0840cb53d64be68ecffca5c865215f2f" title=" " alt="" coords="297,205,542,264"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="590,212,543,221,542,215,595,211"/>
+<area shape="rect" id="Node000006" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0c0a647eb5152c7c1e2a8bf8cfe7da07" title=" " alt="" coords="5,5,244,48"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="297,116,290,113,275,100,266,87,257,74,242,62,222,51,220,46,245,58,261,71,270,84,279,96,293,108,302,115"/>
+<area shape="rect" id="Node000007" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#aa63a5ff29e38e83c8ff9b5552dbe5dc5" title=" " alt="" coords="5,72,244,115"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="274,125,236,118,235,113,279,122"/>
+<area shape="rect" id="Node000008" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a8b71840ea47b6cbea9ed6a9366f45e1b" title=" " alt="" coords="5,139,244,181"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="274,157,245,159,243,154,279,155"/>
+<area shape="rect" id="Node000010" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a904ec15126a6b9337862ee8239a31e72" title=" " alt="" coords="11,205,238,248"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="279,232,239,232,238,227,284,230"/>
+<area shape="rect" id="Node000011" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a1ceec3b9e1725b6c1c600c287e2790b8" title=" " alt="" coords="11,272,238,315"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="279,263,236,274,235,269,284,261"/>
+<area shape="rect" id="Node000012" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#aee19121615dbde32491cf3c51acf75c0" title=" " alt="" coords="11,339,238,381"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="302,270,293,278,279,290,270,303,261,316,245,329,222,340,220,336,242,324,257,312,266,300,275,287,290,274,297,273"/>
+<area shape="rect" id="Node000014" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a668fd279502b6187ba1694bd8e643016" title=" " alt="" coords="292,288,548,347"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="578,318,549,320,548,315,583,317"/>
+<area shape="rect" id="Node000015" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a6a462a5d6f2f380c4c951f48cb4f3a33" title=" " alt="" coords="297,371,542,429"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="631,343,531,373,530,367,626,344"/>
+</map>
