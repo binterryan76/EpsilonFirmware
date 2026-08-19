@@ -4,5 +4,5 @@ Epsilon Firmware is a firmware intended to operate machines such as 3D printers,
 
 Note: Epsilon Firmware is still early in development and large architectural code changes are still happening.
 
-## Architecture
+## Architecture {#md_epsilon_firmware_epsilon_firmware_introduction_architecture}
 Similar to Klipper, Epsilon Firmware is split into two sections, the host side (written in C#) and the microcontroller / MCU side written in C++. The host can control one or more machines, each with one or more microconrollers.

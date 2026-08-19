@@ -113,7 +113,7 @@ var NAVTREEINDEX7 =
 "d7/d2f/_epsilon_captain__wzh2xjmg__wpftmp_8_global_usings_8g_8cs.html":[2,0,1,1,1,0,0,380],
 "d7/d2f/_epsilon_captain__wzh2xjmg__wpftmp_8_global_usings_8g_8cs_source.html":[2,0,1,1,1,0,0,380],
 "d7/d31/md_epsilon_firmware_epsilon_firmware_events.html":[3,0,1,1],
-"d7/d31/md_epsilon_firmware_epsilon_firmware_events.html#autotoc_md5":[3,0,1,1,0],
+"d7/d31/md_epsilon_firmware_epsilon_firmware_events.html#md_epsilon_firmware_epsilon_firmware_events_event_types":[3,0,1,1,0],
 "d7/d36/_epsilon_captain__rfiszzmz__wpftmp_8_assembly_info_8cs.html":[2,0,1,1,1,0,0,295],
 "d7/d36/_epsilon_captain__rfiszzmz__wpftmp_8_assembly_info_8cs_source.html":[2,0,1,1,1,0,0,295],
 "d7/d37/_release_2net10_80_2_epsilon_core_8_global_usings_8g_8cs.html":[2,0,1,0,9,1,0,2],

@@ -122,7 +122,7 @@ var NAVTREEINDEX1 =
 "d1/db0/_epsilon_captain__papwtdhn__wpftmp_8_global_usings_8g_8cs.html":[2,0,1,1,1,0,0,266],
 "d1/db0/_epsilon_captain__papwtdhn__wpftmp_8_global_usings_8g_8cs_source.html":[2,0,1,1,1,0,0,266],
 "d1/dc7/md_epsilon_firmware_epsilon_firmware_introduction.html":[3,0,1,2],
-"d1/dc7/md_epsilon_firmware_epsilon_firmware_introduction.html#autotoc_md6":[3,0,1,2,0],
+"d1/dc7/md_epsilon_firmware_epsilon_firmware_introduction.html#md_epsilon_firmware_epsilon_firmware_introduction_architecture":[3,0,1,2,0],
 "d1/dca/_result_8cs.html":[2,0,1,0,6,4],
 "d1/dca/_result_8cs_source.html":[2,0,1,0,6,4],
 "d1/dcf/_epsilon_captain__iv3ktikl__wpftmp_8_global_usings_8g_8cs.html":[2,0,1,1,1,0,0,186],

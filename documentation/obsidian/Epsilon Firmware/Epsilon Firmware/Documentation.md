@@ -4,7 +4,7 @@ Documentation is split into two sections: [[#Doxygen]], and [[#Obsidian]].
 Doxygen is an open source tool to generate documentation based on the source code, it's xml comments, and additional markdown documentation (written with Obsidian). 
 https://www.doxygen.nl/
 
-### Generating Doxygen Documentation {#my_anchor}
+### Generating Doxygen Documentation
 To generate Doxygen documentation:
 1. Make sure GraphViz is installed.
 	1. https://graphviz.org/download/
@@ -49,4 +49,4 @@ https://obsidian.md/
 	1. https://obsidian.md/download
 2. Open Obsidian and click "Open folder as vault"
 3. Select directory \documentation\obsidian\Epsilon Firmware
-4. Edit the files as you normally would but note that for them to show up in Doxygen, you will have to do this: [[#Generating Doxygen Documentation]] [Link Text](@ref my_anchor)
+4. Edit the files as you normally would but note that for them to show up in Doxygen, you will have to do this: [[#Generating Doxygen Documentation]]

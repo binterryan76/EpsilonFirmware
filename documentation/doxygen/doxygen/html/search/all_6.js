@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['editing_20markdown_20documentation_0',['Editing Markdown Documentation',['../d5/d28/md_epsilon_firmware_epsilon_firmware_documentation.html#autotoc_md4',1,'']]],
+  ['editing_20markdown_20documentation_0',['Editing Markdown Documentation',['../d5/d28/md_epsilon_firmware_epsilon_firmware_documentation.html#md_epsilon_firmware_epsilon_firmware_documentation_editing_markdown_documentation',1,'']]],
   ['emergencyshutdown_1',['EmergencyShutdown',['../d6/d67/namespace_epsilon_core_1_1_commands.html#a9644795f0387aaf001178088e7650574aa599ea1d57cf683869d0836d2f992393',1,'EpsilonCore::Commands']]],
   ['endstop_2',['Endstop',['../d2/db9/class_epsilon_core_1_1_boards_1_1_endstop.html',1,'EpsilonCore.Boards.Endstop'],['../d8/d4e/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_endstop_command.html#a067bd38dd0c76a0cce1e221a2fc4f776',1,'EpsilonCore.Commands.SetupCommands.AddEndstopCommand.Endstop'],['../d2/db9/class_epsilon_core_1_1_boards_1_1_endstop.html#a848538be42fd40525cfb19e939b04934',1,'EpsilonCore.Boards.Endstop.Endstop()']]],
   ['endstop_2ecs_3',['Endstop.cs',['../d4/dcc/_endstop_8cs.html',1,'']]],
@@ -497,7 +497,7 @@ var searchData=
   ['epsilondesktop_5fxsmqjrgc_5fwpftmp_2eglobalusings_2eg_2ecs_494',['EpsilonDesktop_xsmqjrgc_wpftmp.GlobalUsings.g.cs',['../da/d0b/_epsilon_desktop__xsmqjrgc__wpftmp_8_global_usings_8g_8cs.html',1,'']]],
   ['epsilondesktop_5fxwgjavcw_5fwpftmp_2eassemblyinfo_2ecs_495',['EpsilonDesktop_xwgjavcw_wpftmp.AssemblyInfo.cs',['../d2/d49/_epsilon_desktop__xwgjavcw__wpftmp_8_assembly_info_8cs.html',1,'']]],
   ['epsilondesktop_5fxwgjavcw_5fwpftmp_2eglobalusings_2eg_2ecs_496',['EpsilonDesktop_xwgjavcw_wpftmp.GlobalUsings.g.cs',['../db/dca/_epsilon_desktop__xwgjavcw__wpftmp_8_global_usings_8g_8cs.html',1,'']]],
-  ['epsilonengine_497',['EpsilonEngine',['../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html',1,'EpsilonCore.Engine.EpsilonEngine'],['../da/d1c/md_epsilon_firmware_epsilon_core_architecture.html#autotoc_md0',1,'EpsilonEngine']]],
+  ['epsilonengine_497',['EpsilonEngine',['../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html',1,'EpsilonCore.Engine.EpsilonEngine'],['../da/d1c/md_epsilon_firmware_epsilon_core_architecture.html#md_epsilon_firmware_epsilon_core_architecture_epsilonengine',1,'EpsilonEngine']]],
   ['epsilonengine_2ecs_498',['EpsilonEngine.cs',['../d4/d5f/_epsilon_engine_8cs.html',1,'']]],
   ['epsilonplot_499',['EpsilonPlot',['../d3/d08/struct_epsilon_plotter_1_1_epsilon_plot.html',1,'EpsilonPlotter']]],
   ['epsilonplot_2ecs_500',['EpsilonPlot.cs',['../d0/d92/_epsilon_plot_8cs.html',1,'']]],
@@ -513,7 +513,7 @@ var searchData=
   ['errorlevel_2ecs_510',['ErrorLevel.cs',['../da/d23/_error_level_8cs.html',1,'']]],
   ['errormissingendstop_511',['ErrorMissingEndstop',['../d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aecf7fd643816d880dfa514dbfd32a49b',1,'EpsilonCore::Commands::QueuedCommand']]],
   ['errormissingkinematicsystem_512',['ErrorMissingKinematicSystem',['../d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a24e1e97fb000b7d49590cb3fe27c08ff',1,'EpsilonCore.Commands.QueuedCommand.ErrorMissingKinematicSystem(ICommand command, Machine machine, IKinematics kinematics)'],['../d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a952dae957254298203ad2ea94307c09b',1,'EpsilonCore.Commands.QueuedCommand.ErrorMissingKinematicSystem(ICommand command, Machine machine, uint kinematicSystemId)']]],
-  ['event_20types_513',['Event Types',['../d7/d31/md_epsilon_firmware_epsilon_firmware_events.html#autotoc_md5',1,'']]],
+  ['event_20types_513',['Event Types',['../d7/d31/md_epsilon_firmware_epsilon_firmware_events.html#md_epsilon_firmware_epsilon_firmware_events_event_types',1,'']]],
   ['events_514',['Events',['../d7/d31/md_epsilon_firmware_epsilon_firmware_events.html',1,'md_epsilon_firmware_epsilon_firmware']]],
   ['events_2emd_515',['Events.md',['../da/dd7/_events_8md.html',1,'']]],
   ['example2_516',['Example2',['../d4/d4f/class_epsilon_desktop_1_1_view_models_1_1_machine_view_model.html#ae2df67d420d4c752cabf586670bbd001',1,'EpsilonDesktop::ViewModels::MachineViewModel']]],

@@ -1,5 +1,3 @@
-C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:4: warning: explicit link request to 'Doxygen' could not be resolved
-C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:4: warning: explicit link request to 'Obsidian' could not be resolved
 C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:27: warning: Found unknown command '\doxygen'
 C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:27: warning: Found unknown command '\EpsilonFirmwareDoxyfile'
 C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:28: warning: Found unknown command '\Program'
@@ -11,7 +9,6 @@ C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for
 C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:53: warning: Found unknown command '\documentation'
 C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:53: warning: Found unknown command '\obsidian'
 C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:53: warning: Found unknown command '\Epsilon'
-C:/Users/binte/source/repos/EpsilonFirmware/documentation/obsidian_formatted_for_doxygen/Epsilon Firmware/Epsilon Firmware/Documentation.md:54: warning: explicit link request to 'Generating' could not be resolved
 C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument id from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections
 C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument name from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections
 C:/Users/binte/source/repos/EpsilonFirmware/src/EpsilonCore/Actuator/StepperMotor.cs:38: warning: argument boardId from the argument list of EpsilonCore.Actuator.StepperMotor.With has multiple @param documentation sections

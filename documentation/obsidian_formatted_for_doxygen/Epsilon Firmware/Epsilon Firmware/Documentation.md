@@ -1,12 +1,12 @@
 # Documentation {#md_epsilon_firmware_epsilon_firmware_documentation}
 
 You gotta document your documentation 😁
-Documentation is split into two sections: [[#Doxygen]], and [[#Obsidian]].
-## Doxygen
+Documentation is split into two sections: [Doxygen](@ref md_epsilon_firmware_epsilon_firmware_documentation_doxygen), and [Obsidian](@ref md_epsilon_firmware_epsilon_firmware_documentation_obsidian).
+## Doxygen {#md_epsilon_firmware_epsilon_firmware_documentation_doxygen}
 Doxygen is an open source tool to generate documentation based on the source code, it's xml comments, and additional markdown documentation (written with Obsidian). 
 https://www.doxygen.nl/
 
-### Generating Doxygen Documentation {#my_anchor}
+### Generating Doxygen Documentation {#md_epsilon_firmware_epsilon_firmware_documentation_generating_doxygen_documentation}
 To generate Doxygen documentation:
 1. Make sure GraphViz is installed.
 	1. https://graphviz.org/download/
@@ -38,17 +38,17 @@ To generate Doxygen documentation:
 			1. https://github.com/doxygen/doxygen/issues/8428
 			2. https://github.com/doxygen/doxygen/issues/10087
 
-### Viewing Doxygen Documentation
+### Viewing Doxygen Documentation {#md_epsilon_firmware_epsilon_firmware_documentation_viewing_doxygen_documentation}
 To view Doxygen documentation, run documentation\doxygen\LaunchDocs.bat
 This is just a shortcut to documentation\doxygen\html\index.html
 
-## Obsidian
+## Obsidian {#md_epsilon_firmware_epsilon_firmware_documentation_obsidian}
 Obsidian is a markdown editor/reader app. It is the preferred way to edit the additional markdown files added to Doxygen.
 https://obsidian.md/
 
-### Editing Markdown Documentation
+### Editing Markdown Documentation {#md_epsilon_firmware_epsilon_firmware_documentation_editing_markdown_documentation}
 1. Make sure obsidian is installed
 	1. https://obsidian.md/download
 2. Open Obsidian and click "Open folder as vault"
 3. Select directory \documentation\obsidian\Epsilon Firmware
-4. Edit the files as you normally would but note that for them to show up in Doxygen, you will have to do this: [[#Generating Doxygen Documentation]] [Link Text](@ref my_anchor)
+4. Edit the files as you normally would but note that for them to show up in Doxygen, you will have to do this: [Generating Doxygen Documentation](@ref md_epsilon_firmware_epsilon_firmware_documentation_generating_doxygen_documentation)
