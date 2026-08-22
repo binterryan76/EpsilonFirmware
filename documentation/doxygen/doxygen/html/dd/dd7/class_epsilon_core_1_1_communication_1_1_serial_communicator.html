@@ -159,6 +159,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a51b757d96951cde46dccb1c77b406827 pub_methods_class_epsilon_core_1_1_communication_1_1_i_communicator" id="r_a51b757d96951cde46dccb1c77b406827"><td class="memItemLeft">byte&#160;</td><td class="memItemRight"><a class="el" href="../../da/de4/class_epsilon_core_1_1_communication_1_1_i_communicator.html#a51b757d96951cde46dccb1c77b406827">IncrementAndReturnNextSequenceNumber</a> ()</td></tr>
 <tr class="memdesc:a51b757d96951cde46dccb1c77b406827 pub_methods_class_epsilon_core_1_1_communication_1_1_i_communicator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next usable sequence number for a command being sent with this ICommunicator.  <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pac-methods" class="groupheader"><a id="pac-methods" name="pac-methods"></a>
+Package Functions</h2></td></tr>
+<tr class="memitem:ace436ad4ecf24fcefd6c5405ffbe4ade" id="r_ace436ad4ecf24fcefd6c5405ffbe4ade"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ace436ad4ecf24fcefd6c5405ffbe4ade">SerialCommunicator</a> (string name, uint baudRate, string portNameIncludeString, uint boardCommandBufferSize, uint machineId)</td></tr>
+<tr class="memdesc:ace436ad4ecf24fcefd6c5405ffbe4ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of SerialCommunicator.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ae3dfd4d28fddba5120a35bfbc4f662d6" id="r_ae3dfd4d28fddba5120a35bfbc4f662d6"><td class="memItemLeft">uint&#160;</td><td class="memItemRight"><a class="el" href="#ae3dfd4d28fddba5120a35bfbc4f662d6">BaudRate</a><code> [get]</code></td></tr>
@@ -206,6 +211,64 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d16/_serial_communicator_8cs_source.html#l00011">11</a> of file <a class="el" href="../../dd/d16/_serial_communicator_8cs_source.html">SerialCommunicator.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ace436ad4ecf24fcefd6c5405ffbe4ade" name="ace436ad4ecf24fcefd6c5405ffbe4ade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace436ad4ecf24fcefd6c5405ffbe4ade">&#9670;&#160;</a></span>SerialCommunicator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EpsilonCore.Communication.SerialCommunicator.SerialCommunicator </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>baudRate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>portNameIncludeString</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>boardCommandBufferSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>machineId</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel package">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new instance of SerialCommunicator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+    <tr><td class="paramname">baudRate</td><td>Baud rate of the UART connection.</td></tr>
+    <tr><td class="paramname">portNameIncludeString</td><td>Name of the COM port.</td></tr>
+    <tr><td class="paramname">boardCommandBufferSize</td><td>The size of the microcontroller's command buffer in bytes.</td></tr>
+    <tr><td class="paramname">machineId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d16/_serial_communicator_8cs_source.html#l00021">21</a> of file <a class="el" href="../../dd/d16/_serial_communicator_8cs_source.html">SerialCommunicator.cs</a>.</p>
+
+</div>
+</div>
 <a id="a48b27e0bcdf95dd7f483d9bf1908f892" name="a48b27e0bcdf95dd7f483d9bf1908f892"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a48b27e0bcdf95dd7f483d9bf1908f892">&#9670;&#160;</a></span>~SerialCommunicator()</h2>
 

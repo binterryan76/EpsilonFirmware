@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['led_0',['Led',['../db/d8c/class_epsilon_core_1_1_boards_1_1_led.html#a1fc00cf85a5cbdf9671321ad0084472b',1,'EpsilonCore::Boards::Led']]],
-  ['log_1',['Log',['../d9/d58/class_epsilon_core_1_1_display_1_1_debug_console_logger.html#ab581239e6522bd4e6bb19e511c8ac59d',1,'EpsilonCore.Display.DebugConsoleLogger.Log()'],['../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834',1,'EpsilonCore.Display.IResultMessageLogger.Log()'],['../da/ded/class_epsilon_desktop_1_1_models_1_1_textbox_result_logger.html#a193e3bfeabf1445bffc6e81376c1cc00',1,'EpsilonDesktop.Models.TextboxResultLogger.Log(string message)'],['../da/ded/class_epsilon_desktop_1_1_models_1_1_textbox_result_logger.html#ade208e6e845572abee03cb42d9ed91f4',1,'EpsilonDesktop.Models.TextboxResultLogger.Log(QueuedCommand queuedCommand)'],['../de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#a945aec81d29555825bf8f5b8baaff405',1,'EpsilonDesktop.ViewModels.MainViewModel.Log()']]]
+  ['kinematicscartesian3d_0',['KinematicsCartesian3D',['../dc/dfc/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_kinematics_cartesian3_d.html#a642c8bb5b03542b12420cb66807b17f2',1,'EpsilonCore::Motion::Kinematics::KinematicsCartesian3D']]],
+  ['kinematicsscara2d_1',['KinematicsScara2D',['../d7/db8/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_kinematics_scara2_d.html#a12cbedf48179a4f78ef0ce85eb359466',1,'EpsilonCore::Motion::Kinematics::KinematicsScara2D']]]
 ];

@@ -1,0 +1,9 @@
+<map id="EpsilonCore.Helpers.Option&#45;1&#45;g.Option" name="EpsilonCore.Helpers.Option&#45;1&#45;g.Option">
+<area shape="rect" id="Node000001" title="Constructs an option from a possible value." alt="" coords="237,72,420,115"/>
+<area shape="rect" id="Node000002" href="$dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a9583bacc2dbfe0d6adb4b06e62238a9a" title="Converts an option of one type to an option of another." alt="" coords="5,5,189,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,68,174,51,174,46,240,66"/>
+<area shape="rect" id="Node000003" href="$dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a631f009ade71af3e0269f36bf4a27ef3" title="Converts an option of one type to an option of another asychronously." alt="" coords="5,72,189,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,94,190,96,189,91,224,93"/>
+<area shape="rect" id="Node000004" href="$dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a1b851213042730c3ead2a0e010127231" title="Automatically converts &lt;T&gt; to Option&lt;T&gt; for easy return." alt="" coords="5,139,189,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="240,119,174,141,173,135,235,120"/>
+</map>

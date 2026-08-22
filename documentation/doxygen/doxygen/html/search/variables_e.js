@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['value_0',['value',['../d5/d9b/struct_epsilon_core_1_1_helpers_1_1_optional_result-1-g.html#ad49577956c7439bac4db38cc1c342f02',1,'EpsilonCore.Helpers.OptionalResult-1-g.value'],['../d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a93fe856385aa7154eeece2d0409d14f1',1,'EpsilonCore.Helpers.Result-1-g.value']]],
+  ['value_0',['value',['../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5',1,'EpsilonCore.Helpers.Option-1-g.value'],['../d5/d9b/struct_epsilon_core_1_1_helpers_1_1_optional_result-1-g.html#ad49577956c7439bac4db38cc1c342f02',1,'EpsilonCore.Helpers.OptionalResult-1-g.value'],['../d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a93fe856385aa7154eeece2d0409d14f1',1,'EpsilonCore.Helpers.Result-1-g.value']]],
   ['very_5fsmall_5facceleration_1',['VERY_SMALL_ACCELERATION',['../de/d2f/class_epsilon_core_1_1_helpers_1_1_constants.html#af8505efb63f541b27411792bb0bbc181',1,'EpsilonCore::Helpers::Constants']]],
   ['very_5fsmall_5fangle_2',['VERY_SMALL_ANGLE',['../de/d2f/class_epsilon_core_1_1_helpers_1_1_constants.html#af89c5d61df582ea0b364b52c1bbcbbec',1,'EpsilonCore::Helpers::Constants']]],
   ['very_5fsmall_5fduration_3',['VERY_SMALL_DURATION',['../de/d2f/class_epsilon_core_1_1_helpers_1_1_constants.html#a60149bb508add9f75fd3daf88e17dd03',1,'EpsilonCore::Helpers::Constants']]],

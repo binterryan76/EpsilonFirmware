@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Motion.Kinematics.CompositeKinematicSystem.AddKinematics" name="EpsilonCore.Motion.Kinematics.CompositeKinematicSystem.AddKinematics">
+<area shape="rect" id="Node000001" title="Returns a new CompositeKinematicSystem with an additional IKinematics. It returns a Result&lt;T&gt; because..." alt="" coords="5,13,285,56"/>
+<area shape="rect" id="Node000002" href="$d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a54de8afd73e5322ee5a3a2827bb5cf35" title=" " alt="" coords="333,5,587,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,32,319,35,314,35,285,37"/>
+</map>

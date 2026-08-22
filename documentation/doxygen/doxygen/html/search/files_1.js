@@ -8,7 +8,7 @@ var searchData=
   ['addledcommand_2ecs_5',['AddLedCommand.cs',['../dd/d64/_add_led_command_8cs.html',1,'']]],
   ['addlinearaxiscommand_2ecs_6',['AddLinearAxisCommand.cs',['../d4/d62/_add_linear_axis_command_8cs.html',1,'']]],
   ['addpincommand_2ecs_7',['AddPinCommand.cs',['../da/ddb/_add_pin_command_8cs.html',1,'']]],
-  ['app_2eg_2ecs_8',['App.g.cs',['../da/dbb/_debug_2net10_80-windows_2_app_8g_8cs.html',1,'(Global Namespace)'],['../df/d70/_release_2net10_80-windows_2_app_8g_8cs.html',1,'(Global Namespace)']]],
+  ['app_2eg_2ecs_8',['App.g.cs',['../d7/d66/_app_8g_8cs.html',1,'']]],
   ['app_2eg_2ei_2ecs_9',['App.g.i.cs',['../d8/d51/_app_8g_8i_8cs.html',1,'']]],
   ['app_2examl_2ecs_10',['App.xaml.cs',['../db/da1/_app_8xaml_8cs.html',1,'']]],
   ['architecture_2emd_11',['Architecture.md',['../da/d0a/_architecture_8md.html',1,'']]],

@@ -1,12 +1,14 @@
 <map id="EpsilonCore.Motion.Move.CalculateDsDtValues" name="EpsilonCore.Motion.Move.CalculateDsDtValues">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,56,181,99"/>
-<area shape="rect" id="Node000002" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="229,5,446,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,53,228,41,264,35,259,37,229,47,182,58"/>
+<area shape="rect" id="Node000002" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="495,5,712,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,53,228,41,357,26,482,21,477,22,358,32,229,47,174,58"/>
 <area shape="rect" id="Node000004" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="250,56,426,99"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,75,237,77,232,78,181,80"/>
-<area shape="rect" id="Node000005" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="229,123,447,149"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="181,96,229,108,264,119,259,119,228,113,181,102"/>
-<area shape="rect" id="Node000003" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="495,27,689,69"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,29,482,35,477,35,447,34"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="426,65,482,61,477,61,427,70"/>
+<area shape="rect" id="Node000006" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="229,123,447,149"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="181,96,229,108,264,119,259,119,228,113,181,102"/>
+<area shape="rect" id="Node000003" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598" title=" " alt="" coords="760,27,955,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="713,29,747,35,742,35,713,34"/>
+<area shape="rect" id="Node000005" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="506,56,701,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="426,75,494,77,488,78,426,80"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="701,63,748,61,742,61,702,69"/>
 </map>

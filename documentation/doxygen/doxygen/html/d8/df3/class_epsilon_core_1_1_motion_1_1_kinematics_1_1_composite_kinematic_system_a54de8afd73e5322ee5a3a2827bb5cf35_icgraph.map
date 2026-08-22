@@ -1,0 +1,7 @@
+<map id="EpsilonCore.Motion.Kinematics.CompositeKinematicSystem.CompositeKinematicSystem" name="EpsilonCore.Motion.Kinematics.CompositeKinematicSystem.CompositeKinematicSystem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="625,5,879,64"/>
+<area shape="rect" id="Node000002" href="$d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#aac487d00324884a61b12a8d39fb2f2ff" title="Returns a new CompositeKinematicSystem with an additional IKinematics. It returns a Result&lt;T&gt; because..." alt="" coords="298,13,577,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="607,35,578,37,577,32,612,35"/>
+<area shape="rect" id="Node000003" href="$d0/dc3/class_epsilon_core_1_1_commands_1_1_setup_commands_1_1_add_kinematics_command.html#a11b6bb40b5bc07785c9fc80d43ba1e21" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,5,250,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="279,35,250,37,250,32,285,34"/>
+</map>

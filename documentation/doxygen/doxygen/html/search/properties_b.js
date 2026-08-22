@@ -12,5 +12,6 @@ var searchData=
   ['minendstopid_9',['MinEndstopId',['../d6/da8/class_epsilon_core_1_1_motion_1_1_endstop_set.html#a853425b6e3cd03f0bf4802a0742e313f',1,'EpsilonCore::Motion::EndstopSet']]],
   ['minormaxstr_10',['MinOrMaxStr',['../d2/db9/class_epsilon_core_1_1_boards_1_1_endstop.html#af365faba42bf8fdcd7ab4c489430d64a',1,'EpsilonCore::Boards::Endstop']]],
   ['minutes2_11',['Minutes2',['../d2/d7b/struct_units_net_helpers_1_1_duration2.html#a9784761e4863d113e4b98312b1219dd5',1,'UnitsNetHelpers::Duration2']]],
-  ['motionsystem_12',['MotionSystem',['../d9/d2f/class_epsilon_core_1_1_machines_1_1_machine.html#a99723a729e599e5d23fc9f437bfe2612',1,'EpsilonCore::Machines::Machine']]]
+  ['motionsystem_12',['MotionSystem',['../d9/d2f/class_epsilon_core_1_1_machines_1_1_machine.html#a99723a729e599e5d23fc9f437bfe2612',1,'EpsilonCore::Machines::Machine']]],
+  ['movequeue_13',['MoveQueue',['../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#a3772bd7471192b626acfa709fe80dfb6',1,'EpsilonCore::Engine::MachineQueue']]]
 ];

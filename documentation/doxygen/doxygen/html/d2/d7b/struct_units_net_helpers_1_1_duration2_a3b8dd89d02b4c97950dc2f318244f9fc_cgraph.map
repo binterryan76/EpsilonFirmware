@@ -1,7 +1,9 @@
 <map id="UnitsNetHelpers.Duration2.ToUnit" name="UnitsNetHelpers.Duration2.ToUnit">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,188,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,188,77"/>
 <area shape="rect" id="Node000002" href="$d2/d7b/struct_units_net_helpers_1_1_duration2.html#a5d645de7d4acc6344f1d9782a4dea7dd" title="Convert this quantity to the given unit." alt="" coords="236,13,434,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,24,223,26,217,27,188,29"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,42,223,40,217,41,189,47"/>
+<area shape="rect" id="Node000004" href="$d2/d7b/struct_units_net_helpers_1_1_duration2.html#a3f3745de914f7bcd2698443bde8643fb" title=" " alt="" coords="244,64,426,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,65,231,72,226,72,188,70"/>
 <area shape="rect" id="Node000003" href="$d2/d7b/struct_units_net_helpers_1_1_duration2.html#a63b8ba17b378ca4ad86d4064173cba40" title=" " alt="" coords="482,5,664,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="434,24,469,27,464,27,434,29"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="434,24,469,26,464,27,435,29"/>
 </map>

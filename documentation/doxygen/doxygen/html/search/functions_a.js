@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kinematicscartesian3d_0',['KinematicsCartesian3D',['../dc/dfc/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_kinematics_cartesian3_d.html#a642c8bb5b03542b12420cb66807b17f2',1,'EpsilonCore::Motion::Kinematics::KinematicsCartesian3D']]],
-  ['kinematicsscara2d_1',['KinematicsScara2D',['../d7/db8/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_kinematics_scara2_d.html#a12cbedf48179a4f78ef0ce85eb359466',1,'EpsilonCore::Motion::Kinematics::KinematicsScara2D']]]
+  ['jogaxescontrol_0',['JogAxesControl',['../d2/db2/class_epsilon_desktop_1_1_views_1_1_jog_axes_control.html#ab97f265b25cd30bf3590be8a7890cfd9',1,'EpsilonDesktop::Views::JogAxesControl']]],
+  ['jogaxesviewmodel_1',['JogAxesViewModel',['../dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#af9fb95ef0d57cfb590a9addb08ac5777',1,'EpsilonDesktop::ViewModels::JogAxesViewModel']]]
 ];

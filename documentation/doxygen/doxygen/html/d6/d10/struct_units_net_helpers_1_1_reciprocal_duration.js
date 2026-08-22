@@ -1,5 +1,6 @@
 var struct_units_net_helpers_1_1_reciprocal_duration =
 [
+    [ "ReciprocalDuration", "d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html#a06cb3fba84c6e4aca32988542a5ca5f8", null ],
     [ "As", "d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html#acd119912f9c8cd43fe7197bc52da6699", null ],
     [ "As", "d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html#ab88901ac03f77179765b141eeaff00df", null ],
     [ "Equals", "d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html#a2d81d4eea3728dbef539d207f5e9d4c8", null ],

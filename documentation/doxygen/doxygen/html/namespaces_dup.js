@@ -1,6 +1,5 @@
 var namespaces_dup =
 [
-    [ "EpsilonCaptain", "d0/db2/namespace_epsilon_captain.html", "d0/db2/namespace_epsilon_captain" ],
     [ "EpsilonCore", "d1/d45/namespace_epsilon_core.html", "d1/d45/namespace_epsilon_core" ],
     [ "EpsilonDesktop", "dc/dcf/namespace_epsilon_desktop.html", "dc/dcf/namespace_epsilon_desktop" ],
     [ "EpsilonPlotter", "d0/d85/namespace_epsilon_plotter.html", "d0/d85/namespace_epsilon_plotter" ],

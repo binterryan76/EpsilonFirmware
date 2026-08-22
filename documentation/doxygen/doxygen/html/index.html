@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Epsilon Firmware: Main Page</title>
+<title>Epsilon Firmware: README</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -109,10 +109,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Epsilon Firmware Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">README </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_epsilon_firmware_readme"></a></p>
+<h1 class="doxsection"><a class="anchor" id="md_epsilon_firmware_readme_introduction"></a>
+Introduction</h1>
+<p>Epsilon Firmware is a firmware intended to operate machines such as 3D printers, pen plotters, or CNC machines. It takes inspiration from RepRap Firmware and Klipper Firmware with several additional features. The motivation for making new firmware came when I tried building a large, complex 3D printer and found it difficult to set up the machine to support the complex behavior using just G-code. One of the primary goals of Epsilon Firmware is to make complex customization easier.</p>
+<p>Note: Epsilon Firmware is still early in development and large architectural code changes are still happening.</p>
+<p>To understand why Epsilon Firmware is being made, see <a class="el" href="db/db0/md_epsilon_firmware_epsilon_firmware_unique_problems_epsilon_firmware_attempts_to_solve.html" title="Unique Problems Epsilon Firmware Attempts To Solve">Unique Problems Epsilon Firmware Attempts To Solve</a></p>
+<h1 class="doxsection"><a class="anchor" id="md_epsilon_firmware_readme_architecture"></a>
+Architecture</h1>
+<p>Similar to Klipper, Epsilon Firmware is split into two sections, the host side (written in C#) and the microcontroller / MCU side written in C++. The host can control one or more machines. Each machine can have one or more microcontrollers. The main application is the user interface which creates an instance of the EpsilonEngine class. </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

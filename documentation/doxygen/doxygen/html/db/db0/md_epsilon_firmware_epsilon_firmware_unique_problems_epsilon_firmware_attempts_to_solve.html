@@ -114,6 +114,35 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/db0/md_epsi
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__c_1_2_users_2binte_2source_2repos_2_epsilon_firmware_2documentation_2obsidian__formatted__for__doxygen_2_epsilon_01_firmware_2_epsilon_01_firmware_2_unique_01_problems_01_epsilon_01_firmware_01_attempts_01_to_01_solve"></a></p>
+<h1 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_unique_problems_epsilon_firmware_attempts_to_solve_problems_with_g_code"></a>
+Problems with G-code</h1>
+<ul>
+<li>G-code is difficult to read because there are so many unique commands which aren't always the same from machine to machine. You probably don't know what <span class="tt">M584 X0 Y1 Z2:3</span> does off the top of your head.</li>
+<li>G-code was created to be as concise as possible while still being human readable with training to save bytes on old, slow computers (some CNC machines from the 1970s are still running). Computers are much faster now so this performance advantage is negligible.</li>
+<li>Using meta-G-code commands is difficult because the G-code language wasn't designed to support such complex situations. Some machines require the use of meta G-code commands which can be used like a traditional programming language to store data in variables, perform loops, conditional logic, etc.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_unique_problems_epsilon_firmware_attempts_to_solve_solution"></a>
+Solution</h2>
+<p>We address all these issues by exposing C# scripting so the machine can be controlled with actual C# scripts which supports far more than meta-G-code commands ever could. For example, you can create strongly typed functions, and custom data types. We can then create a library of functions to control machines with a more readable language. Most slicers only output G-code so handling G-Code is still required but code that is written by hand (such as macros) should use a simpler, easier-to-read language and I suggest that C# should be that language despite it adding some syntax overhead.</p>
+<h3 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_unique_problems_epsilon_firmware_attempts_to_solve_ideal_syntax"></a>
+Ideal Syntax</h3>
+<p>G-code would ideally look roughly like this: </p><div class="fragment"><div class="line"><span class="preprocessor"> #</span></div>
+<div class="line">Machine.EnqueueCommands(</div>
+<div class="line">[</div>
+<div class="line">    Home(x, y),</div>
+<div class="line">    Move(x:10, y:20, speed:100),</div>
+<div class="line">    Move(x:15, y:30),</div>
+<div class="line">];</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_unique_problems_epsilon_firmware_attempts_to_solve_stop_methods"></a>
+Stop Methods</h1>
+<ul>
+<li>Hardware emergency stop</li>
+<li>Software emergency stop</li>
+<li>Pause</li>
+<li>Cancel current job </li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_unique_problems_epsilon_firmware_attempts_to_solve_other_issues"></a>
+Other Issues</h1>
 <ul>
 <li>Doing a Z baby step move during a single slow print move will not occur until the move finishes.<ul>
 <li>We address this by allowing some commands to be processed immediately when received.</li>
@@ -131,20 +160,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/db0/md_epsi
 <li>We address this by supporting composite kinematic systems where commands can be used to set up a kinematic system which is a combination of other kinematic systems. Adding a new base kinematic system is as simple as creating a new C# record which implements the IKinematics interface.</li>
 </ul>
 </li>
-<li>Customizing firmware is confusing and difficult.<ul>
-<li>We address this by being incredibly picky about code readability and having excellent documentation.</li>
-</ul>
-</li>
-<li>Using meta-G-code commands is difficult. Some machines require the use of meta G-code commands which can be used like a traditional programming language to store data in variables, perform loops, conditional logic, etc.<ul>
-<li>We address this by exposing C# scripting so the machine can be controlled with actual C# scripts which supports far more than meta-G-code commands ever could. For example, you can create strongly typed functions, and custom data types.</li>
+<li>Customizing firmware source code is confusing and difficult.<ul>
+<li>We address this by being picky about code readability and having excellent documentation.</li>
 </ul>
 </li>
 <li>Using the daemon.gcode in RepRap Firmware is slow.<ul>
-<li>We address this by using the C# event system.</li>
+<li>We address this by using the C# <a class="el" href="../../d0/d74/md_epsilon_firmware_epsilon_firmware_event_system.html" title="Event System">Event System</a>.</li>
 </ul>
 </li>
 <li>Making a machine that does certain things when some conditions are met is difficult.<ul>
-<li>We address this by using the C# event system. </li>
+<li>We address this by using the C# <a class="el" href="../../d0/d74/md_epsilon_firmware_epsilon_firmware_event_system.html" title="Event System">Event System</a>. </li>
 </ul>
 </li>
 </ul>

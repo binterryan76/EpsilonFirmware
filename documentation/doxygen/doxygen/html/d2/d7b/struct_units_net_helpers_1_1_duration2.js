@@ -1,5 +1,6 @@
 var struct_units_net_helpers_1_1_duration2 =
 [
+    [ "Duration2", "d2/d7b/struct_units_net_helpers_1_1_duration2.html#a3f3745de914f7bcd2698443bde8643fb", null ],
     [ "As", "d2/d7b/struct_units_net_helpers_1_1_duration2.html#a5d645de7d4acc6344f1d9782a4dea7dd", null ],
     [ "As", "d2/d7b/struct_units_net_helpers_1_1_duration2.html#a2ab386426b66303a760ca3f269dd52ea", null ],
     [ "Equals", "d2/d7b/struct_units_net_helpers_1_1_duration2.html#ab63512c37d92127f59564a53eb479d44", null ],

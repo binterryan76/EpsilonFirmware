@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Epsilon Firmware", "index.html", [
+    [ "README", "index.html", "index" ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [
@@ -55,20 +56,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d1/d23/_epsilon_captain__leerhnfz__wpftmp_8_global_usings_8g_8cs.html",
-"d2/d7b/struct_units_net_helpers_1_1_duration2.html#a6df9dbc05be2910bb5c7ac1da230ebfe",
-"d3/d4d/class_epsilon_core_1_1_units_1_1_display_units.html#aa6b000a3c83adfd804fb404d4c6d2180",
-"d4/d4d/class_epsilon_core_1_1_commands_1_1_macros_1_1_board_macros_1_1_btt_octopus_pro_macros.html#a019fff6f39e355c21f60ffc8c2a3da25",
-"d4/d73/_epsilon_captain__f1el4ylc__wpftmp_8_assembly_info_8cs_source.html",
-"d5/dd6/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_linear.html#a0faa1c7d7543c97295fb0f0629e35e6b",
-"d6/de0/struct_units_net_helpers_1_1_reciprocal_duration2.html#a1aa2ce15fe973a7f8a2068859cf02845",
-"d7/de0/_epsilon_captain__2bx3zp3t__wpftmp_8_assembly_info_8cs.html",
-"d8/d9b/_epsilon_captain__hpe2ntom__wpftmp_8_global_usings_8g_8cs_source.html",
-"da/d6d/class_epsilon_core_1_1_commands_1_1_thermal_commands_1_1_set_target_temp_command.html#a2c464607643e8968c69adf82d9151f77",
-"db/d5e/interface_epsilon_core_1_1_motion_1_1_kinematics_1_1_i_kinematics.html#adc9785118df436bf8ad28fc2a05b0237",
-"dc/dae/_epsilon_captain__iccsz1u5__wpftmp_8_assembly_info_8cs_source.html",
-"dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a8765f5d8086818835495c4193a0e6dae",
-"df/d9b/_epsilon_captain__p42ehp5z__wpftmp_8_assembly_info_8cs.html"
+"d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e",
+"d2/dd3/namespace_epsilon_core_1_1_units.html",
+"d3/def/class_epsilon_core_1_1_units_1_1_default_units.html#ad3882f205b003dd70389bda2e3db048b",
+"d4/d4f/class_epsilon_desktop_1_1_view_models_1_1_machine_view_model.html#aa1b7503197a25d4477a97934645e755c",
+"d6/d10/struct_units_net_helpers_1_1_reciprocal_duration.html#aac00087c1e683c31fd8219d1f6701bb7",
+"d7/d71/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_ids.html#a66cd134ac34f2c57adec198039fe3a99",
+"d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a0e3c54be2c512f31b34772db2a5f5e81",
+"da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#a061593c422f24769f73b256e61667699",
+"db/d6c/class_epsilon_core_1_1_thermal_1_1_thermometer.html#a29cdc358688a454bd8d4e031108198ef",
+"dc/df6/class_epsilon_desktop_1_1_view_models_1_1_axis_rotational_buttons_view_model.html#a4d20e5de7adeac017fe877da40ea68e9",
+"df/dae/class_epsilon_core_1_1_boards_1_1_board.html#a6288d28444a79cbbff983967391fd7d5a8092f0b8f17fd364c0804a39ae56f5de"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -1,5 +1,6 @@
 var class_epsilon_core_1_1_communication_1_1_serial_communicator =
 [
+    [ "SerialCommunicator", "dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#ace436ad4ecf24fcefd6c5405ffbe4ade", null ],
     [ "~SerialCommunicator", "dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a48b27e0bcdf95dd7f483d9bf1908f892", null ],
     [ "Connect", "dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#a25b5dc917b8ab44db2643e5c5db0fe60", null ],
     [ "Disconnect", "dd/dd7/class_epsilon_core_1_1_communication_1_1_serial_communicator.html#ac6cf47be00e379977ebb4b7de41cbdf4", null ],

@@ -1,90 +1,96 @@
 <map id="EpsilonDesktop.ViewModels.MainViewModel.TestMoveQueue" name="EpsilonDesktop.ViewModels.MainViewModel.TestMoveQueue">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,496,218,539"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,555,218,597"/>
 <area shape="rect" id="Node000002" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a330ee787e788e7a45b32f5ecb3d6dff7" title=" " alt="" coords="1352,5,1588,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,495,135,443,166,374,208,300,234,264,264,233,362,142,407,108,451,81,498,60,550,46,610,37,680,35,914,35,1137,31,1339,25,1334,27,1137,36,914,40,680,40,610,43,551,51,499,65,453,86,410,113,366,147,268,237,239,268,213,302,170,376,140,445,122,497"/>
-<area shape="rect" id="Node000003" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a1a1bb4ef025cb02e84108d89d858eb5d" title="Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue p..." alt="" coords="312,247,496,289"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,494,366,297,366,302,140,498"/>
-<area shape="rect" id="Node000010" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="1646,235,1860,277"/>
-<area shape="poly" id="edge48_Node000001_Node000010" title=" " alt="" coords="201,493,265,481,381,467,472,459,680,456,1175,456,1240,459,1298,465,1395,477,1441,479,1488,473,1539,458,1597,431,1614,418,1623,403,1631,385,1644,365,1717,289,1721,287,1648,368,1636,388,1628,405,1618,421,1600,436,1541,463,1489,478,1442,484,1395,483,1297,470,1240,464,1175,461,680,461,472,464,382,472,266,487,204,498"/>
-<area shape="rect" id="Node000033" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9a636956b3537895bb5ad565e8cd39ad" title="Returns the latest Machine based on it&#39;s ID. Returns null if it cannot be found." alt="" coords="312,496,496,539"/>
-<area shape="poly" id="edge40_Node000001_Node000033" title=" " alt="" coords="217,515,299,516,294,519,219,520"/>
-<area shape="rect" id="Node000034" href="$da/d6c/class_epsilon_core_1_1_motion_1_1_motion_system_precisions.html#a0255b4712083b6701a25f1da74fc7e34" title=" " alt="" coords="266,563,542,605"/>
-<area shape="poly" id="edge41_Node000001_Node000034" title=" " alt="" coords="208,537,295,558,290,560,208,542"/>
-<area shape="rect" id="Node000035" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a0e3c54be2c512f31b34772db2a5f5e81" title="Creates a new Move object and automatically sets the sample points and segments. It does many checks ..." alt="" coords="2196,609,2399,636"/>
-<area shape="poly" id="edge42_Node000001_Node000035" title=" " alt="" coords="137,536,195,579,230,599,267,615,327,633,379,643,425,648,469,649,562,644,680,640,1754,640,1982,636,2184,629,2178,630,1982,641,1754,645,680,645,562,650,470,654,425,654,378,648,326,638,265,620,227,604,192,583,137,542"/>
-<area shape="rect" id="Node000039" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a491fb41fd0580e0523e1ec133ed29ce3" title="Writes the move queue to a csv file. Has columns for time, axis positions, actuator positions,..." alt="" coords="297,680,510,723"/>
-<area shape="poly" id="edge49_Node000001_Node000039" title=" " alt="" coords="131,537,188,598,226,631,267,659,294,674,289,674,264,664,223,635,185,602,130,542"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,554,122,481,147,377,166,321,192,265,224,212,264,166,314,121,361,87,406,62,452,45,500,34,553,28,680,25,914,25,1339,21,1334,23,914,31,680,31,553,34,501,39,453,50,408,67,364,91,317,125,268,170,228,216,197,267,171,323,152,379,127,482,117,555"/>
+<area shape="rect" id="Node000003" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a1a1bb4ef025cb02e84108d89d858eb5d" title="Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue p..." alt="" coords="312,180,496,223"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,553,375,233,378,237,132,556"/>
+<area shape="rect" id="Node000012" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="1670,373,1883,416"/>
+<area shape="poly" id="edge51_Node000001_Node000012" title=" " alt="" coords="218,558,431,535,556,526,680,523,1175,523,1295,527,1390,531,1435,530,1482,525,1535,514,1598,497,1636,483,1672,464,1734,426,1739,424,1675,468,1638,488,1599,503,1537,520,1483,530,1435,535,1390,536,1295,532,1175,528,680,528,556,531,432,540,219,564"/>
+<area shape="rect" id="Node000036" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9a636956b3537895bb5ad565e8cd39ad" title="Returns the latest Machine based on it&#39;s ID. Returns null if it cannot be found." alt="" coords="312,613,496,656"/>
+<area shape="poly" id="edge43_Node000001_Node000036" title=" " alt="" coords="218,595,299,612,294,614,219,600"/>
+<area shape="rect" id="Node000037" href="$da/d6c/class_epsilon_core_1_1_motion_1_1_motion_system_precisions.html#a0255b4712083b6701a25f1da74fc7e34" title=" " alt="" coords="266,680,542,723"/>
+<area shape="poly" id="edge44_Node000001_Node000037" title=" " alt="" coords="143,595,200,631,267,666,286,675,281,675,265,670,197,636,143,601"/>
+<area shape="rect" id="Node000038" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a0e3c54be2c512f31b34772db2a5f5e81" title="Creates a new Move object and automatically sets the sample points and segments. It does many checks ..." alt="" coords="2244,591,2446,617"/>
+<area shape="poly" id="edge45_Node000001_Node000038" title=" " alt="" coords="218,573,680,573,1778,573,2019,580,2231,595,2226,595,2019,585,1778,579,680,579,218,579"/>
+<area shape="rect" id="Node000042" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a491fb41fd0580e0523e1ec133ed29ce3" title="Writes the move queue to a csv file. Has columns for time, axis positions, actuator positions,..." alt="" coords="297,747,510,789"/>
+<area shape="poly" id="edge52_Node000001_Node000042" title=" " alt="" coords="128,595,185,664,223,701,267,732,285,743,280,743,264,737,220,705,181,668,127,600"/>
 <area shape="rect" id="Node000004" href="$d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="1378,56,1563,99"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="495,249,590,232,1363,94,1361,99,590,237,497,254"/>
-<area shape="rect" id="Node000005" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7ae9403462c6b24c7b5269486935b043" title="Starts the main loop to process commands." alt="" coords="590,247,773,289"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="495,265,577,267,572,269,497,271"/>
-<area shape="rect" id="Node000006" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="821,247,1005,289"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="773,265,808,267,803,269,774,271"/>
-<area shape="rect" id="Node000007" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="1071,172,1276,215"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="989,244,1084,218,1079,220,991,248"/>
-<area shape="rect" id="Node000030" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="1053,296,1294,339"/>
-<area shape="poly" id="edge35_Node000006_Node000030" title=" " alt="" coords="1005,283,1045,292,1040,293,1005,288"/>
-<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="1191,169,1252,105,1294,71,1341,42,1360,36,1355,39,1343,46,1297,75,1255,109,1194,174"/>
-<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="1212,169,1272,138,1341,108,1365,103,1360,105,1343,113,1274,143,1214,174"/>
-<area shape="rect" id="Node000008" href="$da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="1371,312,1569,355"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1218,213,1343,274,1408,305,1403,305,1341,278,1218,218"/>
-<area shape="rect" id="Node000009" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="1342,123,1598,181"/>
-<area shape="poly" id="edge11_Node000007_Node000009" title=" " alt="" coords="1275,177,1329,171,1324,173,1277,182"/>
-<area shape="rect" id="Node000029" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="1356,205,1584,264"/>
-<area shape="poly" id="edge33_Node000007_Node000029" title=" " alt="" coords="1276,205,1344,216,1339,217,1276,210"/>
-<area shape="poly" id="edge9_Node000008_Node000008" title=" " alt="" coords="1417,310,1415,302,1424,293,1442,287,1470,285,1501,288,1520,297,1515,297,1499,293,1470,291,1443,293,1427,297,1420,303,1422,313"/>
-<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="1566,179,1599,191,1689,228,1684,228,1597,196,1566,185"/>
-<area shape="rect" id="Node000011" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="1930,123,2121,181"/>
-<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="1810,232,1930,188,1935,186,1812,237"/>
-<area shape="rect" id="Node000014" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1908,235,2143,277"/>
-<area shape="poly" id="edge16_Node000010_Node000014" title=" " alt="" coords="1860,253,1895,256,1890,256,1860,259"/>
-<area shape="rect" id="Node000021" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="1919,331,2132,373"/>
-<area shape="poly" id="edge24_Node000010_Node000021" title=" " alt="" coords="1816,275,1951,325,1945,325,1816,281"/>
-<area shape="rect" id="Node000026" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1938,443,2113,485"/>
-<area shape="poly" id="edge29_Node000010_Node000026" title=" " alt="" coords="1779,275,1838,326,1909,383,1980,434,1974,433,1906,387,1835,330,1778,280"/>
-<area shape="rect" id="Node000012" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="2202,64,2393,107"/>
-<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="2121,126,2195,110,2190,112,2122,131"/>
-<area shape="rect" id="Node000013" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="2210,131,2385,173"/>
-<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="2121,149,2197,152,2192,152,2122,155"/>
-<area shape="rect" id="Node000015" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="2210,197,2385,240"/>
-<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="2143,237,2197,232,2192,233,2144,242"/>
-<area shape="rect" id="Node000020" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="2210,264,2385,307"/>
-<area shape="poly" id="edge23_Node000014_Node000020" title=" " alt="" coords="2143,266,2197,274,2192,274,2144,271"/>
-<area shape="rect" id="Node000016" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="2461,147,2678,173"/>
-<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="2385,197,2492,177,2487,178,2386,202"/>
-<area shape="rect" id="Node000018" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="2482,197,2657,240"/>
-<area shape="poly" id="edge20_Node000015_Node000018" title=" " alt="" coords="2385,216,2469,218,2463,219,2386,221"/>
-<area shape="rect" id="Node000019" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="2460,264,2679,291"/>
-<area shape="poly" id="edge22_Node000015_Node000019" title=" " alt="" coords="2386,235,2492,260,2487,260,2386,240"/>
-<area shape="rect" id="Node000017" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="2735,168,2929,211"/>
-<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="2679,170,2722,177,2716,177,2679,175"/>
-<area shape="poly" id="edge21_Node000018_Node000017" title=" " alt="" coords="2657,206,2722,201,2717,202,2658,211"/>
-<area shape="rect" id="Node000022" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="2191,331,2404,373"/>
-<area shape="poly" id="edge25_Node000021_Node000022" title=" " alt="" coords="2132,349,2178,352,2172,352,2133,355"/>
-<area shape="rect" id="Node000023" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="2191,397,2404,440"/>
-<area shape="poly" id="edge26_Node000021_Node000023" title=" " alt="" coords="2115,371,2195,393,2190,393,2115,377"/>
-<area shape="rect" id="Node000024" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="2484,455,2655,497"/>
-<area shape="poly" id="edge27_Node000023_Node000024" title=" " alt="" coords="2402,438,2471,455,2466,455,2402,443"/>
-<area shape="rect" id="Node000025" href="$dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="2467,388,2672,431"/>
-<area shape="poly" id="edge28_Node000023_Node000025" title=" " alt="" coords="2405,412,2454,413,2448,414,2405,418"/>
-<area shape="rect" id="Node000027" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="2210,496,2385,539"/>
-<area shape="poly" id="edge30_Node000026_Node000027" title=" " alt="" coords="2114,479,2197,497,2192,497,2113,484"/>
-<area shape="poly" id="edge32_Node000027_Node000027" title=" " alt="" coords="2247,494,2245,486,2253,477,2271,471,2298,469,2327,472,2346,481,2341,481,2326,477,2298,475,2272,477,2256,481,2250,487,2251,497"/>
-<area shape="rect" id="Node000028" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="2466,521,2673,548"/>
-<area shape="poly" id="edge31_Node000027_Node000028" title=" " alt="" coords="2386,520,2453,527,2448,527,2386,526"/>
-<area shape="poly" id="edge34_Node000029_Node000010" title=" " alt="" coords="1584,241,1633,246,1628,247,1585,246"/>
-<area shape="poly" id="edge37_Node000030_Node000004" title=" " alt="" coords="1212,293,1253,264,1292,225,1307,194,1312,165,1319,137,1327,123,1340,109,1361,98,1365,95,1344,113,1331,126,1324,139,1318,166,1312,196,1296,228,1257,268,1215,298"/>
-<area shape="poly" id="edge36_Node000030_Node000008" title=" " alt="" coords="1294,321,1358,327,1353,328,1295,326"/>
-<area shape="rect" id="Node000031" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="1361,379,1579,421"/>
-<area shape="poly" id="edge38_Node000030_Node000031" title=" " alt="" coords="1247,337,1343,364,1372,374,1367,374,1341,369,1247,342"/>
-<area shape="rect" id="Node000032" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="1657,379,1849,421"/>
-<area shape="poly" id="edge39_Node000031_Node000032" title=" " alt="" coords="1580,397,1644,400,1639,400,1580,403"/>
-<area shape="poly" id="edge43_Node000035_Node000024" title=" " alt="" coords="2320,606,2403,549,2426,527,2451,507,2467,502,2472,500,2454,512,2429,531,2406,553,2322,611"/>
-<area shape="poly" id="edge45_Node000035_Node000028" title=" " alt="" coords="2328,606,2384,582,2452,557,2478,553,2483,552,2453,563,2386,587,2329,611"/>
-<area shape="rect" id="Node000036" href="$d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a6ebca5a6675f5b2f2a294a7c85993ad7" title="Used to convert axis positions to actuator positions." alt="" coords="2452,572,2687,631"/>
-<area shape="poly" id="edge44_Node000035_Node000036" title=" " alt="" coords="2399,612,2434,612,2440,612,2399,617"/>
-<area shape="rect" id="Node000037" href="$d5/dd6/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_linear.html#aac2526af2c862cb481ebc11c25e2a4eb" title="Returns true if a position is unreachable by this axis." alt="" coords="2478,655,2661,697"/>
-<area shape="poly" id="edge46_Node000035_Node000037" title=" " alt="" coords="2370,634,2466,655,2461,655,2369,639"/>
-<area shape="rect" id="Node000038" href="$da/dea/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_rotational.html#aa46b9ab40c4c0eb280067b403e3ba1f8" title="Returns true if a position is unreachable by this axis." alt="" coords="2466,721,2673,764"/>
-<area shape="poly" id="edge47_Node000035_Node000038" title=" " alt="" coords="2321,634,2380,670,2453,707,2472,716,2466,715,2451,712,2377,675,2319,639"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="495,181,590,165,804,138,1018,115,1365,85,1360,87,1018,120,805,143,590,171,497,186"/>
+<area shape="rect" id="Node000005" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7ae9403462c6b24c7b5269486935b043" title="Starts the main loop to process commands." alt="" coords="590,180,773,223"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="495,199,577,200,572,203,497,204"/>
+<area shape="rect" id="Node000006" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="821,180,1005,223"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="773,199,808,200,803,202,774,204"/>
+<area shape="rect" id="Node000007" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="1071,213,1276,256"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1005,210,1058,219,1053,220,1006,216"/>
+<area shape="rect" id="Node000033" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="1053,135,1294,177"/>
+<area shape="poly" id="edge38_Node000006_Node000033" title=" " alt="" coords="1004,183,1040,179,1035,181,1006,188"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="1259,211,1292,187,1305,170,1312,152,1314,115,1317,78,1325,60,1340,42,1344,42,1348,39,1344,46,1330,63,1322,79,1319,115,1317,153,1310,172,1296,191,1262,215"/>
+<area shape="poly" id="edge12_Node000007_Node000004" title=" " alt="" coords="1253,210,1292,187,1308,168,1315,148,1323,128,1340,109,1361,99,1365,97,1344,113,1327,131,1320,150,1312,171,1296,191,1256,215"/>
+<area shape="rect" id="Node000008" href="$db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#aa2f7fa140de51c5818e6f3061d21cbf3" title="Adds a command to the ReadyToSend queue and fills the DataPacketsReadyToSend queue with the data pack..." alt="" coords="1349,280,1591,323"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1271,254,1360,276,1355,276,1272,259"/>
+<area shape="rect" id="Node000010" href="$da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="1371,213,1569,256"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="1275,232,1358,234,1353,235,1276,237"/>
+<area shape="rect" id="Node000011" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="1342,347,1598,405"/>
+<area shape="poly" id="edge13_Node000007_Node000011" title=" " alt="" coords="1207,254,1269,293,1343,332,1358,341,1353,340,1341,337,1266,298,1206,259"/>
+<area shape="rect" id="Node000032" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="1356,429,1584,488"/>
+<area shape="poly" id="edge36_Node000007_Node000032" title=" " alt="" coords="1190,254,1252,333,1295,377,1344,415,1352,422,1347,422,1340,420,1291,381,1248,337,1188,259"/>
+<area shape="rect" id="Node000009" href="$db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#a43c39913a44247cacdb50e33fc19194d" title="Fills the DataPacketsReadyToSend queue with the data packets from the next command to send if there a..." alt="" coords="1646,280,1907,323"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1592,299,1633,301,1628,302,1592,304"/>
+<area shape="poly" id="edge11_Node000010_Node000010" title=" " alt="" coords="1415,212,1412,203,1422,194,1441,189,1470,187,1502,189,1523,198,1517,198,1501,194,1470,192,1442,194,1424,199,1417,205,1420,214"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="1599,381,1657,387,1652,388,1599,386"/>
+<area shape="rect" id="Node000013" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="1977,157,2168,216"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="1835,370,1871,353,1905,333,1930,310,1953,285,2021,227,2026,225,1957,289,1934,314,1908,337,1873,358,1837,375"/>
+<area shape="rect" id="Node000016" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1955,299,2190,341"/>
+<area shape="poly" id="edge18_Node000012_Node000016" title=" " alt="" coords="1864,370,1968,346,1973,345,1865,375"/>
+<area shape="rect" id="Node000024" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="1966,373,2179,416"/>
+<area shape="poly" id="edge27_Node000012_Node000024" title=" " alt="" coords="1883,392,1953,394,1948,395,1884,397"/>
+<area shape="rect" id="Node000029" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1985,477,2160,520"/>
+<area shape="poly" id="edge32_Node000012_Node000029" title=" " alt="" coords="1840,414,1998,472,1993,472,1839,419"/>
+<area shape="rect" id="Node000014" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="2249,99,2440,141"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="2168,161,2242,145,2237,146,2169,166"/>
+<area shape="rect" id="Node000015" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="2257,165,2432,208"/>
+<area shape="poly" id="edge17_Node000013_Node000015" title=" " alt="" coords="2168,184,2244,186,2239,187,2169,189"/>
+<area shape="rect" id="Node000017" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="2257,232,2432,275"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="2162,295,2239,279,2244,278,2163,301"/>
+<area shape="rect" id="Node000023" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="2257,299,2432,341"/>
+<area shape="poly" id="edge26_Node000016_Node000023" title=" " alt="" coords="2190,317,2244,320,2239,320,2191,323"/>
+<area shape="rect" id="Node000018" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="2782,181,2999,208"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="2432,230,2499,217,2637,203,2769,198,2763,198,2637,208,2500,223,2433,235"/>
+<area shape="rect" id="Node000020" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="2529,232,2704,275"/>
+<area shape="poly" id="edge22_Node000017_Node000020" title=" " alt="" coords="2432,251,2516,253,2510,254,2433,256"/>
+<area shape="rect" id="Node000022" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="2507,299,2726,325"/>
+<area shape="poly" id="edge25_Node000017_Node000022" title=" " alt="" coords="2433,270,2539,295,2534,295,2433,275"/>
+<area shape="rect" id="Node000019" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598" title=" " alt="" coords="3047,203,3241,245"/>
+<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="3000,205,3034,211,3029,211,3000,210"/>
+<area shape="rect" id="Node000021" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="2793,232,2988,275"/>
+<area shape="poly" id="edge23_Node000020_Node000021" title=" " alt="" coords="2705,251,2780,253,2775,254,2705,256"/>
+<area shape="poly" id="edge24_Node000021_Node000019" title=" " alt="" coords="2988,239,3034,237,3029,237,2988,245"/>
+<area shape="rect" id="Node000025" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="2238,365,2451,408"/>
+<area shape="poly" id="edge28_Node000024_Node000025" title=" " alt="" coords="2179,389,2225,390,2219,391,2180,394"/>
+<area shape="rect" id="Node000026" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="2238,432,2451,475"/>
+<area shape="poly" id="edge29_Node000024_Node000026" title=" " alt="" coords="2175,414,2230,428,2225,428,2174,419"/>
+<area shape="rect" id="Node000027" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="2531,461,2702,504"/>
+<area shape="poly" id="edge30_Node000026_Node000027" title=" " alt="" coords="2452,462,2518,472,2513,472,2452,468"/>
+<area shape="rect" id="Node000028" href="$dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="2514,395,2719,437"/>
+<area shape="poly" id="edge31_Node000026_Node000028" title=" " alt="" coords="2452,436,2501,432,2495,433,2452,441"/>
+<area shape="rect" id="Node000030" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="2257,523,2432,565"/>
+<area shape="poly" id="edge33_Node000029_Node000030" title=" " alt="" coords="2161,511,2244,527,2239,527,2160,516"/>
+<area shape="poly" id="edge35_Node000030_Node000030" title=" " alt="" coords="2294,521,2292,513,2300,504,2318,498,2345,496,2374,499,2393,508,2388,507,2373,504,2345,501,2319,503,2303,508,2297,514,2298,524"/>
+<area shape="rect" id="Node000031" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="2513,528,2720,555"/>
+<area shape="poly" id="edge34_Node000030_Node000031" title=" " alt="" coords="2433,540,2500,542,2495,543,2433,546"/>
+<area shape="poly" id="edge37_Node000032_Node000012" title=" " alt="" coords="1584,432,1659,419,1654,420,1585,438"/>
+<area shape="poly" id="edge40_Node000033_Node000004" title=" " alt="" coords="1254,132,1341,108,1373,102,1368,104,1343,113,1256,137"/>
+<area shape="poly" id="edge39_Node000033_Node000010" title=" " alt="" coords="1256,175,1375,208,1370,209,1257,181"/>
+<area shape="rect" id="Node000034" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="1361,123,1579,165"/>
+<area shape="poly" id="edge41_Node000033_Node000034" title=" " alt="" coords="1294,149,1348,148,1343,150,1295,154"/>
+<area shape="rect" id="Node000035" href="$dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="1681,123,1872,165"/>
+<area shape="poly" id="edge42_Node000034_Node000035" title=" " alt="" coords="1579,141,1668,143,1663,145,1580,147"/>
+<area shape="poly" id="edge46_Node000038_Node000027" title=" " alt="" coords="2424,588,2450,575,2465,561,2473,546,2482,529,2498,514,2514,507,2519,505,2501,518,2486,533,2478,548,2469,564,2453,580,2426,593"/>
+<area shape="poly" id="edge48_Node000038_Node000031" title=" " alt="" coords="2402,587,2499,564,2533,559,2538,558,2500,569,2402,593"/>
+<area shape="rect" id="Node000039" href="$d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a6ebca5a6675f5b2f2a294a7c85993ad7" title="Used to convert axis positions to actuator positions." alt="" coords="2499,579,2734,637"/>
+<area shape="poly" id="edge47_Node000038_Node000039" title=" " alt="" coords="2446,603,2486,606,2481,606,2446,608"/>
+<area shape="rect" id="Node000040" href="$d5/dd6/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_linear.html#aac2526af2c862cb481ebc11c25e2a4eb" title="Returns true if a position is unreachable by this axis." alt="" coords="2525,661,2708,704"/>
+<area shape="poly" id="edge49_Node000038_Node000040" title=" " alt="" coords="2393,615,2500,647,2527,657,2522,656,2499,652,2393,621"/>
+<area shape="rect" id="Node000041" href="$da/dea/class_epsilon_core_1_1_motion_1_1_axis_1_1_axis_rotational.html#aa46b9ab40c4c0eb280067b403e3ba1f8" title="Returns true if a position is unreachable by this axis." alt="" coords="2513,728,2720,771"/>
+<area shape="poly" id="edge50_Node000038_Node000041" title=" " alt="" coords="2362,615,2421,663,2459,690,2501,714,2515,723,2510,722,2498,718,2456,695,2417,668,2360,620"/>
 </map>

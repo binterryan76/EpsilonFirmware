@@ -1,0 +1,60 @@
+<map id="UnitsNetHelpers.Frequency2.Frequency2" name="UnitsNetHelpers.Frequency2.Frequency2">
+<area shape="rect" id="Node000001" title=" " alt="" coords="2865,420,3059,463"/>
+<area shape="rect" id="Node000002" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="2289,75,2507,101"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2947,404,2928,359,2900,303,2863,247,2840,222,2815,199,2780,176,2742,156,2662,126,2581,107,2507,96,2507,91,2582,101,2663,121,2745,151,2783,171,2819,195,2844,218,2867,244,2905,300,2933,357,2952,407"/>
+<area shape="rect" id="Node000014" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="2591,209,2786,252"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="2939,405,2890,335,2855,298,2816,266,2785,251,2786,246,2818,262,2859,294,2894,332,2944,407"/>
+<area shape="rect" id="Node000020" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a53826559ff307b822c3be216e189a717" title=" " alt="" coords="2565,276,2812,303"/>
+<area shape="poly" id="edge22_Node000001_Node000020" title=" " alt="" coords="2930,407,2880,361,2849,337,2816,317,2787,306,2788,301,2818,312,2852,333,2884,357,2935,409"/>
+<area shape="rect" id="Node000021" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#aeb17a9430ddf52fe6112ae29ed6a1116" title=" " alt="" coords="2565,327,2812,353"/>
+<area shape="poly" id="edge23_Node000001_Node000021" title=" " alt="" coords="2911,411,2867,390,2816,368,2777,357,2777,351,2818,363,2869,385,2916,412"/>
+<area shape="rect" id="Node000022" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#aab81833e4705d408e763d078d1abe64f" title=" " alt="" coords="2564,377,2813,404"/>
+<area shape="poly" id="edge24_Node000001_Node000022" title=" " alt="" coords="2847,420,2764,407,2765,402,2852,421"/>
+<area shape="rect" id="Node000023" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#ad4a49c9a4784d1cdb93bac5a98c9b49b" title=" " alt="" coords="2566,428,2811,455"/>
+<area shape="poly" id="edge25_Node000001_Node000023" title=" " alt="" coords="2847,441,2811,444,2811,439,2852,441"/>
+<area shape="rect" id="Node000024" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a4c6b22f984490e2645db17c2e756afbf" title=" " alt="" coords="2564,479,2813,505"/>
+<area shape="poly" id="edge26_Node000001_Node000024" title=" " alt="" coords="2852,462,2765,481,2764,475,2847,462"/>
+<area shape="rect" id="Node000025" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a75b90808e16b9d1693730406123044a1" title=" " alt="" coords="2560,529,2817,556"/>
+<area shape="poly" id="edge27_Node000001_Node000025" title=" " alt="" coords="2916,470,2869,498,2818,520,2778,531,2777,526,2816,515,2867,493,2911,472"/>
+<area shape="rect" id="Node000026" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3408104b5dbd0948055f5c929f4db7bf" title=" " alt="" coords="2564,580,2813,607"/>
+<area shape="poly" id="edge28_Node000001_Node000026" title=" " alt="" coords="2935,473,2884,526,2852,550,2818,570,2788,582,2787,577,2816,566,2849,546,2880,522,2930,475"/>
+<area shape="rect" id="Node000027" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a81f66f91acbc7a2adb040dadae287a69" title=" " alt="" coords="2560,631,2817,657"/>
+<area shape="poly" id="edge29_Node000001_Node000027" title=" " alt="" coords="2945,475,2923,512,2895,551,2859,589,2818,621,2793,633,2792,627,2816,616,2856,586,2891,548,2919,509,2940,478"/>
+<area shape="rect" id="Node000028" href="$d1/d33/struct_units_net_helpers_1_1_frequency2.html#a24c46b481334948055c39ba427f4f0b2" title=" " alt="" coords="2591,681,2786,724"/>
+<area shape="poly" id="edge30_Node000001_Node000028" title=" " alt="" coords="2950,476,2931,523,2903,575,2865,627,2819,671,2786,689,2785,683,2815,667,2861,624,2898,572,2926,521,2946,479"/>
+<area shape="rect" id="Node000003" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="2061,96,2236,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2271,103,2237,110,2236,104,2276,102"/>
+<area shape="rect" id="Node000004" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1778,96,2013,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2043,118,2014,120,2013,115,2048,117"/>
+<area shape="rect" id="Node000005" href="$d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="1516,96,1730,139"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1760,118,1731,120,1730,115,1765,117"/>
+<area shape="rect" id="Node000006" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="1212,5,1468,64"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1530,91,1443,67,1443,62,1535,91"/>
+<area shape="rect" id="Node000012" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#aa8253565b6132fa6a1c80bb1c0cc6d9a" title=" " alt="" coords="5,163,218,205"/>
+<area shape="poly" id="edge14_Node000005_Node000012" title=" " alt="" coords="1535,144,1469,161,1356,178,1267,185,1063,187,587,187,219,187,217,181,587,181,1063,181,1267,180,1355,172,1468,156,1540,142"/>
+<area shape="rect" id="Node000013" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="1226,88,1454,147"/>
+<area shape="poly" id="edge12_Node000005_Node000013" title=" " alt="" coords="1498,118,1455,120,1454,115,1503,117"/>
+<area shape="rect" id="Node000007" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="960,96,1164,139"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1222,70,1137,98,1135,93,1227,68"/>
+<area shape="rect" id="Node000008" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="728,96,912,139"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="942,118,913,120,912,115,947,117"/>
+<area shape="rect" id="Node000009" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7ae9403462c6b24c7b5269486935b043" title="Starts the main loop to process commands." alt="" coords="497,96,680,139"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="711,118,682,120,680,115,716,116"/>
+<area shape="rect" id="Node000010" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a1a1bb4ef025cb02e84108d89d858eb5d" title="Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue p..." alt="" coords="266,96,449,139"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="479,119,451,120,448,115,484,116"/>
+<area shape="rect" id="Node000011" href="$de/d8f/class_epsilon_desktop_1_1_view_models_1_1_main_view_model.html#ab60d7ed415bd23eb2a585771901566ee" title=" " alt="" coords="15,96,208,139"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="248,119,210,120,207,115,252,116"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="260,145,194,164,191,160,263,141"/>
+<area shape="poly" id="edge13_Node000013_Node000007" title=" " alt="" coords="1208,118,1165,120,1164,115,1214,117"/>
+<area shape="rect" id="Node000015" href="$d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="2310,125,2486,168"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="2595,205,2474,171,2475,166,2600,205"/>
+<area shape="rect" id="Node000016" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a0454a95362da4e171f76ad5b706e2c08" title=" " alt="" coords="2284,192,2512,219"/>
+<area shape="poly" id="edge18_Node000014_Node000016" title=" " alt="" coords="2573,221,2512,218,2512,213,2578,221"/>
+<area shape="rect" id="Node000017" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a55df9820219954fa06f0b64f5470bac3" title=" " alt="" coords="2284,243,2512,269"/>
+<area shape="poly" id="edge19_Node000014_Node000017" title=" " alt="" coords="2573,241,2512,249,2512,243,2578,240"/>
+<area shape="rect" id="Node000018" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a74fa04f1bcc4013d3008f35c386406f6" title=" " alt="" coords="2284,293,2512,320"/>
+<area shape="poly" id="edge20_Node000014_Node000018" title=" " alt="" coords="2587,256,2560,267,2512,284,2468,295,2467,290,2511,279,2559,261,2582,257"/>
+<area shape="rect" id="Node000019" href="$d8/d1e/class_units_net_helpers_1_1_helpers.html#a0e461cc1999fccf0e384352709fefa3b" title=" " alt="" coords="2284,344,2512,371"/>
+<area shape="poly" id="edge21_Node000014_Node000019" title=" " alt="" coords="2579,253,2561,266,2546,282,2538,299,2530,317,2513,334,2490,346,2489,341,2510,330,2526,314,2533,297,2541,279,2558,262,2574,255"/>
+<area shape="poly" id="edge17_Node000015_Node000003" title=" " alt="" coords="2292,135,2237,130,2236,125,2297,134"/>
+</map>

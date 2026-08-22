@@ -1,5 +1,6 @@
 var class_epsilon_core_1_1_engine_1_1_epsilon_engine =
 [
+    [ "EpsilonEngine", "d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#aff9f34a3fb8099666542d191b3f8a740", null ],
     [ "~EpsilonEngine", "d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a13694b4f6d00ef56c26a6ef7dc4eb552", null ],
     [ "AddCommunicator", "d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#aadd566c8948d1a6fec14aa5280ed57d3", null ],
     [ "AddMachineQueue", "d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a1a1bb4ef025cb02e84108d89d858eb5d", null ],

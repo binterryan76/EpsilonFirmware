@@ -1,10 +1,14 @@
 <map id="EpsilonCore.Commands.SetupCommands.AddKinematicsCommand.EnqueueCommandSpecific" name="EpsilonCore.Commands.SetupCommands.AddKinematicsCommand.EnqueueCommandSpecific">
-<area shape="rect" id="Node000001" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,31,250,89"/>
-<area shape="rect" id="Node000002" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#ab58e732a8274a2af0bc1b0a5b8c908b7" title="Returns a new QueuedCommand indicating the command failed." alt="" coords="298,5,510,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,43,285,41,280,42,251,48"/>
-<area shape="rect" id="Node000004" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aa4874bcffedb1e5f7347cd82d5ed49cf" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="298,72,510,115"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="250,72,285,79,280,79,250,77"/>
-<area shape="rect" id="Node000003" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a37824ea92db6a9fe516561f1146be964" title=" " alt="" coords="558,39,770,81"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="510,38,545,44,540,44,510,43"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="510,77,540,76,545,75,511,82"/>
+<area shape="rect" id="Node000001" title="This function should contain Enqueue logic specific to a particular command. This will perform any ch..." alt="" coords="5,72,250,131"/>
+<area shape="rect" id="Node000002" href="$d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#aac487d00324884a61b12a8d39fb2f2ff" title="Returns a new CompositeKinematicSystem with an additional IKinematics. It returns a Result&lt;T&gt; because..." alt="" coords="298,13,577,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,72,322,59,317,61,251,78"/>
+<area shape="rect" id="Node000004" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#ab58e732a8274a2af0bc1b0a5b8c908b7" title="Returns a new QueuedCommand indicating the command failed." alt="" coords="331,80,544,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="250,99,319,101,313,102,251,104"/>
+<area shape="rect" id="Node000006" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#aa4874bcffedb1e5f7347cd82d5ed49cf" title="Returns a new QueuedCommand indicating the command was successful and no data needs to be sent to the..." alt="" coords="331,147,544,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="250,125,323,143,317,143,250,130"/>
+<area shape="rect" id="Node000003" href="$d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a54de8afd73e5322ee5a3a2827bb5cf35" title=" " alt="" coords="625,5,879,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="577,32,612,34,606,35,578,37"/>
+<area shape="rect" id="Node000005" href="$d7/d27/class_epsilon_core_1_1_commands_1_1_queued_command.html#a37824ea92db6a9fe516561f1146be964" title=" " alt="" coords="646,117,858,160"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="544,111,633,124,628,124,544,117"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="544,155,628,150,633,150,544,161"/>
 </map>

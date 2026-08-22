@@ -114,9 +114,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('da/d1c/md_epsi
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__c_1_2_users_2binte_2source_2repos_2_epsilon_firmware_2documentation_2obsidian__formatted__for__doxygen_2_epsilon_01_firmware_2_epsilon_01_core_2_architecture"></a></p>
+<h1 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_core_architecture_visual_studio_projects"></a>
+Visual Studio Projects</h1>
+<h2 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_core_architecture_epsiloncore"></a>
+EpsilonCore</h2>
+<p>This is a Visual Studio project which contains most of the firmware code on the host side (not microcontroller code). It compiles into a .dll file so that multiple types of user interfaces can be used.</p>
+<h2 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_core_architecture_epsilondesktop"></a>
+EpsilonDesktop</h2>
+<p>This is a Visual Studio project which contains a desktop interface for Epsilon Firmware. It compiles into an .exe file which can run on Windows. It is a useful tool for debugging <a class="el" href="../../d1/d45/namespace_epsilon_core.html">EpsilonCore</a> because it can run with the Visual Studio debugger on the same machine used to develop code so you don't have to use a web interface for most debugging.</p>
 <h1 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_core_architecture_epsilonengine"></a>
 EpsilonEngine</h1>
-<p>This is the main class which runs main loop receiving commands, queueing commands, sending data packets, and receiving data packets for every machine. EpsilonEngine contains multiple MachineQueue objects. </p>
+<p>This is the main class which runs the main forever loop running each machine by receiving commands from the user interface, queueing commands to the corresponding <a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html" title="EpsilonCore.Engine.MachineQueue">MachineQueue</a>, sending and receiving DataPackets to/from microcontrollers. EpsilonEngine contains exactly one <a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html" title="EpsilonCore.Engine.MachineQueue">MachineQueue</a> object per machine. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

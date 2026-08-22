@@ -1,6 +1,8 @@
 var class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system =
 [
+    [ "CompositeKinematicSystem", "d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a54de8afd73e5322ee5a3a2827bb5cf35", null ],
     [ "CompositeKinematicSystem", "d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#af0c196e8b88de820de69538173fb0ffe", null ],
+    [ "AddKinematics", "d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#aac487d00324884a61b12a8d39fb2f2ff", null ],
     [ "ForwardKinematics", "d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a377668f881b4a1e33452cf29a5cf7a3c", null ],
     [ "InverseKinematics", "d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a6ebca5a6675f5b2f2a294a7c85993ad7", null ],
     [ "ActuatorMemoriesLinear", "d8/df3/class_epsilon_core_1_1_motion_1_1_kinematics_1_1_composite_kinematic_system.html#a7d0458e5ac5356fd898c96f5057fcc81", null ],

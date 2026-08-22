@@ -1,5 +1,6 @@
 var struct_units_net_helpers_1_1_frequency2 =
 [
+    [ "Frequency2", "d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598", null ],
     [ "Abs", "d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa", null ],
     [ "As", "d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5b898ed39e3cab7349351af2194f60e8", null ],
     [ "As", "d1/d33/struct_units_net_helpers_1_1_frequency2.html#ae5afe4f740b691835fb47639dae63b2a", null ],

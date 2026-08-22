@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e977dd4c05fb464b",
+        "id": "db545c2b81dc4788",
         "type": "tabs",
         "children": [
           {
-            "id": "3b61f652ca25b2cb",
+            "id": "e83a7d62abf07097",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -188,14 +188,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "3b61f652ca25b2cb",
+  "active": "e83a7d62abf07097",
   "lastOpenFiles": [
-    "Epsilon Firmware/Introduction.md",
+    "Epsilon Firmware/Architecture.md",
+    "Epsilon Core/Primary Classes.md",
     "Epsilon Firmware/Unique Problems Epsilon Firmware Attempts To Solve.md",
     "Epsilon Firmware/Documentation.md",
+    "Epsilon Firmware/Event System.md",
+    "README.md",
+    "MachineQueue.md",
+    "Epsilon Core/MachineQueue.md",
+    "Epsilon Firmware/EpsilonEngine.md",
+    "Epsilon Firmware/Introduction.md",
     "@ref.md",
-    "Epsilon Core/Architecture.md",
-    "Epsilon Firmware/Events.md",
     "Epsilon Firmware",
     "Epsilon Core",
     "create a link.md"

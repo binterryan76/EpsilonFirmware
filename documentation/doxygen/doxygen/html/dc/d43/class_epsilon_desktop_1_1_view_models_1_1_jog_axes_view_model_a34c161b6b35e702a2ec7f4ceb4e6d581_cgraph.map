@@ -1,11 +1,13 @@
 <map id="EpsilonDesktop.ViewModels.JogAxesViewModel.New" name="EpsilonDesktop.ViewModels.JogAxesViewModel.New">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,43,198,85"/>
-<area shape="rect" id="Node000002" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#af9fb95ef0d57cfb590a9addb08ac5777" title=" " alt="" coords="246,43,501,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,61,233,63,227,65,198,67"/>
-<area shape="rect" id="Node000003" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0f34a75db6d24699f86da4ef50d95cff" title="This method reads all the non&#45;extrusion axes from the machine and populates the axes and axis button ..." alt="" coords="549,43,765,85"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="501,61,536,64,530,64,501,67"/>
-<area shape="rect" id="Node000004" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9a636956b3537895bb5ad565e8cd39ad" title="Returns the latest Machine based on it&#39;s ID. Returns null if it cannot be found." alt="" coords="844,5,1028,48"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="765,47,826,41,831,41,766,52"/>
-<area shape="rect" id="Node000005" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a25b4bded784d0b1c6277c20c805c83df" title="This sets the visibility and enabled state of the buttons based on the presence of axes...." alt="" coords="813,72,1059,131"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="766,76,800,83,795,83,766,81"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,88,198,131"/>
+<area shape="rect" id="Node000002" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#af9fb95ef0d57cfb590a9addb08ac5777" title=" " alt="" coords="246,88,501,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,107,233,109,227,110,199,112"/>
+<area shape="rect" id="Node000003" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a0f34a75db6d24699f86da4ef50d95cff" title="This method reads all the non&#45;extrusion axes from the machine and populates the axes and axis button ..." alt="" coords="549,88,765,131"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="501,107,536,109,530,110,502,112"/>
+<area shape="rect" id="Node000004" href="$d2/db6/class_epsilon_desktop_1_1_view_models_1_1_axis_linear_buttons_view_model.html#a562c516a6a22bd98ae16f8760f9e4f44" title=" " alt="" coords="825,5,1047,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="739,85,807,69,813,68,740,90"/>
+<area shape="rect" id="Node000005" href="$d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9a636956b3537895bb5ad565e8cd39ad" title="Returns the latest Machine based on it&#39;s ID. Returns null if it cannot be found." alt="" coords="844,88,1028,131"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="766,107,831,109,826,110,766,112"/>
+<area shape="rect" id="Node000006" href="$dc/d43/class_epsilon_desktop_1_1_view_models_1_1_jog_axes_view_model.html#a25b4bded784d0b1c6277c20c805c83df" title="This sets the visibility and enabled state of the buttons based on the presence of axes...." alt="" coords="813,155,1059,213"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="740,129,812,150,807,150,740,134"/>
 </map>

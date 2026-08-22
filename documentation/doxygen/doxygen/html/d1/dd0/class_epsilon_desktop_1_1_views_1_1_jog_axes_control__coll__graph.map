@@ -1,22 +1,18 @@
 <map id="EpsilonDesktop.Views.JogAxesControl" name="EpsilonDesktop.Views.JogAxesControl">
-<area shape="rect" id="Node000001" title="JogAxesControl." alt="" coords="610,13,789,55"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="38,10,219,53"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,51,424,57,612,53,607,55,424,62,234,56"/>
-<area shape="poly" id="edge3_Node000001_Node000002" title=" " alt="" coords="234,36,424,39,612,40,607,41,424,45,234,42"/>
-<area shape="poly" id="edge5_Node000001_Node000002" title=" " alt="" coords="234,22,424,21,612,26,607,28,424,27,235,27"/>
-<area shape="poly" id="edge7_Node000001_Node000002" title=" " alt="" coords="234,8,424,3,612,13,607,14,424,9,235,13"/>
-<area shape="rect" id="Node000004" href="$d2/db2/class_epsilon_desktop_1_1_views_1_1_jog_axes_control.html" title="JogAxesControl." alt="" coords="301,99,479,142"/>
-<area shape="poly" id="edge9_Node000004_Node000002" title=" " alt="" coords="162,59,228,89,303,115,298,117,226,94,162,64"/>
-<area shape="poly" id="edge11_Node000004_Node000002" title=" " alt="" coords="187,56,303,98,298,100,187,62"/>
-<area shape="poly" id="edge13_Node000004_Node000002" title=" " alt="" coords="233,55,348,98,343,100,232,61"/>
-<area shape="poly" id="edge15_Node000004_Node000002" title=" " alt="" coords="234,38,311,66,372,99,367,99,309,71,234,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,195,252,238"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,222,372,205,478,176,541,149,599,117,649,83,682,57,687,55,652,88,602,121,543,154,480,181,373,210,267,227"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="267,200,372,181,478,152,531,130,583,104,664,57,669,55,585,108,534,134,480,157,373,186,268,205"/>
-<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="204,189,334,166,407,149,478,128,560,92,632,57,637,55,563,97,480,133,409,154,335,171,205,195"/>
-<area shape="poly" id="edge10_Node000004_Node000003" title=" " alt="" coords="251,187,311,164,359,143,364,142,313,168,252,192"/>
-<area shape="poly" id="edge12_Node000004_Node000003" title=" " alt="" coords="202,187,327,143,332,142,204,192"/>
-<area shape="poly" id="edge14_Node000004_Node000003" title=" " alt="" coords="170,186,231,159,298,137,303,135,233,164,172,190"/>
-<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="483,92,623,55,618,57,484,97"/>
-<area shape="poly" id="edge16_Node000004_Node000004" title=" " alt="" coords="370,82,377,75,390,73,402,75,410,81,414,90,413,100,408,97,409,90,406,84,400,80,390,78,379,80,373,86"/>
+<area shape="rect" id="Node000001" title="JogAxesControl." alt="" coords="610,15,789,57"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="38,5,219,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,40,424,47,612,47,607,49,424,52,234,45"/>
+<area shape="poly" id="edge3_Node000001_Node000002" title=" " alt="" coords="234,26,611,32,609,37,234,31"/>
+<area shape="poly" id="edge5_Node000001_Node000002" title=" " alt="" coords="234,11,424,11,612,20,607,22,424,16,234,17"/>
+<area shape="rect" id="Node000004" href="$d2/db2/class_epsilon_desktop_1_1_views_1_1_jog_axes_control.html" title="JogAxesControl." alt="" coords="301,95,479,137"/>
+<area shape="poly" id="edge7_Node000004_Node000002" title=" " alt="" coords="173,52,234,78,303,102,298,103,232,83,172,58"/>
+<area shape="poly" id="edge9_Node000004_Node000002" title=" " alt="" coords="208,51,328,93,323,95,207,56"/>
+<area shape="poly" id="edge11_Node000004_Node000002" title=" " alt="" coords="234,42,304,67,363,94,357,94,302,72,234,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,143,252,185"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,180,372,177,426,170,479,159,537,138,593,111,641,82,675,59,680,57,643,86,595,115,539,143,480,164,427,175,372,182,267,185"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="267,158,372,153,426,146,479,135,526,119,573,98,650,59,655,57,575,103,528,124,480,140,427,151,372,158,267,164"/>
+<area shape="poly" id="edge8_Node000004_Node000003" title=" " alt="" coords="267,145,312,138,317,138,268,150"/>
+<area shape="poly" id="edge10_Node000004_Node000003" title=" " alt="" coords="218,136,303,123,298,124,219,142"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="490,88,612,58,617,57,491,93"/>
+<area shape="poly" id="edge12_Node000004_Node000004" title=" " alt="" coords="370,77,377,71,390,68,402,70,410,76,414,85,413,96,408,92,409,86,406,79,400,75,390,73,379,75,372,81"/>
 </map>

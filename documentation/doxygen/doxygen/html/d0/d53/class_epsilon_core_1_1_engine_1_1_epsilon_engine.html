@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Epsilon Firmware: EpsilonCore.Engine.EpsilonEngine(IResultMessageLogger logger) Class Reference</title>
+<title>Epsilon Firmware: EpsilonCore.Engine.EpsilonEngine Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/d53/class_e
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">EpsilonCore.Engine.EpsilonEngine(IResultMessageLogger logger) Class Reference</div></div>
+  <div class="headertitle"><div class="title">EpsilonCore.Engine.EpsilonEngine Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/d53/class_e
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aff9f34a3fb8099666542d191b3f8a740" id="r_aff9f34a3fb8099666542d191b3f8a740"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aff9f34a3fb8099666542d191b3f8a740">EpsilonEngine</a> (<a class="el" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html">IResultMessageLogger</a> logger)</td></tr>
 <tr class="memitem:a1a1bb4ef025cb02e84108d89d858eb5d" id="r_a1a1bb4ef025cb02e84108d89d858eb5d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1a1bb4ef025cb02e84108d89d858eb5d">AddMachineQueue</a> (<a class="el" href="../../d9/d2f/class_epsilon_core_1_1_machines_1_1_machine.html">Machine</a> machine)</td></tr>
 <tr class="memdesc:a1a1bb4ef025cb02e84108d89d858eb5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue per machine.  <br /></td></tr>
 <tr class="memitem:aadd566c8948d1a6fec14aa5280ed57d3" id="r_aadd566c8948d1a6fec14aa5280ed57d3"><td class="memItemLeft">Exception?&#160;</td><td class="memItemRight"><a class="el" href="#aadd566c8948d1a6fec14aa5280ed57d3">AddCommunicator</a> (uint machineQueueId, <a class="el" href="../../da/de4/class_epsilon_core_1_1_communication_1_1_i_communicator.html">ICommunicator</a> communicator)</td></tr>
@@ -143,7 +144,7 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a0bc2cfa54d93d5e25053efd353d15e94" id="r_a0bc2cfa54d93d5e25053efd353d15e94"><td class="memItemLeft">ConcurrentDictionary&lt; uint, MachineQueue &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0bc2cfa54d93d5e25053efd353d15e94">MachineQueues</a> = []<code> [get]</code></td></tr>
+<tr class="memitem:a0bc2cfa54d93d5e25053efd353d15e94" id="r_a0bc2cfa54d93d5e25053efd353d15e94"><td class="memItemLeft">ConcurrentDictionary&lt; uint, <a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0bc2cfa54d93d5e25053efd353d15e94">MachineQueues</a> = []<code> [get]</code></td></tr>
 <tr class="memitem:a5eb59e1cb1dceb5e32487c7a93e38246" id="r_a5eb59e1cb1dceb5e32487c7a93e38246"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5eb59e1cb1dceb5e32487c7a93e38246">Running</a> = false<code> [get, private set]</code></td></tr>
 <tr class="memdesc:a5eb59e1cb1dceb5e32487c7a93e38246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the main loop is running. False until Start is called.  <br /></td></tr>
 <tr class="memitem:a547e4930991b990745d78c2ccb1fb637" id="r_a547e4930991b990745d78c2ccb1fb637"><td class="memItemLeft"><a class="el" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html">IResultMessageLogger</a>&#160;</td><td class="memItemRight"><a class="el" href="#a547e4930991b990745d78c2ccb1fb637">EngineLogger</a> = logger<code> [get]</code></td></tr>
@@ -159,17 +160,17 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a5191c89cd7edb372880c7c4c8c952375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the main loop to stop process commands.  <br /></td></tr>
 <tr class="memitem:a087560170cede1d859a5c1e38090f445" id="r_a087560170cede1d859a5c1e38090f445"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a087560170cede1d859a5c1e38090f445">MainLoop</a> ()</td></tr>
 <tr class="memdesc:a087560170cede1d859a5c1e38090f445"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is what the mainThread runs. continually.  <br /></td></tr>
-<tr class="memitem:ab0f630c8fa0c1e28f59012c8c8f9c078" id="r_ab0f630c8fa0c1e28f59012c8c8f9c078"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab0f630c8fa0c1e28f59012c8c8f9c078">EnqueueNextCommand</a> (MachineQueue machineQueue)</td></tr>
+<tr class="memitem:ab0f630c8fa0c1e28f59012c8c8f9c078" id="r_ab0f630c8fa0c1e28f59012c8c8f9c078"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab0f630c8fa0c1e28f59012c8c8f9c078">EnqueueNextCommand</a> (<a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a> machineQueue)</td></tr>
 <tr class="memdesc:ab0f630c8fa0c1e28f59012c8c8f9c078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued. Will then try to move the command from MachineQueue.Queued to MachineQueue.ReadyToSend. This process involved getting the output machine for a command by calling ICommand.EnqueueCommandSpecific(Machine). This will also solve the MoveQueue when either enough.  <br /></td></tr>
-<tr class="memitem:a5252d741f7566fcc4fd532d47f368f9e" id="r_a5252d741f7566fcc4fd532d47f368f9e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5252d741f7566fcc4fd532d47f368f9e">SendSomeQueuedCommands</a> (MachineQueue machineQueue)</td></tr>
+<tr class="memitem:a5252d741f7566fcc4fd532d47f368f9e" id="r_a5252d741f7566fcc4fd532d47f368f9e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5252d741f7566fcc4fd532d47f368f9e">SendSomeQueuedCommands</a> (<a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a> machineQueue)</td></tr>
 <tr class="memdesc:a5252d741f7566fcc4fd532d47f368f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from MachineQueue.ReadyToSend to MachineQueue.Sent. Sends DataPackets until either an error is encountered or the microcontroller's internal machineQueue doesn't have enough space for the next command.  <br /></td></tr>
 <tr class="memitem:a7dddc05b08ab389ddfd78bcd337b24dc" id="r_a7dddc05b08ab389ddfd78bcd337b24dc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7dddc05b08ab389ddfd78bcd337b24dc">ProcessDataPacket</a> (<a class="el" href="../../da/de4/class_epsilon_core_1_1_communication_1_1_i_communicator.html">ICommunicator</a> communicator, <a class="el" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html">DataPacket</a> dataPacket)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:ae439110c4a0a61bf5942c1ba28f48d6c" id="r_ae439110c4a0a61bf5942c1ba28f48d6c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae439110c4a0a61bf5942c1ba28f48d6c">SolveMovesAndMarkCommandsAsReadyToSend</a> (MachineQueue machineQueue)</td></tr>
+<tr class="memitem:ae439110c4a0a61bf5942c1ba28f48d6c" id="r_ae439110c4a0a61bf5942c1ba28f48d6c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae439110c4a0a61bf5942c1ba28f48d6c">SolveMovesAndMarkCommandsAsReadyToSend</a> (<a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a> machineQueue)</td></tr>
 <tr class="memdesc:ae439110c4a0a61bf5942c1ba28f48d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue.ReadyToSend.  <br /></td></tr>
-<tr class="memitem:a9737b43f60aa52b9ceecc82d4ee82052" id="r_a9737b43f60aa52b9ceecc82d4ee82052"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a9737b43f60aa52b9ceecc82d4ee82052">SolveMovesAndMarkHalfOfMoveCommandsAsReadyToSend</a> (MachineQueue machineQueue)</td></tr>
+<tr class="memitem:a9737b43f60aa52b9ceecc82d4ee82052" id="r_a9737b43f60aa52b9ceecc82d4ee82052"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a9737b43f60aa52b9ceecc82d4ee82052">SolveMovesAndMarkHalfOfMoveCommandsAsReadyToSend</a> (<a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a> machineQueue)</td></tr>
 <tr class="memdesc:a9737b43f60aa52b9ceecc82d4ee82052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until half the move commands have been moved and continues to move commands until another MoveCommand is encountered.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -186,6 +187,25 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00049">49</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aff9f34a3fb8099666542d191b3f8a740" name="aff9f34a3fb8099666542d191b3f8a740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff9f34a3fb8099666542d191b3f8a740">&#9670;&#160;</a></span>EpsilonEngine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EpsilonCore.Engine.EpsilonEngine.EpsilonEngine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html">IResultMessageLogger</a></td>          <td class="paramname"><span class="paramname"><em>logger</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00051">51</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+
+</div>
+</div>
 <a id="a13694b4f6d00ef56c26a6ef7dc4eb552" name="a13694b4f6d00ef56c26a6ef7dc4eb552"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13694b4f6d00ef56c26a6ef7dc4eb552">&#9670;&#160;</a></span>~EpsilonEngine()</h2>
 
@@ -211,7 +231,7 @@ Private Attributes</h2></td></tr>
 
 <p>Stops the main loop on cleanup. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00162">162</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00164">164</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -255,7 +275,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00116">116</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00118">118</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -296,80 +316,86 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00093">93</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00095">95</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a1a1bb4ef025cb02e84108d89d858eb5d_cgraph.png" border="0" usemap="#ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a1a1bb4ef025cb02e84108d89d858eb5d_cgraph" loading="lazy" alt=""/></div>
 <map name="ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a1a1bb4ef025cb02e84108d89d858eb5d_cgraph" id="ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a1a1bb4ef025cb02e84108d89d858eb5d_cgraph">
-<area shape="rect" title="Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue p..." alt="" coords="5,39,189,81"/>
-<area shape="rect" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="1024,5,1210,48"/>
-<area shape="poly" title=" " alt="" coords="189,54,1009,28,1008,33,189,60"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7ae9403462c6b24c7b5269486935b043" title="Starts the main loop to process commands." alt="" coords="237,68,420,111"/>
-<area shape="poly" title=" " alt="" coords="187,69,223,74,219,77,190,74"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="468,72,651,115"/>
-<area shape="poly" title=" " alt="" coords="419,88,455,90,450,93,421,93"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="718,192,922,235"/>
-<area shape="poly" title=" " alt="" coords="608,112,760,184,755,186,608,118"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="699,72,941,115"/>
-<area shape="poly" title=" " alt="" coords="651,91,686,92,681,94,653,96"/>
-<area shape="poly" title=" " alt="" coords="856,189,897,160,939,125,953,107,961,90,970,74,987,58,1008,49,1013,47,990,62,974,77,965,93,957,110,943,128,901,165,859,194"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a330ee787e788e7a45b32f5ecb3d6dff7" title=" " alt="" coords="999,229,1235,256"/>
-<area shape="poly" title=" " alt="" coords="922,221,986,229,981,230,923,226"/>
+<area shape="rect" title="Creates a new machine machineQueue for the given machine. There is exactly one machine machineQueue p..." alt="" coords="5,101,189,144"/>
+<area shape="rect" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="1024,72,1210,115"/>
+<area shape="poly" title=" " alt="" coords="188,118,237,116,1010,94,1008,99,237,121,190,122"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a7ae9403462c6b24c7b5269486935b043" title="Starts the main loop to process commands." alt="" coords="237,131,420,173"/>
+<area shape="poly" title=" " alt="" coords="188,132,223,137,219,140,190,137"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="468,131,651,173"/>
+<area shape="poly" title=" " alt="" coords="419,150,455,151,450,153,421,154"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="718,229,922,272"/>
+<area shape="poly" title=" " alt="" coords="618,171,750,223,745,224,618,177"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="699,131,941,173"/>
+<area shape="poly" title=" " alt="" coords="651,149,686,151,681,153,653,155"/>
+<area shape="poly" title=" " alt="" coords="870,226,905,207,939,183,953,168,961,153,971,139,987,124,1008,117,1013,114,990,129,975,142,966,156,957,171,942,187,908,212,872,231"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a330ee787e788e7a45b32f5ecb3d6dff7" title=" " alt="" coords="999,461,1235,488"/>
+<area shape="poly" title=" " alt="" coords="834,270,859,310,893,358,938,407,990,447,1002,456,997,455,987,452,934,411,889,361,854,313,832,275"/>
+<area shape="rect" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#aa2f7fa140de51c5818e6f3061d21cbf3" title="Adds a command to the ReadyToSend queue and fills the DataPacketsReadyToSend queue with the data pack..." alt="" coords="996,229,1238,272"/>
+<area shape="poly" title=" " alt="" coords="922,248,983,250,978,251,923,253"/>
 <area shape="rect" href="../../da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="1018,163,1216,205"/>
-<area shape="poly" title=" " alt="" coords="922,201,1004,195,999,196,923,206"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="989,280,1245,339"/>
-<area shape="poly" title=" " alt="" coords="889,233,989,265,1012,275,1007,275,988,271,888,238"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="1003,363,1230,421"/>
-<area shape="poly" title=" " alt="" coords="843,232,906,290,947,321,990,348,1001,356,996,355,987,353,944,325,903,294,841,237"/>
-<area shape="poly" title=" " alt="" coords="1064,161,1062,153,1071,143,1089,138,1117,136,1147,138,1167,147,1162,147,1146,144,1117,141,1090,143,1073,148,1067,154,1069,163"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="1293,329,1506,372"/>
-<area shape="poly" title=" " alt="" coords="1246,325,1280,333,1275,333,1246,331"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="1576,155,1768,213"/>
-<area shape="poly" title=" " alt="" coords="1435,326,1607,223,1612,221,1437,331"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1554,296,1790,339"/>
-<area shape="poly" title=" " alt="" coords="1506,335,1542,333,1536,334,1507,340"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="1565,363,1779,405"/>
-<area shape="poly" title=" " alt="" coords="1507,361,1553,369,1547,369,1507,366"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1584,475,1760,517"/>
-<area shape="poly" title=" " alt="" coords="1442,370,1619,467,1614,467,1441,375"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="1849,96,2040,139"/>
-<area shape="poly" title=" " alt="" coords="1767,158,1837,144,1842,142,1769,163"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="1857,163,2032,205"/>
-<area shape="poly" title=" " alt="" coords="1768,181,1844,184,1838,184,1768,187"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="1857,229,2032,272"/>
-<area shape="poly" title=" " alt="" coords="1761,293,1839,276,1844,275,1763,298"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="1857,296,2032,339"/>
-<area shape="poly" title=" " alt="" coords="1790,315,1844,317,1838,318,1790,320"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="2100,179,2317,205"/>
-<area shape="poly" title=" " alt="" coords="2032,229,2127,210,2133,209,2033,234"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="2120,229,2296,272"/>
-<area shape="poly" title=" " alt="" coords="2032,248,2108,250,2102,251,2033,253"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="2099,296,2317,323"/>
-<area shape="poly" title=" " alt="" coords="2033,268,2133,292,2127,292,2032,273"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="2365,200,2560,243"/>
-<area shape="poly" title=" " alt="" coords="2317,202,2352,208,2347,208,2317,207"/>
-<area shape="poly" title=" " alt="" coords="2296,238,2352,234,2347,235,2297,243"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="1838,363,2051,405"/>
-<area shape="poly" title=" " alt="" coords="1779,381,1824,384,1819,384,1779,387"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="1838,429,2051,472"/>
-<area shape="poly" title=" " alt="" coords="1762,403,1842,425,1837,425,1762,409"/>
-<area shape="rect" href="../../d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="2122,379,2294,421"/>
-<area shape="poly" title=" " alt="" coords="2051,427,2104,420,2110,419,2052,433"/>
-<area shape="rect" href="../../dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="2106,445,2311,488"/>
-<area shape="poly" title=" " alt="" coords="2052,454,2093,460,2087,460,2051,460"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="1857,520,2032,563"/>
-<area shape="poly" title=" " alt="" coords="1760,508,1844,524,1839,524,1760,513"/>
-<area shape="poly" title=" " alt="" coords="1895,518,1893,510,1901,501,1918,495,1944,493,1972,496,1991,505,1986,504,1971,501,1944,499,1919,501,1904,505,1898,511,1899,521"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="2104,528,2312,555"/>
-<area shape="poly" title=" " alt="" coords="2033,539,2092,541,2086,541,2033,544"/>
-<area shape="poly" title=" " alt="" coords="1231,373,1280,368,1275,369,1231,378"/>
-<area shape="poly" title=" " alt="" coords="917,69,1011,50,1006,52,919,74"/>
-<area shape="poly" title=" " alt="" coords="893,113,1033,157,1027,158,893,118"/>
-<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="1008,72,1226,115"/>
-<area shape="poly" title=" " alt="" coords="940,91,995,93,990,94,942,96"/>
-<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="1304,72,1495,115"/>
-<area shape="poly" title=" " alt="" coords="1226,91,1291,93,1286,94,1227,96"/>
+<area shape="poly" title=" " alt="" coords="917,226,1007,208,1002,210,919,231"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="989,379,1245,437"/>
+<area shape="poly" title=" " alt="" coords="848,270,911,317,990,364,1003,372,998,372,987,369,908,321,847,275"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="1003,296,1230,355"/>
+<area shape="poly" title=" " alt="" coords="908,270,990,293,985,293,908,275"/>
+<area shape="rect" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#a43c39913a44247cacdb50e33fc19194d" title="Fills the DataPacketsReadyToSend queue with the data packets from the next command to send if there a..." alt="" coords="1293,229,1553,272"/>
+<area shape="poly" title=" " alt="" coords="1238,248,1280,250,1275,251,1239,253"/>
+<area shape="poly" title=" " alt="" coords="1061,161,1059,153,1068,143,1088,138,1117,136,1149,138,1169,147,1164,147,1148,144,1117,141,1089,143,1071,148,1064,154,1066,163"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="1316,345,1530,388"/>
+<area shape="poly" title=" " alt="" coords="1245,388,1304,383,1299,383,1246,393"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="1623,171,1815,229"/>
+<area shape="poly" title=" " alt="" coords="1462,342,1649,238,1654,237,1464,347"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1601,312,1837,355"/>
+<area shape="poly" title=" " alt="" coords="1530,352,1589,348,1584,349,1531,357"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="1612,379,1826,421"/>
+<area shape="poly" title=" " alt="" coords="1530,376,1600,386,1594,386,1530,381"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1631,491,1807,533"/>
+<area shape="poly" title=" " alt="" coords="1469,386,1662,484,1657,483,1468,391"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="1896,179,2087,221"/>
+<area shape="poly" title=" " alt="" coords="1815,197,1883,200,1878,200,1815,203"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="1904,112,2079,155"/>
+<area shape="poly" title=" " alt="" coords="1814,174,1886,159,1891,158,1816,179"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="1904,312,2079,355"/>
+<area shape="poly" title=" " alt="" coords="1837,331,1891,333,1885,334,1837,336"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="1904,245,2079,288"/>
+<area shape="poly" title=" " alt="" coords="1808,309,1886,292,1891,291,1810,314"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="2412,211,2630,237"/>
+<area shape="poly" title=" " alt="" coords="2075,309,2096,298,2111,285,2119,272,2128,259,2145,247,2207,225,2272,212,2336,207,2399,210,2394,211,2336,213,2272,218,2208,230,2147,252,2132,262,2124,275,2115,289,2100,302,2077,314"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="2168,261,2343,304"/>
+<area shape="poly" title=" " alt="" coords="2079,314,2150,303,2155,302,2080,319"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="2146,328,2364,355"/>
+<area shape="poly" title=" " alt="" coords="2080,333,2133,337,2128,338,2080,339"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598" title=" " alt="" coords="2678,232,2872,275"/>
+<area shape="poly" title=" " alt="" coords="2630,234,2665,240,2659,240,2630,239"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="2424,261,2618,304"/>
+<area shape="poly" title=" " alt="" coords="2343,280,2411,282,2406,283,2344,285"/>
+<area shape="poly" title=" " alt="" coords="2618,269,2665,266,2660,267,2619,274"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="1885,445,2098,488"/>
+<area shape="poly" title=" " alt="" coords="1809,419,1889,441,1884,441,1809,425"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="1885,379,2098,421"/>
+<area shape="poly" title=" " alt="" coords="1826,397,1871,400,1866,400,1826,403"/>
+<area shape="rect" href="../../d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="2170,379,2341,421"/>
+<area shape="poly" title=" " alt="" coords="2098,397,2157,400,2151,400,2099,403"/>
+<area shape="rect" href="../../dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="2152,445,2358,488"/>
+<area shape="poly" title=" " alt="" coords="2079,419,2156,441,2151,441,2078,425"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="1904,536,2079,579"/>
+<area shape="poly" title=" " alt="" coords="1807,524,1891,540,1886,540,1807,529"/>
+<area shape="poly" title=" " alt="" coords="1942,534,1940,526,1948,517,1965,511,1991,509,2019,512,2038,521,2033,520,2018,517,1991,515,1966,517,1951,521,1945,527,1946,537"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="2152,544,2359,571"/>
+<area shape="poly" title=" " alt="" coords="2080,555,2139,557,2133,557,2080,560"/>
+<area shape="poly" title=" " alt="" coords="1231,338,1304,350,1298,350,1231,343"/>
+<area shape="poly" title=" " alt="" coords="930,128,1011,114,1006,115,932,133"/>
+<area shape="poly" title=" " alt="" coords="941,162,1005,171,999,172,941,168"/>
+<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="1008,5,1226,48"/>
+<area shape="poly" title=" " alt="" coords="854,128,915,92,988,58,1010,52,1005,54,990,62,918,97,857,132"/>
+<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="1328,5,1519,48"/>
+<area shape="poly" title=" " alt="" coords="1226,24,1315,26,1309,27,1227,29"/>
 </map>
 </div>
 <div class="dynheader">
@@ -411,7 +437,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00236">236</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00238">238</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -453,7 +479,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00186">186</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00188">188</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -521,7 +547,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00198">198</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00200">200</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -547,7 +573,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void EpsilonCore.Engine.EpsilonEngine.EnqueueNextCommand </td>
           <td>(</td>
-          <td class="paramtype">MachineQueue</td>          <td class="paramname"><span class="paramname"><em>machineQueue</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a></td>          <td class="paramname"><span class="paramname"><em>machineQueue</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -572,65 +598,71 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00317">317</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00319">319</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_ab0f630c8fa0c1e28f59012c8c8f9c078_cgraph.png" border="0" usemap="#ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_ab0f630c8fa0c1e28f59012c8c8f9c078_cgraph" loading="lazy" alt=""/></div>
 <map name="ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_ab0f630c8fa0c1e28f59012c8c8f9c078_cgraph" id="ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_ab0f630c8fa0c1e28f59012c8c8f9c078_cgraph">
-<area shape="rect" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="5,147,210,189"/>
+<area shape="rect" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="5,180,210,223"/>
 <area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a330ee787e788e7a45b32f5ecb3d6dff7" title=" " alt="" coords="268,5,504,32"/>
-<area shape="poly" title=" " alt="" coords="126,145,181,92,217,64,256,42,275,36,271,39,259,46,220,69,185,96,130,148"/>
-<area shape="rect" href="../../da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="287,80,485,123"/>
-<area shape="poly" title=" " alt="" coords="198,144,281,125,277,129,201,148"/>
-<area shape="rect" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="293,147,478,189"/>
-<area shape="poly" title=" " alt="" coords="209,166,280,167,275,169,211,170"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="258,213,514,272"/>
-<area shape="poly" title=" " alt="" coords="189,187,262,208,257,210,191,193"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="272,296,500,355"/>
-<area shape="poly" title=" " alt="" coords="131,187,188,235,223,260,259,282,271,289,265,290,256,286,220,264,185,239,131,192"/>
-<area shape="poly" title=" " alt="" coords="334,79,331,70,340,61,358,55,386,53,416,56,435,64,430,65,415,61,386,59,359,61,343,65,337,71,339,80"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="562,263,775,305"/>
-<area shape="poly" title=" " alt="" coords="514,259,549,266,544,267,515,264"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="845,88,1037,147"/>
-<area shape="poly" title=" " alt="" coords="704,260,876,156,881,154,706,265"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="823,229,1059,272"/>
-<area shape="poly" title=" " alt="" coords="775,268,810,266,805,268,776,274"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="834,296,1048,339"/>
-<area shape="poly" title=" " alt="" coords="776,294,822,302,816,303,776,300"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="853,408,1029,451"/>
-<area shape="poly" title=" " alt="" coords="711,303,888,400,883,400,710,308"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="1118,29,1309,72"/>
-<area shape="poly" title=" " alt="" coords="1036,91,1111,75,1106,77,1038,96"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="1126,96,1301,139"/>
-<area shape="poly" title=" " alt="" coords="1037,115,1113,117,1107,118,1037,120"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="1126,163,1301,205"/>
-<area shape="poly" title=" " alt="" coords="1030,226,1113,208,1108,210,1032,231"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="1126,229,1301,272"/>
-<area shape="poly" title=" " alt="" coords="1059,248,1113,250,1107,251,1059,253"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1368,112,1586,139"/>
-<area shape="poly" title=" " alt="" coords="1301,162,1402,142,1396,143,1302,167"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1390,163,1565,205"/>
-<area shape="poly" title=" " alt="" coords="1301,181,1377,184,1371,184,1302,187"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1368,229,1586,256"/>
-<area shape="poly" title=" " alt="" coords="1302,201,1402,225,1396,225,1302,206"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1634,133,1829,176"/>
-<area shape="poly" title=" " alt="" coords="1586,135,1621,142,1616,142,1586,141"/>
-<area shape="poly" title=" " alt="" coords="1565,171,1621,167,1616,168,1566,176"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="1107,296,1320,339"/>
-<area shape="poly" title=" " alt="" coords="1048,315,1093,317,1088,318,1048,320"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="1107,363,1320,405"/>
-<area shape="poly" title=" " alt="" coords="1031,337,1111,358,1106,358,1031,342"/>
-<area shape="rect" href="../../d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="1392,312,1563,355"/>
-<area shape="poly" title=" " alt="" coords="1320,361,1373,353,1379,352,1321,366"/>
-<area shape="rect" href="../../dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="1374,379,1580,421"/>
-<area shape="poly" title=" " alt="" coords="1321,388,1362,393,1356,393,1321,393"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="1126,453,1301,496"/>
-<area shape="poly" title=" " alt="" coords="1029,441,1113,458,1108,457,1029,447"/>
-<area shape="poly" title=" " alt="" coords="1164,451,1162,443,1170,434,1187,429,1213,427,1241,429,1260,438,1255,437,1240,434,1213,432,1188,434,1173,439,1167,445,1168,454"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="1374,461,1581,488"/>
-<area shape="poly" title=" " alt="" coords="1302,472,1361,475,1355,475,1302,477"/>
-<area shape="poly" title=" " alt="" coords="499,306,549,301,544,302,501,311"/>
+<area shape="poly" title=" " alt="" coords="120,178,174,110,213,72,256,42,272,36,268,40,259,46,216,77,178,113,125,181"/>
+<area shape="rect" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#aa2f7fa140de51c5818e6f3061d21cbf3" title="Adds a command to the ReadyToSend queue and fills the DataPacketsReadyToSend queue with the data pack..." alt="" coords="265,56,507,99"/>
+<area shape="poly" title=" " alt="" coords="137,178,191,142,257,108,276,102,273,106,259,113,194,147,141,181"/>
+<area shape="rect" href="../../da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="287,147,485,189"/>
+<area shape="poly" title=" " alt="" coords="209,187,274,180,270,183,212,191"/>
+<area shape="rect" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="293,213,478,256"/>
+<area shape="poly" title=" " alt="" coords="209,211,280,220,275,223,211,216"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="258,280,514,339"/>
+<area shape="poly" title=" " alt="" coords="154,221,259,266,277,274,272,275,257,270,155,226"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="272,363,500,421"/>
+<area shape="poly" title=" " alt="" coords="125,220,181,284,218,318,259,348,269,355,263,356,256,353,215,323,177,288,125,225"/>
+<area shape="rect" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#a43c39913a44247cacdb50e33fc19194d" title="Fills the DataPacketsReadyToSend queue with the data packets from the next command to send if there a..." alt="" coords="562,56,822,99"/>
+<area shape="poly" title=" " alt="" coords="507,75,549,76,544,78,509,80"/>
+<area shape="poly" title=" " alt="" coords="334,146,331,137,340,128,358,122,386,120,416,122,435,131,430,132,415,128,386,125,359,127,343,132,337,138,339,147"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="586,329,799,372"/>
+<area shape="poly" title=" " alt="" coords="514,324,573,334,568,335,515,329"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="892,155,1084,213"/>
+<area shape="poly" title=" " alt="" coords="731,326,918,222,923,220,733,331"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="870,296,1106,339"/>
+<area shape="poly" title=" " alt="" coords="799,336,858,332,853,333,800,341"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="881,363,1095,405"/>
+<area shape="poly" title=" " alt="" coords="799,360,869,370,863,370,799,365"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="900,475,1076,517"/>
+<area shape="poly" title=" " alt="" coords="738,370,931,467,926,467,737,375"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="1165,96,1356,139"/>
+<area shape="poly" title=" " alt="" coords="1083,158,1158,142,1153,144,1085,163"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="1173,163,1348,205"/>
+<area shape="poly" title=" " alt="" coords="1084,181,1160,184,1154,184,1084,187"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="1173,229,1348,272"/>
+<area shape="poly" title=" " alt="" coords="1077,293,1160,275,1155,276,1079,298"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="1173,296,1348,339"/>
+<area shape="poly" title=" " alt="" coords="1106,315,1160,317,1154,318,1106,320"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1681,179,1899,205"/>
+<area shape="poly" title=" " alt="" coords="1348,227,1415,215,1544,201,1668,195,1663,196,1544,206,1415,220,1349,232"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1436,229,1612,272"/>
+<area shape="poly" title=" " alt="" coords="1348,248,1424,250,1418,251,1349,253"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1415,296,1633,323"/>
+<area shape="poly" title=" " alt="" coords="1349,268,1449,292,1443,292,1349,273"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598" title=" " alt="" coords="1947,200,2141,243"/>
+<area shape="poly" title=" " alt="" coords="1899,202,1934,208,1928,208,1899,207"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1693,229,1887,272"/>
+<area shape="poly" title=" " alt="" coords="1612,248,1680,250,1675,251,1613,253"/>
+<area shape="poly" title=" " alt="" coords="1887,237,1934,234,1929,235,1888,242"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="1154,363,1367,405"/>
+<area shape="poly" title=" " alt="" coords="1095,381,1140,384,1135,384,1095,387"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="1154,429,1367,472"/>
+<area shape="poly" title=" " alt="" coords="1078,403,1158,425,1153,425,1078,409"/>
+<area shape="rect" href="../../d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="1438,379,1610,421"/>
+<area shape="poly" title=" " alt="" coords="1367,427,1420,420,1426,419,1368,433"/>
+<area shape="rect" href="../../dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="1422,445,1627,488"/>
+<area shape="poly" title=" " alt="" coords="1368,454,1409,459,1403,460,1368,460"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="1173,520,1348,563"/>
+<area shape="poly" title=" " alt="" coords="1076,508,1160,524,1155,524,1076,513"/>
+<area shape="poly" title=" " alt="" coords="1211,518,1209,510,1217,501,1234,495,1260,493,1288,496,1307,505,1302,504,1287,501,1260,499,1235,501,1220,505,1214,511,1215,521"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="1420,528,1628,555"/>
+<area shape="poly" title=" " alt="" coords="1349,539,1408,541,1402,541,1349,544"/>
+<area shape="poly" title=" " alt="" coords="499,374,572,366,567,368,500,379"/>
 </map>
 </div>
 <div class="dynheader">
@@ -678,7 +710,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00705">705</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00707">707</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -729,75 +761,81 @@ Here is the caller graph for this function:</div>
 
 <p>This is what the mainThread runs. continually. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00212">212</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00214">214</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a087560170cede1d859a5c1e38090f445_cgraph.png" border="0" usemap="#ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a087560170cede1d859a5c1e38090f445_cgraph" loading="lazy" alt=""/></div>
 <map name="ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a087560170cede1d859a5c1e38090f445_cgraph" id="ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a087560170cede1d859a5c1e38090f445_cgraph">
-<area shape="rect" title="This is what the mainThread runs. continually." alt="" coords="5,159,189,201"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="255,192,460,235"/>
-<area shape="poly" title=" " alt="" coords="188,189,242,197,237,200,190,194"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="237,111,478,153"/>
-<area shape="poly" title=" " alt="" coords="188,161,225,155,221,158,191,165"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a330ee787e788e7a45b32f5ecb3d6dff7" title=" " alt="" coords="536,229,772,256"/>
-<area shape="poly" title=" " alt="" coords="459,221,523,229,518,230,460,226"/>
-<area shape="rect" href="../../da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="555,96,753,139"/>
-<area shape="poly" title=" " alt="" coords="412,189,525,148,552,142,548,145,527,153,414,194"/>
-<area shape="rect" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="562,163,747,205"/>
-<area shape="poly" title=" " alt="" coords="459,201,549,194,544,196,461,206"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="526,280,782,339"/>
-<area shape="poly" title=" " alt="" coords="426,233,527,265,549,274,544,275,525,271,426,238"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="540,363,768,421"/>
-<area shape="poly" title=" " alt="" coords="380,232,444,290,484,321,527,348,538,356,533,356,525,353,481,325,440,294,379,237"/>
-<area shape="poly" title=" " alt="" coords="601,95,599,86,608,77,626,71,654,69,685,72,704,80,699,81,683,77,654,75,627,77,611,81,604,87,606,96"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="830,329,1044,372"/>
-<area shape="poly" title=" " alt="" coords="783,325,818,333,812,333,783,331"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="1114,155,1305,213"/>
-<area shape="poly" title=" " alt="" coords="972,326,1144,223,1149,221,975,331"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1092,296,1327,339"/>
-<area shape="poly" title=" " alt="" coords="1044,335,1079,333,1074,334,1045,340"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="1103,363,1316,405"/>
-<area shape="poly" title=" " alt="" coords="1044,361,1090,369,1085,369,1044,366"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1122,475,1297,517"/>
-<area shape="poly" title=" " alt="" coords="979,370,1157,467,1151,467,978,375"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="1386,163,1577,205"/>
-<area shape="poly" title=" " alt="" coords="1305,181,1373,184,1368,184,1306,187"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="1394,96,1569,139"/>
-<area shape="poly" title=" " alt="" coords="1305,158,1381,142,1376,143,1306,163"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="1394,296,1569,339"/>
-<area shape="poly" title=" " alt="" coords="1327,315,1381,317,1376,318,1328,320"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="1394,229,1569,272"/>
-<area shape="poly" title=" " alt="" coords="1299,293,1376,276,1381,275,1300,298"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1637,195,1854,221"/>
-<area shape="poly" title=" " alt="" coords="1566,293,1587,282,1601,270,1610,257,1619,244,1635,231,1646,228,1651,227,1638,236,1623,247,1614,260,1605,273,1590,286,1567,298"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1658,245,1833,288"/>
-<area shape="poly" title=" " alt="" coords="1569,298,1640,287,1645,286,1570,303"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1636,312,1855,339"/>
-<area shape="poly" title=" " alt="" coords="1570,317,1623,321,1618,322,1570,323"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1903,216,2097,259"/>
-<area shape="poly" title=" " alt="" coords="1855,218,1890,224,1884,224,1855,223"/>
-<area shape="poly" title=" " alt="" coords="1833,254,1890,250,1885,251,1834,259"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="1375,429,1588,472"/>
-<area shape="poly" title=" " alt="" coords="1300,403,1379,425,1374,425,1299,409"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="1375,363,1588,405"/>
-<area shape="poly" title=" " alt="" coords="1316,381,1362,384,1356,384,1317,387"/>
-<area shape="rect" href="../../d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="1660,363,1831,405"/>
-<area shape="poly" title=" " alt="" coords="1589,381,1647,384,1642,384,1589,387"/>
-<area shape="rect" href="../../dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="1643,429,1848,472"/>
-<area shape="poly" title=" " alt="" coords="1569,403,1646,425,1641,425,1569,409"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="1394,520,1569,563"/>
-<area shape="poly" title=" " alt="" coords="1298,508,1381,524,1376,524,1297,513"/>
-<area shape="poly" title=" " alt="" coords="1432,518,1430,510,1438,501,1456,495,1482,493,1510,496,1528,505,1523,504,1509,501,1482,499,1457,501,1441,505,1435,511,1437,521"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="1642,528,1849,555"/>
-<area shape="poly" title=" " alt="" coords="1570,539,1629,541,1624,541,1570,544"/>
-<area shape="poly" title=" " alt="" coords="768,373,818,368,813,369,769,378"/>
-<area shape="poly" title=" " alt="" coords="477,124,542,122,537,124,479,129"/>
-<area shape="poly" title=" " alt="" coords="478,151,549,164,544,166,479,156"/>
-<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="545,5,763,48"/>
-<area shape="poly" title=" " alt="" coords="403,108,525,57,550,51,546,54,527,63,406,112"/>
-<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="841,5,1033,48"/>
-<area shape="poly" title=" " alt="" coords="763,24,828,26,823,28,765,29"/>
+<area shape="rect" title="This is what the mainThread runs. continually." alt="" coords="5,459,189,501"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="255,380,460,423"/>
+<area shape="poly" title=" " alt="" coords="169,456,272,426,268,429,171,460"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="237,492,478,535"/>
+<area shape="poly" title=" " alt="" coords="189,489,223,495,218,497,190,494"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a330ee787e788e7a45b32f5ecb3d6dff7" title=" " alt="" coords="536,247,772,273"/>
+<area shape="poly" title=" " alt="" coords="381,378,443,329,483,304,525,283,548,277,543,279,527,288,486,309,447,334,384,382"/>
+<area shape="rect" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#aa2f7fa140de51c5818e6f3061d21cbf3" title="Adds a command to the ReadyToSend queue and fills the DataPacketsReadyToSend queue with the data pack..." alt="" coords="533,380,775,423"/>
+<area shape="poly" title=" " alt="" coords="459,399,520,401,515,402,460,404"/>
+<area shape="rect" href="../../da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="555,537,753,580"/>
+<area shape="poly" title=" " alt="" coords="393,421,527,499,590,531,585,531,525,504,392,426"/>
+<area shape="rect" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="562,447,747,489"/>
+<area shape="poly" title=" " alt="" coords="455,421,549,443,544,444,455,426"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="526,164,782,223"/>
+<area shape="poly" title=" " alt="" coords="373,378,434,307,477,267,525,232,537,228,532,231,527,237,480,271,438,311,377,382"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="540,297,768,356"/>
+<area shape="poly" title=" " alt="" coords="444,377,528,358,523,360,446,382"/>
+<area shape="rect" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#a43c39913a44247cacdb50e33fc19194d" title="Fills the DataPacketsReadyToSend queue with the data packets from the next command to send if there a..." alt="" coords="830,380,1091,423"/>
+<area shape="poly" title=" " alt="" coords="776,399,817,401,812,402,776,404"/>
+<area shape="poly" title=" " alt="" coords="599,535,596,527,606,518,625,513,654,511,686,513,707,522,701,522,685,518,654,516,626,518,608,523,601,529,603,538"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="854,239,1067,281"/>
+<area shape="poly" title=" " alt="" coords="783,219,847,234,842,235,783,224"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="1161,64,1352,123"/>
+<area shape="poly" title=" " alt="" coords="999,236,1187,132,1192,130,1001,241"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1139,205,1374,248"/>
+<area shape="poly" title=" " alt="" coords="1067,245,1126,241,1121,242,1068,251"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="1150,272,1363,315"/>
+<area shape="poly" title=" " alt="" coords="1067,269,1137,279,1132,280,1068,275"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1169,384,1344,427"/>
+<area shape="poly" title=" " alt="" coords="1006,279,1200,377,1194,377,1005,284"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="1433,72,1624,115"/>
+<area shape="poly" title=" " alt="" coords="1352,91,1420,93,1415,94,1353,96"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="1441,5,1616,48"/>
+<area shape="poly" title=" " alt="" coords="1352,67,1428,51,1423,53,1353,72"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="1441,205,1616,248"/>
+<area shape="poly" title=" " alt="" coords="1374,224,1428,226,1423,227,1375,229"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="1441,139,1616,181"/>
+<area shape="poly" title=" " alt="" coords="1346,202,1428,184,1423,186,1347,207"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1950,104,2167,131"/>
+<area shape="poly" title=" " alt="" coords="1612,202,1634,191,1648,179,1656,165,1666,152,1682,140,1744,118,1809,106,1874,101,1936,103,1931,104,1874,106,1810,111,1745,123,1685,145,1670,156,1661,168,1652,182,1637,196,1614,207"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1705,155,1880,197"/>
+<area shape="poly" title=" " alt="" coords="1616,207,1692,195,1687,196,1618,212"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1683,221,1902,248"/>
+<area shape="poly" title=" " alt="" coords="1617,227,1670,231,1665,231,1617,232"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598" title=" " alt="" coords="2215,125,2409,168"/>
+<area shape="poly" title=" " alt="" coords="2167,127,2202,133,2197,134,2168,133"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1961,155,2156,197"/>
+<area shape="poly" title=" " alt="" coords="1880,173,1948,176,1943,176,1881,179"/>
+<area shape="poly" title=" " alt="" coords="2156,162,2202,159,2197,160,2156,167"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="1422,339,1635,381"/>
+<area shape="poly" title=" " alt="" coords="1346,313,1426,334,1421,334,1346,318"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="1422,272,1635,315"/>
+<area shape="poly" title=" " alt="" coords="1363,291,1409,293,1403,294,1364,296"/>
+<area shape="rect" href="../../d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="1707,272,1878,315"/>
+<area shape="poly" title=" " alt="" coords="1636,291,1694,293,1689,294,1636,296"/>
+<area shape="rect" href="../../dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="1690,339,1895,381"/>
+<area shape="poly" title=" " alt="" coords="1616,313,1693,334,1688,334,1616,318"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="1441,429,1616,472"/>
+<area shape="poly" title=" " alt="" coords="1345,417,1428,434,1423,434,1344,423"/>
+<area shape="poly" title=" " alt="" coords="1479,427,1477,419,1485,410,1503,405,1529,403,1557,405,1575,414,1570,413,1556,410,1529,408,1504,410,1488,415,1482,421,1484,430"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="1689,437,1896,464"/>
+<area shape="poly" title=" " alt="" coords="1617,448,1676,450,1671,451,1617,453"/>
+<area shape="poly" title=" " alt="" coords="767,299,847,284,842,286,769,304"/>
+<area shape="poly" title=" " alt="" coords="478,529,542,541,537,541,478,534"/>
+<area shape="poly" title=" " alt="" coords="478,492,549,484,544,485,479,497"/>
+<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="545,604,763,647"/>
+<area shape="poly" title=" " alt="" coords="400,533,460,562,527,590,549,599,544,599,525,594,458,566,399,538"/>
+<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="865,604,1056,647"/>
+<area shape="poly" title=" " alt="" coords="764,623,852,625,847,625,764,628"/>
 </map>
 </div>
 <div class="dynheader">
@@ -846,7 +884,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00583">583</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00585">585</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -882,7 +920,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void EpsilonCore.Engine.EpsilonEngine.SendSomeQueuedCommands </td>
           <td>(</td>
-          <td class="paramtype">MachineQueue</td>          <td class="paramname"><span class="paramname"><em>machineQueue</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a></td>          <td class="paramname"><span class="paramname"><em>machineQueue</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -901,7 +939,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00478">478</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00480">480</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -952,7 +990,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void EpsilonCore.Engine.EpsilonEngine.SolveMovesAndMarkCommandsAsReadyToSend </td>
           <td>(</td>
-          <td class="paramtype">MachineQueue</td>          <td class="paramname"><span class="paramname"><em>machineQueue</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a></td>          <td class="paramname"><span class="paramname"><em>machineQueue</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -971,7 +1009,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00417">417</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00419">419</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -996,15 +1034,17 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="778,202,861,184,856,186,779,207"/>
 <area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="873,205,1049,248"/>
 <area shape="poly" title=" " alt="" coords="806,224,860,226,855,227,807,229"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1116,88,1334,115"/>
-<area shape="poly" title=" " alt="" coords="1049,138,1149,118,1144,119,1050,143"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1382,88,1599,115"/>
+<area shape="poly" title=" " alt="" coords="1048,136,1115,124,1244,110,1369,105,1364,106,1245,115,1116,129,1050,141"/>
 <area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1137,139,1312,181"/>
 <area shape="poly" title=" " alt="" coords="1049,157,1124,160,1119,160,1050,163"/>
 <area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1116,205,1334,232"/>
 <area shape="poly" title=" " alt="" coords="1049,177,1149,201,1144,202,1049,182"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1382,109,1576,152"/>
-<area shape="poly" title=" " alt="" coords="1334,111,1369,117,1364,118,1334,117"/>
-<area shape="poly" title=" " alt="" coords="1313,147,1369,143,1364,144,1314,152"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598" title=" " alt="" coords="1647,109,1842,152"/>
+<area shape="poly" title=" " alt="" coords="1600,111,1634,117,1629,118,1600,117"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1394,139,1588,181"/>
+<area shape="poly" title=" " alt="" coords="1313,157,1381,160,1375,160,1313,163"/>
+<area shape="poly" title=" " alt="" coords="1588,146,1635,143,1629,144,1589,151"/>
 <area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="854,272,1068,315"/>
 <area shape="poly" title=" " alt="" coords="796,291,841,293,836,294,796,296"/>
 <area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="854,339,1068,381"/>
@@ -1055,7 +1095,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void EpsilonCore.Engine.EpsilonEngine.SolveMovesAndMarkHalfOfMoveCommandsAsReadyToSend </td>
           <td>(</td>
-          <td class="paramtype">MachineQueue</td>          <td class="paramname"><span class="paramname"><em>machineQueue</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a></td>          <td class="paramname"><span class="paramname"><em>machineQueue</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1074,7 +1114,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00439">439</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00441">441</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1099,15 +1139,17 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="749,202,832,184,827,186,750,207"/>
 <area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="844,205,1020,248"/>
 <area shape="poly" title=" " alt="" coords="777,224,831,226,826,227,778,229"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1087,88,1304,115"/>
-<area shape="poly" title=" " alt="" coords="1020,138,1120,118,1115,119,1021,143"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1353,88,1570,115"/>
+<area shape="poly" title=" " alt="" coords="1019,136,1086,124,1215,110,1340,105,1335,106,1216,115,1087,129,1021,141"/>
 <area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1108,139,1284,181"/>
 <area shape="poly" title=" " alt="" coords="1020,157,1095,160,1090,160,1021,163"/>
 <area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1087,205,1305,232"/>
 <area shape="poly" title=" " alt="" coords="1020,177,1120,201,1115,202,1020,182"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1353,109,1547,152"/>
-<area shape="poly" title=" " alt="" coords="1305,111,1340,117,1335,118,1305,117"/>
-<area shape="poly" title=" " alt="" coords="1284,147,1340,143,1335,144,1285,152"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598" title=" " alt="" coords="1618,109,1813,152"/>
+<area shape="poly" title=" " alt="" coords="1571,111,1605,117,1600,118,1571,117"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="1364,139,1559,181"/>
+<area shape="poly" title=" " alt="" coords="1284,157,1352,160,1346,160,1284,163"/>
+<area shape="poly" title=" " alt="" coords="1559,146,1606,143,1600,144,1560,151"/>
 <area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="825,272,1039,315"/>
 <area shape="poly" title=" " alt="" coords="767,291,812,293,807,294,767,296"/>
 <area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="825,339,1039,381"/>
@@ -1171,77 +1213,83 @@ Here is the caller graph for this function:</div>
 
 <p>Starts the main loop to process commands. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00152">152</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00154">154</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a7ae9403462c6b24c7b5269486935b043_cgraph.png" border="0" usemap="#ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a7ae9403462c6b24c7b5269486935b043_cgraph" loading="lazy" alt=""/></div>
 <map name="ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a7ae9403462c6b24c7b5269486935b043_cgraph" id="ad0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine_a7ae9403462c6b24c7b5269486935b043_cgraph">
-<area shape="rect" title="Starts the main loop to process commands." alt="" coords="5,159,189,201"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="237,159,420,201"/>
-<area shape="poly" title=" " alt="" coords="187,178,223,179,219,181,190,182"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="486,192,691,235"/>
-<area shape="poly" title=" " alt="" coords="420,189,474,197,469,199,421,194"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="468,111,709,153"/>
-<area shape="poly" title=" " alt="" coords="419,161,457,156,452,158,422,165"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a330ee787e788e7a45b32f5ecb3d6dff7" title=" " alt="" coords="767,229,1004,256"/>
-<area shape="poly" title=" " alt="" coords="691,221,755,229,750,230,692,226"/>
-<area shape="rect" href="../../da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="786,96,985,139"/>
-<area shape="poly" title=" " alt="" coords="643,189,756,148,784,142,779,144,758,153,645,194"/>
-<area shape="rect" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="793,163,978,205"/>
-<area shape="poly" title=" " alt="" coords="691,201,780,194,775,195,692,206"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="757,280,1014,339"/>
-<area shape="poly" title=" " alt="" coords="657,233,758,265,781,275,775,275,757,271,657,238"/>
-<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="772,363,999,421"/>
-<area shape="poly" title=" " alt="" coords="611,232,675,290,715,321,759,348,770,356,764,355,756,353,712,325,672,294,610,237"/>
-<area shape="poly" title=" " alt="" coords="833,94,830,86,839,77,858,71,886,69,916,72,936,80,930,81,915,77,885,75,859,77,842,81,835,87,837,96"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="1062,329,1275,372"/>
-<area shape="poly" title=" " alt="" coords="1014,325,1049,333,1044,333,1014,331"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="1345,155,1536,213"/>
-<area shape="poly" title=" " alt="" coords="1204,326,1376,223,1381,221,1206,331"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1323,296,1558,339"/>
-<area shape="poly" title=" " alt="" coords="1275,335,1310,333,1305,334,1276,340"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="1334,363,1547,405"/>
-<area shape="poly" title=" " alt="" coords="1275,361,1321,369,1316,369,1275,366"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1353,475,1528,517"/>
-<area shape="poly" title=" " alt="" coords="1211,370,1388,467,1383,467,1209,375"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="1617,163,1809,205"/>
-<area shape="poly" title=" " alt="" coords="1536,181,1605,184,1599,184,1537,187"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="1625,96,1801,139"/>
-<area shape="poly" title=" " alt="" coords="1536,158,1613,142,1608,143,1537,163"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="1625,296,1801,339"/>
-<area shape="poly" title=" " alt="" coords="1559,315,1612,317,1607,318,1559,320"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="1625,229,1801,272"/>
-<area shape="poly" title=" " alt="" coords="1530,293,1607,276,1613,275,1531,298"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="1868,195,2086,221"/>
-<area shape="poly" title=" " alt="" coords="1797,293,1818,282,1832,270,1841,257,1851,244,1866,231,1877,228,1882,227,1869,236,1854,247,1846,260,1836,273,1821,286,1799,298"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1889,245,2064,288"/>
-<area shape="poly" title=" " alt="" coords="1801,298,1872,287,1877,286,1802,303"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1868,312,2086,339"/>
-<area shape="poly" title=" " alt="" coords="1801,317,1855,321,1849,322,1801,323"/>
-<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="2134,216,2328,259"/>
-<area shape="poly" title=" " alt="" coords="2086,218,2121,224,2116,224,2086,223"/>
-<area shape="poly" title=" " alt="" coords="2065,254,2121,250,2116,251,2065,259"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="1606,429,1820,472"/>
-<area shape="poly" title=" " alt="" coords="1531,403,1611,425,1605,425,1530,409"/>
-<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="1606,363,1820,405"/>
-<area shape="poly" title=" " alt="" coords="1548,381,1593,384,1588,384,1548,387"/>
-<area shape="rect" href="../../d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="1891,363,2062,405"/>
-<area shape="poly" title=" " alt="" coords="1820,381,1878,384,1873,384,1820,387"/>
-<area shape="rect" href="../../dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="1874,429,2080,472"/>
-<area shape="poly" title=" " alt="" coords="1800,403,1878,425,1872,425,1800,409"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="1625,520,1801,563"/>
-<area shape="poly" title=" " alt="" coords="1529,508,1613,524,1607,524,1529,513"/>
-<area shape="poly" title=" " alt="" coords="1664,518,1661,510,1670,501,1687,495,1713,493,1741,496,1760,505,1754,504,1740,501,1713,499,1688,501,1672,505,1666,511,1668,521"/>
-<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="1873,528,2080,555"/>
-<area shape="poly" title=" " alt="" coords="1801,539,1860,541,1855,541,1801,544"/>
-<area shape="poly" title=" " alt="" coords="999,373,1049,368,1044,369,1000,378"/>
-<area shape="poly" title=" " alt="" coords="709,123,773,122,768,124,710,129"/>
-<area shape="poly" title=" " alt="" coords="709,151,780,165,775,166,710,156"/>
-<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="776,5,995,48"/>
-<area shape="poly" title=" " alt="" coords="635,108,756,57,782,52,777,54,758,63,637,112"/>
-<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="1073,5,1264,48"/>
-<area shape="poly" title=" " alt="" coords="995,24,1059,26,1054,27,996,29"/>
+<area shape="rect" title="Starts the main loop to process commands." alt="" coords="5,459,189,501"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a087560170cede1d859a5c1e38090f445" title="This is what the mainThread runs. continually." alt="" coords="237,459,420,501"/>
+<area shape="poly" title=" " alt="" coords="188,477,223,479,219,481,189,483"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ab0f630c8fa0c1e28f59012c8c8f9c078" title="Moves the next ICommands from MachineQueue.CommandsToEnqueue to MachineQueue.Queued...." alt="" coords="486,380,691,423"/>
+<area shape="poly" title=" " alt="" coords="401,456,503,427,498,429,402,461"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a5252d741f7566fcc4fd532d47f368f9e" title="Sends a set of DataPackets via an ICommunicator and moves commands and their output machines from Mac..." alt="" coords="468,492,709,535"/>
+<area shape="poly" title=" " alt="" coords="420,489,455,496,450,496,421,494"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a330ee787e788e7a45b32f5ecb3d6dff7" title=" " alt="" coords="767,247,1004,273"/>
+<area shape="poly" title=" " alt="" coords="613,377,675,329,714,304,756,283,779,277,774,279,758,288,717,309,678,334,616,382"/>
+<area shape="rect" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#aa2f7fa140de51c5818e6f3061d21cbf3" title="Adds a command to the ReadyToSend queue and fills the DataPacketsReadyToSend queue with the data pack..." alt="" coords="764,380,1007,423"/>
+<area shape="poly" title=" " alt="" coords="691,399,752,401,747,402,692,404"/>
+<area shape="rect" href="../../da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html#acd7f0f4a15d204f3f64a815de098f6ca" title="Used to format QueuedCommand.DisplayMessage for Display.IResultMessageLogger. Returns a message forma..." alt="" coords="786,537,985,580"/>
+<area shape="poly" title=" " alt="" coords="625,421,759,499,821,531,816,531,756,504,623,426"/>
+<area shape="rect" href="../../d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html#ab00ba0546b96c77229f3005a885b2834" title="Logs a message." alt="" coords="793,447,978,489"/>
+<area shape="poly" title=" " alt="" coords="687,421,780,444,775,444,687,426"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#ae439110c4a0a61bf5942c1ba28f48d6c" title="Solves the MoveQueue and moves all commands from MachineQueue.Queued to MachineQueue...." alt="" coords="757,164,1014,223"/>
+<area shape="poly" title=" " alt="" coords="604,378,666,307,708,267,756,232,763,231,768,229,759,237,712,271,669,311,608,382"/>
+<area shape="rect" href="../../d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html#a9737b43f60aa52b9ceecc82d4ee82052" title="Solves the MoveQueue and moves commands from MachineQueue.Queued to MachineQueue.ReadyToSend until ha..." alt="" coords="772,297,999,356"/>
+<area shape="poly" title=" " alt="" coords="676,377,759,358,754,360,677,382"/>
+<area shape="rect" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#a43c39913a44247cacdb50e33fc19194d" title="Fills the DataPacketsReadyToSend queue with the data packets from the next command to send if there a..." alt="" coords="1062,380,1322,423"/>
+<area shape="poly" title=" " alt="" coords="1007,399,1049,401,1043,402,1008,404"/>
+<area shape="poly" title=" " alt="" coords="830,535,828,527,837,518,856,513,886,511,917,513,938,522,933,522,916,518,885,516,857,518,840,523,833,529,835,538"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#af6488444c3a7f1536ba889799b0d0bd5" title="Solves the time of every MovePoint." alt="" coords="1085,239,1298,281"/>
+<area shape="poly" title=" " alt="" coords="1014,219,1079,235,1073,235,1014,224"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a88330e26eed7fc9c7790ec51f5808c30" title=" " alt="" coords="1392,64,1583,123"/>
+<area shape="poly" title=" " alt="" coords="1230,236,1418,132,1423,130,1233,241"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a94d135ab2470bac8285d825b0bc11769" title=" " alt="" coords="1370,205,1605,248"/>
+<area shape="poly" title=" " alt="" coords="1298,245,1357,241,1352,242,1300,251"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a91f1a317213fb33959542dc38ca74c05" title=" " alt="" coords="1381,272,1594,315"/>
+<area shape="poly" title=" " alt="" coords="1299,269,1368,279,1363,280,1299,275"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#addda563cc2328c7ea3a1d5df4f11b4de" title="Simplifies a set of MovePoints using the Douglas&#45;Peucker algorithm and an allowable linear and rotati..." alt="" coords="1400,384,1575,427"/>
+<area shape="poly" title=" " alt="" coords="1238,279,1431,377,1426,377,1237,284"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#afe7d735a9bf78eecc8736c0dee08c0d0" title="Computes MovePoint.ActuatorPositionDerivatives1Linear, MovePoint.ActuatorPositionDerivatives1Rotation..." alt="" coords="1664,72,1856,115"/>
+<area shape="poly" title=" " alt="" coords="1583,91,1652,93,1646,94,1584,96"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ade25f061114fd796ad6543da4064883c" title="Calculates MovePoint.ActuatorLimitedDsDt for every point." alt="" coords="1672,5,1848,48"/>
+<area shape="poly" title=" " alt="" coords="1583,67,1660,51,1655,53,1584,72"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#ab994df50b3b5cc0fe013252dcfe7437e" title=" " alt="" coords="1672,205,1848,248"/>
+<area shape="poly" title=" " alt="" coords="1605,224,1659,226,1654,227,1606,229"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#aeadf555e23f02cd5a40c5222fa7beede" title=" " alt="" coords="1672,139,1848,181"/>
+<area shape="poly" title=" " alt="" coords="1577,202,1660,184,1654,186,1578,207"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a3a8b788ac9fec042873d44e0da2bfefa" title=" " alt="" coords="2181,104,2398,131"/>
+<area shape="poly" title=" " alt="" coords="1844,202,1865,191,1879,179,1888,165,1897,152,1913,140,1975,118,2040,106,2105,101,2168,103,2163,104,2105,106,2041,111,1977,123,1916,145,1901,156,1892,168,1883,182,1868,196,1846,207"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a4caf5f22b4c2398eacbdaba2fe549fcb" title=" " alt="" coords="1936,155,2112,197"/>
+<area shape="poly" title=" " alt="" coords="1848,207,1924,195,1919,196,1849,212"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a5efc79926edebbe9b30120701075d75e" title=" " alt="" coords="1915,221,2133,248"/>
+<area shape="poly" title=" " alt="" coords="1848,227,1902,231,1896,231,1849,232"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#a89716554ab43dbba73cf3a2b00324598" title=" " alt="" coords="2446,125,2641,168"/>
+<area shape="poly" title=" " alt="" coords="2399,127,2433,133,2428,134,2399,133"/>
+<area shape="rect" href="../../d1/d33/struct_units_net_helpers_1_1_frequency2.html#abeb32f92ff7d3078945cef9d6acf9b92" title=" " alt="" coords="2192,155,2387,197"/>
+<area shape="poly" title=" " alt="" coords="2112,173,2180,176,2174,176,2112,179"/>
+<area shape="poly" title=" " alt="" coords="2387,162,2434,159,2428,160,2388,167"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#a4de6b55412ab2c2f942ca0c6d31e9075" title="Returns a factor which can be multiplied by an actuator&#39;s square corner velocity then multiplied by t..." alt="" coords="1653,339,1867,381"/>
+<area shape="poly" title=" " alt="" coords="1578,313,1658,334,1652,334,1578,318"/>
+<area shape="rect" href="../../d7/dd3/class_epsilon_core_1_1_motion_1_1_move_queue.html#ac9da118961d373d0c497ec7abecf3c96" title="Returns the cosine of the angle between two consecutive move&#39;s speed vectors in actuator space...." alt="" coords="1653,272,1867,315"/>
+<area shape="poly" title=" " alt="" coords="1595,291,1640,293,1635,294,1595,296"/>
+<area shape="rect" href="../../d8/d1e/class_units_net_helpers_1_1_helpers.html#a93f465da09fa0b90e35f3132e1693e2b" title=" " alt="" coords="1938,272,2110,315"/>
+<area shape="poly" title=" " alt="" coords="1867,291,1925,293,1920,294,1867,296"/>
+<area shape="rect" href="../../dd/d12/class_epsilon_core_1_1_motion_1_1_move_point.html#a03a29e96cd7e9466d43244b6d134249d" title="Normalizes the actuator first derivatives based on the actuator&#39;s square corner speed...." alt="" coords="1921,339,2126,381"/>
+<area shape="poly" title=" " alt="" coords="1847,313,1925,334,1919,334,1847,318"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a89f472cb5e4465b461adb675e4ba94d2" title="Runs the Douglas&#45;Peucker algorithm on a range of MovePoints from startIndex &#160;to endIndex &#160;and appends..." alt="" coords="1672,429,1848,472"/>
+<area shape="poly" title=" " alt="" coords="1576,417,1660,434,1654,434,1576,423"/>
+<area shape="poly" title=" " alt="" coords="1711,427,1708,419,1717,410,1734,405,1760,403,1788,405,1807,414,1801,413,1787,410,1760,408,1735,410,1719,415,1713,421,1715,430"/>
+<area shape="rect" href="../../d8/d52/class_epsilon_core_1_1_motion_1_1_move.html#a6145d9f40b8c0bd019ced76af4c72cb6" title=" " alt="" coords="1920,437,2128,464"/>
+<area shape="poly" title=" " alt="" coords="1848,448,1907,451,1902,451,1848,453"/>
+<area shape="poly" title=" " alt="" coords="999,299,1078,284,1073,286,1000,305"/>
+<area shape="poly" title=" " alt="" coords="710,529,773,541,768,541,710,534"/>
+<area shape="poly" title=" " alt="" coords="709,492,780,484,775,485,710,498"/>
+<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#a56bf848c6b4f9d34052922344c544a8f" title="Returns a new DataPacket with the given sequence number assigned." alt="" coords="776,604,995,647"/>
+<area shape="poly" title=" " alt="" coords="632,533,691,562,758,590,781,599,775,599,756,594,689,566,631,538"/>
+<area shape="rect" href="../../dc/dc9/class_epsilon_core_1_1_communication_1_1_data_packet.html#aca8dc1097721b393f3c0686256ffd6e9" title=" " alt="" coords="1096,604,1288,647"/>
+<area shape="poly" title=" " alt="" coords="995,623,1083,625,1078,625,995,628"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1286,7 +1334,7 @@ Here is the caller graph for this function:</div>
 
 <p>Stops the main loop to stop process commands. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00170">170</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00172">172</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1315,7 +1363,7 @@ Here is the caller graph for this function:</div>
 
 <p>Raised when a QueuedCommand is queued and the QueuedCommand.ResultantMachine is applied to the MachineQueue.LatestQueuedMachine. The sender object will be the QueuedCommand.InitialMachine that the command was queued to. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00073">73</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00075">75</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 
 </div>
 </div>
@@ -1333,7 +1381,7 @@ Here is the caller graph for this function:</div>
 
 <p>Raised when a QueuedCommand is fully resolved and the QueuedCommand.ResultantMachine is applied to the MachineQueue.CurrentMachine. The sender object will be the QueuedCommand.ResultantMachine that resulted from the command. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00086">86</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00088">88</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 
 </div>
 </div>
@@ -1351,7 +1399,7 @@ Here is the caller graph for this function:</div>
 
 <p>Raised when a QueuedCommand is sent to one or more Boards. The sender object will be the QueuedCommand.InitialMachine that the command was queued to. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00079">79</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00081">81</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 
 </div>
 </div>
@@ -1375,7 +1423,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00061">61</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00063">63</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 
 </div>
 </div>
@@ -1402,7 +1450,7 @@ Here is the caller graph for this function:</div>
 
 <p>Logger to use for errors that occur not related to a specific machine. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00066">66</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00068">68</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 
 </div>
 </div>
@@ -1416,7 +1464,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ConcurrentDictionary&lt;uint, MachineQueue&gt; EpsilonCore.Engine.EpsilonEngine.MachineQueues = []</td>
+          <td class="memname">ConcurrentDictionary&lt;uint, <a class="el" href="../../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html">MachineQueue</a>&gt; EpsilonCore.Engine.EpsilonEngine.MachineQueues = []</td>
         </tr>
       </table>
   </td>
@@ -1426,7 +1474,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00054">54</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00056">56</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 
 </div>
 </div>
@@ -1452,7 +1500,7 @@ Here is the caller graph for this function:</div>
 
 <p>Indicates if the main loop is running. False until Start is called. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00060">60</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html#l00062">62</a> of file <a class="el" href="../../d4/d5f/_epsilon_engine_8cs_source.html">EpsilonEngine.cs</a>.</p>
 
 </div>
 </div>

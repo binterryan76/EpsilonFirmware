@@ -139,37 +139,52 @@ Generating Doxygen Documentation</h2>
 <li>Select "Path"</li>
 <li>Click "Edit..."</li>
 <li>Click "New"</li>
-<li>Add directory containing python.exe (usually "C:\Users\USERNAME\AppData\Local\Python\bin")</li>
+<li>Add directory containing python.exe (usually <span class="tt">C:\Users\USERNAME\AppData\Local\Python\bin</span>)</li>
 <li>Click "New" again.</li>
-<li>Add directory containing dot.exe (usually "C:\Program Files (x86)\Graphviz\bin")</li>
+<li>Add directory containing dot.exe (usually <span class="tt">C:\Program Files (x86)\Graphviz\bin</span>)</li>
 <li>Click "OK" on all 3 windows.</li>
 </ol>
 </li>
-<li>Make sure doxyfile is setup correctly (documentation\doxygen\EpsilonFirmwareDoxyfile):<ol type="a">
-<li>Open doxywizard (usually located in C:\Program Files\doxygen\bin\doxywizard.exe)</li>
-<li>Open the doxyfile (documentation\doxygen\EpsilonFirmwareDoxyfile)</li>
+<li>Make sure doxyfile is setup correctly (<span class="tt">documentation\doxygen\EpsilonFirmwareDoxyfile</span>):<ol type="a">
+<li>Open doxywizard (usually located in <span class="tt">C:\Program Files\doxygen\bin\doxywizard.exe</span>)</li>
+<li>Open the doxyfile (<span class="tt">documentation\doxygen\EpsilonFirmwareDoxyfile</span>)</li>
 <li>Click the Expert tab and use the search to validate the following settings:</li>
-<li>Make sure DOT_PATH is set to the GraphViz location which contains dot.exe (usually C:\Program Files (x86)\Graphviz\bin)</li>
+<li>Make sure DOT_PATH is set to the GraphViz location which contains dot.exe (usually <span class="tt">C:\Program Files (x86)\Graphviz\bin</span>)</li>
 </ol>
 </li>
-<li>Run documentation\doxygen\GenerateDocs.bat<ol type="a">
-<li>This will run a pre-processing python script to format and copy the obsidian markdown files so they show up in the Doxygen navigation panel with the proper structure.</li>
-<li>Then it will run Doxygen.<ol type="i">
-<li>This will run a python script to pre-process every *.cs file because Doxygen doesn't like the default constructor syntax and doesn't like records which EpsilonFirmware uses a lot of.</li>
-<li>This script is indicated in the EpsilonFirmwareDoxyfile with the FILTER_PATTERNS setting.</li>
-<li>Hopefully we can get rid of this script eventually once Doxygen is updated and these issues are resolved:<ol type="A">
+<li>Run <span class="tt">documentation\doxygen\GenerateDocs.bat</span><ol type="a">
+<li>This will run a pre-processing python script <a class="el" href="#md_epsilon_firmware_epsilon_firmware_documentation_generate_markdown_nav_py" title="generate_markdown_nav.py">generate_markdown_nav.py</a></li>
+<li>Then it will run Doxygen which will run <a class="el" href="#md_epsilon_firmware_epsilon_firmware_documentation_doxygen_record_filter_py" title="doxygen_record_filter.py">doxygen_record_filter.py</a> on every *.cs file</li>
+</ol>
+</li>
+</ol>
+<h3 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_documentation_doxygen_python_scripts"></a>
+Doxygen Python Scripts</h3>
+<p>Generating the Doxygen documentation uses two python scripts to format the Doxygen pages.</p>
+<h4 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_documentation_generate_markdown_nav_py"></a>
+generate_markdown_nav.py</h4>
+<p>This is the first python script run when generating Doxygen documentation. It does the following:</p><ul>
+<li>Makes a copy of the Obsidian markdown files in <span class="tt">documentation\obsidian_formatted_for_doxygen</span></li>
+<li>Creates the required files for Doxygen to have an expanding section for markdown documentation which matches the hierarchical folder structure of the Obsidian documentation inside the <span class="tt">obsidian_formatted_for_doxygen</span> directory.</li>
+<li>Reformats internal Obsidian links to specific headers by adding unique Doxygen tags at the end of every Obsidian header and changing links to reference those Doxygen tags.</li>
+</ul>
+<h4 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_documentation_doxygen_record_filter_py"></a>
+doxygen_record_filter.py</h4>
+<p>This python script is ran on every *.cs file because Doxygen doesn't understand C# default constructor syntax and also doesn't understand C# records which EpsilonFirmware uses a lot of. This script changes records to classes so they show up in the Doxygen classes section. It also adds constructors for classes and records so Doxygen doesn't interpret classes/records with default constructors as functions.</p><ol type="1">
+<li>This script is pointed to by the EpsilonFirmwareDoxyfile with the FILTER_PATTERNS setting.</li>
+<li>This script is called by both <a class="el" href="#md_epsilon_firmware_epsilon_firmware_documentation_qualify_wikilinks_py" title="qualify_wikilinks.py">qualify_wikilinks.py</a> and <a class="el" href="#md_epsilon_firmware_epsilon_firmware_documentation_generate_markdown_nav_py" title="generate_markdown_nav.py">generate_markdown_nav.py</a></li>
+<li>Hopefully we can get rid of this script eventually once Doxygen is updated and these issues are resolved:<ul>
 <li><a href="https://github.com/doxygen/doxygen/issues/8428">https://github.com/doxygen/doxygen/issues/8428</a></li>
 <li><a href="https://github.com/doxygen/doxygen/issues/10087">https://github.com/doxygen/doxygen/issues/10087</a></li>
-</ol>
+</ul>
 </li>
 </ol>
-</li>
-</ol>
-</li>
-</ol>
+<h4 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_documentation_qualify_wikilinks_py"></a>
+qualify_wikilinks.py</h4>
+<p>This python script is called inside <span class="tt">GenerateDocs.bat</span> and it alters the Obsidian markdown files to make links to classes using brackets [[ ClassName]] into fully qualified links so <span class="tt">generate_markdown_nav.py</span> detects them properly.</p>
 <h2 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_documentation_viewing_doxygen_documentation"></a>
 Viewing Doxygen Documentation</h2>
-<p>To view Doxygen documentation, run documentation\doxygen\LaunchDocs.bat This is just a shortcut to documentation\doxygen\html\index.html</p>
+<p>To view Doxygen documentation, run <span class="tt">documentation\doxygen\LaunchDocs.bat</span> This is just a shortcut to <span class="tt">documentation\doxygen\html\index.html</span></p>
 <h1 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_documentation_obsidian"></a>
 Obsidian</h1>
 <p>Obsidian is a markdown editor/reader app. It is the preferred way to edit the additional markdown files added to Doxygen. <a href="https://obsidian.md/">https://obsidian.md/</a></p>
@@ -181,9 +196,15 @@ Editing Markdown Documentation</h2>
 </ol>
 </li>
 <li>Open Obsidian and click "Open folder as vault"</li>
-<li>Select directory \documentation\obsidian\Epsilon Firmware</li>
-<li>Edit the files as you normally would but note that for them to show up in Doxygen, you will have to do this: <a class="el" href="#md_epsilon_firmware_epsilon_firmware_documentation_generating_doxygen_documentation" title="Generating Doxygen Documentation">Generating Doxygen Documentation</a> </li>
+<li>Select directory <span class="tt">\documentation\obsidian\Epsilon Firmware</span></li>
+<li>Edit the files as you normally would but note that for them to show up in Doxygen, you will have to do this: <a class="el" href="#md_epsilon_firmware_epsilon_firmware_documentation_generating_doxygen_documentation" title="Generating Doxygen Documentation">Generating Doxygen Documentation</a></li>
 </ol>
+<h3 class="doxsection"><a class="anchor" id="md_epsilon_firmware_epsilon_firmware_documentation_additional_notes"></a>
+Additional Notes</h3>
+<ul>
+<li>If you want to reference a class in Obsidian markdown documentation, enclose the class name in double square brackets [[ClassName]]</li>
+<li>If you want to reference a member in a class, follow this format: [[ClassName#MemberName]] </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

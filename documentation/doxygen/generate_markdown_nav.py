@@ -30,7 +30,10 @@ Re-run this script any time the vault changes, then re-run doxygen.
 import argparse
 import re
 import shutil
+import subprocess
 import sys
+import tempfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 SKIP_DIR_NAMES = {".obsidian", ".git", ".trash", ".smart-connections", "node_modules"}
@@ -126,6 +129,113 @@ def ensure_page_id(md_path: Path, desired_id: str, filename_title: str) -> tuple
     return desired_id, filename_title
 
 
+COMPOUND_KINDS = {"class", "struct", "interface", "protocol", "exception", "namespace"}
+
+
+def build_symbol_maps(code_dirs: list, filter_patterns: list, warnings: list):
+    """
+    Run a fast, output-free Doxygen pass over the given source directories to
+    discover documented classes/structs/namespaces, so [[Name]] links in the
+    vault can be resolved to the right Doxygen \\ref target automatically.
+    Returns (short_name_map, qualified_name_map); both empty if code_dirs is
+    empty or doxygen isn't available.
+
+    filter_patterns is passed straight through as Doxygen's own
+    FILTER_PATTERNS syntax (e.g. '*.cs=cs_record_filter.py'), for source
+    that needs preprocessing before Doxygen's parser can see it - such as
+    C# records, which Doxygen doesn't recognize at all without one.
+    """
+    short_name_map = {}       # "widget" -> ["mypkg::widget::Widget", ...]
+    qualified_name_map = {}   # "mypkg::widget::widget" -> "mypkg::widget::Widget"
+
+    if not code_dirs:
+        return short_name_map, qualified_name_map
+
+    if shutil.which("doxygen") is None:
+        warnings.append(
+            "--code-dir was given but 'doxygen' isn't on PATH, so class-name "
+            "links can't be resolved this run. [[ClassName]] links will be "
+            "left as literal text."
+        )
+        return short_name_map, qualified_name_map
+
+    with tempfile.TemporaryDirectory() as tmp:
+        tagfile = Path(tmp) / "code_tags.xml"
+        config_lines = [
+            f'INPUT = {" ".join(str(Path(d).resolve()) for d in code_dirs)}',
+            "RECURSIVE = YES",
+            "EXTRACT_ALL = YES",
+            "EXTRACT_PRIVATE = YES",
+            "EXTRACT_PACKAGE = YES",
+            "GENERATE_HTML = NO",
+            "GENERATE_LATEX = NO",
+            "GENERATE_XML = NO",
+            "QUIET = YES",
+            "WARNINGS = NO",
+            f"GENERATE_TAGFILE = {tagfile}",
+        ]
+        if filter_patterns:
+            quoted = " ".join(f'"{p}"' for p in filter_patterns)
+            filter_line = f"FILTER_PATTERNS = {quoted}"
+            config_lines.append(filter_line)
+            print(f"Class scan is using: {filter_line}")
+            print("  (this only affects THIS script's internal class scan - add the same "
+                  "FILTER_PATTERNS line, and matching FILE_PATTERNS entries, to your real "
+                  "Doxyfile too, or the final build won't see it)")
+        config = "\n".join(config_lines)
+
+        # Broadly defensive on purpose: any failure here should degrade to
+        # Broadly defensive on purpose: any failure here should degrade to
+        # "no class-name resolution this run" rather than crash the whole
+        # script and leave every [[...]] link - including plain note links
+        # that have nothing to do with classes - unprocessed.
+        try:
+            result = subprocess.run(["doxygen", "-"], input=config, text=True,
+                                     capture_output=True, timeout=300, check=True)
+        except Exception as e:
+            warnings.append(f"Scanning --code-dir for classes failed ({e!r}); "
+                             "class-name links will be left as literal text.")
+            return short_name_map, qualified_name_map
+
+        if not tagfile.exists():
+            warnings.append("Class scan produced no tag file; "
+                             "class-name links will be left as literal text.")
+            return short_name_map, qualified_name_map
+
+        try:
+            root = ET.parse(tagfile).getroot()
+        except Exception as e:
+            warnings.append(f"Couldn't parse the generated tag file ({e!r}); "
+                             "class-name links will be left as literal text.")
+            return short_name_map, qualified_name_map
+
+        for compound in root.findall("compound"):
+            kind = compound.get("kind")
+            if kind not in COMPOUND_KINDS:
+                continue
+            name_el = compound.find("name")
+            if name_el is None or not name_el.text:
+                continue
+            qualified = name_el.text.strip()
+            short = qualified.rsplit("::", 1)[-1]
+            short_name_map.setdefault(short.lower(), []).append((qualified, kind))
+            qualified_name_map[qualified.lower()] = qualified
+
+        # Doxygen ran and produced a tag file, but found nothing at all - this
+        # is almost always a filter command silently failing (e.g. Windows
+        # doesn't recognize "python3", only "python") or a wrong --code-dir
+        # path. Doxygen's own QUIET/WARNINGS suppression hides that from its
+        # normal output, so surface the raw stderr here instead of staying
+        # silent about it.
+        if not short_name_map and not qualified_name_map:
+            leftover = (result.stderr or "").strip()
+            if leftover:
+                print("Class scan found zero classes/structs/namespaces. Raw Doxygen/filter "
+                      f"stderr from that scan, which may explain why:\n{leftover}", file=sys.stderr)
+
+    return short_name_map, qualified_name_map
+
+
 def die(msg: str):
     print(f"ERROR: {msg}", file=sys.stderr)
     sys.exit(1)
@@ -203,8 +313,43 @@ def parse_wikilink(inner: str):
     )
 
 
+def resolve_class_name(note_part: str, short_name_map: dict, qualified_name_map: dict):
+    """
+    Look up note_part against known classes/structs/namespaces.
+    Returns (qualified_name, ambiguous_candidates):
+      - unique match:    (qualified_name, None)
+      - ambiguous match: (None, [candidate, candidate, ...])
+      - no match at all: (None, None)
+    """
+    exact = qualified_name_map.get(note_part.lower())
+    if exact:
+        return exact, None
+
+    candidates = short_name_map.get(note_part.lower(), [])
+    if not candidates:
+        return None, None
+
+    # Prefer an exact-case short-name match (handles the common case of a
+    # module/namespace and a class sharing a name that only differs by
+    # case, e.g. Python's `widget.py` module containing class `Widget`).
+    exact_case = [q for q, _kind in candidates if q.rsplit("::", 1)[-1] == note_part]
+    if len(exact_case) == 1:
+        return exact_case[0], None
+    if len(exact_case) > 1:
+        return None, exact_case
+
+    # No exact-case match - fall back case-insensitively, preferring
+    # concrete types (class/struct/...) over namespaces.
+    concrete = [q for q, kind in candidates if kind != "namespace"]
+    pool = concrete or [q for q, _kind in candidates]
+    if len(pool) == 1:
+        return pool[0], None
+    return None, pool
+
+
 def rewrite_wikilinks(md_path: Path, page_id: str, filename_to_pageid: dict, path_to_pageid: dict,
-                       page_headings: dict, warnings: list):
+                       page_headings: dict, short_name_map: dict, qualified_name_map: dict,
+                       code_dir_used: bool, warnings: list):
     """Replace Obsidian [[...]] links with Doxygen [text](@ref anchor) links."""
     text = md_path.read_text(encoding="utf-8", errors="replace")
     rel = md_path.name
@@ -216,11 +361,31 @@ def rewrite_wikilinks(md_path: Path, page_id: str, filename_to_pageid: dict, pat
             ref = note_part.lower()
             if ref.endswith(".md"):
                 ref = ref[:-3]
-            # Try an exact vault-relative path match first (handles [[Folder/Note]]),
-            # then fall back to matching by bare filename (the common case).
             target_page_id = path_to_pageid.get(ref) or filename_to_pageid.get(ref.rsplit("/", 1)[-1])
+
             if not target_page_id:
-                warnings.append(f"{rel}: couldn't resolve link to note \"{note_part}\" - left as-is")
+                # Not a note - see if it's a documented class/struct/namespace instead.
+                qualified, ambiguous = resolve_class_name(note_part, short_name_map, qualified_name_map)
+                if ambiguous:
+                    warnings.append(
+                        f'{rel}: "{note_part}" matches more than one symbol '
+                        f"({', '.join(ambiguous)}) - write the fully-qualified name "
+                        f'(e.g. [[{ambiguous[0]}]]) to disambiguate'
+                    )
+                    return match.group(0)
+                if not qualified and "::" in note_part:
+                    # Looks already fully-qualified (e.g. baked in ahead of time by
+                    # qualify_wikilinks.py) but this run has no class scan to verify
+                    # it against - pass it through and let Doxygen's real build be
+                    # the one to flag it if it's actually wrong.
+                    qualified = note_part
+                if qualified:
+                    target = f"{qualified}::{header_part}" if header_part else qualified
+                    display = alias or (f"{note_part}::{header_part}" if header_part else note_part)
+                    return f"[{display}](@ref {target})"
+                hint = "" if code_dir_used else \
+                    " (no --code-dir given this run, so class names were never checked)"
+                warnings.append(f"{rel}: couldn't resolve link to note or class \"{note_part}\" - left as-is{hint}")
                 return match.group(0)
         else:
             target_page_id = page_id  # same-file link, e.g. [[#Header]]
@@ -274,7 +439,7 @@ def check_safe_to_write(vault: Path, staging: Path):
             )
 
 
-def build(vault: Path, staging: Path, root_title: str, root_id: str):
+def build(vault: Path, staging: Path, root_title: str, root_id: str, code_dirs: list, filter_patterns: list):
     if not vault.exists():
         die(f"vault directory does not exist: {vault}")
 
@@ -317,7 +482,11 @@ def build(vault: Path, staging: Path, root_title: str, root_id: str):
         rel = md.relative_to(staging).with_suffix("")
         desired_id = slugify(rel.parts)
         fallback_title = title_from_stem(md.stem)
-        pid, title = ensure_page_id(md, desired_id, fallback_title)
+        try:
+            pid, title = ensure_page_id(md, desired_id, fallback_title)
+        except Exception as e:
+            print(f"WARNING: skipping title normalization for {md} ({e!r})", file=sys.stderr)
+            pid, title = desired_id, fallback_title
         page_ids[md] = pid
         children[md.parent].append((title.lower(), pid, title, False))
 
@@ -338,10 +507,24 @@ def build(vault: Path, staging: Path, root_title: str, root_id: str):
 
     # Anchor every heading (not just the page title) so header-level links resolve.
     link_warnings = []
-    page_headings = {pid: assign_heading_anchors(md, pid, link_warnings) for md, pid in page_ids.items()}
+    page_headings = {}
+    for md, pid in page_ids.items():
+        try:
+            page_headings[pid] = assign_heading_anchors(md, pid, link_warnings)
+        except Exception as e:
+            print(f"WARNING: skipping heading-anchor assignment for {md} ({e!r})", file=sys.stderr)
+            page_headings[pid] = {}
+
+    short_name_map, qualified_name_map = build_symbol_maps(code_dirs, filter_patterns, link_warnings)
+    code_dir_used = bool(code_dirs)
 
     for md, pid in page_ids.items():
-        rewrite_wikilinks(md, pid, filename_to_pageid, path_to_pageid, page_headings, link_warnings)
+        try:
+            rewrite_wikilinks(md, pid, filename_to_pageid, path_to_pageid, page_headings,
+                               short_name_map, qualified_name_map, code_dir_used, link_warnings)
+        except Exception as e:
+            print(f"WARNING: skipping link rewriting for {md} ({e!r}) - its [[...]] links "
+                  "were left untouched", file=sys.stderr)
 
     for d in all_dirs:
         if d == staging:
@@ -387,6 +570,13 @@ if __name__ == "__main__":
     ap.add_argument("staging", metavar="STAGING_DIR", help="Path to write the staged, Doxygen-ready copy")
     ap.add_argument("--root-title", default="Markdown", help="Title of the root page (default: Markdown)")
     ap.add_argument("--root-id", default="md_root", help="Doxygen page id for the root page (default: md_root)")
+    ap.add_argument("--code-dir", action="append", default=[], metavar="DIR",
+                     help="Source directory to scan for classes/structs/namespaces so [[Name]] links "
+                          "can resolve to their Doxygen class page. Repeatable. Requires 'doxygen' on PATH.")
+    ap.add_argument("--filter-pattern", action="append", default=[], metavar="PATTERN",
+                     help="Doxygen FILTER_PATTERNS entry to apply during class scanning, e.g. "
+                          "'*.cs=cs_record_filter.py'. Repeatable. Add the same entry to your real "
+                          "Doxyfile's FILTER_PATTERNS too, so the final build sees it the same way.")
     args = ap.parse_args()
 
     vault_path = Path(args.vault).resolve()
@@ -394,4 +584,4 @@ if __name__ == "__main__":
     print(f"vault:   {args.vault}  ->  {vault_path}")
     print(f"staging: {args.staging}  ->  {staging_path}")
 
-    build(vault_path, staging_path, args.root_title, args.root_id)
+    build(vault_path, staging_path, args.root_title, args.root_id, args.code_dir, args.filter_pattern)

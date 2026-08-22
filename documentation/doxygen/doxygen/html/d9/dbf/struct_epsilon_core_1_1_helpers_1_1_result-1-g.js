@@ -8,6 +8,7 @@ var struct_epsilon_core_1_1_helpers_1_1_result_1_g =
     [ "operator Result< T >", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a52f9a9e5b72dedd77a3304c519aacb4a", null ],
     [ "Result", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a2d57e0e6e680bf5a56e16cb7f66f6921", null ],
     [ "Result", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a998d041daa766d841eb5921504a1641d", null ],
+    [ "ToOptional", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#acd7c5cead62b09e0d5f456cfe9660015", null ],
     [ "ToString", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a699d504f5fa70c030b2b8ac71b899958", null ],
     [ "exception", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#ab92378141c1781d837a78e4aef7d1672", null ],
     [ "value", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html#a93fe856385aa7154eeece2d0409d14f1", null ],

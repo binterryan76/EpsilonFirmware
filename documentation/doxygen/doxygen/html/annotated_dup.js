@@ -1,10 +1,5 @@
 var annotated_dup =
 [
-    [ "EpsilonCaptain", "d0/db2/namespace_epsilon_captain.html", [
-      [ "ViewModels", "d2/d36/namespace_epsilon_captain_1_1_view_models.html", [
-        [ "FilePickerControl", "d3/d72/class_epsilon_captain_1_1_view_models_1_1_file_picker_control.html", "d3/d72/class_epsilon_captain_1_1_view_models_1_1_file_picker_control" ]
-      ] ]
-    ] ],
     [ "EpsilonCore", "d1/d45/namespace_epsilon_core.html", [
       [ "Actuator", "dd/d38/namespace_epsilon_core_1_1_actuator.html", [
         [ "IActuator", "da/d2e/interface_epsilon_core_1_1_actuator_1_1_i_actuator.html", "da/d2e/interface_epsilon_core_1_1_actuator_1_1_i_actuator" ],
@@ -64,11 +59,13 @@ var annotated_dup =
         [ "IResultMessageLogger", "d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger.html", "d6/da7/interface_epsilon_core_1_1_display_1_1_i_result_message_logger" ]
       ] ],
       [ "Engine", "d7/d09/namespace_epsilon_core_1_1_engine.html", [
-        [ "EpsilonEngine", "d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html", "d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine" ]
+        [ "EpsilonEngine", "d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine.html", "d0/d53/class_epsilon_core_1_1_engine_1_1_epsilon_engine" ],
+        [ "MachineQueue", "db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html", "db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue" ]
       ] ],
       [ "Helpers", "d2/df6/namespace_epsilon_core_1_1_helpers.html", [
         [ "Constants", "de/d2f/class_epsilon_core_1_1_helpers_1_1_constants.html", "de/d2f/class_epsilon_core_1_1_helpers_1_1_constants" ],
         [ "Helper", "da/d9c/class_epsilon_core_1_1_helpers_1_1_helper.html", "da/d9c/class_epsilon_core_1_1_helpers_1_1_helper" ],
+        [ "Option&lt; T &gt;", "dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html", "dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g" ],
         [ "OptionalResult&lt; T &gt;", "d5/d9b/struct_epsilon_core_1_1_helpers_1_1_optional_result-1-g.html", "d5/d9b/struct_epsilon_core_1_1_helpers_1_1_optional_result-1-g" ],
         [ "Result&lt; T &gt;", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g.html", "d9/dbf/struct_epsilon_core_1_1_helpers_1_1_result-1-g" ]
       ] ],
@@ -104,6 +101,7 @@ var annotated_dup =
         [ "Thermometer", "db/d6c/class_epsilon_core_1_1_thermal_1_1_thermometer.html", "db/d6c/class_epsilon_core_1_1_thermal_1_1_thermometer" ]
       ] ],
       [ "Units", "d2/dd3/namespace_epsilon_core_1_1_units.html", [
+        [ "CommunicationUnits", "d0/d40/class_epsilon_core_1_1_units_1_1_communication_units.html", "d0/d40/class_epsilon_core_1_1_units_1_1_communication_units" ],
         [ "DefaultUnits", "d3/def/class_epsilon_core_1_1_units_1_1_default_units.html", "d3/def/class_epsilon_core_1_1_units_1_1_default_units" ],
         [ "DisplayUnits", "d3/d4d/class_epsilon_core_1_1_units_1_1_display_units.html", "d3/d4d/class_epsilon_core_1_1_units_1_1_display_units" ]
       ] ]
@@ -123,9 +121,7 @@ var annotated_dup =
       [ "Views", "d8/d49/namespace_epsilon_desktop_1_1_views.html", [
         [ "FilePickerControl", "de/d82/class_epsilon_desktop_1_1_views_1_1_file_picker_control.html", "de/d82/class_epsilon_desktop_1_1_views_1_1_file_picker_control" ],
         [ "JogAxesControl", "d2/db2/class_epsilon_desktop_1_1_views_1_1_jog_axes_control.html", "d2/db2/class_epsilon_desktop_1_1_views_1_1_jog_axes_control" ],
-        [ "MachineControl", "d1/d73/class_epsilon_desktop_1_1_views_1_1_machine_control.html", "d1/d73/class_epsilon_desktop_1_1_views_1_1_machine_control" ],
-        [ "Position3Control", "d5/d68/class_epsilon_desktop_1_1_views_1_1_position3_control.html", "d5/d68/class_epsilon_desktop_1_1_views_1_1_position3_control" ],
-        [ "PositionControl", "d0/df3/class_epsilon_desktop_1_1_views_1_1_position_control.html", "d0/df3/class_epsilon_desktop_1_1_views_1_1_position_control" ]
+        [ "MachineControl", "d1/d73/class_epsilon_desktop_1_1_views_1_1_machine_control.html", "d1/d73/class_epsilon_desktop_1_1_views_1_1_machine_control" ]
       ] ],
       [ "App", "d0/d8d/class_epsilon_desktop_1_1_app.html", "d0/d8d/class_epsilon_desktop_1_1_app" ],
       [ "Constants", "d2/d3b/class_epsilon_desktop_1_1_constants.html", "d2/d3b/class_epsilon_desktop_1_1_constants" ],

@@ -1,0 +1,5 @@
+<map id="EpsilonCore.Engine.MachineQueue.AddCommandToReadyToSend" name="EpsilonCore.Engine.MachineQueue.AddCommandToReadyToSend">
+<area shape="rect" id="Node000001" title="Adds a command to the ReadyToSend queue and fills the DataPacketsReadyToSend queue with the data pack..." alt="" coords="5,5,248,48"/>
+<area shape="rect" id="Node000002" href="$db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#a43c39913a44247cacdb50e33fc19194d" title="Fills the DataPacketsReadyToSend queue with the data packets from the next command to send if there a..." alt="" coords="296,5,556,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,24,283,27,278,27,248,29"/>
+</map>

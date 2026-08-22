@@ -3,7 +3,8 @@
 doxygen_record_filter.py
 
 Doxygen INPUT_FILTER for C# source files. Doxygen's C# parser does not
-understand the `record` keyword or positional/primary-constructor syntax
+understand the `record` keyword, positional/primary-constructor record
+syntax, or primary constructors on ordinary classes/structs (C# 12)
 (see https://github.com/doxygen/doxygen/issues/10087, open/unresolved).
 
 This script rewrites:
@@ -33,6 +34,30 @@ into an equivalent plain class Doxygen CAN parse:
         public double Distance => Math.Sqrt(X * X + Y * Y);
     }
 
+It also rewrites primary constructors on ordinary (non-record) classes
+and structs, e.g.:
+
+    public class Point(int X, int Y)
+    {
+        public double Distance => Math.Sqrt(X * X + Y * Y);
+    }
+
+into:
+
+    public class Point
+    {
+        public Point(int X, int Y) { }
+
+        public double Distance => Math.Sqrt(X * X + Y * Y);
+    }
+
+Note this case is deliberately handled differently from records: a plain
+class's primary-constructor parameters do NOT automatically become public
+properties (that's record-only behavior) - they're just constructor
+parameters available inside the class body. So only the constructor
+signature is synthesized, with an empty body; no properties are invented.
+This keeps the documented API accurate to what the class actually exposes.
+
 Usage (Doxyfile):
     FILTER_PATTERNS = *.cs="python doxygen_record_filter.py"
 
@@ -40,10 +65,10 @@ Doxygen calls this as: doxygen_record_filter.py <path-to-file>
 The transformed source must be written to stdout.
 
 Limitations: this uses regex, not a real C# parser. It correctly handles
-the common cases (single-line and multi-line record headers, record
+the common cases (single-line and multi-line record/class headers, record
 struct, record class, generics, base lists) but is not bulletproof
-against exotic formatting. Only the record header is rewritten -- the
-body (if any) is left untouched and appended as-is.
+against exotic formatting. Only the record/class header is rewritten --
+the body (if any) is left untouched and appended as-is.
 """
 
 import re
@@ -155,8 +180,61 @@ def rewrite_record(match):
         return f"{header}\n{{\n{body_prefix}"
 
 
+# Matches a primary constructor on an ORDINARY (non-record) class/struct, e.g.:
+#   public class Point(int X, int Y)
+#   internal struct Vector3<T>(T X, T Y, T Z) : IVector
+# Deliberately requires the "(...)" to be present (unlike RECORD_HEADER_RE,
+# where it's optional) - a class/struct with no parens after its name is
+# already something Doxygen parses fine, and must be left completely alone.
+CLASS_PRIMARY_CTOR_RE = re.compile(
+    r"""
+    (?P<modifiers>
+        (?:\b(?:public|internal|protected|private|sealed|abstract|partial|static|readonly)\b\s*)*
+    )
+    \b(?P<kindkw>class|struct)\b\s+
+    (?P<name>\w+)
+    (?P<generics><[^>{};]+>)?
+    \s*
+    \(\s*(?P<params>[^)]*)\s*\)
+    \s*
+    (?P<bases>:\s*[^{;]+)?
+    \s*
+    (?P<term>[{;])
+    """,
+    re.VERBOSE | re.DOTALL,
+)
+
+
+def rewrite_class_primary_ctor(match):
+    modifiers = match.group("modifiers")
+    kindkw = match.group("kindkw")
+    name = match.group("name")
+    generics = match.group("generics") or ""
+    params_str = match.group("params").strip()
+    bases = match.group("bases") or ""
+    term = match.group("term")
+
+    header = f"{modifiers}{kindkw} {name}{generics} {bases}".rstrip()
+    # Unlike a record, primary-constructor parameters on a plain class/struct
+    # do NOT become public properties - they're only constructor parameters.
+    # So only the constructor signature is synthesized; the original
+    # parameter list (including any attributes/defaults) is passed through
+    # verbatim rather than split apart, since nothing needs to be turned
+    # into separate property declarations here.
+    ctor_line = f"    public {name}({params_str}) {{ }}"
+
+    if term == ";":
+        # Not valid C# for a plain class in practice, but handled for
+        # symmetry with the record case rather than risking a corrupt rewrite.
+        return f"{header}\n{{\n{ctor_line}\n}}"
+    else:
+        return f"{header}\n{{\n{ctor_line}\n"
+
+
 def filter_source(text):
-    return RECORD_HEADER_RE.sub(rewrite_record, text)
+    text = RECORD_HEADER_RE.sub(rewrite_record, text)
+    text = CLASS_PRIMARY_CTOR_RE.sub(rewrite_class_primary_ctor, text)
+    return text
 
 
 def main():

@@ -9,5 +9,6 @@ var searchData=
   ['serialrxparity_6',['SerialRXParity',['../d0/d2f/namespace_epsilon_core_1_1_communication.html#adfe59bed04a7b7cf97a0a740fc3e40d7aa8d97941e5b0039e93f8b32e4dd1cc51',1,'EpsilonCore::Communication']]],
   ['serialtxfull_7',['SerialTXFull',['../d0/d2f/namespace_epsilon_core_1_1_communication.html#adfe59bed04a7b7cf97a0a740fc3e40d7a581b3527c3fd9206283e89b44fa8d85b',1,'EpsilonCore::Communication']]],
   ['set_5ftarget_5ftemp_8',['SET_TARGET_TEMP',['../d6/d67/namespace_epsilon_core_1_1_commands.html#ab627a0e10629dea0532d8b200460c050a2f27dbff6580b00b08bcfa29d3d9a696',1,'EpsilonCore::Commands']]],
-  ['success_9',['Success',['../d6/d67/namespace_epsilon_core_1_1_commands.html#a9644795f0387aaf001178088e7650574a505a83f220c02df2f85c3810cd9ceb38',1,'EpsilonCore::Commands']]]
+  ['stopped_9',['Stopped',['../db/d2b/class_epsilon_core_1_1_engine_1_1_machine_queue.html#a28bcc0636283b112ea04c30197f75a21ac23e2b09ebe6bf4cb5e2a9abe85c0be2',1,'EpsilonCore::Engine::MachineQueue']]],
+  ['success_10',['Success',['../d6/d67/namespace_epsilon_core_1_1_commands.html#a9644795f0387aaf001178088e7650574a505a83f220c02df2f85c3810cd9ceb38',1,'EpsilonCore::Commands']]]
 ];

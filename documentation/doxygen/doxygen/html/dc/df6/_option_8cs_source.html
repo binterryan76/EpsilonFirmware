@@ -120,82 +120,118 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/df6/_option
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d2/df6/namespace_epsilon_core_1_1_helpers.html">EpsilonCore.Helpers</a>;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">internal</span> readonly record <span class="keyword">struct </span>Option&lt;T&gt;</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html">    8</a></span><span class="keyword">internal</span> readonly record <span class="keyword">struct </span><a class="code hl_function" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">Option</a>&lt;T&gt;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">private</span> readonly T? value;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">private</span> readonly T? <a class="code hl_variable" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5">value</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5">   11</a></span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma warning disable CS8603 </span><span class="comment">// Possible null reference return.</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span> readonly T? Value =&gt; value ?? <span class="keywordflow">throw</span> <span class="keyword">new</span> NullReferenceException(<span class="stringliteral">&quot;Option is nothing and has no value&quot;</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span> readonly T? <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a> =&gt; <a class="code hl_variable" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5">value</a> ?? <span class="keywordflow">throw</span> <span class="keyword">new</span> NullReferenceException(<span class="stringliteral">&quot;Option is nothing and has no value&quot;</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">   19</a></span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma warning restore CS8603 </span><span class="comment">// Possible null reference return.</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    [MemberNotNullWhen(<span class="keyword">true</span>, nameof(Value))]</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> IsSome { <span class="keyword">get</span>; }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    [MemberNotNullWhen(<span class="keyword">false</span>, nameof(Value))]</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> IsNone =&gt; !IsSome;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">public</span> Option(T? value)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        this.value = value;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        IsSome = value is not <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    [MemberNotNullWhen(<span class="keyword">true</span>, nameof(<a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a>))]</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">   27</a></span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    [MemberNotNullWhen(<span class="keyword">false</span>, nameof(<a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a>))]</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span> readonly <span class="keywordtype">bool</span> <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af5b9f8b5c457518c16fb988ba9ee16e0">IsNone</a> =&gt; !<a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af5b9f8b5c457518c16fb988ba9ee16e0">   33</a></span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">public</span> <a class="code hl_function" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">Option</a>(T? <a class="code hl_variable" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5">value</a>)</div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">   39</a></span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        this.value = <a class="code hl_variable" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5">value</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a> = <a class="code hl_variable" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5">value</a> is not <span class="keyword">null</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">public</span> Option()</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        IsSome = <span class="keyword">false</span>;</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#ae7cc9caa1fa16b67b50eda029e138755">   48</a></span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    [MethodImpl(MethodImplOptions.AggressiveInlining)]</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    [Pure]</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">public</span> <span class="keyword">static</span> implicit <span class="keyword">operator</span> Option&lt;T&gt;(T? value)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Option&lt;T&gt;(value);</div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a1b851213042730c3ead2a0e010127231">   59</a></span>    {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">Option&lt;T&gt;</a>(<a class="code hl_variable" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5">value</a>);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    [Pure]</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">public</span> <span class="keyword">override</span> readonly <span class="keywordtype">string</span> ToString()</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">if</span> (IsSome)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> Value.ToString() ?? <span class="stringliteral">&quot;(null)&quot;</span>;</div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a52a766cec440fd78c145b1fe87c8069b">   66</a></span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a>)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a>.ToString() ?? <span class="stringliteral">&quot;(null)&quot;</span>;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;None&quot;</span>;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    [Pure]</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> GetHashCode()</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> IsSome ? Value.GetHashCode() : 0;</div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#ad9dda71765b84190d0e8636d82324565">   76</a></span>    {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span> <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a> ? <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a>.GetHashCode() : 0;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    [MethodImpl(MethodImplOptions.AggressiveInlining)]</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    [Pure]</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">public</span> R Match&lt;R&gt;(Func&lt;T, R&gt; Some, Func&lt;R&gt; None)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> IsSome ? Some(Value) : None();</div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a4414f7b8f32002f32e7a0cff95d7594b">   91</a></span>    {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a> ? Some(<a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a>) : None();</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    [MethodImpl(MethodImplOptions.AggressiveInlining)]</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    [Pure]</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">public</span> R Match&lt;R&gt;(Func&lt;T, R&gt; Some, R None)</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> IsSome ? Some(Value) : None;</div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#ac4936aa5d33d63372057fcfa1cc2e696">  106</a></span>    {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a> ? Some(<a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a>) : None;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    [Pure]</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">public</span> Option&lt;B&gt; Map&lt;B&gt;(Func&lt;T, B&gt; f)</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">return</span> IsSome ? <span class="keyword">new</span> Option&lt;B&gt;(f(Value)) : new Option&lt;B&gt;();</div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a9583bacc2dbfe0d6adb4b06e62238a9a">  118</a></span>    {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">return</span> <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a> ? <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">Option&lt;B&gt;</a>(f(<a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a>)) : <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">Option&lt;B&gt;</a>();</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    [Pure]</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">public</span> async Task&lt;Option&lt;B&gt;&gt; MapAsync&lt;B&gt;(Func&lt;T, Task&lt;B&gt;&gt; f)</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    {</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">return</span> IsSome ? <span class="keyword">new</span> Option&lt;B&gt;(await f(Value)) : new Option&lt;B&gt;();</div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a631f009ade71af3e0269f36bf4a27ef3">  130</a></span>    {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">return</span> <a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">IsSome</a> ? <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">Option&lt;B&gt;</a>(await f(<a class="code hl_property" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">Value</a>)) : <span class="keyword">new</span> <a class="code hl_function" href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">Option&lt;B&gt;</a>();</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
+</div>
+</div>
 <div class="ttc" id="anamespace_epsilon_core_1_1_helpers_html"><div class="ttname"><a href="../../d2/df6/namespace_epsilon_core_1_1_helpers.html">EpsilonCore.Helpers</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/dee/_epsilon_core_2_helpers_2_constants_8cs_source.html#l00003">Constants.cs:3</a></div></div>
+<div class="ttc" id="astruct_epsilon_core_1_1_helpers_1_1_option-1-g_html_a15578f71b8e61926ae9ce79c96335788"><div class="ttname"><a href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a15578f71b8e61926ae9ce79c96335788">EpsilonCore.Helpers.Option-1-g.Value</a></div><div class="ttdeci">readonly? T Value</div><div class="ttdoc">Returns the value of the option if something.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">Option.cs:19</a></div></div>
+<div class="ttc" id="astruct_epsilon_core_1_1_helpers_1_1_option-1-g_html_a52a766cec440fd78c145b1fe87c8069b"><div class="ttname"><a href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#a52a766cec440fd78c145b1fe87c8069b">EpsilonCore.Helpers.Option-1-g.ToString</a></div><div class="ttdeci">override readonly string ToString()</div><div class="ttdef"><b>Definition</b> <a href="#l00066">Option.cs:66</a></div></div>
+<div class="ttc" id="astruct_epsilon_core_1_1_helpers_1_1_option-1-g_html_aad6316ff74e139b81b0b0f26c678c1c5"><div class="ttname"><a href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#aad6316ff74e139b81b0b0f26c678c1c5">EpsilonCore.Helpers.Option-1-g.value</a></div><div class="ttdeci">readonly? T value</div><div class="ttdef"><b>Definition</b> <a href="#l00011">Option.cs:11</a></div></div>
+<div class="ttc" id="astruct_epsilon_core_1_1_helpers_1_1_option-1-g_html_abdd3a38521276c525b454ad5a5465e35"><div class="ttname"><a href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#abdd3a38521276c525b454ad5a5465e35">EpsilonCore.Helpers.Option-1-g.IsSome</a></div><div class="ttdeci">bool IsSome</div><div class="ttdoc">Returns true if option is something.</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Option.cs:27</a></div></div>
+<div class="ttc" id="astruct_epsilon_core_1_1_helpers_1_1_option-1-g_html_ad9dda71765b84190d0e8636d82324565"><div class="ttname"><a href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#ad9dda71765b84190d0e8636d82324565">EpsilonCore.Helpers.Option-1-g.GetHashCode</a></div><div class="ttdeci">override int GetHashCode()</div><div class="ttdef"><b>Definition</b> <a href="#l00076">Option.cs:76</a></div></div>
+<div class="ttc" id="astruct_epsilon_core_1_1_helpers_1_1_option-1-g_html_ae7cc9caa1fa16b67b50eda029e138755"><div class="ttname"><a href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#ae7cc9caa1fa16b67b50eda029e138755">EpsilonCore.Helpers.Option-1-g.Option</a></div><div class="ttdeci">Option()</div><div class="ttdoc">Constructs an option from a.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">Option.cs:48</a></div></div>
+<div class="ttc" id="astruct_epsilon_core_1_1_helpers_1_1_option-1-g_html_af5b9f8b5c457518c16fb988ba9ee16e0"><div class="ttname"><a href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af5b9f8b5c457518c16fb988ba9ee16e0">EpsilonCore.Helpers.Option-1-g.IsNone</a></div><div class="ttdeci">readonly bool IsNone</div><div class="ttdoc">Returns true if option is nothing.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">Option.cs:33</a></div></div>
+<div class="ttc" id="astruct_epsilon_core_1_1_helpers_1_1_option-1-g_html_af8c78ee7046379b32c27dcd91bea9fb5"><div class="ttname"><a href="../../dc/d47/struct_epsilon_core_1_1_helpers_1_1_option-1-g.html#af8c78ee7046379b32c27dcd91bea9fb5">EpsilonCore.Helpers.Option-1-g.Option</a></div><div class="ttdeci">Option(T? value)</div><div class="ttdoc">Constructs an option from a possible value.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">Option.cs:39</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
