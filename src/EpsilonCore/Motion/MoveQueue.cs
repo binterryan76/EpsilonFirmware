@@ -1,4 +1,4 @@
-﻿using EpsilonCore.Helpers;
+﻿using EpsilonCore.Helpers; using GenericHelpers;
 using EpsilonCore.Motion.Kinematics;
 using System.Text;
 using UnitsNet;

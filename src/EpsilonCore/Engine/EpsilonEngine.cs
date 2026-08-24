@@ -6,6 +6,7 @@ using EpsilonCore.Display;
 using EpsilonCore.Helpers;
 using EpsilonCore.Machines;
 using EpsilonCore.Motion;
+using GenericHelpers;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 
@@ -86,6 +87,13 @@ public class EpsilonEngine(IResultMessageLogger logger)
     public EventHandler<QueuedCommand>? CommandResolved;
 
     /// <summary>
+    /// Raised when <see cref="AddMachineQueue"/> is called.
+    /// The event argument is the id of the <see cref="MachineQueue"/> added.
+    /// The sender object will be this <see cref="EpsilonEngine"/>.
+    /// </summary>
+    public EventHandler<uint>? MachineQueueAdded;
+
+    /// <summary>
     /// Creates a new machine machineQueue for the given machine.
     /// There is exactly one machine machineQueue per machine.
     /// </summary>
@@ -93,10 +101,15 @@ public class EpsilonEngine(IResultMessageLogger logger)
     public void AddMachineQueue(Machine machine)
     {
         //TODO: Epsilon engine should make the Machine object and commands should be used to manipulate them.
-        bool success = MachineQueues.TryAdd((uint)MachineQueues.Count, new MachineQueue(machine));
+        MachineQueue machineQueue = new(machine);
+        uint id = MachineQueues.NextId();
+        bool success = MachineQueues.TryAdd(id, machineQueue);
 
         if (success)
+        {
             machine.ResultMessageLogger.Log($"New machine added: '{machine.Name}'.");
+            MachineQueueAdded?.Invoke(this, id);
+        }
         else
             machine.ResultMessageLogger.Log($"New machine failed to be added: '{machine.Name}'.");
 

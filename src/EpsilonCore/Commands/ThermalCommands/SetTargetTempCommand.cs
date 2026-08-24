@@ -1,9 +1,9 @@
 ﻿using EpsilonCore.Boards;
 using EpsilonCore.Communication;
-using EpsilonCore.Helpers;
 using EpsilonCore.Machines;
 using EpsilonCore.Thermal;
 using EpsilonCore.Units;
+using GenericHelpers;
 using System.Diagnostics;
 using UnitsNet;
 

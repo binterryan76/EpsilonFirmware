@@ -1,9 +1,8 @@
-﻿
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 
-namespace EpsilonCore.Helpers;
+namespace GenericHelpers;
 
 internal readonly record struct Option<T>
 {

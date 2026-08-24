@@ -1,7 +1,7 @@
 ﻿using EpsilonCore.Boards;
 using EpsilonCore.Commands.SetupCommands;
 using EpsilonCore.Engine;
-using EpsilonCore.Helpers;
+using EpsilonCore.Helpers; using GenericHelpers;
 using System.Diagnostics;
 using UnitsNet;
 

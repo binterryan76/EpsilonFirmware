@@ -125,28 +125,22 @@
             VerticalAlignment="Center"
             Command="{Binding TestCodeCommand}"
             Content="Run Test Code" />
-
-        <views:JogAxesControl
-            Grid.Row="8"
-            Grid.Column="0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Center"
-            DataContext="{Binding JogAxesViewModel}" />
-
+        
         <TabControl
             Grid.Row="8"
-            Grid.Column="1"
+            Grid.Column="0"
             Margin="5"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
-            ItemsSource="">
+            ItemsSource="{Binding MachineViewModels}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Machine.Name}" />
+                </DataTemplate>
+            </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>
                 <DataTemplate>
-                    <!--  Put your control for each element here  -->
-                    <TextBox
-                        Width="200"
-                        Height="50"
-                        Text="{Binding ItemValue}" />
+                    <views:MachineControl DataContext="{Binding}"/>
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </TabControl>

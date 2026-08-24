@@ -1,4 +1,4 @@
-﻿using EpsilonCore.Helpers;
+﻿using GenericHelpers;
 using UnitsNet;
 
 namespace EpsilonCore.Boards;

@@ -13,13 +13,14 @@ using EpsilonCore.Motion;
 using EpsilonCore.Motion.Axis;
 using EpsilonCore.Motion.Kinematics;
 using EpsilonCore.Units;
+using EpsilonDesktop.Models;
+using GenericHelpers;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
 using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
-
 using UnitsNet;
 
 namespace EpsilonDesktop.ViewModels;
@@ -52,9 +53,44 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     public partial FilePickerViewModel FilePickerViewModel { get; set; } = new();
 
+    public ObservableCollection<MachineViewModel> MachineViewModels { get; set; } = [];
+
+    [ObservableProperty]
+    public partial AppSettings AppSettings { get; set; }
+
     public MainViewModel()
     {
         globals = new(Log);
+        AppSettings = LoadAppSettings();
+
+        AppSettings LoadAppSettings()
+        {
+            Result<AppSettings> appSettings = AppSettings.Load();
+
+            if (appSettings.IsSuccess)
+                return appSettings.Value;
+            else
+            {
+                Log($"Failed to load app settings: {appSettings.Exception.Message}");
+                return new();
+            }
+        }
+    }
+
+    public async Task OnLoad()
+    {
+        if (AppSettings.StartupFilePath is null || !File.Exists(AppSettings.StartupFilePath))
+            return;
+
+        try
+        {
+            string startupFileContents = File.ReadAllText(AppSettings.StartupFilePath);
+            await CSharpScript.RunAsync(startupFileContents, options, globals);
+        }
+        catch (Exception ex)
+        {
+            Log($"Compile error:\n\t{ex.Message}");
+        }
     }
 
     private bool Log(string message)
@@ -201,6 +237,12 @@ public partial class MainViewModel : ObservableObject
                     command.Command,
                     ErrorLevel.Success,
                     "Command resolved"));
+        };
+        engine.MachineQueueAdded += (object? engineMachineQueueAddedTo, uint machineQueueId) =>
+        {
+            Result<MachineViewModel> viewModel = MachineViewModel.New(engine, machineQueueId, engine.EngineLogger);
+            Debug.Assert(viewModel.IsSuccess);
+            MachineViewModels.Add(viewModel.Value);
         };
         engine.AddMachineQueue(mainMachine);
 

@@ -1,6 +1,6 @@
 ﻿using EpsilonCore.Boards;
 using EpsilonCore.Commands;
-using EpsilonCore.Helpers;
+using EpsilonCore.Helpers; using GenericHelpers;
 using System.Collections.Immutable;
 
 namespace EpsilonCore.Communication;

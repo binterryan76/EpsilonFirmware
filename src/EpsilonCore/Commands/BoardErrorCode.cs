@@ -1,5 +1,5 @@
 ﻿using EpsilonCore.Communication;
-using EpsilonCore.Helpers;
+using EpsilonCore.Helpers; using GenericHelpers;
 using System.Diagnostics;
 
 namespace EpsilonCore.Commands;

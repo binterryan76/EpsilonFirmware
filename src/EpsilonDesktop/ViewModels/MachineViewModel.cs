@@ -2,8 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using EpsilonCore.Display;
 using EpsilonCore.Engine;
-using EpsilonCore.Helpers;
 using EpsilonCore.Machines;
+using GenericHelpers;
 using System.Collections.ObjectModel;
 using UnitsNet;
 
@@ -12,26 +12,25 @@ namespace EpsilonDesktop.ViewModels;
 public partial class MachineViewModel : ObservableObject
 {
     private EpsilonEngine Engine { get; init; }
-    private uint MachineId { get; init; }
     private IResultMessageLogger ResultMessageLogger { get; init; }
 
     [ObservableProperty]
-    public partial Machine Machine { get; set; }
+    public partial Machine CurrentMachine { get; set; }
 
     [ObservableProperty]
-    private partial JogAxesViewModel JogAxesViewModel { get; set; }
+    public partial JogAxesViewModel JogAxesViewModel { get; set; }
 
     // Don't mark as static or partial.
     public ObservableCollection<AxisLinearButtonsViewModel> ExampleList { get; set; } = [];
 
     private MachineViewModel(
         EpsilonEngine engine,
-        uint machineId,
+        Machine currentMachine,
         IResultMessageLogger resultMessageLogger,
         JogAxesViewModel jogAxisViewModel)
     {
         Engine = engine;
-        MachineId = machineId;
+        CurrentMachine = currentMachine;
         ResultMessageLogger = resultMessageLogger;
         JogAxesViewModel = jogAxisViewModel;
 
@@ -48,7 +47,7 @@ public partial class MachineViewModel : ObservableObject
         Machine? machine = engine.GetCurrentMachine(machineId);
 
         if (machine is null)
-            return new ArgumentException($"Machine {machineId} doesn't exist in engine.");
+            return new ArgumentException($"CurrentMachine {machineId} doesn't exist in engine.");
 
         Result<JogAxesViewModel> jogAxisViewModel = JogAxesViewModel.New(
             engine,
@@ -60,7 +59,7 @@ public partial class MachineViewModel : ObservableObject
         if (jogAxisViewModel.IsError)
             return jogAxisViewModel.Exception;
 
-        return new MachineViewModel(engine, machineId, resultMessageLogger, jogAxisViewModel.Value);
+        return new MachineViewModel(engine, machine, resultMessageLogger, jogAxisViewModel.Value);
     }
 
 

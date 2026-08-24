@@ -1,6 +1,6 @@
 ﻿using EpsilonCore.Commands;
 using EpsilonCore.Display;
-using EpsilonCore.Helpers;
+using EpsilonCore.Helpers; using GenericHelpers;
 
 namespace EpsilonDesktop.Models;
 

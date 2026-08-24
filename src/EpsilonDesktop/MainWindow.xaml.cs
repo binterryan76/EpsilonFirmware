@@ -19,9 +19,8 @@ public partial class MainWindow : Window
         return (MainViewModel)DataContext;
     }
 
-    private void MainWindow_Load(object sender, EventArgs e)
+    private async void MainWindow_Load(object sender, EventArgs e)
     {
-        //GetViewModel().PlotTests();
-        //GetViewModel().Test();
+        await GetViewModel().OnLoad();
     }
 }

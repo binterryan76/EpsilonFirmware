@@ -7,12 +7,33 @@
     xmlns:local="clr-namespace:EpsilonDesktop.Views"
     xmlns:models="clr-namespace:EpsilonDesktop.Models"
     xmlns:viewModels="clr-namespace:EpsilonDesktop.ViewModels"
-    x:Name="RootWindow"
-    d:DataContext="{d:DesignInstance Type=viewModels:JogAxesViewModel}"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    xmlns:views="clr-namespace:EpsilonDesktop.Views"
+    Name="windowRoot"
+    Width="Auto"
+    Height="Auto"
+    MinWidth="300"
+    MinHeight="300"
+    d:DataContext="{d:DesignInstance Type=viewModels:MachineViewModel}"
     mc:Ignorable="d">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label
+            Content="{Binding CurrentMachine.Name}"
+            FontSize="16"
+            Grid.Row="0"
+            Grid.Column="0"/>
+        
+        <views:JogAxesControl
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center"
+            DataContext="{Binding JogAxesViewModel}" />
     </Grid>
 </UserControl>

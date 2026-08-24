@@ -1,5 +1,5 @@
 ﻿using EpsilonCore.Actuator;
-using EpsilonCore.Helpers;
+using EpsilonCore.Helpers; using GenericHelpers;
 using EpsilonCore.Machines;
 using EpsilonCore.Motion.Axis;
 using EpsilonCore.Motion.Kinematics;

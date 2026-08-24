@@ -1,5 +1,6 @@
 ﻿using EpsilonCore.Commands;
 using EpsilonCore.Machines;
+using GenericHelpers;
 using System.Collections.Immutable;
 using UnitsNet;
 using UnitsNetHelpers;

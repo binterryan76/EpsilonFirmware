@@ -1,5 +1,5 @@
 ﻿using EpsilonCore.Boards;
-using EpsilonCore.Helpers;
+using EpsilonCore.Helpers; using GenericHelpers;
 using EpsilonCore.Machines;
 
 namespace EpsilonCore.Commands.SetupCommands;

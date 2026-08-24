@@ -1,4 +1,4 @@
-﻿using EpsilonCore.Helpers;
+﻿using EpsilonCore.Helpers; using GenericHelpers;
 using EpsilonCore.Machines;
 using EpsilonCore.Motion.Axis;
 

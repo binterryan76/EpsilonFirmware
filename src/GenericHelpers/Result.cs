@@ -2,7 +2,7 @@
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
 
-namespace EpsilonCore.Helpers;
+namespace GenericHelpers;
 
 /// <summary>
 /// Represents a result which may either be successful and contain a value or an error and contain an exception.
