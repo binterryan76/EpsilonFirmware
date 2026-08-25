@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Epsilon Firmware/Documentation.md",
+                "file": "Epsilon Core/Primary Classes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Documentation"
+              "title": "Primary Classes"
             }
           }
         ]
@@ -190,11 +190,11 @@
   },
   "active": "e83a7d62abf07097",
   "lastOpenFiles": [
-    "Epsilon Firmware/Architecture.md",
-    "Epsilon Core/Primary Classes.md",
+    "Epsilon Firmware/Event System.md",
     "Epsilon Firmware/Unique Problems Epsilon Firmware Attempts To Solve.md",
     "Epsilon Firmware/Documentation.md",
-    "Epsilon Firmware/Event System.md",
+    "Epsilon Firmware/Architecture.md",
+    "Epsilon Core/Primary Classes.md",
     "README.md",
     "MachineQueue.md",
     "Epsilon Core/MachineQueue.md",

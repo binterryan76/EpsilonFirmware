@@ -26,6 +26,7 @@ public class AppSettings
         try
         {
             string settingsJson = JsonSerializer.Serialize(this, jsonSerializerOptions);
+            Directory.CreateDirectory(Constants.APP_DATA_DIRECTORY);
             File.WriteAllText(Constants.SETTINGS_FILE_PATH, settingsJson);
             return null;
         }
@@ -45,7 +46,7 @@ public class AppSettings
     public static Result<AppSettings> Load()
     {
         if (!File.Exists(Constants.SETTINGS_FILE_PATH))
-            return new();
+            return new AppSettings();
 
         try
         {
@@ -57,5 +58,17 @@ public class AppSettings
         {
             return ex;
         }
+    }
+
+    /// <summary>
+    /// Returns a copy of the AppSettings which can be used by 
+    /// </summary>
+    /// <returns></returns>
+    public AppSettings Copy()
+    {
+        return new AppSettings()
+        {
+            StartupFilePath = StartupFilePath
+        };
     }
 }

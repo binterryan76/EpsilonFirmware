@@ -14,6 +14,7 @@ using EpsilonCore.Motion.Axis;
 using EpsilonCore.Motion.Kinematics;
 using EpsilonCore.Units;
 using EpsilonDesktop.Models;
+using EpsilonDesktop.Views;
 using GenericHelpers;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 using Microsoft.CodeAnalysis.Scripting;
@@ -51,7 +52,7 @@ public partial class MainViewModel : ObservableObject
 
 
     [ObservableProperty]
-    public partial FilePickerViewModel FilePickerViewModel { get; set; } = new();
+    public partial string ScriptFilePath { get; set; } = "";
 
     public ObservableCollection<MachineViewModel> MachineViewModels { get; set; } = [];
 
@@ -75,6 +76,49 @@ public partial class MainViewModel : ObservableObject
                 return new();
             }
         }
+
+        EpsilonEngine engine = globals.Engine;
+
+        // Log when commands are queued.
+        engine.CommandQueued += (object? sender, QueuedCommand command) =>
+        {
+            Debug.Assert(command.InitialMachine is not null);
+            command.InitialMachine.ResultMessageLogger.Log(
+                Helper.GetFormattedDisplayMessage(
+                    command.Command,
+                    ErrorLevel.Success,
+                    "Command queued"));
+        };
+
+        // Log when commands are sent.
+        engine.CommandSent += (object? sender, QueuedCommand command) =>
+        {
+            Debug.Assert(command.InitialMachine is not null);
+            command.InitialMachine.ResultMessageLogger.Log(
+                Helper.GetFormattedDisplayMessage(
+                    command.Command,
+                    ErrorLevel.Success,
+                    "Command sent"));
+        };
+
+        // Log when commands are resolved.
+        engine.CommandResolved += (object? sender, QueuedCommand command) =>
+        {
+            Debug.Assert(command.ResultantMachine is not null);
+            command.ResultantMachine.ResultMessageLogger.Log(
+                Helper.GetFormattedDisplayMessage(
+                    command.Command,
+                    ErrorLevel.Success,
+                    "Command resolved"));
+        };
+
+        // Add a new tab for a MachineControl for every MachineQueue added.
+        engine.MachineQueueAdded += (object? engineMachineQueueAddedTo, uint machineQueueId) =>
+        {
+            Result<MachineViewModel> viewModel = MachineViewModel.New(engine, machineQueueId, engine.EngineLogger);
+            Debug.Assert(viewModel.IsSuccess);
+            MachineViewModels.Add(viewModel.Value);
+        };
     }
 
     public async Task OnLoad()
@@ -118,7 +162,7 @@ public partial class MainViewModel : ObservableObject
     {
         try
         {
-            string code = File.ReadAllText(FilePickerViewModel.FilePath);
+            string code = File.ReadAllText(ScriptFilePath);
             await CSharpScript.RunAsync(code, options, globals);
         }
         catch (Exception ex)
@@ -211,39 +255,6 @@ public partial class MainViewModel : ObservableObject
         const uint mainCommunicatorId = 0;
 
         EpsilonEngine engine = globals.Engine;
-        engine.CommandQueued += (object? sender, QueuedCommand command) =>
-        {
-            Debug.Assert(command.InitialMachine is not null);
-            command.InitialMachine.ResultMessageLogger.Log(
-                Helper.GetFormattedDisplayMessage(
-                    command.Command,
-                    ErrorLevel.Success,
-                    "Command queued"));
-        };
-        engine.CommandSent += (object? sender, QueuedCommand command) =>
-        {
-            Debug.Assert(command.InitialMachine is not null);
-            command.InitialMachine.ResultMessageLogger.Log(
-                Helper.GetFormattedDisplayMessage(
-                    command.Command,
-                    ErrorLevel.Success,
-                    "Command sent"));
-        };
-        engine.CommandResolved += (object? sender, QueuedCommand command) =>
-        {
-            Debug.Assert(command.ResultantMachine is not null);
-            command.ResultantMachine.ResultMessageLogger.Log(
-                Helper.GetFormattedDisplayMessage(
-                    command.Command,
-                    ErrorLevel.Success,
-                    "Command resolved"));
-        };
-        engine.MachineQueueAdded += (object? engineMachineQueueAddedTo, uint machineQueueId) =>
-        {
-            Result<MachineViewModel> viewModel = MachineViewModel.New(engine, machineQueueId, engine.EngineLogger);
-            Debug.Assert(viewModel.IsSuccess);
-            MachineViewModels.Add(viewModel.Value);
-        };
         engine.AddMachineQueue(mainMachine);
 
         uint lineNumber = 1;
@@ -368,4 +379,16 @@ public partial class MainViewModel : ObservableObject
             writeSimplifiedPoints: true);
     }
 
+    [RelayCommand]
+    public void OpenSettingsWindow()
+    {
+        AppSettings appSettingsCopy = AppSettings.Copy();
+        SettingsViewModel viewModel = new(appSettingsCopy);
+        SettingsWindow settingsWindow = new(viewModel);
+        bool? dialogResult = settingsWindow.ShowDialog();
+
+        // Update settings but only if the user clicked OK.
+        if (dialogResult is not null && dialogResult.Value)
+            AppSettings = viewModel.Settings;
+    }
 }

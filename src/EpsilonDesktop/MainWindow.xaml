@@ -27,6 +27,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -36,14 +37,25 @@
             <ColumnDefinition Width="*" MaxWidth="800" />
         </Grid.ColumnDefinitions>
 
-        <views:FilePickerControl
+        <Button
             Grid.Row="0"
+            Grid.Column="0"
+            Margin="10"
+            Padding="5"
+            HorizontalAlignment="Left"
+            Command="{Binding OpenSettingsWindowCommand}"
+            Content="Settings" />
+
+        <views:FilePickerControl
+            Grid.Row="1"
             Grid.Column="0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
-            DataContext="{Binding FilePickerViewModel}" />
+            FileFilter="Scripts (*.cs)|*.cs|All files (*.*)|*.*"
+            FilePath="{Binding ScriptFilePath}"
+            LabelText="Script File Path:" />
         <Button
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="0"
             Margin="5"
             HorizontalAlignment="Right"
@@ -52,14 +64,14 @@
             Content="Send" />
 
         <Label
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="0"
             Margin="5,5,5,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="Code To Send:" />
         <TextBox
-            Grid.Row="3"
+            Grid.Row="4"
             Grid.Column="0"
             MaxHeight="200"
             Margin="5,0,5,5"
@@ -69,7 +81,7 @@
             Text="{Binding CodeToSend}"
             TextWrapping="Wrap" />
         <Button
-            Grid.Row="4"
+            Grid.Row="5"
             Grid.Column="0"
             Margin="5"
             HorizontalAlignment="Right"
@@ -77,14 +89,14 @@
             Command="{Binding SendCodeCommand}"
             Content="Send" />
         <Label
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="0"
             Margin="5,5,5,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="Response:" />
         <TextBox
-            Grid.Row="6"
+            Grid.Row="7"
             Grid.Column="0"
             MaxHeight="200"
             Margin="5,0,5,5"
@@ -95,7 +107,7 @@
             TextWrapping="Wrap" />
         <ScrollViewer
             Grid.Row="0"
-            Grid.RowSpan="7"
+            Grid.RowSpan="8"
             Grid.Column="1"
             Padding="5"
             HorizontalAlignment="Center"
@@ -118,16 +130,16 @@
         </ScrollViewer>
 
         <Button
-            Grid.Row="7"
+            Grid.Row="8"
             Grid.Column="0"
             Margin="5"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             Command="{Binding TestCodeCommand}"
             Content="Run Test Code" />
-        
+
         <TabControl
-            Grid.Row="8"
+            Grid.Row="9"
             Grid.Column="0"
             Margin="5"
             HorizontalAlignment="Stretch"
@@ -140,7 +152,7 @@
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>
                 <DataTemplate>
-                    <views:MachineControl DataContext="{Binding}"/>
+                    <views:MachineControl DataContext="{Binding}" />
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </TabControl>

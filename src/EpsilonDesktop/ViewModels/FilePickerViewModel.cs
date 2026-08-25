@@ -10,7 +10,10 @@ public partial class FilePickerViewModel : ObservableObject
     public partial string FilePath { get; set; } = "";
 
     [ObservableProperty]
-    public partial string FileFilter { get; set; } = "Scripts (*.cs)|*.cs|All files (*.*)|*.*";
+    public partial string FileFilter { get; set; } = "";
+
+    [ObservableProperty]
+    public partial string LabelText { get; set; } = "File Path:";
 
     [RelayCommand]
     public void Browse()
