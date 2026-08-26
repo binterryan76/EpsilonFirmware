@@ -226,17 +226,21 @@ public class EpsilonEngine(IResultMessageLogger logger)
     {
         while (Running)
         {
-            //mainLoopMutex.WaitOne();
+            bool allSkipped = true;
             foreach (MachineQueue machineQueue in MachineQueues.Values)
             {
-                // skip stopped queues
-                if (machineQueue.SendStatus != MachineQueue.MachineQueueStatus.Running)
+                // Skip stopped queues and empty MachineQueues.
+                if (machineQueue.IsEmpty || machineQueue.SendStatus != MachineQueue.MachineQueueStatus.Running)
                     continue;
 
+                allSkipped = false;
                 EnqueueNextCommand(machineQueue);
                 SendSomeQueuedCommands(machineQueue);
             }
-            //mainLoopMutex.ReleaseMutex();
+
+            // Prevents 100% CPU usage when nothing is happening on every MachineQueue.
+            if (allSkipped)
+                Thread.Sleep(500);
         }
     }
 

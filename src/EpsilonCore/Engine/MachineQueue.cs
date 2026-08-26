@@ -26,6 +26,20 @@ internal class MachineQueue(Machine initialMachine)
     }
 
     /// <summary>
+    /// Returns true if this MachineQueue has no data to process.
+    /// </summary>
+    public bool IsEmpty
+    {
+        get =>
+            CommandsToEnqueue.IsEmpty &&
+            Queued.Count <= 0 &&
+            ReadyToSend.Count <= 0 &&
+            DataPacketsReadyToSend.Count <= 0 &&
+            Sent.Count <= 0 &&
+            MoveQueue.Count <= 0;
+    }
+
+    /// <summary>
     /// Contains commands that were sent from an external source and haven't been looked at yet.
     /// </summary>
     public ConcurrentQueue<ICommand> CommandsToEnqueue { get; } = [];
