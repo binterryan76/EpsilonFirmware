@@ -150,11 +150,7 @@
                     <TextBlock Text="{Binding Machine.Name}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
-            <TabControl.ContentTemplate>
-                <DataTemplate>
-                    <views:MachineControl DataContext="{Binding}" />
-                </DataTemplate>
-            </TabControl.ContentTemplate>
+
         </TabControl>
     </Grid>
 </Window>
