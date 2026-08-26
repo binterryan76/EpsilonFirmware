@@ -57,6 +57,9 @@ public partial class MainViewModel : ObservableObject
     public ObservableCollection<MachineViewModel> MachineViewModels { get; set; } = [];
 
     [ObservableProperty]
+    public partial MachineViewModel? SelectedMachineViewModel { get; set; } = null;
+
+    [ObservableProperty]
     public partial AppSettings AppSettings { get; set; }
 
     public MainViewModel()
@@ -118,6 +121,8 @@ public partial class MainViewModel : ObservableObject
             Result<MachineViewModel> viewModel = MachineViewModel.New(engine, machineQueueId, engine.EngineLogger);
             Debug.Assert(viewModel.IsSuccess);
             MachineViewModels.Add(viewModel.Value);
+            if (MachineViewModels.Count == 1)
+                SelectedMachineViewModel = viewModel.Value;
         };
     }
 

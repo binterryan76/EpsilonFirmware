@@ -92,6 +92,12 @@ public partial class JogAxesViewModel : ObservableObject
         SelectedDistanceRotational = DistancesRotational.First();
         ResultMessageLogger = resultMessageLogger;
         ReadAllAxes();
+        engine.CommandResolved += (object? sender, QueuedCommand queuedCommand) =>
+        {
+            // TODO: Add rotational axis command here.
+            if (queuedCommand.Command is AddLinearAxisCommand)
+                ReadAllAxes(queuedCommand.ResultantMachine);
+        };
     }
 
     public static Result<JogAxesViewModel> New(
@@ -199,7 +205,29 @@ public partial class JogAxesViewModel : ObservableObject
         Engine.EnqueueCommand(MachineId, move.Value);
     }
 
+    [RelayCommand]
+    public void HomeAxis1()
+    {
+        // TODO: Add homing command/macro.
+    }
 
+    [RelayCommand]
+    public void HomeAxis2()
+    {
+        // TODO: Add homing command/macro.
+    }
+
+    [RelayCommand]
+    public void HomeAxis3()
+    {
+        // TODO: Add homing command/macro.
+    }
+
+    [RelayCommand]
+    public void HomeAllCommand()
+    {
+        // TODO: Add homing command/macro.
+    }
 
     [RelayCommand]
     public void Axis1Backwards()

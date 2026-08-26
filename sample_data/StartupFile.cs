@@ -83,6 +83,15 @@ AxisLinear z = new(
     PosMax: Length.FromMillimeters(200),
     PosAtMinEndstop: Length.FromMillimeters(0),
     PosAtMaxEndstop: Length.FromMillimeters(200));
+	
+AxisLinear w = new(
+    "W",
+    KinematicSystemId: 0,
+    IsExtrusionAxis: false,
+    PosMin: Length.FromMillimeters(0),
+    PosMax: Length.FromMillimeters(200),
+    PosAtMinEndstop: Length.FromMillimeters(0),
+    PosAtMaxEndstop: Length.FromMillimeters(200));
 
 
 const uint mainMachineId = 0;
@@ -116,6 +125,7 @@ List<ICommand> commands =
     new AddLinearAxisCommand(x, lineNumber++),
     new AddLinearAxisCommand(y, lineNumber++),
     new AddLinearAxisCommand(z, lineNumber++),
+	new AddLinearAxisCommand(w, lineNumber++),
     new AddActuatorRotationalCommand(stepperMotorProximal, lineNumber++),
     new AddActuatorRotationalCommand(stepperMotorDistal, lineNumber++),
     new AddKinematicsCommand(kinematics, [], [0, 1], [0, 1], [], [endstopSetX, endstopSetY], lineNumber++),

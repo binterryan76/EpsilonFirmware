@@ -21,13 +21,15 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Label
             Content="{Binding CurrentMachine.Name}"
             FontSize="16"
             Grid.Row="0"
-            Grid.Column="0"/>
+            Grid.Column="0"
+            Margin="10"/>
         
         <views:JogAxesControl
             Grid.Row="1"

@@ -144,13 +144,20 @@
             Margin="5"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
-            ItemsSource="{Binding MachineViewModels}">
+            ItemsSource="{Binding MachineViewModels}"
+            SelectedItem="{Binding SelectedMachineViewModel, Mode=TwoWay}">
             <TabControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Machine.Name}" />
+                    <TextBlock Text="{Binding CurrentMachine.Name}" 
+                       FontWeight="Bold" 
+                       Margin="5,2"/>
                 </DataTemplate>
             </TabControl.ItemTemplate>
-
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <views:MachineControl DataContext="{Binding}"/>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
         </TabControl>
     </Grid>
 </Window>
