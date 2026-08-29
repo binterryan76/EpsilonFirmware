@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:EpsilonDesktop.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:project="clr-namespace:EpsilonDesktop"
     xmlns:models="clr-namespace:EpsilonDesktop.Models"
     xmlns:viewModels="clr-namespace:EpsilonDesktop.ViewModels"
     x:Name="RootWindow"
@@ -56,7 +57,7 @@
                 Grid.Column="1"
                 Width="60"
                 Height="60"
-                Content="&#x1F819;"
+                Content="{x:Static project:Constants.ARROW_UP}"
                 FontSize="20"
                 IsEnabled="{Binding Axis2Enabled}"
                 Visibility="{Binding Axis2Visibility}" 
@@ -68,7 +69,7 @@
                 Grid.Column="0"
                 Width="60"
                 Height="60"
-                Content="&#x1F818;"
+                Content="{x:Static project:Constants.ARROW_LEFT}"
                 FontSize="20"
                 IsEnabled="{Binding Axis1Enabled}"
                 Visibility="{Binding Axis1Visibility}" 
@@ -80,7 +81,7 @@
                 Grid.Column="2"
                 Width="60"
                 Height="60"
-                Content="&#x1F81A;"
+                Content="{x:Static project:Constants.ARROW_RIGHT}"
                 FontSize="20"
                 IsEnabled="{Binding Axis1Enabled}"
                 Visibility="{Binding Axis1Visibility}" 
@@ -92,11 +93,38 @@
                 Grid.Column="1"
                 Width="60"
                 Height="60"
-                Content="&#x1F81B;"
+                Content="{x:Static project:Constants.ARROW_DOWN}"
                 FontSize="20"
                 IsEnabled="{Binding Axis2Enabled}"
                 Visibility="{Binding Axis2Visibility}" 
                 Command="{Binding Axis2BackwardsCommand}"/>
+
+            <StackPanel
+                Orientation="Horizontal"
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <Label
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    Content="{Binding Axis1.Name}">
+                </Label>
+                <Label
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    Content="/">
+                </Label>
+                <Label
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    Content="{Binding Axis2.Name}">
+                </Label>
+            </StackPanel>
+            
 
             <!--  Z Up Arrow (↑)  -->
             <Button
@@ -105,11 +133,19 @@
                 Width="60"
                 Height="60"
                 Margin="20,0"
-                Content="&#x1F819;"
+                Content="{x:Static project:Constants.ARROW_UP}"
                 FontSize="20"
                 IsEnabled="{Binding Axis3Enabled}"
                 Visibility="{Binding Axis3Visibility}" 
                 Command="{Binding Axis3ForwardsCommand}"/>
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content="{Binding Axis3.Name}"
+                FontSize="16"/>
 
             <!--  Z Down Arrow (↓)  -->
             <Button
@@ -118,7 +154,7 @@
                 Width="60"
                 Height="60"
                 Margin="20,0"
-                Content="&#x1F81B;"
+                Content="{x:Static project:Constants.ARROW_DOWN}"
                 FontSize="20"
                 IsEnabled="{Binding Axis3Enabled}"
                 Visibility="{Binding Axis3Visibility}" 
@@ -209,7 +245,7 @@
                                 Height="60"
                                 Command="{Binding MoveAxisBackwardLinearCommand, ElementName=RootWindow}"
                                 CommandParameter="{Binding Axis}"
-                                Content="&#x1F818;"
+                                Content="{x:Static project:Constants.ARROW_LEFT}"
                                 FontSize="20"
                                 IsEnabled="{Binding ButtonsEnabled}" />
 
@@ -230,7 +266,7 @@
                                 Height="60"
                                 Command="{Binding MoveAxisForwardLinearCommand, ElementName=RootWindow}"
                                 CommandParameter="{Binding Axis}"
-                                Content="&#x1F81A;"
+                                Content="{x:Static project:Constants.ARROW_RIGHT}"
                                 FontSize="20"
                                 IsEnabled="{Binding ButtonsEnabled}" />
 
@@ -302,7 +338,7 @@
                             Height="60"
                             Command="{Binding MoveAxisForwardRotationalCommand, ElementName=RootWindow}"
                             CommandParameter="{Binding Axis}"
-                            Content="&#x2B6E;"
+                            Content="{x:Static project:Constants.ARROW_CLOCKWISE}"
                             FontSize="20"
                             IsEnabled="{Binding ButtonsEnabled}" />
 
@@ -324,7 +360,7 @@
                             Height="60"
                             Command="{Binding MoveAxisBackwardRotationalCommand, ElementName=RootWindow}"
                             CommandParameter="{Binding Axis}"
-                            Content="&#x21B6;"
+                            Content="{x:Static project:Constants.ARROW_COUNTERCLOCKWISE}"
                             FontSize="20"
                             IsEnabled="{Binding ButtonsEnabled}" />
 
