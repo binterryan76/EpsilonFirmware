@@ -27,6 +27,7 @@
             Grid.Column="0">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Header="Axis" DisplayMemberBinding="{Binding AxisName}" />
                     <GridViewColumn Header="Position" DisplayMemberBinding="{Binding CurrentPosition}" />
                     <GridViewColumn Header="Distance To Go" DisplayMemberBinding="{Binding DistanceToGo}" />
                 </GridView>

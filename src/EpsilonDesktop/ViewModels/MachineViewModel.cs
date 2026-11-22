@@ -20,6 +20,9 @@ public partial class MachineViewModel : ObservableObject
     [ObservableProperty]
     public partial JogAxesViewModel JogAxesViewModel { get; set; }
 
+    [ObservableProperty]
+    public partial CurrentPositionViewModel CurrentPositionViewModel { get; set; }
+
     // Don't mark as static or partial.
     public ObservableCollection<AxisLinearButtonsViewModel> ExampleList { get; set; } = [];
 
@@ -27,13 +30,14 @@ public partial class MachineViewModel : ObservableObject
         EpsilonEngine engine,
         Machine currentMachine,
         IResultMessageLogger resultMessageLogger,
-        JogAxesViewModel jogAxisViewModel)
+        JogAxesViewModel jogAxisViewModel,
+        CurrentPositionViewModel currentPositionViewModel)
     {
         Engine = engine;
         CurrentMachine = currentMachine;
         ResultMessageLogger = resultMessageLogger;
         JogAxesViewModel = jogAxisViewModel;
-
+        CurrentPositionViewModel = currentPositionViewModel;
     }
 
     public static Result<MachineViewModel> New(
@@ -59,7 +63,9 @@ public partial class MachineViewModel : ObservableObject
         if (jogAxisViewModel.IsError)
             return jogAxisViewModel.Exception;
 
-        return new MachineViewModel(engine, machine, resultMessageLogger, jogAxisViewModel.Value);
+        CurrentPositionViewModel currentPositionViewModel = new(engine, machineId, resultMessageLogger);
+
+        return new MachineViewModel(engine, machine, resultMessageLogger, jogAxisViewModel.Value, currentPositionViewModel);
     }
 
 

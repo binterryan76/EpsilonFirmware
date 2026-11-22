@@ -22,6 +22,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Label
@@ -37,5 +38,13 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
             DataContext="{Binding JogAxesViewModel}" />
+
+        <views:CurrentPositionControl
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="10"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            DataContext="{Binding CurrentPositionViewModel}" />
     </Grid>
 </UserControl>
