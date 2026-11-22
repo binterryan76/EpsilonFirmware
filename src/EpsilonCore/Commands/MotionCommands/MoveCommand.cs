@@ -11,7 +11,7 @@ namespace EpsilonCore.Commands.MotionCommands;
 /// <summary>
 /// Command to move the machine to the specified position.
 /// </summary>
-public record MoveCommand : ICommand
+public record MoveCommand : IScheduledCommand
 {
     /// <summary>
     /// Final positions of the linear axes involved in the move.

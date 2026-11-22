@@ -35,16 +35,24 @@ Documentation (Doxygen + Obsidian markdown) is generated with `documentation/dox
 Even machine setup is done with commands (`Commands/SetupCommands/Add*Command`: add a board, pin, axis, kinematics, endstop, and so on), not by mutating a `Machine`.
 
 ### Commands
-Every command implements `ICommand.EnqueueCommandSpecific(Machine initialMachine)`, which validates against the initial machine and returns a `QueuedCommand` that holds the `ErrorLevel`, a message, the `ResultantMachine`, and the `DataPacket`s to send to the MCU(s). Sequence numbers are **not** set there; they are assigned just before sending. `RequiresZeroVelocity` forces the motion planner to bring the machine to a stop first. Commands that come from a program carry an optional `LineNumber`.
+Queued commands implement `ICommand.EnqueueCommandSpecific(Machine initialMachine)`, which validates against the initial machine and returns a `QueuedCommand` that holds the `ErrorLevel`, a message, the `ResultantMachine`, the `DataPacket`s to send to the MCU(s) and an `ExpectedDuration`. Sequence numbers and timing headers are **not** set there; the engine adds them just before sending. `RequiresZeroVelocity` forces the motion planner to bring the machine to a stop first. Commands that come from a program carry an optional `LineNumber`.
+
+There are three kinds of commands:
+- `IScheduledCommand` (and plain `ICommand`s such as setup commands): run in order and take a known time. The resultant machine is predicted when queued.
+- `IConditionalCommand`: run in order but finish at an unknown time (`MoveIntoEndstopsCommand`, `WaitForTempCommand`). The board reports a `CommandOutcome` and `Resolve` builds the real resultant machine. If `IsResultPredictable` is false the command is a **barrier**: nothing after it is planned until it resolves. If it is true, `Resolve` must not change planned state, because later commands were already planned from the prediction.
+- `IImmediateCommand`: sent with `EpsilonEngine.SendImmediate` from the caller's thread, skipping every queue and the board's buffer (emergency stop, pause, resume, clear faults, babystep, status query). They are not `ICommand`s.
 
 ### Engine and command lifecycle
-- `EpsilonEngine` owns one `MachineQueue` per machine (`ConcurrentDictionary<uint, MachineQueue>`) and runs a single background `MainLoop` thread, started on the first `AddMachineQueue`. The loop sleeps when every queue is idle or stopped.
-- `MachineQueue` moves commands through these stages: `CommandsToEnqueue` (thread-safe inbox) → `Queued` (step times not solved yet, waits in `MoveQueue`) → `ReadyToSend` → `DataPacketsReadyToSend` → `Sent` → resolved. It tracks both `LatestQueuedMachine` and `CurrentMachine`.
-- Events `CommandQueued`, `CommandSent`, `CommandResolved`, and `MachineQueueAdded` are how the UI (and user scripts) observe state changes.
-- One command can produce data packets for several boards. All of them must have buffer space before any packet for that command is sent.
+- `EpsilonEngine` owns one `MachineQueue` per machine and runs a single background `MainLoop` thread, started on the first `AddMachineQueue`. The loop waits on an `AutoResetEvent` that is set when commands are enqueued or packets arrive.
+- `MachineQueue` moves commands through these stages: `CommandsToEnqueue` → `Queued` (step times not solved yet, waits in `MoveQueue`) → `ReadyToSend` → `InFlight` (sent; tracked per board by sequence number in `BoardState`) → resolved. Commands resolve strictly in queue order once all of their packets have completed. It tracks both `LatestQueuedMachine` and `CurrentMachine`.
+- **Threading:** the main loop, the communicators' receive threads and `SendImmediate` callers all touch a `MachineQueue`. Everything except `CommandsToEnqueue` is guarded by `MachineQueue.SyncRoot`; use `RunLocked`, which raises events (queued with `DeferEvent`) only after releasing the lock. UI handlers must not block on the UI thread (use `Dispatcher.BeginInvoke`), because startup scripts can call `CompleteAllCommands` on the UI thread.
+- Statuses (`MachineQueueStatus`): `Running`, `Pausing`, `Paused`, `Stopped` (fault, needs `ClearFaults`), `EmergencyStopped`. A failed conditional command, a board fault report or a watchdog timeout calls `Fault`: it pauses the boards, discards all unresolved commands and stops the queue.
+- Events `CommandQueued`, `CommandSent`, `CommandResolved`, `CommandFailed`, `MachineQueueAdded`, `MachineQueueStatusChanged` and `BoardStatusReceived` are how the UI (and user scripts) observe state changes.
+- `ClockSync` estimates each board's clock from `CLOCK_SYNC_REQUEST`/`RESPONSE` exchanges. Once synced, queued packets get an `AtClock` start tick (one shared start time across boards). Before sync, or while a conditional command is unresolved on that board, they get `AfterPrevious`.
+- Babystep offsets are mutable `LiveAdjustments`, not part of the immutable `Machine`.
 
 ### Communication protocol
-`DataPacket` byte layout: `[0]` data length (max 255), `[1]` sequence number, `[2]` `CommandCode`, then the payload. `CommandCode` values must fit in a byte; they must stay in sync with the MCU-side C++ firmware. `SerialCommunicator` (System.IO.Ports) implements `ICommunicator`. Incoming packets come in through the `DataPacketsReceivedHandler` event and are handled in `EpsilonEngine.ProcessDataPacket`.
+`DataPacket` byte layout: `[0]` data length (max 255), `[1]` sequence number, `[2]` `CommandCode`, then the payload. Queued packets have a 9 byte `CommandTiming` header at the start of the payload. Code ranges: 1–127 queued, 128–191 immediate, 240–255 board-to-host. Completion (`COMMAND_COMPLETE`/`COMMAND_RESULT`) and buffer space (`BUFFER_BYTES_FREED`) are separate messages. The full protocol, which the MCU-side C++ firmware must match, is in `documentation/obsidian/Epsilon Firmware/Epsilon Firmware/Communication Protocol.md`; update it whenever packet formats change. `SerialCommunicator` (System.IO.Ports) implements `ICommunicator`; `Send` must be thread-safe and must not check buffer space.
 
 ### Units
 Physical quantities use UnitsNet types throughout (`Length`, `Angle`, `Duration`, `RotationalSpeed`, ...), not raw doubles. `Units/` defines `DefaultUnits`, `CommunicationUnits` (units used when encoding to MCU bytes) and `DisplayUnits`.
@@ -57,7 +65,7 @@ EpsilonDesktop configures machines with **C# scripts** run through Roslyn (`CSha
 
 ## Documentation
 
-Design notes live in the Obsidian vault at `documentation/obsidian/Epsilon Firmware/` (Architecture, Primary Classes, Event System, Unique Problems). In those notes, link to classes as `[[ClassName]]` and to members as `[[ClassName#MemberName]]`.
+Design notes live in the Obsidian vault at `documentation/obsidian/Epsilon Firmware/` (Architecture, Primary Classes, Communication Protocol, Event System, Unique Problems). In those notes, link to classes as `[[ClassName]]` and to members as `[[ClassName#MemberName]]`.
 
 # Code Styling
 - Prefer `Regex myRegex = new();` over `var myRegex = new Regex();`

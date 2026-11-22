@@ -35,6 +35,7 @@ public class SerialCommunicator : ICommunicator
 
 
     private readonly SerialPort serialPort = new();
+    private readonly Lock sendLock = new();
     private bool connected = false;
 
     /// <summary>
@@ -259,16 +260,25 @@ public class SerialCommunicator : ICommunicator
                 return false;
         }
 
-        int serialPortBytesAvailable = serialPort.WriteBufferSize - serialPort.BytesToWrite;
-        if (serialPortBytesAvailable < packet.AllData.Length)
-            return false;
+        // Immediate commands are sent from other threads than the main loop, so writes must not interleave.
+        lock (sendLock)
+        {
+            int serialPortBytesAvailable = serialPort.WriteBufferSize - serialPort.BytesToWrite;
+            if (serialPortBytesAvailable < packet.AllData.Length)
+                return false;
 
-        if (BoardCommandBufferBytesFree < packet.AllData.Length)
-            return false;
-
-        serialPort.Write(packet.AllData.ToArray(), 0, packet.AllData.Length);
-        serialPort.BaseStream.Flush();
-        return true;
+            try
+            {
+                serialPort.Write(packet.AllData.ToArray(), 0, packet.AllData.Length);
+                serialPort.BaseStream.Flush();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error writing to serial port - {serialPort.PortName}: {ex.Message}");
+                return false;
+            }
+            return true;
+        }
     }
 
 }

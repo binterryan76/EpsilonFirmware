@@ -19,7 +19,7 @@ public record SetTargetTempCommand(
     uint TempControllerIndex,
     Temperature TargetTemp,
     uint? LineNumber = null)
-    : ICommand
+    : IScheduledCommand
 {
     /// <inheritdoc />
     public string Description { get; } =

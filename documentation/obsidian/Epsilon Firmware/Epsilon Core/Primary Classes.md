@@ -5,8 +5,10 @@ This is the main class which runs the main forever loop running each machine by 
 The [[EpsilonCore::Engine::MachineQueue|MachineQueue]] class manages the lifecycle of [[EpsilonCore::Commands::ICommand|ICommand]]s:
 1. Queued to a machine.
 2. Ready to send to microcontrollers.
-3. Sent to microcontrollers.
-4. Resolved and discarded.
+3. Sent to microcontrollers and tracked as in flight until every board reports each of its data packets complete (matched by sequence number).
+4. Resolved in queue order and discarded.
+
+[[IImmediateCommand]]s such as an emergency stop skip all of these steps (see [[Communication Protocol]]).
 
 Because [[Epsilon Firmware/Architecture#EpsilonCore|EpsilonCore]] uses many [[Architecture#Immutable Records|immutable records]] and each [[EpsilonCore::Commands::ICommand|ICommand]] has a [[EpsilonCore::Commands::ICommand#ResultantMachine|ICommand.ResultantMachine]] the [[EpsilonCore::Engine::MachineQueue|MachineQueue]] class also manages the chain of resultant machines including the resultant machine of the last queued command and the last resolved command.
 
@@ -15,4 +17,11 @@ There are many different types of commands such as [[EpsilonCore::Commands::Moti
 
 ### Command Duration
 Some commands have known a duration such as a 1 second pause or a move command (since the step pulse times are calculated before sending to the microcontroller) but some have an unknown duration such as a homing command or a command to wait for a heater to reach a given temperature. Every command with an unknown duration relies on a measurement of a sensor in order to fully resolve. This is important because a machine can have any action cancelled and the recovery procedure will require the host-side firmware to figure out where any microcontrollers were in their execution of the commands they have queued.
+
+This is why there are three kinds of commands:
+- [[IScheduledCommand]]: runs in order and takes a known time (moves, setting a target temperature). Its resultant machine is predicted when it is queued, and once the board clocks are synchronized it is sent with the exact board clock tick to start at.
+- [[IConditionalCommand]]: runs in order but finishes at an unknown time (moving into endstops, waiting for a temperature). The board reports a result and [[IConditionalCommand#Resolve]] builds the real resultant machine. If the result can't be predicted ([[IConditionalCommand#IsResultPredictable]] is false), nothing after the command is planned until it resolves.
+- [[IImmediateCommand]]: runs as soon as the board receives it, skipping every queue (emergency stop, pause, resume, babystep).
+
+Values measured from sensors (such as the temperature reached by a wait) are not stored in the immutable machine, because the commands after them were already planned from the predicted machine.
 

@@ -29,6 +29,11 @@ public record DataPacket
     public const int COMMAND_CODE_INDEX = 2;
 
     /// <summary>
+    /// Index of the first <see cref="byte"/> after the <see cref="CommandCode"/>.
+    /// </summary>
+    public const int PAYLOAD_INDEX = 3;
+
+    /// <summary>
     /// ID of the <see cref="ICommunicator"/> to send <see cref="DataPacket"/> with 
     /// or the <see cref="ICommunicator"/> that received the <see cref="DataPacket"/>.
     /// TODO: Maybe rename to BoardQueueId? BoardQueue.Id should equal ICommunicator.Id which should equal Board.Id
@@ -59,6 +64,11 @@ public record DataPacket
     /// Total number of <see cref="byte"/>s in the <see cref="AllData"/> array.
     /// </summary>
     public int TotalLength => AllData.Length;
+
+    /// <summary>
+    /// The <see cref="byte"/>s after the <see cref="CommandCode"/>.
+    /// </summary>
+    public ReadOnlySpan<byte> Payload => AllData.AsSpan()[PAYLOAD_INDEX..];
 
     /// <summary>
     /// Maximum number of data <see cref="byte"/>s in the <see cref="AllData"/> array.
@@ -182,5 +192,24 @@ public record DataPacket
     public DataPacket SetSequenceNumber(byte sequenceNumber)
     {
         return this with { AllData = AllData.SetItem(SEQUENCE_NUM_INDEX, sequenceNumber) };
+    }
+
+    /// <summary>
+    /// Returns a new <see cref="DataPacket"/> with a <see cref="CommandTiming"/> header inserted right after the
+    /// <see cref="CommandCode"/>. Queued commands get this header right before they are sent.
+    /// Returns an error if the packet would exceed <see cref="MAX_TOTAL_LENGTH"/>.
+    /// </summary>
+    /// <param name="timing">The timing header to insert.</param>
+    /// <returns>The data packet with the timing header, or an error if it would be too long.</returns>
+    public Result<DataPacket> WithTiming(CommandTiming timing)
+    {
+        int newDataLength = DataLength + CommandTiming.LENGTH;
+        if (newDataLength > MAX_DATA_LENGTH)
+            return new ArgumentException(
+                $"Data packet for {(Commands.CommandCode)CommandCode} is too long to add a timing header: " +
+                $"{newDataLength} data bytes exceeds {MAX_DATA_LENGTH}.");
+
+        byte[] allData = [(byte)newDataLength, SequenceNumber, CommandCode, .. timing.ToBytes(), .. Payload];
+        return this with { AllData = [.. allData] };
     }
 }

@@ -29,6 +29,13 @@ public record QueuedCommand(
     Machine? ResultantMachine = null)
 {
     /// <summary>
+    /// How long the command takes to run on the board once it starts.
+    /// Used to schedule the commands after it at exact board clock times.
+    /// Zero for commands that finish instantly or whose duration is unknown (<see cref="IConditionalCommand"/>s).
+    /// </summary>
+    public Duration ExpectedDuration { get; init; } = Duration.Zero;
+
+    /// <summary>
     /// Constructs a new <see cref="QueuedCommand"/> with no data packets to send to the microcontroller.
     /// </summary>
     /// <param name="errorLevel"></param>

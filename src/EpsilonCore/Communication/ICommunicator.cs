@@ -38,6 +38,10 @@ public abstract class ICommunicator : IEntity
 
     /// <summary>
     /// Sends a data packet to a microcontroller board.
+    /// Must be safe to call from several threads at once because immediate commands are sent from the caller's thread
+    /// while the engine's main loop sends queued commands.
+    /// Must not check <see cref="BoardCommandBufferBytesFree"/>: the engine does that for queued commands, and
+    /// immediate commands never use the command buffer.
     /// </summary>
     /// <param name="packet"></param>
     /// <returns>True if successful, false if unsuccessful.</returns>
@@ -71,6 +75,13 @@ public abstract class ICommunicator : IEntity
     }
 
     /// <summary>
+    /// Returns the sequence number <see cref="IncrementAndReturnNextSequenceNumber"/> will return next, without using it.
+    /// </summary>
+    /// <returns>The next sequence number.</returns>
+    public byte PeekNextSequenceNumber() =>
+        lastUsedSequenceNumber == byte.MaxValue ? (byte)0 : (byte)(lastUsedSequenceNumber + 1);
+
+    /// <summary>
     /// Raised when one or more <see cref="DataPacket"/>s are received from a microcontroller board.
     /// Automatically assigned when an <see cref="ICommunicator"/> is assigned to a <see cref="MachineQueue"/>.
     /// </summary>
@@ -90,6 +101,19 @@ public abstract class ICommunicator : IEntity
     /// Keeps track of how many bytes are unoccupied in the microcontroller's command buffer.
     /// </summary>
     public uint BoardCommandBufferBytesFree { get => BoardCommandBufferSize - BoardCommandBufferBytesOccupied; }
+
+    /// <summary>
+    /// Marks bytes of the microcontroller's command buffer as free after a <see cref="Commands.CommandCode.BUFFER_BYTES_FREED"/> message.
+    /// </summary>
+    /// <param name="bytesFreed">Number of bytes the board freed.</param>
+    internal void FreeBufferBytes(uint bytesFreed) =>
+        BoardCommandBufferBytesOccupied = bytesFreed >= BoardCommandBufferBytesOccupied ? 0 : BoardCommandBufferBytesOccupied - bytesFreed;
+
+    /// <summary>
+    /// Marks the whole command buffer as free, used when the board discards its buffer
+    /// (emergency stop, pause or fault).
+    /// </summary>
+    internal void ResetBufferAccounting() => BoardCommandBufferBytesOccupied = 0;
 }
 
 

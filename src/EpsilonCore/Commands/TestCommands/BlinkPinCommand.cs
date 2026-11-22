@@ -13,7 +13,7 @@ public record BlinkPinCommand(
     UInt32 BlinkCount,
     Duration BlinkTimeHigh,
     Duration BlinkTimeLow,
-    uint? LineNumber = null) : ICommand
+    uint? LineNumber = null) : IScheduledCommand
 {
     /// <inheritdoc />
     public string Description { get; } = $"Blinks pin {PinId} {BlinkCount} times holding pin high for {BlinkTimeHigh} and low for {BlinkTimeLow}";
@@ -71,6 +71,6 @@ public record BlinkPinCommand(
 
         Debug.Assert(dataPacket.IsSuccess);
 
-        return QueuedCommand.Success(this, initialMachine, initialMachine, [dataPacket.Value]);
+        return QueuedCommand.Success(this, initialMachine, initialMachine, [dataPacket.Value]) with { ExpectedDuration = durationTotal };
     }
 }
