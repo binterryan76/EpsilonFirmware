@@ -10,7 +10,6 @@ using EpsilonCore.Motion.Axis;
 using GenericHelpers;
 using System.Collections.Immutable;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Windows;
 using UnitsNet;
 
@@ -263,22 +262,6 @@ public partial class JogAxesViewModel : ObservableObject
     public void Axis3Forwards()
     {
         MoveAxisForwardLinear(Axis3);
-    }
-
-    public void CommandResolved(object? sender, QueuedCommand queuedCommand)
-    {
-        switch (queuedCommand.Command)
-        {
-            // TODO: Add other commands that should trigger a refresh of the axes here (AddRotationalAxisCommand).
-            case AddLinearAxisCommand:
-                Debug.Assert(queuedCommand.ResultantMachine is not null);
-                ReadAllAxes(queuedCommand.ResultantMachine);
-                break;
-            default:
-                // Do nothing for other commands
-                break;
-        }
-        ;
     }
 
     /// <summary>

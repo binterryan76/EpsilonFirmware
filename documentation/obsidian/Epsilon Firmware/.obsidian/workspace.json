@@ -20,8 +20,33 @@
               "icon": "lucide-file",
               "title": "Primary Classes"
             }
+          },
+          {
+            "id": "fc9042a4d1ff50ee",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.14.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.14.4"
+            }
+          },
+          {
+            "id": "82469f3cc8a5a313",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.15.0"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.15.0"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -188,7 +213,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "e83a7d62abf07097",
+  "active": "82469f3cc8a5a313",
   "lastOpenFiles": [
     "Epsilon Firmware/Event System.md",
     "Epsilon Firmware/Unique Problems Epsilon Firmware Attempts To Solve.md",

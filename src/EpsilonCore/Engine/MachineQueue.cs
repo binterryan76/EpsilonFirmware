@@ -40,6 +40,26 @@ internal class MachineQueue(Machine initialMachine)
     }
 
     /// <summary>
+    /// Raised when a <see cref="QueuedCommand"/> is queued and the <see cref="QueuedCommand.ResultantMachine"/> 
+    /// is applied to the <see cref="MachineQueue.LatestQueuedMachine"/>.
+    /// The sender object will be the <see cref="QueuedCommand.InitialMachine"/> that the command was queued to.
+    /// </summary>
+    public EventHandler<QueuedCommand>? CommandQueued;
+
+    /// <summary>
+    /// Raised when a <see cref="QueuedCommand"/> is sent to one or more <see cref="Board"/>s.
+    /// The sender object will be the <see cref="QueuedCommand.InitialMachine"/> that the command was queued to.
+    /// </summary>
+    public EventHandler<QueuedCommand>? CommandSent;
+
+    /// <summary>
+    /// Raised when a <see cref="QueuedCommand"/> is fully resolved and the <see cref="QueuedCommand.ResultantMachine"/>
+    /// is applied to the <see cref="MachineQueue.CurrentMachine"/>.
+    /// The sender object will be the <see cref="QueuedCommand.ResultantMachine"/> that resulted from the command.
+    /// </summary>
+    public EventHandler<QueuedCommand>? CommandResolved;
+
+    /// <summary>
     /// Contains commands that were sent from an external source and haven't been looked at yet.
     /// </summary>
     public ConcurrentQueue<ICommand> CommandsToEnqueue { get; } = [];
